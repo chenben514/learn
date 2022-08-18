@@ -1,0 +1,48 @@
+
+### 功能開發
+
+待實作功能：
+7. 詞彙功能 - 加上簡筆畫
+3. 國文七言絕句
+5. 數學題材建立
+6. 接詞遊戲
+8. 嵌入 Ben 的個人網頁
+9. 注音功能
+
+    
+- 3. 填星功能
+   --> 答對加 1 顆星，答錯扣到 0 顆星
+   --> 答對0顆星(test-no-pass),1-2顆星(test-pass),3顆星(test-finish)，呈現不同顏色
+   --> (X) 只要沒有0顆星的話，就解鎖一個項目
+X 4. 聽寫題型
+- 5. 記憶功能
+   --> 記憶上次選擇科目，主題，題型
+   --> 記憶目前使用者姓名  
+
+  6. 字彙篇輸外單，秀全義
+  7. 錯題複習鈕
+🐽
+### Bug
+  1. 詞彙有2個
+  
+//choose-korean_word_topik_b_all;
+:choose-korean_word_topik_b_k; -- 1    
+
+=== backup
+1. pagination
+              <!-- <div class="pagination">
+                <a href="#">&laquo;</a>
+                <a href="#">1</a>
+                <a class="active" href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#">6</a>
+                <a href="#">&raquo;</a>
+              </div> page -->
+
+
+### 已完成功能
+1. 音樂重覆放映取消
+4. by 課分離資料夾
+2. 數學自動變換數字

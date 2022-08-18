@@ -1,0 +1,37 @@
+{
+  "folders": [
+    {
+      "path": "../../Study"
+    },
+    {
+      "path": "../../../../MyNote"
+    },
+    {
+      "path": "../../Project/NextJS"
+    },
+    {
+      "path": "../../../Books/Web前端開發書附範例"
+    },
+    {
+      "path": "../../../../MyProject"
+    },
+    {
+      "path": "../../../../Children/Quiz"
+    },
+    {
+      "path": "../../Tarot/Emma2"
+    },
+    {
+      "path": ".."
+    },
+    {
+      "path": "../../../Udemy/Udemy_Janas_Css"
+    },
+    {
+      "path": "../../../../../Downloads/turn.js-master/demos/magazine"
+    }
+  ],
+  "settings": {
+    "liveServer.settings.multiRootWorkspaceName": "ComboStudy"
+  }
+}
