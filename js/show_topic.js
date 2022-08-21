@@ -1,3 +1,6 @@
+var windowWidth = window.innerWidth;
+var windowHeight = window.innerHeight;
+
 var curProcCnt = 0;
 
 let search_input = document.getElementById("search__input");
@@ -148,6 +151,7 @@ function showTopic() {
 
   curMainSubj = localStorage.getItem(curCourse + "_main_subj");
   var curRightCnt;
+  var curMidCnt = 0;
   for (i = 0; i < topics.length; i++) {
     curRightCnt = 0;
     if (topics[i].course != curCourse) continue;
@@ -190,6 +194,7 @@ function showTopic() {
     curDetail.setAttribute("class", "detail");
 
     // 2.1. curDetailLeft
+    curMidCnt++;
     var curDetailLeft = document.createElement("detail-left-side");
     curDetailLeft.setAttribute("class", "detail-left-side");
 
@@ -200,14 +205,23 @@ function showTopic() {
     var curDetailMidSbj = document.createElement("detail_mid_subj");
     curDetailMidSbj.setAttribute("class", "detail_mid_subj");
 
+    curDetailMidSbj.innerText = curMidCnt.toString() + ". \n";
     if (topics[i].mid_explain.includes("\\")) {
       curDetailMidSbj.innerText =
+        curDetailMidSbj.innerText +
         topics[i].mid_explain.split("\\")[0] +
         "\n" +
         topics[i].mid_explain.split("\\")[1];
-    } else curDetailMidSbj.innerText = topics[i].mid_explain;
+    } else {
+      curDetailMidSbj.innerText =
+        curDetailMidSbj.innerText + topics[i].mid_explain;
+    }
 
-    curDetailLeft.appendChild(curDetailLeftImg);
+    // alert(windowWidth);
+    if (windowWidth > 600) {
+      curDetailLeft.appendChild(curDetailLeftImg);
+    }
+
     curDetailLeft.appendChild(curDetailMidSbj);
 
     // 2.2. curDetailRight

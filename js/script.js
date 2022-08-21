@@ -1427,27 +1427,27 @@ function startAudio(curQuiz) {
     //    after the API code downloads.
     var videoId = youtube_url.split("=")[1].split("&")[0];
 
-    var YT_height, YT_width;
-    var windowWidth = window.screen.width;
-    var windowHeight = window.screen.height;
+    // var YT_height, YT_width;
+    // var windowWidth = window.screen.width;
+    // var windowHeight = window.screen.height;
 
     // alert(windowWidth + ":" + windowHeight);
-    if (subtitles.length < 4) {
-      // YT_height = 640;
-      // YT_width = 960;
-      YT_height = windowHeight * 0.5;
-      YT_width = windowWidth * 0.9;
-    } else {
-      // YT_height = windowHeight * 0.5;
-      // YT_width = windowWidth * 0.9;
-      // YT_height = 320;
-      // YT_width = 640;
-    }
+    // if (subtitles.length < 4) {
+    //   // YT_height = 640;
+    //   // YT_width = 960;
+    //   YT_height = windowHeight * 0.5;
+    //   YT_width = windowWidth * 0.9;
+    // } else {
+    //   // YT_height = windowHeight * 0.5;
+    //   // YT_width = windowWidth * 0.9;
+    //   // YT_height = 320;
+    //   // YT_width = 640;
+    // }
 
     window.YT.ready(function () {
       player = new window.YT.Player("player-div", {
-        height: YT_height,
-        width: YT_width,
+        // height: YT_height,
+        // width: YT_width,
         videoId: videoId,
         events: {
           onReady: onPlayerReady,
