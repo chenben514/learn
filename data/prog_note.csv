@@ -23,6 +23,8 @@ X 4. 聽寫題型
   7. 錯題複習鈕
 🐽
 ### Bug
+var myDebug = document.getElementsByClassName("modal-content")[0];
+var myDebug2 = document.getElementById("player-div");
 
 1.1. 列出可用字幕
 youtube-dl --list-subs  https://www.youtube.com/watch?v=1mLVhtn3yNI&ab_channel=%E4%B8%AD%E5%A4%A9%E6%96%B0%E8%81%9E

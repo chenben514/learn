@@ -58,10 +58,11 @@ let audio, source;
 let autoRowSelected = 0;
 let myAudioTableRow;
 let remainHighlight,
-  bRemainHighlight = true;
+  bRemainHighlight = false;
 
 /*5.2 subtitle youtube */
-let youtube_mode = false;
+let youtube_mode = false,
+  youtube_ready = false;
 var player;
 let youtube_url;
 
@@ -1284,15 +1285,18 @@ function showTable() {
   var span = document.getElementById("closeAudio");
   span.addEventListener("click", closeAudio);
 
+  var tableRowCnt = 0;
   for (let k = 0; k < subtitles.length; k++) {
     if (bRemainHighlight) {
       if (subtitles[k].content.includes("<em>")) {
         r = t.insertRow(-1);
+        tableRowCnt++;
       } else {
         continue;
       }
     } else {
       r = t.insertRow(-1);
+      tableRowCnt++;
     }
 
     r.setAttribute("class", "audio_table_row");
@@ -1307,23 +1311,25 @@ function showTable() {
     c.innerHTML = highlight_start(subtitles[k].content);
   }
 
-  th = t.createTHead();
-  r = th.insertRow(0);
-  c = r.insertCell(-1);
-  c.style.width = "7%";
-  c.innerHTML = "#";
-  c = r.insertCell(-1);
-  c.style.width = "93%";
-  c.innerHTML = "句子";
-
-  audio_sec_bottom = document.createElement("div");
-  audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
-  audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
-  modalContent.appendChild(audio_sec_bottom);
-  audio_sec_bottom.appendChild(t);
+  if (tableRowCnt > 0) {
+    th = t.createTHead();
+    r = th.insertRow(0);
+    c = r.insertCell(-1);
+    c.style.width = "7%";
+    c.innerHTML = "#";
+    c = r.insertCell(-1);
+    c.style.width = "93%";
+    c.innerHTML = "句子";
+    audio_sec_bottom = document.createElement("div");
+    audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+    audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
+    modalContent.appendChild(audio_sec_bottom);
+    audio_sec_bottom.appendChild(t);
+  }
 }
 
 function startAudio(curQuiz) {
+  subtitles = [];
   //2.generate questions
 
   content.classList.add("slight_opacity");
@@ -1359,7 +1365,7 @@ function startAudio(curQuiz) {
       .split("@")[1]
       .replace(/&/g, "_")
       .replace(/~/g, "-");
-    youtube_url = "https://www.youtube.com/watch?v=" + tmpID;
+    youtube_url = "https://www.youtube-nocookie.com/watch?v=" + tmpID;
   } else {
     readSubtitles(base_filename + ".srt");
   }
@@ -1385,7 +1391,6 @@ function startAudio(curQuiz) {
 
   let audio_sec_top;
   audio_sec_top = document.createElement("div");
-  audio_sec_top.setAttribute("class", "audio_sec_top");
 
   if (curQuizType.includes("youtube")) {
     youtube_mode = true;
@@ -1402,26 +1407,41 @@ function startAudio(curQuiz) {
   var audio_filename;
 
   if (curQuizType.includes("youtube")) {
+    audio_sec_top.classList.add("video_sec_top");
     // x.1. This code loads the IFrame Player API code asynchronously.
     var playerDiv = document.createElement("div");
     playerDiv.setAttribute("id", "player-div");
+    playerDiv.classList.add("myPlayerDiv");
+    var messageDiv = document.createElement("div");
     audio_sec_top.appendChild(playerDiv);
-    audio_sec_top.appendChild(remainHighlight);
-    audio_sec_top.appendChild(lblRemainHighlight);
+    if (bRemainHighlight) {
+      messageDiv.appendChild(remainHighlight);
+      messageDiv.appendChild(lblRemainHighlight);
+      messageDiv.classList.add("myMessageDiv");
+      audio_sec_top.appendChild(messageDiv);
+    }
+
     modalContent.appendChild(audio_sec_top);
 
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
     var videoId = youtube_url.split("=")[1].split("&")[0];
-    // alert(videoId);
-    //        videoId: "4p5286T_kn0",
+
     var YT_height, YT_width;
+    var windowWidth = window.screen.width;
+    var windowHeight = window.screen.height;
+
+    // alert(windowWidth + ":" + windowHeight);
     if (subtitles.length < 4) {
-      YT_height = 640;
-      YT_width = 960;
+      // YT_height = 640;
+      // YT_width = 960;
+      YT_height = windowHeight * 0.5;
+      YT_width = windowWidth * 0.9;
     } else {
-      YT_height = 320;
-      YT_width = 640;
+      // YT_height = windowHeight * 0.5;
+      // YT_width = windowWidth * 0.9;
+      // YT_height = 320;
+      // YT_width = 640;
     }
 
     window.YT.ready(function () {
@@ -1439,6 +1459,7 @@ function startAudio(curQuiz) {
     // 4. The API will call this function when the video player is ready.
     function onPlayerReady(e) {
       e.target.playVideo();
+      youtube_ready = true;
     }
 
     function stopVideo() {
@@ -1452,6 +1473,7 @@ function startAudio(curQuiz) {
       e.target.seekTo(current + 10);
     }
   } else {
+    audio_sec_top.classList.add("audio_sec_top");
     if (curQuizType.includes("m4a")) {
       audio_filename = base_filename + ".m4a";
     } else {
@@ -1482,12 +1504,15 @@ function startAudio(curQuiz) {
   // audio.addEventListener("timeupdate", function () {
   function handleAudioLoop() {
     let currentTime;
+
     if (youtube_mode) {
+      if (!youtube_ready) return;
       if (player.getPlayerState() != YT.PlayerState.PLAYING) return;
       currentTime = player.playerInfo.currentTime;
     } else currentTime = audio.currentTime;
 
     if (!nowAudioLoop) {
+      if (bRemainHighlight) return;
       if (currentTime > subtitles[autoRowSelected - 1].finish) {
         myAudioTableRow[autoRowSelected - 1].style.color = "blue";
         while (currentTime > subtitles[autoRowSelected].finish) {
@@ -1522,8 +1547,6 @@ function getSecond(inputTime) {
   var secondArr = inputTime.split(":");
   var hour = Number(secondArr[0]);
   var minute = Number(secondArr[1]);
-  console.log("1:" + inputTime);
-  console.log("2:" + secondArr[2]);
   var second2Arr = secondArr[2].split(",");
   var second = Number(second2Arr[0]);
   var milliSecond = Number(second2Arr[1]);

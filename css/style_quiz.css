@@ -512,7 +512,8 @@ section .correct_list {
   display: none; /* Hidden by default */
   position: fixed; /* Stay in place */
   z-index: 1; /* Sit on top */
-  padding-top: 100px; /* Location of the box */
+  /* padding-top: 100px; Location of the box */
+  padding-top: 1rem;
   left: 0;
   top: 0;
   width: 100%; /* Full width */
@@ -531,6 +532,16 @@ section .correct_list {
   width: 80%;
   font-size: 20px;
   color: blue;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .modal-content {
+    /* background-color: red; */
+    margin: 0;
+    padding: 5px;
+    width: 100%;
+    /* width: 50%; */
+  }
 }
 
 /* The Close Button */
@@ -582,12 +593,24 @@ section .correct_list {
 } */
 
 /* Zebra striping */
+.video_sec_top {
+  background-color: rgb(220, 237, 216);
+
+  padding: 0.5rem 1rem;
+  width: 95%;
+  /* height: 50%; */
+  height: 400px;
+}
+
 .audio_sec_top {
   background-color: rgb(220, 237, 216);
 
   padding: 0.5rem 1rem;
   width: 95%;
+  /* height: 50%; */
+  height: 10rem;
 }
+
 .audio {
   /* background-color: pink; */
   background-color: rgb(220, 237, 216);
@@ -595,8 +618,33 @@ section .correct_list {
   width: 95%;
 }
 
+.myPlayerDiv {
+  width: 60%;
+  height: 87%;
+}
+@media only screen and (max-width: 37.5em) {
+  .myPlayerDiv {
+    width: 100%;
+  }
+}
+
+.myMessageDiv {
+  width: 100%;
+  height: 8%;
+}
+.remainHighlight {
+  /* width: 3rem;
+  height: 3rem; */
+  margin: 1rem;
+}
+.lblRemainHighlight {
+  font-size: 2rem;
+  color: blue;
+  text-align: center;
+}
+
 .audio_sec_bottom {
-  /* background-color: rgb(220, 237, 216); */
+  background-color: lightblue;
   padding: 0.5rem 1rem;
   width: 95%;
   height: 500px;
@@ -611,6 +659,9 @@ section .correct_list {
 
 .audio_table tr:nth-of-type(odd) {
   background: #eee;
+}
+.audio_table tr:nth-of-type(even) {
+  background: #ddd;
 }
 
 .audio_table thead td {
@@ -637,15 +688,4 @@ section .correct_list {
 
 .highlightRow {
   background-color: green;
-}
-
-.remainHighlight {
-  width: 3rem;
-  height: 3rem;
-  margin: 2rem;
-}
-.lblRemainHighlight {
-  font-size: 2rem;
-  color: blue;
-  text-align: center;
 }
