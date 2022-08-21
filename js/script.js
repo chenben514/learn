@@ -1,3 +1,4 @@
+/*history: test_0822_0120*/
 import game_focus from "./game_focus.js";
 import loadWordChain from "./game_word_chain.js";
 
