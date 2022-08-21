@@ -1,5 +1,6 @@
 var curProcCnt = 0;
 
+let search_input = document.getElementById("search__input");
 const topic_view = document.querySelector(".main_subj");
 const subject_view = document.querySelector(".mid_subj");
 class Topic {
@@ -17,7 +18,8 @@ class Topic {
 var topics = [];
 
 curCourse = localStorage.getItem("lastCourse");
-if (curCourse == "undefined" || curCourse == null) curCourse = "korean";
+if (curCourse == "undefined" || curCourse == null || curCourse.length == 0)
+  curCourse = "korean";
 
 curMainSubj = localStorage.getItem(curCourse + "_main_subj");
 if (curMainSubj == "undefined" || curMainSubj == null) curMainSubj = "word";
@@ -61,18 +63,65 @@ function getTopic() {
     topic.mid_explain = singTopicArr[4];
     topic.quiz_type = singTopicArr[5];
 
-    for (j = 6; j < singTopicArr.length; j += 2) {
-      topic.small_subjs.push(singTopicArr[j]);
-      topic.small_subj_explains.push(singTopicArr[j + 1]);
-      if (j + 2 < singTopicArr.length) {
-        if (singTopicArr[j + 2].startsWith("http")) {
-          topic.small_subj_html.push(singTopicArr[j + 2]);
-          j += 1;
+    if (singTopicArr[6] == "all.csv") {
+      var allFile =
+        "./data/" +
+        topic.course +
+        "/" +
+        topic.main_subj +
+        "/" +
+        topic.mid_subj +
+        "/all.csv";
+
+      var allRead = new XMLHttpRequest();
+      read.open("GET", allFile, false);
+      read.setRequestHeader("Cache-Control", "no-cache");
+      read.send();
+      var allDisplayName = read.responseText;
+      if (allDisplayName.includes("<title>Error</title>")) {
+        alert("can not get all.csv file : " + allFile);
+      }
+      var allTopicArr = allDisplayName.replace(/\r\n/g, "\n").split("\n");
+      for (j = 0; j < allTopicArr.length; j++) {
+        var allSingTopicArr = allTopicArr[j].split(",");
+        if (allTopicArr[j].length < 2) continue;
+
+        var allVideoId = allSingTopicArr[2]
+          .split("=")[1]
+          .split("&")[0]
+          .replace(/_/g, "&")
+          .replace(/-/g, "~");
+        topic.small_subjs.push("all@" + allVideoId + "@" + allSingTopicArr[0]);
+
+        if (
+          allSingTopicArr[1].length > 5 ||
+          allSingTopicArr[1].includes("\\")
+        ) {
+          topic.small_subj_explains.push(
+            Number(j + 1) + "." + allSingTopicArr[1]
+          );
+        } else {
+          topic.small_subj_explains.push(
+            Number(j + 1) + "\n" + allSingTopicArr[1]
+          );
+        }
+
+        topic.small_subj_html.push("NA");
+      }
+    } else {
+      for (j = 6; j < singTopicArr.length; j += 2) {
+        topic.small_subjs.push(singTopicArr[j]);
+        topic.small_subj_explains.push(singTopicArr[j + 1]);
+        if (j + 2 < singTopicArr.length) {
+          if (singTopicArr[j + 2].startsWith("http")) {
+            topic.small_subj_html.push(singTopicArr[j + 2]);
+            j += 1;
+          } else {
+            topic.small_subj_html.push("NA");
+          }
         } else {
           topic.small_subj_html.push("NA");
         }
-      } else {
-        topic.small_subj_html.push("NA");
       }
     }
     topics[i] = topic;
@@ -98,8 +147,9 @@ function showTopic() {
   var bCourse = false;
 
   curMainSubj = localStorage.getItem(curCourse + "_main_subj");
-
+  var curRightCnt;
   for (i = 0; i < topics.length; i++) {
+    curRightCnt = 0;
     if (topics[i].course != curCourse) continue;
     var curFigure = document.createElement("figure");
 
@@ -149,7 +199,13 @@ function showTopic() {
 
     var curDetailMidSbj = document.createElement("detail_mid_subj");
     curDetailMidSbj.setAttribute("class", "detail_mid_subj");
-    curDetailMidSbj.innerText = topics[i].mid_explain;
+
+    if (topics[i].mid_explain.includes("\\")) {
+      curDetailMidSbj.innerText =
+        topics[i].mid_explain.split("\\")[0] +
+        "\n" +
+        topics[i].mid_explain.split("\\")[1];
+    } else curDetailMidSbj.innerText = topics[i].mid_explain;
 
     curDetailLeft.appendChild(curDetailLeftImg);
     curDetailLeft.appendChild(curDetailMidSbj);
@@ -204,7 +260,15 @@ function showTopic() {
         curButton.setAttribute("class", "test-button test-no-pass");
       } else curProcCnt++;
 
+      // alert(search_input);
+      if (search_input.value.length > 0) {
+        if (!curButton.innerText.includes(search_input.value) > 0) {
+          continue;
+        }
+      }
+
       c.appendChild(curButton);
+      curRightCnt++;
 
       //2. wrong button
       var curWrongStorage;
@@ -296,9 +360,11 @@ function showTopic() {
     }
 
     // 2.X. curDetail
-    curDetail.appendChild(curDetailLeft);
-    curDetail.appendChild(curDetailRight);
-    subject_view.appendChild(curDetail);
+    if (curRightCnt > 0) {
+      curDetail.appendChild(curDetailLeft);
+      curDetail.appendChild(curDetailRight);
+      subject_view.appendChild(curDetail);
+    }
   }
 }
 

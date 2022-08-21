@@ -57,11 +57,30 @@ var subTitleCnt = 0;
 let audio, source;
 let autoRowSelected = 0;
 let myAudioTableRow;
+let remainHighlight,
+  bRemainHighlight = true;
 
 /*5.2 subtitle youtube */
 let youtube_mode = false;
 var player;
 let youtube_url;
+
+//0.0. Set Search
+let search_button = document.querySelectorAll(".search__button");
+search_button[0].addEventListener("click", showSearch);
+
+let search_input = document.getElementById("search__input");
+search_input.addEventListener("input", showSearch);
+
+let oldSearchValue = "";
+
+function showSearch() {
+  if (oldSearchValue != search_input.value) {
+    var tmpID = document.getElementById(curMainSubj);
+    oldSearchValue = search_input.value;
+    tmpID.click();
+  }
+}
 
 //0.1. Set Subject
 const subject_links = document.querySelectorAll(".side-nav__link");
@@ -112,8 +131,11 @@ function setCourse() {
 }
 
 //0.2. Set Last Course
-var element = document.getElementById(curCourse).parentNode;
-element.classList.add("side-nav__item--active");
+var tmpElement = document.getElementById(curCourse);
+if (tmpElement != null) {
+  var element = document.getElementById(curCourse).parentNode;
+  element.classList.add("side-nav__item--active");
+}
 
 //0.3. Set Main Subject
 const main_subject_links = document.querySelectorAll(".main_subj__photo");
@@ -1165,7 +1187,7 @@ function readSubtitles(srtFile) {
   subTitleCnt = 0;
 
   if (checkFileExist(srtFile) == false) {
-    alert("Quiz file [" + selFile + "] does not exist.");
+    alert("Quiz file [" + srtFile + "] does not exist.");
     return false;
   }
 
@@ -1179,28 +1201,126 @@ function readSubtitles(srtFile) {
   let quesCnt = quesArr.length;
   youtube_url = quesArr[0];
 
-  if (quesCnt < 4) return;
-
-  for (let k = 0; k < quesCnt / 4; k++) {
-    let subtitle = new Subtitle();
-    subtitles.push(subtitle);
-  }
-
   for (let k = 0; k < quesCnt; k++) {
-    if (k % 4 == 0) {
-      subtitles[subTitleCnt].numb = subTitleCnt + 1;
+    if (quesArr[k].includes("-->")) {
+      let subtitle = new Subtitle();
+      subtitles.push(subtitle);
     }
-    if (k % 4 == 1) {
+  }
+  if (subtitles.length < 1) return;
+
+  subTitleCnt = 0;
+  var nowStatus = 0; //0:nothing,1:start
+  bRemainHighlight = false;
+  for (let k = 0; k < quesCnt; k++) {
+    if (quesArr[k].includes("-->")) {
       var timeArr = quesArr[k].split("-"); //00:01:01,440 --> 00:01:03,232
       subtitles[subTitleCnt].start = getSecond(timeArr[0]);
       var time2Arr = timeArr[2].split(">"); //00:01:01,440 --> 00:01:03,232
       subtitles[subTitleCnt].finish = getSecond(time2Arr[1]);
-    }
-    if (k % 4 == 2) {
-      subtitles[subTitleCnt].content = quesArr[k];
-      subTitleCnt = subTitleCnt + 1;
+      subtitles[subTitleCnt].numb = subTitleCnt + 1;
+      subtitles[subTitleCnt].content = "";
+      nowStatus = 1;
+    } else {
+      if (nowStatus == 1) {
+        if (quesArr[k].length == 0) {
+          nowStatus = 0;
+          subTitleCnt++;
+        } else {
+          if (quesArr[k].includes("<em>")) {
+            bRemainHighlight = true;
+          }
+          subtitles[subTitleCnt].content =
+            subtitles[subTitleCnt].content + " " + quesArr[k];
+        }
+      }
     }
   }
+
+  // for (let k = 0; k < quesCnt; k++) {
+  //   if (k % 4 == 0) {
+  //     subtitles[subTitleCnt].numb = subTitleCnt + 1;
+  //   }
+  //   if (k % 4 == 1) {
+  //     var timeArr = quesArr[k].split("-"); //00:01:01,440 --> 00:01:03,232
+  //     subtitles[subTitleCnt].start = getSecond(timeArr[0]);
+  //     var time2Arr = timeArr[2].split(">"); //00:01:01,440 --> 00:01:03,232
+  //     subtitles[subTitleCnt].finish = getSecond(time2Arr[1]);
+  //   }
+  //   if (k % 4 == 2) {
+  //     subtitles[subTitleCnt].content = quesArr[k];
+  //     subTitleCnt = subTitleCnt + 1;
+  //   }
+  // }
+}
+
+function highlight_start(content) {
+  var return_content;
+  return_content = content;
+
+  return_content = return_content.replaceAll(
+    "<em>",
+    "<span style='background-color:yellow'>"
+  );
+  return_content = return_content.replaceAll("</em>", "</span>");
+
+  return return_content;
+}
+
+function showTable() {
+  let audio_sec_bottom;
+  var modalContent = document.getElementById("modal-content-audio");
+  var tmpAudio_sec_bottom = document.getElementById("audio_sec_bottom");
+  if (tmpAudio_sec_bottom != null) {
+    modalContent.removeChild(tmpAudio_sec_bottom);
+  }
+
+  /* 3. table */
+  let t, th, c, r;
+  t = document.createElement("table");
+  t.setAttribute("class", "audio_table");
+  t.setAttribute("id", "my_audio_table");
+
+  var span = document.getElementById("closeAudio");
+  span.addEventListener("click", closeAudio);
+
+  for (let k = 0; k < subtitles.length; k++) {
+    if (bRemainHighlight) {
+      if (subtitles[k].content.includes("<em>")) {
+        r = t.insertRow(-1);
+      } else {
+        continue;
+      }
+    } else {
+      r = t.insertRow(-1);
+    }
+
+    r.setAttribute("class", "audio_table_row");
+    if (k == 0) r.classList.add("table_font_highlight");
+    else r.classList.remove("table_font_highlight");
+    c = r.insertCell(-1);
+    c.innerHTML = subtitles[k].numb;
+    r.onclick = function () {
+      selectRow(this);
+    };
+    c = r.insertCell(-1);
+    c.innerHTML = highlight_start(subtitles[k].content);
+  }
+
+  th = t.createTHead();
+  r = th.insertRow(0);
+  c = r.insertCell(-1);
+  c.style.width = "7%";
+  c.innerHTML = "#";
+  c = r.insertCell(-1);
+  c.style.width = "93%";
+  c.innerHTML = "句子";
+
+  audio_sec_bottom = document.createElement("div");
+  audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+  audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
+  modalContent.appendChild(audio_sec_bottom);
+  audio_sec_bottom.appendChild(t);
 }
 
 function startAudio(curQuiz) {
@@ -1234,13 +1354,36 @@ function startAudio(curQuiz) {
     curTopicArr[3];
 
   /*read src file*/
-  readSubtitles(base_filename + ".srt");
+  if (curTopicArr[3].includes("all@")) {
+    var tmpID = curTopicArr[3]
+      .split("@")[1]
+      .replace(/&/g, "_")
+      .replace(/~/g, "-");
+    youtube_url = "https://www.youtube.com/watch?v=" + tmpID;
+  } else {
+    readSubtitles(base_filename + ".srt");
+  }
 
   modalContent.innerHTML =
     '<span class="close" id="closeAudio">&times;</span><p>';
 
   /* 2. audio player */
-  let audio_sec_top, audio_sec_bottom;
+  var remainHighlight = document.createElement("input");
+  remainHighlight.type = "checkbox";
+  remainHighlight.name = "remainHighlight";
+  remainHighlight.id = "remainHighlight";
+  remainHighlight.classList.add("remainHighlight");
+  remainHighlight.checked = bRemainHighlight;
+  var lblRemainHighlight = document.createElement("label");
+  lblRemainHighlight.innerText = "過濾只留重點列";
+  lblRemainHighlight.classList.add("lblRemainHighlight");
+  lblRemainHighlight.htmlFor = "remainHighlight";
+  remainHighlight.onclick = function () {
+    bRemainHighlight = remainHighlight.checked;
+    showTable();
+  };
+
+  let audio_sec_top;
   audio_sec_top = document.createElement("div");
   audio_sec_top.setAttribute("class", "audio_sec_top");
 
@@ -1263,6 +1406,8 @@ function startAudio(curQuiz) {
     var playerDiv = document.createElement("div");
     playerDiv.setAttribute("id", "player-div");
     audio_sec_top.appendChild(playerDiv);
+    audio_sec_top.appendChild(remainHighlight);
+    audio_sec_top.appendChild(lblRemainHighlight);
     modalContent.appendChild(audio_sec_top);
 
     // 3. This function creates an <iframe> (and YouTube player)
@@ -1296,16 +1441,6 @@ function startAudio(curQuiz) {
       e.target.playVideo();
     }
 
-    // 5. The API calls this function when the player's state changes.
-    //    The function indicates that when playing a video (state=1),
-    //    the player should play for six seconds and then stop.
-    // var done = false;
-    // function onPlayerStateChange(event) {
-    //   if (event.data == YT.PlayerState.PLAYING && !done) {
-    //     setTimeout(stopVideo, 6000);
-    //     done = true;
-    //   }
-    // }
     function stopVideo() {
       player.stopVideo();
     }
@@ -1326,6 +1461,7 @@ function startAudio(curQuiz) {
     source.setAttribute("src", audio_filename);
     audio.appendChild(source);
     audio_sec_top.appendChild(audio);
+
     modalContent.appendChild(audio_sec_top);
   }
 
@@ -1335,60 +1471,29 @@ function startAudio(curQuiz) {
   } else {
   }
 
-  /* 3. table */
-  let t, th, c, r;
-  t = document.createElement("table");
-  t.setAttribute("class", "audio_table");
-  t.setAttribute("id", "my_audio_table");
-
-  var span = document.getElementById("closeAudio");
-  span.addEventListener("click", closeAudio);
-
-  for (let k = 0; k < subtitles.length; k++) {
-    r = t.insertRow(-1);
-    r.setAttribute("class", "audio_table_row");
-    if (k == 0) r.classList.add("table_font_highlight");
-    else r.classList.remove("table_font_highlight");
-    c = r.insertCell(-1);
-    c.innerHTML = subtitles[k].numb;
-    r.onclick = function () {
-      selectRow(this);
-    };
-    c = r.insertCell(-1);
-    c.innerHTML = subtitles[k].content;
-  }
-
-  th = t.createTHead();
-  r = th.insertRow(0);
-  c = r.insertCell(-1);
-  c.style.width = "7%";
-  c.innerHTML = "#";
-  c = r.insertCell(-1);
-  c.style.width = "93%";
-  c.innerHTML = "句子";
-
-  audio_sec_bottom = document.createElement("div");
-  audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
-  modalContent.appendChild(audio_sec_bottom);
-  audio_sec_bottom.appendChild(t);
+  showTable();
 
   const tbody = document.getElementById("my_audio_table");
   myAudioTableRow = document.getElementsByClassName("audio_table_row");
 
   autoRowSelected = 1;
   rowSelected = myAudioTableRow[autoRowSelected - 1];
-  timeoutID = window.setInterval(handleAudioLoop, 500);
+  timeoutID = window.setInterval(handleAudioLoop, 50);
   // audio.addEventListener("timeupdate", function () {
   function handleAudioLoop() {
     let currentTime;
-    if (youtube_mode) currentTime = player.playerInfo.currentTime;
-    else currentTime = audio.currentTime;
+    if (youtube_mode) {
+      if (player.getPlayerState() != YT.PlayerState.PLAYING) return;
+      currentTime = player.playerInfo.currentTime;
+    } else currentTime = audio.currentTime;
 
     if (!nowAudioLoop) {
       if (currentTime > subtitles[autoRowSelected - 1].finish) {
         myAudioTableRow[autoRowSelected - 1].style.color = "blue";
         while (currentTime > subtitles[autoRowSelected].finish) {
-          autoRowSelected++;
+          if (autoRowSelected < subtitles.length) {
+            autoRowSelected++;
+          }
         }
 
         myAudioTableRow[autoRowSelected].style.color = "red";
@@ -1411,8 +1516,6 @@ function startAudio(curQuiz) {
       }
     }
   }
-
-  function RespondTableClick() {}
 }
 
 function getSecond(inputTime) {

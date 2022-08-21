@@ -638,3 +638,14 @@ section .correct_list {
 .highlightRow {
   background-color: green;
 }
+
+.remainHighlight {
+  width: 3rem;
+  height: 3rem;
+  margin: 2rem;
+}
+.lblRemainHighlight {
+  font-size: 2rem;
+  color: blue;
+  text-align: center;
+}

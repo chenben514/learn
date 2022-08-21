@@ -23,11 +23,17 @@ X 4. 聽寫題型
   7. 錯題複習鈕
 🐽
 ### Bug
-  1. 詞彙有2個
-  
-//choose-korean_word_topik_b_all;
-:choose-korean_word_topik_b_k; -- 1    
 
+1.1. 列出可用字幕
+youtube-dl --list-subs  https://www.youtube.com/watch?v=1mLVhtn3yNI&ab_channel=%E4%B8%AD%E5%A4%A9%E6%96%B0%E8%81%9E
+
+1.2. 列出檔案名稱
+youtube-dl --get-filename --flat-playlist  --skip-download  --download-archive archive.txt -o '%(playlist_title)s/%(title)s-%(id)s.%(ext)s' "https://www.youtube.com/watch?v=1mLVhtn3yNI&ab_channel=%E4%B8%AD%E5%A4%A9%E6%96%B0%E8%81%9E"
+
+1.3. 產生中文字幕
+youtube-dl --skip-download --write-sub --sub-lang zh "https://www.youtube.com/watch?v=RBcf1RH_mxU&list=PLInPGbDZkjSQoWcZWwWPMKUFi425RVvVt&index=2&ab_channel=KingSejongInstituteFoundation"
+
+  
 === backup
 1. pagination
               <!-- <div class="pagination">
