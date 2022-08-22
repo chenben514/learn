@@ -1387,6 +1387,9 @@ function startAudio(curQuiz) {
   base_filename = base_left_filename + "/" + curTopicArr[3];
 
   /*read src file*/
+  playlistCnt = 0;
+  playlists = [];
+
   if (curQuiz.includes("Left@@@")) {
     parseCsv(base_left_filename + "/all.csv");
     var detailCnt = quesArr.length;
@@ -1394,7 +1397,6 @@ function startAudio(curQuiz) {
     var videoId = quesArr[r].split("=")[1].split("&")[0];
     youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoId;
 
-    playlistCnt = 0;
     for (var x = 0; x < quesArr.length; x++) {
       if (quesArr[x].length < 5) {
         continue;
@@ -1499,7 +1501,11 @@ function startAudio(curQuiz) {
 
       flex_container.appendChild(flex_box);
     }
-    modalContent.appendChild(flex_container);
+
+    var audio_sec_bottom = document.createElement("div");
+    audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+    audio_sec_bottom.appendChild(flex_container);
+    modalContent.appendChild(audio_sec_bottom);
     // 秀右邊縮圖--結束
 
     // 3. This function creates an <iframe> (and YouTube player)

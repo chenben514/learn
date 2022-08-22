@@ -602,13 +602,26 @@ section .correct_list {
   height: 400px;
 }
 
+@media (max-width: 600px) {
+  .video_sec_top {
+    height: 300px;
+  }
+}
+
 .audio_sec_top {
   background-color: rgb(220, 237, 216);
 
   padding: 0.5rem 1rem;
   width: 95%;
   /* height: 50%; */
-  height: 10rem;
+  height: 300px;
+  /* height: 50%; */
+}
+
+@media (max-width: 600px) {
+  .audio_sec_top {
+    height: 200px;
+  }
 }
 
 .audio {
@@ -647,8 +660,14 @@ section .correct_list {
   background-color: lightblue;
   padding: 0.5rem 1rem;
   width: 95%;
-  height: 500px;
+  height: 400px;
+  /* height: 40%; */
   overflow-y: scroll;
+}
+@media (max-width: 600px) {
+  .audio_sec_bottom {
+    height: 300px;
+  }
 }
 
 .audio_table {
