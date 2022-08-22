@@ -225,12 +225,6 @@ for (let i = 0; i < small_test_links.length; i++) {
   small_test_links[i].addEventListener("click", startQuiz);
 }
 
-// let conver_test_links = document.querySelectorAll(".conversation-test-button");
-// for (let i = 0; i < conver_test_links.length; i++) {
-//   conver_test_links[i].addEventListener("click", alert("hello"));
-//   // startAudio(conver_test_links[i].id)
-// }
-
 let conver_test_links = document.querySelectorAll(".conversation-test-button");
 for (let i = 0; i < conver_test_links.length; i++) {
   conver_test_links[i].addEventListener(
@@ -286,7 +280,6 @@ function pronClick() {
     else if (curCourse == "korean") msg.lang = "ko-KR";
     else if (curCourse == "japan") msg.lang = "ja-JP";
     else if (curCourse == "english") msg.lang = "en-US";
-    // alert(msg.text);
     window.speechSynthesis.speak(msg);
   }
 }
@@ -563,7 +556,6 @@ function parseSrt(filename) {
         subtitles[k].finish
     );
   }
-  // alert(quesArr[0]);
 }
 
 function getQuestions() {
@@ -1143,7 +1135,6 @@ function queCounter(index) {
 }
 
 function keydown(e) {
-  // alert("ben_debug:" + e.code);
   e.preventDefault();
   switch (e.code) {
     case "Enter":
@@ -1361,6 +1352,7 @@ function showTable() {
 }
 
 function startAudio(curQuiz) {
+  var bPlayerList = false;
   subtitles = [];
   //2.generate questions
   document.getElementById(curQuiz).classList.add("test-pressed");
@@ -1391,6 +1383,7 @@ function startAudio(curQuiz) {
   playlists = [];
 
   if (curQuiz.includes("Left@@@")) {
+    bPlayerList = true;
     parseCsv(base_left_filename + "/all.csv");
     var detailCnt = quesArr.length;
     var r = Math.floor(Math.random() * detailCnt);
@@ -1502,10 +1495,13 @@ function startAudio(curQuiz) {
       flex_container.appendChild(flex_box);
     }
 
-    var audio_sec_bottom = document.createElement("div");
-    audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
-    audio_sec_bottom.appendChild(flex_container);
-    modalContent.appendChild(audio_sec_bottom);
+    if (bPlayerList) {
+      var audio_sec_bottom = document.createElement("div");
+      audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+      audio_sec_bottom.appendChild(flex_container);
+      modalContent.appendChild(audio_sec_bottom);
+    }
+
     // 秀右邊縮圖--結束
 
     // 3. This function creates an <iframe> (and YouTube player)
@@ -1700,6 +1696,5 @@ function changeVariable(inputString, varArr) {
     newString = eval(calcString);
   }
 
-  // alert(inputString + "\n" + newString)
   return newString;
 }
