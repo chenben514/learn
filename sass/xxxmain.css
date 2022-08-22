@@ -9,7 +9,6 @@
   --color-grey-dark-1: #333;
   --color-grey-dark-2: #777;
   --color-grey-dark-3: #999;
-  --color-selected: lightpink;
   --shadow-dark: 0 2rem 6rem rgba(0, 0, 0, 0.3);
   --shadow-light: 0 2rem 5rem rgba(0, 0, 0, 0.06);
   --line: 1px solid var(--color-grey-light-2);
@@ -150,7 +149,7 @@ body {
   display: -ms-flexbox;
   display: flex;
   padding: 0.2rem;
-  background-color: lightblue;
+  background-color: #ffcbcb;
   border-bottom: var(--line);
   margin: 0.2rem;
   -webkit-box-align: center;
@@ -518,7 +517,6 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1;
           flex: 1;
-  cursor: pointer;
 }
 
 .main_subj__item {
@@ -544,10 +542,6 @@ body {
   padding: 0.2rem;
   width: 6rem;
   text-align: center;
-}
-
-.detail_left_subj {
-  cursor: pointer;
 }
 
 .test-button {
@@ -582,25 +576,12 @@ body {
   background-color: lightpink;
 }
 
-.test-pressed {
-  background-color: var(--color-selected);
-}
-
 .wrong-button {
   height: 3rem;
   width: 6rem;
   font-size: 1rem;
   padding: 0.1rem;
   color: black;
-  cursor: pointer;
-}
-
-.conversation-test-button {
-  cursor: pointer;
-}
-
-.class-button {
-  cursor: pointer;
 }
 
 .overview {
@@ -1035,4 +1016,4 @@ body {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
 }
-/*# sourceMappingURL=main.css.map */
+/*# sourceMappingURL=xxxmain.css.map */

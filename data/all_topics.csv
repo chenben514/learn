@@ -67,7 +67,7 @@ korean,video,999,inter^korean,中級韓國語,conversation_youtube,all.csv
 ### 學習法
 learn,game,5,learn,專注力,game_focus,1,1.\數字方格
 #learn,game,5,learn,國語,game_word_chain,1,1.\字詞接龍
-learn,video,999,hongkong^transpotation,香港交通工具歌,conversation_youtube,all.csv
+learn,video,999,hongkong^transpotation,香港交通工具歌🚙,conversation_youtube,all.csv
 
 ### 數學
 math,calc,99,junior_1,小一四則運算,calc,1,練習1

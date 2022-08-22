@@ -245,6 +245,7 @@
     width: 100%;
     display: block;
     flex: 1;
+    cursor: pointer;
   }
 
   &__item {
@@ -274,6 +275,10 @@
   width: 6rem;
   text-align: center;
 }
+.detail_left_subj {
+  cursor: pointer;
+}
+
 .test-button {
   height: 5rem;
   width: 9rem;
@@ -281,6 +286,7 @@
   padding: 0rem;
   color: blue;
   background-color: lightgray;
+  cursor: pointer;
 }
 .test-button-lock {
   font-size: 2.5rem;
@@ -300,12 +306,25 @@
   background-color: lightpink;
 }
 
+.test-pressed {
+  background-color: var(--color-selected);
+}
+
 .wrong-button {
   height: 3rem;
   width: 6rem;
   font-size: 1rem;
   padding: 0.1rem;
   color: black;
+  cursor: pointer;
+}
+
+.conversation-test-button {
+  cursor: pointer;
+}
+
+.class-button {
+  cursor: pointer;
 }
 
 // HOTEL OVERVIEW

@@ -6,6 +6,7 @@ var curProcCnt = 0;
 let search_input = document.getElementById("search__input");
 const topic_view = document.querySelector(".main_subj");
 const subject_view = document.querySelector(".mid_subj");
+let curDetailLeft;
 class Topic {
   numb;
   course;
@@ -195,8 +196,18 @@ function showTopic() {
 
     // 2.1. curDetailLeft
     curMidCnt++;
-    var curDetailLeft = document.createElement("detail-left-side");
+    curDetailLeft = document.createElement("detail-left-side");
     curDetailLeft.setAttribute("class", "detail-left-side");
+    var curLeftID =
+      "Left@@@" +
+      topics[i].quiz_type +
+      "-" +
+      topics[i].course +
+      "_" +
+      topics[i].main_subj +
+      "_" +
+      topics[i].mid_subj;
+    curDetailLeft.setAttribute("id", curLeftID);
 
     var curDetailLeftImg = document.createElement("img");
     curDetailLeftImg.setAttribute("class", "category");
@@ -215,6 +226,11 @@ function showTopic() {
     } else {
       curDetailMidSbj.innerText =
         curDetailMidSbj.innerText + topics[i].mid_explain;
+    }
+
+    if (topics[i].quiz_type.includes("youtube")) {
+      curDetailLeft.classList.add("detail_left_subj");
+      curDetailLeft.disabled = true;
     }
 
     // alert(windowWidth);
@@ -342,7 +358,7 @@ function showTopic() {
             topics[i].small_subj_html[j] +
             "'" +
             '"' +
-            'class="class-button id ="" ' +
+            'class="class-button" id ="" ' +
             curClassID +
             ">課程 </button><span style='color:blue;'>";
         }

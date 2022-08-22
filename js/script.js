@@ -49,6 +49,12 @@ class Subtitle {
   finish;
 }
 
+class Playlist {
+  numb;
+  content;
+  video_id;
+}
+
 /*5.1 subtitle audio */
 let rowSelected;
 let startTime, finishTime;
@@ -67,7 +73,11 @@ let youtube_mode = false,
 var player;
 let youtube_url;
 
-//0.0. Set Search
+/*5.3 subtitle audio */
+let playlistCnt = 0;
+let playlists = [];
+
+//6.1. Set Search
 let search_button = document.querySelectorAll(".search__button");
 search_button[0].addEventListener("click", showSearch);
 
@@ -75,6 +85,9 @@ let search_input = document.getElementById("search__input");
 search_input.addEventListener("input", showSearch);
 
 let oldSearchValue = "";
+
+//7.1. Set Selected
+let curSelected = "";
 
 function showSearch() {
   if (oldSearchValue != search_input.value) {
@@ -161,6 +174,11 @@ function setMainSubject() {
     tmp_main_subject_links[i].addEventListener("click", setMainSubject);
   }
 
+  let left_test_links = document.querySelectorAll(".detail_left_subj");
+  for (let i = 0; i < left_test_links.length; i++) {
+    left_test_links[i].addEventListener("click", startLeft);
+  }
+
   let small_test_links = document.querySelectorAll(".test-button");
   for (let i = 0; i < small_test_links.length; i++) {
     small_test_links[i].addEventListener("click", startQuiz);
@@ -188,6 +206,11 @@ function setMainSubject() {
   // for (let i = 0; i < small_class_links.length; i++) {
   //   small_class_links[i].addEventListener("click", startClass);
   // }
+}
+
+let left_test_links = document.querySelectorAll(".detail_left_subj");
+for (let i = 0; i < left_test_links.length; i++) {
+  left_test_links[i].addEventListener("click", startLeft);
 }
 
 //0.4. Set Small Course
@@ -262,12 +285,25 @@ function pronClick() {
   }
 }
 
+// if Left button clicked
+function startLeft() {
+  startAudio(this.id);
+}
 // if startQuiz button clicked
 function startQuiz() {
   curQuiz = this.id;
   var curQuizArr = curQuiz.split("-");
   curQuizType = curQuizArr[0];
 
+  if (curSelected.length != 0) {
+    var tmpSelected;
+    tmpSelected = document.getElementById(curSelected);
+    if (tmpSelected != undefined) {
+      tmpSelected.classList.remove("test-pressed");
+    }
+  }
+  this.classList.add("test-pressed");
+  curSelected = curQuiz;
   //0.1 disable all test buttons
 
   let small_wrong_links = document.querySelectorAll(".wrong-button");
@@ -365,15 +401,10 @@ function startWrong() {
   var curTopicArr = curQuizArr[1].split("_");
   curQuizType = curQuizArr[0];
 
-  base_filename =
-    "./data/" +
-    curTopicArr[0] +
-    "/" +
-    curTopicArr[1] +
-    "/" +
-    curTopicArr[2] +
-    "/" +
-    curTopicArr[3];
+  var base_left_filename =
+    "./data/" + curTopicArr[0] + "/" + curTopicArr[1] + "/" + curTopicArr[2];
+
+  base_filename = base_left_filename + "/" + curTopicArr[3];
 
   if (
     curQuizType.includes("conversation_m4a") ||
@@ -539,15 +570,10 @@ function getQuestions() {
   var curTopicArr = curQuizArr[1].split("_");
   curQuizType = curQuizArr[0];
 
-  base_filename =
-    "./data/" +
-    curTopicArr[0] +
-    "/" +
-    curTopicArr[1] +
-    "/" +
-    curTopicArr[2] +
-    "/" +
-    curTopicArr[3];
+  var base_left_filename =
+    "./data/" + curTopicArr[0] + "/" + curTopicArr[1] + "/" + curTopicArr[2];
+
+  base_filename = base_left_filename + "/" + curTopicArr[3];
 
   if (
     curQuizType.includes("conversation_m4a") ||
@@ -1332,7 +1358,7 @@ function showTable() {
 function startAudio(curQuiz) {
   subtitles = [];
   //2.generate questions
-
+  document.getElementById(curQuiz).classList.add("test-pressed");
   content.classList.add("slight_opacity");
 
   var curQuizArr = curQuiz.split("-");
@@ -1350,18 +1376,32 @@ function startAudio(curQuiz) {
   var curTopicArr = curQuizArr[1].split("_");
   var base_filename, audio_filename, selFile, txtFileName;
 
-  base_filename =
-    "./data/" +
-    curTopicArr[0] +
-    "/" +
-    curTopicArr[1] +
-    "/" +
-    curTopicArr[2] +
-    "/" +
-    curTopicArr[3];
+  var base_left_filename =
+    "./data/" + curTopicArr[0] + "/" + curTopicArr[1] + "/" + curTopicArr[2];
+
+  base_filename = base_left_filename + "/" + curTopicArr[3];
 
   /*read src file*/
-  if (curTopicArr[3].includes("all@")) {
+  if (curQuiz.includes("Left@@@")) {
+    parseCsv(base_left_filename + "/all.csv");
+    var detailCnt = quesArr.length;
+    var r = Math.floor(Math.random() * detailCnt);
+    var videoId = quesArr[r].split("=")[1].split("&")[0];
+    youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoId;
+
+    playlistCnt = 0;
+    for (var x = 0; x < quesArr.length; x++) {
+      if (quesArr[x].length < 5) {
+        continue;
+      }
+      let playlist = new Playlist();
+      playlist.numb = playlistCnt + 1;
+      playlist.content = quesArr[x].split(",")[1];
+      playlist.video_id = quesArr[x].split(",")[2].split("=")[1].split("&")[0];
+      playlists.push(playlist);
+      playlistCnt++;
+    }
+  } else if (curTopicArr[3].includes("all@")) {
     var tmpID = curTopicArr[3]
       .split("@")[1]
       .replace(/&/g, "_")
@@ -1415,35 +1455,51 @@ function startAudio(curQuiz) {
     playerDiv.classList.add("myPlayerDiv");
     var messageDiv = document.createElement("div");
     audio_sec_top.appendChild(playerDiv);
+
+    // 秀上方訊息
     if (bRemainHighlight) {
       messageDiv.appendChild(remainHighlight);
       messageDiv.appendChild(lblRemainHighlight);
       messageDiv.classList.add("myMessageDiv");
       audio_sec_top.appendChild(messageDiv);
     }
-
+    // 秀上方訊息-結束
     modalContent.appendChild(audio_sec_top);
+
+    // 秀右邊縮圖
+    var audio_sec_img = document.createElement("img");
+    audio_sec_img.setAttribute("class", "category");
+    audio_sec_img.setAttribute("src", "img/hangul_writing.png");
+
+    var flex_container = document.createElement("div");
+    flex_container.setAttribute("class", "flex-container");
+    for (var z = 0; z < playlistCnt; z++) {
+      let playlist = new Playlist();
+      var src =
+        "linear-gradient(to bottom, rgba(217,167,199,0.4), rgba(255,252,220,0.4)), url('https://img.youtube.com/vi/" +
+        playlists[z].video_id +
+        "/default.jpg'";
+
+      var flex_box = document.createElement("div");
+      flex_box.setAttribute("class", "flex-box");
+      flex_box.style.backgroundImage = src;
+      flex_box.innerText = playlists[z].content;
+      flex_box.setAttribute("id", playlists[z].video_id);
+
+      flex_box.addEventListener("click", function () {
+        player.stopVideo();
+        player.loadVideoById(this.id);
+        player.playVideo();
+      });
+
+      flex_container.appendChild(flex_box);
+    }
+    modalContent.appendChild(flex_container);
+    // 秀右邊縮圖--結束
 
     // 3. This function creates an <iframe> (and YouTube player)
     //    after the API code downloads.
     var videoId = youtube_url.split("=")[1].split("&")[0];
-
-    // var YT_height, YT_width;
-    // var windowWidth = window.screen.width;
-    // var windowHeight = window.screen.height;
-
-    // alert(windowWidth + ":" + windowHeight);
-    // if (subtitles.length < 4) {
-    //   // YT_height = 640;
-    //   // YT_width = 960;
-    //   YT_height = windowHeight * 0.5;
-    //   YT_width = windowWidth * 0.9;
-    // } else {
-    //   // YT_height = windowHeight * 0.5;
-    //   // YT_width = windowWidth * 0.9;
-    //   // YT_height = 320;
-    //   // YT_width = 640;
-    // }
 
     window.YT.ready(function () {
       player = new window.YT.Player("player-div", {
@@ -1465,6 +1521,10 @@ function startAudio(curQuiz) {
 
     function stopVideo() {
       player.stopVideo();
+    }
+
+    function playVideo() {
+      player.playVideo();
     }
 
     function forwardVideo() {
@@ -1493,8 +1553,9 @@ function startAudio(curQuiz) {
     audio.play();
   } else {
   }
-
   showTable();
+
+  if (subtitles.length < 1) return; //no subtitle, exit
 
   const tbody = document.getElementById("my_audio_table");
   myAudioTableRow = document.getElementsByClassName("audio_table_row");
@@ -1505,6 +1566,11 @@ function startAudio(curQuiz) {
   // audio.addEventListener("timeupdate", function () {
   function handleAudioLoop() {
     let currentTime;
+
+    /*pre-check*/
+    if (subtitles.length <= 0) return;
+    if (autoRowSelected > subtitles.length) return;
+    /*pre-check*/
 
     if (youtube_mode) {
       if (!youtube_ready) return;
