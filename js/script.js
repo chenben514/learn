@@ -120,6 +120,12 @@ function setCourse() {
     main_subject_links[i].addEventListener("click", setMainSubject);
   }
 
+  //0.3. Set Left Subject
+  let left_test_links = document.querySelectorAll(".detail_left_subj");
+  for (let i = 0; i < left_test_links.length; i++) {
+    left_test_links[i].addEventListener("click", startLeft);
+  }
+
   //0.2. Set Subject
   let small_test_links = document.querySelectorAll(".test-button");
   for (let i = 0; i < small_test_links.length; i++) {
@@ -294,7 +300,6 @@ function startQuiz() {
   curQuiz = this.id;
   var curQuizArr = curQuiz.split("-");
   curQuizType = curQuizArr[0];
-
   if (curSelected.length != 0) {
     var tmpSelected;
     tmpSelected = document.getElementById(curSelected);
