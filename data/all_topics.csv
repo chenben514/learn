@@ -36,6 +36,7 @@ english,business,999,bbcWork,BBC at Work,conversation_youtube,0,序言,1,面試�
 #japan,listen,5,recorder,詞語錄音機,audio,1,10題,2,100題
 japan,video,999,easyJapan,Easy\Japan,conversation_youtube,all.csv
 japan,video,999,akaneClass,あかね\日本語教室,conversation_youtube,all.csv
+japan,video,999,song,歌曲,conversation_youtube,all.csv
 
 ### 韓文
 korean,word,99,topikb,TOPIK_初級,choose,all,基本123,k,ㄱ型243,n,ㄴ型91,t,ㄷ型133,m,ㅁ型120,p,ㅂ型144,s,ㅅ型218,o,ㅇ型306,ss,ㅈ型197,other,其他269
