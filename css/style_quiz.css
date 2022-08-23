@@ -719,8 +719,8 @@ section .correct_list {
 .flex-box {
   padding: 1rem;
   margin: 1rem;
-  height: 100px;
-  width: 100px;
+  height: 90px;
+  width: 90px;
   overflow: auto;
   background-color: yellow;
   color: blue;
