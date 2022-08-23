@@ -13,6 +13,7 @@
 ### 中文
 chinese,word,99,idiom,成語典,choose,1,P1-3,2,P4-6,3,P7-10,3,P11-13
 chinese,video,999,easyMandarin,Easy\Mandarin,conversation_youtube,all.csv
+chinese,video,999,song,歌曲,conversation_youtube,all.csv
 
 ### 英文
 english,word,999,200,英語小達人,choose,small,200字
