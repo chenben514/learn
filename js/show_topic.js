@@ -217,16 +217,18 @@ function showTopic() {
     curDetailMidSbj.setAttribute("class", "detail_mid_subj");
 
     curDetailMidSbj.innerText = curMidCnt.toString() + ". \n";
-    if (topics[i].mid_explain.includes("\\")) {
-      curDetailMidSbj.innerText =
-        curDetailMidSbj.innerText +
-        topics[i].mid_explain.split("\\")[0] +
-        "\n" +
-        topics[i].mid_explain.split("\\")[1];
-    } else {
-      curDetailMidSbj.innerText =
-        curDetailMidSbj.innerText + topics[i].mid_explain;
-    }
+    topics[i].mid_explain = topics[i].mid_explain.replaceAll("\\", "\n");
+    curDetailMidSbj.innerText += topics[i].mid_explain;
+    // if (topics[i].mid_explain.includes("\\")) {
+    //   curDetailMidSbj.innerText =
+    //     curDetailMidSbj.innerText +
+    //     topics[i].mid_explain.split("\\")[0] +
+    //     "\n" +
+    //     topics[i].mid_explain.split("\\")[1];
+    // } else {
+    //   curDetailMidSbj.innerText =
+    //     curDetailMidSbj.innerText + topics[i].mid_explain;
+    // }
 
     if (topics[i].quiz_type.includes("youtube")) {
       curDetailLeft.classList.add("detail_left_subj");
@@ -271,12 +273,17 @@ function showTopic() {
         curButton.innerText = "🔒";
         curButton.disabled = true;
       } else {
-        if (topics[i].small_subj_explains[j].includes("\\")) {
-          curButton.innerText =
-            topics[i].small_subj_explains[j].split("\\")[0] +
-            "\n" +
-            topics[i].small_subj_explains[j].split("\\")[1];
-        } else curButton.innerText = topics[i].small_subj_explains[j];
+        topics[i].small_subj_explains[j] = topics[i].small_subj_explains[
+          j
+        ].replaceAll("\\", "\n");
+        curButton.innerText += topics[i].small_subj_explains[j];
+
+        // if (topics[i].small_subj_explains[j].includes("\\")) {
+        //   curButton.innerText =
+        //     topics[i].small_subj_explains[j].split("\\")[0] +
+        //     "\n" +
+        //     topics[i].small_subj_explains[j].split("\\")[1];
+        // } else curButton.innerText = topics[i].small_subj_explains[j];
 
         // alert(curButton.innerText);
         // curButton.innerText = "1.1.1  \n節省";
