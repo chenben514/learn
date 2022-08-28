@@ -1,0 +1,20 @@
+作業 (さぎょう)	work	work 	participation	figure
+作品 (さくひん)	work 	participation	figure	town market 
+参加 (さんか)	participation	figure	town market 	guidance
+姿 (すがた)	figure	town market 	guidance	event
+市場 (いちば)	town market 	guidance	event	fact
+指導 (しどう)	guidance	event	fact	circumstances
+事件 (じけん)	event	fact	circumstances	office work
+事実 (じじつ)	fact	circumstances	office work	time
+事情 (じじょう)	circumstances	office work	time	by oneself
+事務 (じむ)	office work	time	by oneself	nature 
+時期 (じき)	time	by oneself	nature 	enforcement
+自身 (じしん)	by oneself	nature 	enforcement	Prime Minister
+自然 (しぜん)	nature 	enforcement	Prime Minister	state
+実施 (じっし)	enforcement	Prime Minister	state	residence
+首相 (しゅしょう)	Prime Minister	state	residence	inhabitant
+州 (しゅう)	state	residence	inhabitant	important
+住宅 (じゅうたく)	residence	inhabitant	important	person's origin 
+住民 (じゅうみん)	inhabitant	important	person's origin 	woman
+重要 (じゅうよう)	important	person's origin 	woman	commodity
+出身 (しゅっしん)	person's origin 	woman	commodity	information

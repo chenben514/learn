@@ -1,0 +1,20 @@
+期間 (きかん)	period	expectation	engine 	function
+期待 (きたい)	expectation	engine 	function	article
+機関 (きかん)	engine 	function	article	reporter
+機能 (きのう)	function	article	reporter	record
+記事 (きじ)	article	reporter	record	member of an assembly
+記者 (きしゃ)	reporter	record	member of an assembly	congress
+記録 (きろく)	record	member of an assembly	congress	chairman
+議員 (ぎいん)	member of an assembly	congress	chairman	professor 
+議会 (ぎかい)	congress	chairman	professor 	muscle
+議長 (ぎちょう)	chairman	professor 	muscle	finance
+教授 (きょうじゅ)	professor 	muscle	finance	contract
+筋 (すじ)	muscle	finance	contract	business conditions
+金融 (きんゆう)	finance	contract	business conditions	management
+契約 (けいやく)	contract	business conditions	management	plan
+景気 (けいき)	business conditions	management	plan	decision
+経営 (けいえい)	management	plan	decision	result
+計画 (けいかく)	plan	decision	result	construction
+決定 (けってい)	decision	result	construction	constitution
+結果 (けっか)	result	construction	constitution	now
+建設 (けんせつ)	construction	constitution	now	reality

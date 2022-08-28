@@ -1,0 +1,20 @@
+差 (さ)	difference	again	author	approval
+再び (ふたたび)	again	author	approval	use
+作家 (さっか)	author	approval	use	unintentionally
+賛成 (さんせい)	approval	use	unintentionally	branch office
+使用 (しよう)	use	unintentionally	branch office	experiment
+思わず (おもわず)	unintentionally	branch office	experiment	implementation 
+支店 (してん)	branch office	experiment	implementation 	practicality
+実験 (じっけん)	experiment	implementation 	practicality	doctrine
+実現 (じつげん)	implementation 	practicality	doctrine	claim
+実際 (じっさい)	practicality	doctrine	claim	housewife
+主義 (しゅぎ)	doctrine	claim	housewife	chief
+主張 (しゅちょう)	claim	housewife	chief	capital city
+主婦 (しゅふ)	housewife	chief	capital city	demand
+主要 (しゅよう)	chief	capital city	demand	income
+首都 (しゅと)	capital city	demand	income	religion
+需要 (じゅよう)	demand	income	religion	amendment
+収入 (しゅうにゅう)	income	religion	amendment	group
+宗教 (しゅうきょう)	religion	amendment	group	preparation
+修正 (しゅうせい)	amendment	group	preparation	processing
+集団 (しゅうだん)	group	preparation	processing	boy

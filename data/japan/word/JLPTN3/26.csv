@@ -1,0 +1,20 @@
+ゲーム	game	coach	code 	goal
+コーチ	coach	code 	goal	service
+コード	code 	goal	service	autograph
+ゴール	goal	service	autograph	juice 
+サービス	service	autograph	juice 	Western soup
+サイン	autograph	juice 	Western soup	switch
+ジュース	juice 	Western soup	switch	skiing 
+スープ	Western soup	switch	skiing 	skating 
+スイッチ	switch	skiing 	skating 	star 
+スキー	skiing 	skating 	star 	figure
+スケート	skating 	star 	figure	stands
+スター	star 	figure	stands	speech
+スタイル	figure	stands	speech	set 
+スタンド	stands	speech	set 	centre
+スピーチ	speech	set 	centre	typewriter
+セット	set 	centre	typewriter	towel
+センター	centre	typewriter	towel	diamond 
+タイプライター	typewriter	towel	diamond 	dance
+タオル	towel	diamond 	dance	cheese 
+ダイヤ	diamond 	dance	cheese 	team

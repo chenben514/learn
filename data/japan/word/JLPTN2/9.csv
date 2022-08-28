@@ -1,0 +1,20 @@
+クリーニング	cleaning	course 	cook	competition
+コース	course 	cook	competition	concrete
+コック	cook	competition	concrete	electrical outlet
+コンクール	competition	concrete	electrical outlet	gum
+こんくりいと (混凝土)	concrete	electrical outlet	gum	group with a common interest 
+コンセント	electrical outlet	gum	group with a common interest 	siren
+ゴム (護謨)	gum	group with a common interest 	siren	office worker
+サークル	group with a common interest 	siren	office worker	season 
+サイレン	siren	office worker	season 	sheet
+サラリーマン	office worker	season 	sheet	camera shutter 
+シーズン	season 	sheet	camera shutter 	series
+シーツ	sheet	camera shutter 	series	journalist
+シャッター	camera shutter 	series	journalist	school
+シリーズ	series	journalist	school	schedule
+ジャーナリスト	journalist	school	schedule	start
+スクール	school	schedule	start	stewardess
+スケジュール	schedule	start	stewardess	stage 
+スタート	start	stewardess	stage 	stop
+スチュワーデス	stewardess	stage 	stop	speaker
+ステージ	stage 	stop	speaker	smart

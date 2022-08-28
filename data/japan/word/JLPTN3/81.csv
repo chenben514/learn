@@ -1,0 +1,20 @@
+印 (しるし)	mark	smoke	inner part	passable
+煙 (けむり)	smoke	inner part	passable	rent
+奥 (おく)	inner part	passable	rent	resolution
+可 (か)	passable	rent	resolution	mistake
+家賃 (やちん)	rent	resolution	mistake	bank
+覚悟 (かくご)	resolution	mistake	bank	together
+間違い (まちがい)	mistake	bank	together	going through
+岸 (きし)	bank	together	going through	pride
+ともに (共に)	together	going through	pride	error
+経由 (けいゆ)	going through	pride	error	misunderstanding
+誇り (ほこり)	pride	error	misunderstanding	to match 
+誤り (あやまり)	error	misunderstanding	to match 	harvest
+誤解 (ごかい)	misunderstanding	to match 	harvest	repair
+合わせる (あわせる)	to match 	harvest	repair	lodging
+収穫 (しゅうかく)	harvest	repair	lodging	detailed
+修理 (しゅうり)	repair	lodging	detailed	fresh
+宿 (やど)	lodging	detailed	fresh	progress
+詳しい (くわしい)	detailed	fresh	progress	sleep
+新鮮 (しんせん)	fresh	progress	sleep	adult 
+進歩 (しんぽ)	progress	sleep	adult 	honest

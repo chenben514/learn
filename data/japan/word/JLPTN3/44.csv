@@ -1,0 +1,20 @@
+影響 (えいきょう)	influence	assistance	price	possible
+援助 (えんじょ)	assistance	price	possible	the past
+価格 (かかく)	price	possible	the past	member
+可能 (かのう)	possible	the past	member	settlement
+過去 (かこ)	the past	member	settlement	restoration
+会員 (かいいん)	member	settlement	restoration	foreign
+解決 (かいけつ)	settlement	restoration	foreign	diplomacy 
+回復 (かいふく)	restoration	foreign	diplomacy 	magnification
+海外 (かいがい)	foreign	diplomacy 	magnification	action
+外交 (がいこう)	diplomacy 	magnification	action	patient
+拡大 (かくだい)	magnification	action	patient	environment
+活動 (かつどう)	action	patient	environment	supervision
+患者 (かんじゃ)	patient	environment	supervision	control
+環境 (かんきょう)	environment	supervision	control	concern
+監督 (かんとく)	supervision	control	concern	relation
+管理 (かんり)	control	concern	relation	enterprise
+関心 (かんしん)	concern	relation	enterprise	foundation
+関連 (かんれん)	relation	enterprise	foundation	period
+企業 (きぎょう)	enterprise	foundation	period	expectation
+基本 (きほん)	foundation	period	expectation	engine 

@@ -1,0 +1,20 @@
+コンピュータ	computer	salad	sandwich	jam
+サラダ	salad	sandwich	jam	suit 
+サンドイッチ	sandwich	jam	suit 	stereo
+ジャム	jam	suit 	stereo	soft 
+スーツ	suit 	stereo	soft 	type
+ステレオ	stereo	soft 	type	text 
+ソフト	soft 	type	text 	tennis
+タイプ	type	text 	tennis	handbag
+テキスト	text 	tennis	handbag	part 
+テニス	tennis	handbag	part 	personal computer
+ハンドバッグ	handbag	part 	personal computer	multi-floor building
+パート	part 	personal computer	multi-floor building	piano
+パソコン	personal computer	multi-floor building	piano	present
+ビル	multi-floor building	piano	present	bell 
+ピアノ	piano	present	bell 	report
+プレゼント	present	bell 	report	word processor
+ベル	bell 	report	word processor	I see
+レポート	report	word processor	I see	to change
+ワープロ	word processor	I see	to change	such 
+なるほど (成程)	I see	to change	such 	to come

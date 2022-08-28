@@ -1,0 +1,20 @@
+パーティ	party	bread	film	fork 
+パン	bread	film	fork 	swimming pool 
+フィルム	film	fork 	swimming pool 	bed
+フォーク	fork 	swimming pool 	bed	page
+プール	swimming pool 	bed	page	pen
+ベッド	bed	page	pen	hotel
+ページ (頁)	page	pen	hotel	ball-point pen
+ペン	pen	hotel	ball-point pen	button
+ホテル	hotel	ball-point pen	button	pocket
+ボールペン	ball-point pen	button	pocket	postbox
+ボタン	button	pocket	postbox	match 
+ポケット	pocket	postbox	match 	metre
+ポスト	postbox	match 	metre	radio
+マッチ (燐寸)	match 	metre	radio	record 
+メートル (米)	metre	radio	record 	restaurant 
+ラジオ	radio	record 	restaurant 	shirt
+レコード	record 	restaurant 	shirt	a little
+レストラン	restaurant 	shirt	a little	other 
+ワイシャツ (Ｙシャツ)	shirt	a little	other 	the tenth day of the month 
+ちょっと (一寸)	a little	other 	the tenth day of the month 	to answer

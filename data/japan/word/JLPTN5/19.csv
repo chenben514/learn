@@ -1,0 +1,20 @@
+南 (みなみ)	south	two	100	hospital
+二 (に)	two	100	hospital	north 
+百 (ひゃく)	100	hospital	north 	every day
+病院 (びょういん)	hospital	north 	every day	tree
+北 (きた)	north 	every day	tree	question 
+毎日 (まいにち)	every day	tree	question 	next year
+木 (き)	tree	question 	next year	one person 
+問題 (もんだい)	question 	next year	one person 	nine
+来年 (らいねん)	next year	one person 	nine	this year
+一人 (ひとり)	one person 	nine	this year	three 
+九 (きゅう)	nine	this year	three 	four
+今年 (ことし)	this year	three 	four	ten
+三 (さん)	three 	four	ten	two persons
+四 (よん)	four	ten	two persons	eight
+十 (じゅう)	ten	two persons	eight	six
+二人 (ふたり)	two persons	eight	six	country
+八 (はち)	eight	six	country	talk
+六 (ろく)	six	country	talk	together 
+国 (くに)	country	talk	together 	rain
+話 (はなし)	talk	together 	rain	English 

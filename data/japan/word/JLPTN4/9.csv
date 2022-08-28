@@ -1,0 +1,20 @@
+葉 (は)	leaf	once	way	typhoon
+一度 (いちど)	once	way	typhoon	price
+仕方 (しかた)	way	typhoon	price	ship
+台風 (たいふう)	typhoon	price	ship	relief
+値段 (ねだん)	price	ship	relief	coast
+船 (ふね)	ship	relief	coast	space 
+安心 (あんしん)	relief	coast	space 	church
+海岸 (かいがん)	coast	space 	church	breakdown
+間 (あいだ)	space 	church	breakdown	government worker
+教会 (きょうかい)	church	breakdown	government worker	branch
+故障 (こしょう)	breakdown	government worker	branch	hobby
+公務員 (こうむいん)	government worker	branch	hobby	judo
+枝 (えだ)	branch	hobby	judo	introduction
+趣味 (しゅみ)	hobby	judo	introduction	newspaper company
+柔道 (じゅうどう)	judo	introduction	newspaper company	Shinto shrine
+紹介 (しょうかい)	introduction	newspaper company	Shinto shrine	doll
+新聞社 (しんぶんしゃ)	newspaper company	Shinto shrine	doll	star
+神社 (じんじゃ)	Shinto shrine	doll	star	popular 
+人形 (にんぎょう)	doll	star	popular 	senior 
+星 (ほし)	star	popular 	senior 	parking lot

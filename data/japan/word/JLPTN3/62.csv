@@ -1,0 +1,20 @@
+神 (かみ)	god	restriction	force	character
+制限 (せいげん)	restriction	force	character	success
+勢い (いきおい)	force	character	success	results
+性格 (せいかく)	character	success	results	noon
+成功 (せいこう)	success	results	noon	life
+成績 (せいせき)	results	noon	life	claim
+正午 (しょうご)	noon	life	claim	youth
+生命 (せいめい)	life	claim	youth	trace
+請求 (せいきゅう)	claim	youth	trace	plan
+青年 (せいねん)	youth	trace	plan	major subject
+跡 (あと)	trace	plan	major subject	selection
+設計 (せっけい)	plan	major subject	selection	corresponding to 
+専攻 (せんこう)	major subject	selection	corresponding to 	damage
+選択 (せんたく)	selection	corresponding to 	damage	physical education
+相当 (そうとう)	corresponding to 	damage	physical education	representation
+損害 (そんがい)	damage	physical education	representation	cabinet minister
+体育 (たいいく)	physical education	representation	cabinet minister	majority
+代理 (だいり)	representation	cabinet minister	majority	unit
+大臣 (だいじん)	cabinet minister	majority	unit	birth
+大半 (たいはん)	majority	unit	birth	earth

@@ -1,0 +1,20 @@
+女子 (じょし)	woman	commodity	information	condition
+商品 (しょうひん)	commodity	information	condition	state of affairs 
+情報 (じょうほう)	information	condition	state of affairs 	current status
+条件 (じょうけん)	condition	state of affairs 	current status	new
+状況 (じょうきょう)	state of affairs 	current status	new	human being
+状態 (じょうたい)	current status	new	human being	popularity
+新た (あらた)	new	human being	popularity	system
+人間 (にんげん)	human being	popularity	system	growth
+人気 (にんき)	popularity	system	growth	government
+制度 (せいど)	system	growth	government	positive
+成長 (せいちょう)	growth	government	positive	duty
+政府 (せいふ)	government	positive	duty	player 
+積極的 (せっきょくてき)	positive	duty	player 	whole
+責任 (せきにん)	duty	player 	whole	organization
+選手 (せんしゅ)	player 	whole	organization	companion
+全体 (ぜんたい)	whole	organization	companion	target
+組織 (そしき)	organization	companion	target	representative
+相手 (あいて)	companion	target	representative	stand
+対象 (たいしょう)	target	representative	stand	convention
+代表 (だいひょう)	representative	stand	convention	president 

@@ -1,0 +1,20 @@
+入場 (にゅうじょう)	entrance	farmer	wave	expert
+農民 (のうみん)	farmer	wave	expert	museum
+波 (なみ)	wave	expert	museum	explosion
+博士 (はかせ)	expert	museum	explosion	discovery
+博物館 (はくぶつかん)	museum	explosion	discovery	secret
+爆発 (ばくはつ)	explosion	discovery	secret	aviation
+発見 (はっけん)	discovery	secret	aviation	surface
+秘密 (ひみつ)	secret	aviation	surface	injustice
+飛行 (ひこう)	aviation	surface	injustice	woman
+表面 (ひょうめん)	surface	injustice	woman	scenery
+不正 (ふせい)	injustice	woman	scenery	not particularly
+婦人 (ふじん)	woman	scenery	not particularly	life
+風景 (ふうけい)	scenery	not particularly	life	tip
+別に (べつに)	not particularly	life	tip	the future 
+暮らし (くらし)	life	tip	the future 	master
+末 (すえ)	tip	the future 	master	life
+未来 (みらい)	the future 	master	life	order
+名人 (めいじん)	master	life	order	plain
+命 (いのち)	life	order	plain	use
+命令 (めいれい)	order	plain	use	oil

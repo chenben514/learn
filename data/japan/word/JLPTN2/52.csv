@@ -1,0 +1,20 @@
+溶岩 (ようがん)	lava	use	science 	audio recording
+用途 (ようと)	use	science 	audio recording	footprints 
+理科 (りか)	science 	audio recording	footprints 	lump
+録音 (ろくおん)	audio recording	footprints 	lump	acquaintance
+足跡 (あしあと)	footprints 	lump	acquaintance	notebook
+塊 (かたまり)	lump	acquaintance	notebook	echo
+知り合い (しりあい)	acquaintance	notebook	echo	discount
+手帳 (てちょう)	notebook	echo	discount	low-lying part of a city 
+響き (ひびき)	echo	discount	low-lying part of a city 	quite
+割引 (わりびき)	discount	low-lying part of a city 	quite	fireworks
+下町 (したまち)	low-lying part of a city 	quite	fireworks	course
+何とも (なんとも)	quite	fireworks	course	probability
+花火 (はなび)	fireworks	course	probability	academic year
+課程 (かてい)	course	probability	academic year	printing type
+確率 (かくりつ)	probability	academic year	printing type	atmospheric pressure
+学年 (がくねん)	academic year	printing type	atmospheric pressure	guest seating 
+活字 (かつじ)	printing type	atmospheric pressure	guest seating 	system 
+気圧 (きあつ)	atmospheric pressure	guest seating 	system 	blood pressure
+客席 (きゃくせき)	guest seating 	system 	blood pressure	prefectural office
+系統 (けいとう)	system 	blood pressure	prefectural office	achievements

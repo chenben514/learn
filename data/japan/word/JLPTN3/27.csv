@@ -1,0 +1,20 @@
+ダンス	dance	cheese 	team	chance
+チーズ	cheese 	team	chance	tent
+チーム	team	chance	tent	date
+チャンス	chance	tent	date	demonstration
+テント	tent	date	demonstration	top 
+デート	date	demonstration	top 	truck
+デモ	demonstration	top 	truck	playing cards
+トップ	top 	truck	playing cards	tunnel 
+トラック	truck	playing cards	tunnel 	drive
+トランプ	playing cards	tunnel 	drive	drama 
+トンネル	tunnel 	drive	drama 	dress
+ドライブ	drive	drama 	dress	knock
+ドラマ	drama 	dress	knock	hiking
+ドレス	dress	knock	hiking	handsome
+ノック	knock	hiking	handsome	violin
+ハイキング	hiking	handsome	violin	bag
+ハンサム	handsome	violin	bag	percent
+バイオリン	violin	bag	percent	pipe
+バッグ	bag	percent	pipe	pilot
+パーセント	percent	pipe	pilot	passport

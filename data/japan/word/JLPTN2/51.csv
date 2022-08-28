@@ -1,0 +1,20 @@
+純粋 (じゅんすい)	pure	police officer	book	first 10 days of month
+巡査 (じゅんさ)	police officer	book	first 10 days of month	worker
+書籍 (しょせき)	book	first 10 days of month	worker	social position
+上旬 (じょうじゅん)	first 10 days of month	worker	social position	gender
+職人 (しょくにん)	worker	social position	gender	cleaning
+身分 (みぶん)	social position	gender	cleaning	getting closer
+性別 (せいべつ)	gender	cleaning	getting closer	amateur
+清掃 (せいそう)	cleaning	getting closer	amateur	prime minister 
+接近 (せっきん)	getting closer	amateur	prime minister 	plain
+素人 (しろうと)	amateur	prime minister 	plain	relative length 
+総理大臣 (そうりだいじん)	prime minister 	plain	relative length 	precise
+地味 (じみ)	plain	relative length 	precise	South Pole 
+長短 (ちょうたん)	relative length 	precise	South Pole 	firing
+的確 (てきかく)	precise	South Pole 	firing	weekday
+南極 (なんきょく)	South Pole 	firing	weekday	plain
+発射 (はっしゃ)	firing	weekday	plain	to bury 
+平日 (へいじつ)	weekday	plain	to bury 	full house
+平野 (へいや)	plain	to bury 	full house	lava
+埋める (うめる)	to bury 	full house	lava	use
+満員 (まんいん)	full house	lava	use	science 

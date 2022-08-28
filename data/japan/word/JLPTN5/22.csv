@@ -1,0 +1,20 @@
+町 (まち)	town	horizontal 	picture	classroom 
+横 (よこ)	horizontal 	picture	classroom 	building
+絵 (え)	picture	classroom 	building	dog 
+教室 (きょうしつ)	classroom 	building	dog 	black 
+建物 (たてもの)	building	dog 	black 	to be
+犬 (いぬ)	dog 	black 	to be	three
+黒 (くろ)	black 	to be	three	paper
+ある (在る)	to be	three	paper	ear 
+三つ (みっつ)	three	paper	ear 	letter
+紙 (かみ)	paper	ear 	letter	lesson
+耳 (みみ)	ear 	letter	lesson	to take out
+手紙 (てがみ)	letter	lesson	to take out	blue
+授業 (じゅぎょう)	lesson	to take out	blue	snow
+出す (だす)	to take out	blue	snow	all
+青 (あお)	blue	snow	all	near
+雪 (ゆき)	snow	all	near	village
+全部 (ぜんぶ)	all	near	village	embassy
+そば (側)	near	village	embassy	adult
+村 (むら)	village	embassy	adult	winter
+大使館 (たいしかん)	embassy	adult	winter	white 

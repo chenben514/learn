@@ -1,0 +1,20 @@
+野 (の)	plain	use	oil	friend
+役 (やく)	use	oil	friend	prevention
+油 (あぶら)	oil	friend	prevention	day of the week
+友 (とも)	friend	prevention	day of the week	component
+予防 (よぼう)	prevention	day of the week	component	tear
+曜日 (ようび)	day of the week	component	tear	train
+要素 (ようそ)	component	tear	train	thesis
+涙 (なみだ)	tear	train	thesis	a family
+列車 (れっしゃ)	train	thesis	a family	little girl
+論文 (ろんぶん)	thesis	a family	little girl	passenger
+一家 (いっか)	a family	little girl	passenger	place
+少女 (しょうじょ)	little girl	passenger	place	hill
+乗客 (じょうきゃく)	passenger	place	hill	shadow
+位置 (いち)	place	hill	shadow	shape
+丘 (おか)	hill	shadow	shape	contribution
+影 (かげ)	shadow	shape	contribution	cherry tree
+格好 (かっこう)	shape	contribution	cherry tree	old person
+寄付 (きふ)	contribution	cherry tree	old person	to leave 
+桜 (さくら)	cherry tree	old person	to leave 	mail service
+年寄り (としより)	old person	to leave 	mail service	advantageous

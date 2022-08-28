@@ -1,0 +1,20 @@
+睡眠 (すいみん)	sleep	adult 	honest	imagination
+成人 (せいじん)	adult 	honest	imagination	nest
+正直 (しょうじき)	honest	imagination	nest	speed
+想像 (そうぞう)	imagination	nest	speed	more or less
+巣 (す)	nest	speed	more or less	relation
+速度 (そくど)	speed	more or less	relation	nature
+多少 (たしょう)	more or less	relation	nature	tower
+仲 (なか)	relation	nature	tower	abrupt
+天然 (てんねん)	nature	tower	abrupt	age
+塔 (とう)	tower	abrupt	age	Japanese apricot 
+突然 (とつぜん)	abrupt	age	Japanese apricot 	middle
+年代 (ねんだい)	age	Japanese apricot 	middle	tiredness
+梅 (うめ)	Japanese apricot 	middle	tiredness	bottle
+半ば (なかば)	middle	tiredness	bottle	discomfort
+疲れ (つかれ)	tiredness	bottle	discomfort	usual
+瓶 (びん)	bottle	discomfort	usual	equality
+不自由 (ふじゆう)	discomfort	usual	equality	pattern
+普段 (ふだん)	usual	equality	pattern	bento
+平等 (びょうどう)	equality	pattern	bento	moat
+柄 (がら)	pattern	bento	moat	strange

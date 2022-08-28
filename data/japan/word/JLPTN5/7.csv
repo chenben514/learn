@@ -1,0 +1,20 @@
+スポーツ	sport	slipper	trousers	sweater
+スリッパ	slipper	trousers	sweater	taxi
+ズボン	trousers	sweater	taxi	table
+セーター	sweater	taxi	table	tape
+タクシー	taxi	table	tape	tape recorder
+テーブル	table	tape	tape recorder	test
+テープ	tape	tape recorder	test	television
+テープレコーダー	tape recorder	test	television	department store 
+テスト	test	television	department store 	toilet
+テレビ	television	department store 	toilet	door 
+デパート	department store 	toilet	door 	knife
+トイレ	toilet	door 	knife	news
+ドア	door 	knife	news	tie
+ナイフ	knife	news	tie	notebook
+ニュース	news	tie	notebook	handkerchief
+ネクタイ	tie	notebook	handkerchief	bus 
+ノート	notebook	handkerchief	bus 	butter
+ハンカチ	handkerchief	bus 	butter	party
+バス	bus 	butter	party	bread
+バター	butter	party	bread	film

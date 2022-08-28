@@ -1,0 +1,20 @@
+組合 (くみあい)	association	consultation	equipment	increase
+相談 (そうだん)	consultation	equipment	increase	existence
+装置 (そうち)	equipment	increase	existence	attitude
+増加 (ぞうか)	increase	existence	attitude	arrest
+存在 (そんざい)	existence	attitude	arrest	ambassador
+態度 (たいど)	attitude	arrest	ambassador	being in charge 
+逮捕 (たいほ)	arrest	ambassador	being in charge 	district
+大使 (たいし)	ambassador	being in charge 	district	company
+担当 (たんとう)	being in charge 	district	company	long-term
+地区 (ちく)	district	company	long-term	direct
+仲間 (なかま)	company	long-term	direct	proposal
+長期 (ちょうき)	long-term	direct	proposal	tradition
+直接 (ちょくせつ)	direct	proposal	tradition	party 
+提案 (ていあん)	proposal	tradition	party 	identical
+伝統 (でんとう)	tradition	party 	identical	road
+党 (とう)	party 	identical	road	feature
+同様 (どうよう)	identical	road	feature	independence 
+道路 (どうろ)	road	feature	independence 	ability
+特徴 (とくちょう)	feature	independence 	ability	horse 
+独立 (どくりつ)	independence 	ability	horse 	field 
