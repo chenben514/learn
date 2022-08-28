@@ -67,7 +67,10 @@ body {
       height: 11rem; } }
 
 .content {
-  display: flex; }
+  display: flex;
+  height: 70vh;
+  overflow: auto;
+  /* Enable scroll if needed */ }
   @media only screen and (max-width: 56.25em) {
     .content {
       flex-direction: column; } }

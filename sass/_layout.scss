@@ -32,6 +32,8 @@
 
 .content {
   display: flex;
+  height: 70vh;
+  overflow: auto; /* Enable scroll if needed */
 
   @media only screen and (max-width: $bp-medium) {
     flex-direction: column;
