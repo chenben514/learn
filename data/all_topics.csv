@@ -104,4 +104,6 @@ learn,game,5,learn,專注力,game_focus,1,1.\數字方格
 learn,video,999,hongkong^transpotation,香港交通工具歌🚙,conversation_youtube,all.csv
 
 ### 數學
-math,calc,99,junior_1,小一四則運算,calc,1,練習1
+math,calc,99,junior1,小一,calc,AddSub^10~1~9,十位數\加減
+math,calc,99,junior21,小二上,calc,AddSub^100~11~99,二位數\加減,clock,時鐘,3digit,三位數,shape,形狀與邊,2step~1~9,兩步驟加減
+math,calc,99,junior22,小二下,calc,2step2~11~99,兩步驟加減2,multi~1~9,個位數乘法

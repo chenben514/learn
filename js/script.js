@@ -643,6 +643,28 @@ function getQuestions() {
 
     question.numb = quesArr[quesList[i]].substr(0, ques_comma_pos);
 
+    if (curQuizType.startsWith("calc")) {
+      /* for Math, with random number */
+      var digitArr = curTopicArr[3].split("~");
+      var varArr = [];
+      for (j = 0; j < 3; j++) {
+        var newValue = Math.floor(
+          //get_random_range_from_filename
+          Math.random() * (parseInt(digitArr[2]) - parseInt(digitArr[1]) + 1) +
+            parseInt(digitArr[1])
+        );
+
+        varArr.push(newValue);
+      }
+      for (var x = 0; x < singQuesArr.length; x++) {
+        // alert(singQuesArr[x]);
+        console.log(x + ":(begin):" + singQuesArr[x]);
+        singQuesArr[x] = changeVariable(singQuesArr[x], varArr);
+        console.log(x + ":(end):" + singQuesArr[x]);
+        // alert(singQuesArr[x]);
+      }
+    }
+
     /*prepare question & answers*/
     if (singQuesArr[0].includes("[")) {
       /* for partial spell with [] */
@@ -684,15 +706,9 @@ function getQuestions() {
         question.option2 = singQuesArr[3];
       } else question.quizType = "spell";
       quesTimer = 60;
-    } else if (curQuizType == "calc") {
-      /* for Math, with random number */
-      var varArr = [];
-      for (j = 0; j < 3; j++) {
-        var newValue = Math.floor(Math.random() * 9) + 1;
-        varArr.push(newValue);
-      }
-      question.question = changeVariable(singQuesArr[0], varArr);
-      question.answer = changeVariable(singQuesArr[1], varArr);
+    } else if (curQuizType.startsWith("calc") && singQuesArr.length < 3) {
+      question.question = singQuesArr[0];
+      question.answer = singQuesArr[1];
 
       question.quizType = "spell";
       quesTimer = 60;
@@ -708,7 +724,7 @@ function getQuestions() {
       question.question = singQuesArr[0];
       question.answer = singQuesArr[1];
       question.quizType = "choose";
-      quesTimer = 10;
+      quesTimer = 60;
 
       ansList = [];
       while (ansList.length < 4) {
@@ -739,9 +755,10 @@ function confirmClick() {
   userInputAns = inputAnswer;
   document.querySelector("#confirmButton").disabled = "true";
   if (curQuesType === "direct_input") {
-    correctAnswer = questions[que_count].answer.toLowerCase();
+    correctAnswer = questions[que_count].answer.toString().toLowerCase();
   } else {
     correctAnswer = questions[que_count].question
+      .toString()
       .toLowerCase()
       .replace(".mp3", "");
   }
@@ -1679,21 +1696,40 @@ function syncDelay(milliseconds) {
 function changeVariable(inputString, varArr) {
   var newString;
   if (inputString === undefined) return inputString;
-  newString = inputString.replace("{a}", varArr[0]);
-  newString = newString.replace("{b}", varArr[1]);
-  newString = newString.replace("{c}", varArr[2]);
-  newString = newString.replace("{a+b}", String(varArr[0] + varArr[1]));
-  newString = newString.replace(
-    "{a+b+c}",
-    String(varArr[0] + varArr[1] + varArr[2])
-  );
-  newString = newString.replace("{A}", varArr[3]);
-  newString = newString.replace("{B}", varArr[4]);
-  newString = newString.replace("{C}", varArr[5]);
-
-  if (newString.substring(0, 1) === "=") {
-    var calcString = newString.substring(1, newString.length);
-    newString = eval(calcString);
+  newString = inputString.replaceAll("{a}", varArr[0]);
+  newString = newString.replaceAll("{b}", varArr[1]);
+  newString = newString.replaceAll("{c}", varArr[2]);
+  // var debug_count = 0;
+  while (newString.toString().indexOf("<") > -1) {
+    // debug_count++;
+    // if (debug_count > 10) {
+    //   alert(debug_count + ":" + newString);
+    //   break;
+    // }
+    var begin = newString.indexOf("<");
+    var end = newString.indexOf(">");
+    var length = newString.length;
+    if (end < begin) {
+      alert("no } match to {");
+      break;
+    }
+    var calcString = newString.substring(begin + 1, end);
+    // alert(inputString);
+    // alert(varArr[0] + ":" + varArr[1] + ":" + varArr[2]);
+    // alert(calcString);
+    var resultString = eval(calcString);
+    // alert(begin + ":" + end + ":" + length);
+    if (begin == 0 && end == length - 1) {
+      newString = resultString;
+    } else if (begin == 0) {
+      newString = resultString + newString.substring(end + 1, length);
+    } else {
+      newString =
+        newString.substring(0, begin - 1) +
+        resultString +
+        newString.substring(end + 1, length);
+    }
+    // alert(newString);
   }
 
   return newString;
