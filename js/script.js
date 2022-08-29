@@ -66,6 +66,7 @@ let autoRowSelected = 0;
 let myAudioTableRow;
 let remainHighlight,
   bRemainHighlight = false;
+let audio_sec_bottom;
 
 /*5.2 subtitle youtube */
 let youtube_mode = false,
@@ -288,6 +289,18 @@ function pronClick() {
 function startLeft() {
   startAudio(this.id);
 }
+
+function disableBtnStatus(status) {
+  let small_wrong_links = document.querySelectorAll(".wrong-button");
+  for (let i = 0; i < small_wrong_links.length; i++) {
+    small_wrong_links[i].disabled = status;
+  }
+  let small_test_links = document.querySelectorAll(".test-button");
+  for (let i = 0; i < small_test_links.length; i++) {
+    small_test_links[i].disabled = status;
+  }
+}
+
 // if startQuiz button clicked
 function startQuiz() {
   curQuiz = this.id;
@@ -303,23 +316,25 @@ function startQuiz() {
   this.classList.add("test-pressed");
   curSelected = curQuiz;
   //0.1 disable all test buttons
+  disableBtnStatus(true);
 
-  let small_wrong_links = document.querySelectorAll(".wrong-button");
-  for (let i = 0; i < small_wrong_links.length; i++) {
-    small_wrong_links[i].disabled = true;
-  }
+  // let small_wrong_links = document.querySelectorAll(".wrong-button");
+  // for (let i = 0; i < small_wrong_links.length; i++) {
+  //   small_wrong_links[i].disabled = true;
+  // }
 
   //0.2. disable all test buttons
   //0.直接聽錄音
   if (curQuizType.includes("conversation_youtube")) {
     startAudio(this.id);
     return;
-  } else {
-    let small_test_links = document.querySelectorAll(".test-button");
-    for (let i = 0; i < small_test_links.length; i++) {
-      small_test_links[i].disabled = true;
-    }
   }
+  // } else {
+  //   let small_test_links = document.querySelectorAll(".test-button");
+  //   for (let i = 0; i < small_test_links.length; i++) {
+  //     small_test_links[i].disabled = true;
+  //   }
+  // }
 
   if (curQuizType == "game_focus") {
     game_focus();
@@ -473,14 +488,21 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 // if restartQuiz button clicked
 restart_quiz.onclick = () => {
   localStorage.setItem(curQuiz + "_right", "");
-  window.location.reload(); //reload the current window
+  result_box.classList.remove("activeResult"); //show result box
+  content.classList.remove("slight_opacity");
+  disableBtnStatus(false);
+  // window.location.reload(); //reload the current window
   return;
   //no-way-here
 };
 
 // if quitQuiz button clicked
 quit_quiz.onclick = () => {
-  window.location.reload(); //reload the current window
+  // quiz_box.classList.remove("activeQuiz"); //show quiz box
+  result_box.classList.remove("activeResult"); //show result box
+  content.classList.remove("slight_opacity");
+  disableBtnStatus(false);
+  // window.location.reload(); //reload the current window
 };
 
 const next_btn = document.querySelector("footer .next_btn");
@@ -1309,7 +1331,6 @@ function highlight_start(content) {
 }
 
 function showTable() {
-  let audio_sec_bottom;
   var modalContent = document.getElementById("modal-content-audio");
   var tmpAudio_sec_bottom = document.getElementById("audio_sec_bottom");
   if (tmpAudio_sec_bottom != null) {
@@ -1513,10 +1534,10 @@ function startAudio(curQuiz) {
     }
 
     if (bPlayerList) {
-      var audio_sec_bottom = document.createElement("div");
-      audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
-      audio_sec_bottom.appendChild(flex_container);
-      modalContent.appendChild(audio_sec_bottom);
+      var tmp_audio_sec_bottom = document.createElement("div");
+      tmp_audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+      tmp_audio_sec_bottom.appendChild(flex_container);
+      modalContent.appendChild(tmp_audio_sec_bottom);
     }
 
     // 秀右邊縮圖--結束
@@ -1615,6 +1636,10 @@ function startAudio(curQuiz) {
         myAudioTableRow[autoRowSelected].style.color = "red";
         autoRowSelected++;
         rowSelected = myAudioTableRow[autoRowSelected - 1];
+        // alert("ben_debug_1639");
+        var nowTop =
+          (autoRowSelected - 1) * (audio_sec_bottom.scrollHeight / subTitleCnt);
+        console.log("nowTop:" + nowTop);
         audio_sec_bottom.scrollTop =
           (autoRowSelected - 1) * (audio_sec_bottom.scrollHeight / subTitleCnt);
       }
@@ -1674,6 +1699,7 @@ function closeAudio() {
   var modal = document.getElementById("myAudio");
   modal.style.display = "none";
   content.classList.remove("slight_opacity");
+  disableBtnStatus(false);
   if (youtube_mode) {
     player.stopVideo();
   } else {

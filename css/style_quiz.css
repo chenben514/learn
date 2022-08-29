@@ -614,13 +614,13 @@ section .correct_list {
   padding: 0.5rem 1rem;
   width: 95%;
   /* height: 50%; */
-  height: 300px;
+  height: 100px;
   /* height: 50%; */
 }
 
 @media (max-width: 600px) {
   .audio_sec_top {
-    height: 200px;
+    height: 100px;
   }
 }
 
