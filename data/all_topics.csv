@@ -61,6 +61,8 @@ japan,spell,999,level6,L6\中級\高階期,choose,常用語,常用語,形狀,形
 japan,spell,999,level7,L7\中級\流利期,choose,常用語,常用語,形狀,形狀,時間,時間,方位,方位,個性,個性,情緒1,情緒1,情緒2,情緒2,身體部位1,身體部位1,身體部位2,身體部位2,動作,動作,健康1,健康1,健康2,健康2,人物1,人物1,人物2,人物2,人生1,人生1,人生2,人生2,飲食,飲食,衣物飾品,衣物飾品,居住,居住,交通,交通,教育1,教育1,教育2,教育2,工作1,工作1,工作2,工作2,工作3,工作3,工作4,工作4,工作5,工作5,工作6,工作6,工作7,工作7,工作8,工作8,職業,職業,休閒活動1,休閒活動1,休閒活動2,休閒活動2,休閒活動3,休閒活動3,休閒活動4,休閒活動4,自然1,自然1,自然2,自然2,自然3,自然3,自然4,自然4,自然5,自然5,法律1,法律1,法律2,法律2,國家1,國家1,國家2,國家2,國家3,國家3,國家4,國家4,國家5,國家5
 japan,video,999,easyJapan,Easy\Japan,conversation_youtube,all.csv
 japan,video,999,akaneClass,あかね\日本語教室,conversation_youtube,all.csv
+japan,video,999,Yunaty,Yunaty\新聞日語,conversation_youtube,all.csv
+japan,video,999,KenConv,Ken\Vlog,conversation_youtube,all.csv
 japan,video,999,song,歌曲,conversation_youtube,all.csv
 
 ### 韓文
@@ -100,6 +102,14 @@ korean,video,999,easyKorean,Easy\Korean,conversation_youtube,all.csv
 korean,video,999,pit^a^pat,撲通撲通韓國語,conversation_youtube,all.csv
 korean,video,999,inter^korean,中級韓國語,conversation_youtube,all.csv
 korean,video,999,TalkToMe,TalkTo\Me,conversation_youtube,all.csv
+korean,video,999,yomitabi,yomitabi\日本遊,conversation_youtube,all.csv
+korean,video,999,Tayoni,Tayoni\Podcast,conversation_youtube,all.csv
+korean,video,999,sejong1,世宗韓國會話1,conversation_youtube,all.csv
+korean,video,999,sejong2,世宗韓國會話2,conversation_youtube,all.csv
+korean,video,999,sejong3,世宗韓國會話3,conversation_youtube,all.csv
+korean,video,999,sejong4,世宗韓國會話4,conversation_youtube,all.csv
+korean,video,999,drama,看戲劇學韓語,conversation_youtube,all.csv
+
 ### 學習法
 learn,game,5,learn,專注力,game_focus,1,1.\數字方格
 #learn,game,5,learn,國語,game_word_chain,1,1.\字詞接龍

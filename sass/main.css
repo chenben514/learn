@@ -64,7 +64,7 @@ body {
 
 .container {
   max-width: 120rem;
-  margin: 8rem auto;
+  margin: 2rem auto;
   background-color: var(--color-grey-light-1);
   -webkit-box-shadow: var(--shadow-dark);
   box-shadow: var(--shadow-dark);
@@ -393,7 +393,7 @@ body {
 .side-nav {
   font-size: 2rem;
   list-style: none;
-  margin-top: 3.5rem;
+  margin-top: 1.5rem;
 }
 
 @media only screen and (max-width: 56.25em) {
