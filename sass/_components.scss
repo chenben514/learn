@@ -240,9 +240,12 @@
 // main_subj
 .main_subj {
   display: flex;
+  height: 18vh;
 
   &__photo {
-    width: 100%;
+    // width: 100%;
+    max-width: 100%;
+    height: auto;
     display: block;
     flex: 1;
     cursor: pointer;
@@ -274,6 +277,11 @@
   padding: 0.2rem;
   width: 6rem;
   text-align: center;
+}
+
+.mid_subj {
+  height: 60vh;
+  overflow: auto;
 }
 
 .detail_left_subj {
@@ -522,8 +530,11 @@
 
   &__photo {
     box-sizing: content-box;
-    height: 4rem;
-    width: 4rem;
+    // height: 4rem;
+    // width: 4rem;
+    height: auto;
+    max-width: 100%;
+
     border-radius: 50%;
     border: 3px solid #fff;
 

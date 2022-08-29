@@ -71,9 +71,7 @@ body {
 
 .content {
   display: flex;
-  height: 70vh;
-  overflow: auto;
-  /* Enable scroll if needed */ }
+  height: 80vh; }
   @media only screen and (max-width: 56.25em) {
     .content {
       flex-direction: column; } }
@@ -88,6 +86,7 @@ body {
 .main_subj-view {
   background-color: #fff;
   margin-top: 1rem;
+  height: 80vh;
   flex: 1; }
 
 .detail {
@@ -304,9 +303,11 @@ body {
       display: none; } }
 
 .main_subj {
-  display: flex; }
+  display: flex;
+  height: 18vh; }
   .main_subj__photo {
-    width: 100%;
+    max-width: 100%;
+    height: auto;
     display: block;
     flex: 1;
     cursor: pointer; }
@@ -327,6 +328,10 @@ body {
   padding: 0.2rem;
   width: 6rem;
   text-align: center; }
+
+.mid_subj {
+  height: 60vh;
+  overflow: auto; }
 
 .detail_left_subj {
   cursor: pointer; }
@@ -504,8 +509,8 @@ body {
     display: flex; }
   .recommend__photo {
     box-sizing: content-box;
-    height: 4rem;
-    width: 4rem;
+    height: auto;
+    max-width: 100%;
     border-radius: 50%;
     border: 3px solid #fff; }
     .recommend__photo:not(:last-child) {
