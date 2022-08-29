@@ -1425,7 +1425,7 @@ function startAudio(curQuiz) {
     parseCsv(base_left_filename + "/all.csv");
     var detailCnt = quesArr.length;
     var r = Math.floor(Math.random() * detailCnt);
-    var videoId = quesArr[r].split("=")[1].split("&")[0];
+    var videoId = quesArr[r].split("=")[1].split("&")[0].split(",")[0];
     youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoId;
 
     for (var x = 0; x < quesArr.length; x++) {

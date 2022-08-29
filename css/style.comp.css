@@ -25,7 +25,8 @@
 
 html {
   box-sizing: border-box;
-  font-size: 62.5%; }
+  font-size: 62.5%;
+  overflow: hidden; }
   @media only screen and (max-width: 68.75em) {
     html {
       font-size: 50%; } }
@@ -324,6 +325,9 @@ body {
   padding: 0.2rem;
   width: 6rem;
   text-align: center; }
+
+.mid_subj {
+  overflow: hidden; }
 
 .detail_left_subj {
   cursor: pointer; }
