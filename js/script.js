@@ -2,6 +2,14 @@
 import game_focus from "./game_focus.js";
 import loadWordChain from "./game_word_chain.js";
 
+//disable window scroll
+// var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+// var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft);
+// window.onscroll = function () {
+//     window.scrollTo(scrollLeft, scrollTop);
+//   };
+//disable window scroll_end
+
 window.pronClick = pronClick;
 window.confirmClick = confirmClick;
 window.optionSelected = optionSelected;
