@@ -561,7 +561,7 @@ function parseCsv(filename) {
   var displayName;
 
   if (checkFileExist(filename) == false) {
-    alert("Quiz file [" + filename + "] does not exist.");
+    // alert("Quiz file [" + filename + "] does not exist.");
     return false;
   }
 
@@ -1259,7 +1259,7 @@ function readSubtitles(srtFile) {
   subTitleCnt = 0;
 
   if (checkFileExist(srtFile) == false) {
-    alert("Quiz file [" + srtFile + "] does not exist.");
+    // alert("Quiz file [" + srtFile + "] does not exist.");
     return false;
   }
 
