@@ -42,7 +42,8 @@ english,combo,999,graph,英語圖鑑字典,choose,1,大自然,https://indigo-gou
 english,video,999,miscellaneous,雜項,conversation_youtube,all.csv
 english,video,999,speech,演講,conversation_youtube,1,1,2,2
 english,video,999,easyEnglish,Easy\English,conversation_youtube,all.csv
-english,business,999,bbcWork,BBC at Work,conversation_youtube,0,序言,1,面試準備
+english,video,999,vanessa,Vanessa\English,conversation_youtube,all.csv
+english,business,999,bbcWork,BBC at Work,conversation_youtube,all.csv
 
 
 ### 日文

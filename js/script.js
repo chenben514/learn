@@ -1429,6 +1429,7 @@ function startAudio(curQuiz) {
   playlistCnt = 0;
   playlists = [];
 
+  // alert(curQuiz);
   if (curQuiz.includes("Left@@@")) {
     bPlayerList = true;
     parseCsv(base_left_filename + "/all.csv");
@@ -1453,6 +1454,8 @@ function startAudio(curQuiz) {
       .split("@")[1]
       .replace(/&/g, "_")
       .replace(/~/g, "-");
+    base_filename = base_left_filename + "/" + curTopicArr[3].split("@")[2];
+    readSubtitles(base_filename + ".srt");
     youtube_url = "https://www.youtube-nocookie.com/watch?v=" + tmpID;
   } else {
     readSubtitles(base_filename + ".srt");
@@ -1607,6 +1610,7 @@ function startAudio(curQuiz) {
     audio.play();
   } else {
   }
+
   showTable();
 
   if (subtitles.length < 1) return; //no subtitle, exit
@@ -1672,7 +1676,12 @@ function getSecond(inputTime) {
   var secondArr = inputTime.split(":");
   var hour = Number(secondArr[0]);
   var minute = Number(secondArr[1]);
-  var second2Arr = secondArr[2].split(",");
+  var second2Arr;
+  if (secondArr[2].includes(",")) {
+    second2Arr = secondArr[2].split(",");
+  } else if (secondArr[2].includes(".")) {
+    second2Arr = secondArr[2].split(".");
+  }
   var second = Number(second2Arr[0]);
   var milliSecond = Number(second2Arr[1]);
   second = second + minute * 60 + hour * 3600 + milliSecond * 0.001;
