@@ -72,7 +72,7 @@ body {
 
 .content {
   display: flex;
-  height: 70vh;
+  height: 85vh;
   overflow: auto;
   /* Enable scroll if needed */ }
   @media only screen and (max-width: 56.25em) {
@@ -81,7 +81,7 @@ body {
 
 .sidebar {
   background-color: var(--color-grey-dark-1);
-  flex: 0 0 15%;
+  flex: 0 0 10%;
   display: flex;
   flex-direction: column;
   justify-content: space-between; }

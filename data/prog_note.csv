@@ -3,9 +3,10 @@ python main.py english video bbcWork PLcetZ6gSk969oGvAI0e4_PgVnlGbm64bp
 ### 功能開發
 
 待實作功能：
-7. 詞彙功能 - 加上簡筆畫
-3. 國文七言絕句
-5. 數學題材建立
+---- 系統面
+  -- Bug
+  -- Feature
+X. 線上編輯 Youtube, 音樂字幕檔，編輯結果可下載為檔案，可以匯入
 6. 接詞遊戲
 8. 嵌入 Ben 的個人網頁
 9. 注音功能
@@ -13,7 +14,12 @@ python main.py english video bbcWork PLcetZ6gSk969oGvAI0e4_PgVnlGbm64bp
 11. 意見欄
 12. 跟我聯絡
 
-    
+---- 課程面
+7. 詞彙功能 - 加上簡筆畫
+3. 國文七言絕句
+5. 數學題材建立
+
+### 己實作功能
 - 3. 填星功能
    --> 答對加 1 顆星，答錯扣到 0 顆星
    --> 答對0顆星(test-no-pass),1-2顆星(test-pass),3顆星(test-finish)，呈現不同顏色

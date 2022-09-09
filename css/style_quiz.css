@@ -599,7 +599,7 @@ section .correct_list {
   padding: 0.5rem 1rem;
   width: 95%;
   /* height: 50%; */
-  height: 400px;
+  height: 360px;
 }
 
 @media (max-width: 600px) {
@@ -660,7 +660,7 @@ section .correct_list {
   background-color: lightblue;
   padding: 0.5rem 1rem;
   width: 95%;
-  height: 400px;
+  height: 360px;
   /* height: 40%; */
   overflow-y: scroll;
 }

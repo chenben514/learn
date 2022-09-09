@@ -73,8 +73,8 @@ var subTitleCnt = 0;
 let audio, source;
 let autoRowSelected = 0;
 let myAudioTableRow;
-let remainHighlight,
-  bRemainHighlight = false;
+let bRemainHighlight = false;
+let bSubtitleEditable = false;
 let audio_sec_bottom;
 
 /*5.2 subtitle youtube */
@@ -312,6 +312,9 @@ function disableBtnStatus(status) {
 
 // if startQuiz button clicked
 function startQuiz() {
+  que_count = 0;
+  userScore = 0; //upgrading score value with 1
+  que_numb = 1;
   curQuiz = this.id;
   var curQuizArr = curQuiz.split("-");
   curQuizType = curQuizArr[0];
@@ -1079,6 +1082,8 @@ function showResult() {
         scoreTag += "🏆";
       }
       scoreTag += "</span>";
+      var starMessage = document.getElementById(curQuiz + "_class_star");
+      starMessage.innerText = showStar(curLevel);
     }
     scoreText.innerHTML = scoreTag; //adding new span tag inside score_Text
   } else if (final_score >= 80) {
@@ -1368,7 +1373,11 @@ function showTable() {
       r = t.insertRow(-1);
       tableRowCnt++;
     }
-
+    if (bSubtitleEditable) {
+      r.setAttribute("contenteditable", "true");
+    } else {
+      r.setAttribute("contenteditable", "false");
+    }
     r.setAttribute("class", "audio_table_row");
     if (k == 0) r.classList.add("table_font_highlight");
     else r.classList.remove("table_font_highlight");
@@ -1465,6 +1474,7 @@ function startAudio(curQuiz) {
     '<span class="close" id="closeAudio">&times;</span><p>';
 
   /* 2. audio player */
+  /* 2.1. 過濾只留重點列 */
   var remainHighlight = document.createElement("input");
   remainHighlight.type = "checkbox";
   remainHighlight.name = "remainHighlight";
@@ -1477,6 +1487,22 @@ function startAudio(curQuiz) {
   lblRemainHighlight.htmlFor = "remainHighlight";
   remainHighlight.onclick = function () {
     bRemainHighlight = remainHighlight.checked;
+    showTable();
+  };
+
+  /* 2.2. 字幕編輯模式 */
+  var subtitleEditable = document.createElement("input");
+  subtitleEditable.type = "checkbox";
+  subtitleEditable.name = "subtitleEditable";
+  subtitleEditable.id = "subtitleEditable";
+  subtitleEditable.classList.add("remainHighlight");
+  subtitleEditable.checked = bSubtitleEditable;
+  var lblsubtitleEditable = document.createElement("label");
+  lblsubtitleEditable.innerText = "編輯字幕";
+  lblsubtitleEditable.classList.add("lblsubtitleEditable");
+  lblsubtitleEditable.htmlFor = "lblsubtitleEditable";
+  lblsubtitleEditable.onclick = function () {
+    bSubtitleEditable = subtitleEditable.checked;
     showTable();
   };
 
@@ -1510,6 +1536,8 @@ function startAudio(curQuiz) {
     if (bRemainHighlight) {
       messageDiv.appendChild(remainHighlight);
       messageDiv.appendChild(lblRemainHighlight);
+      messageDiv.appendChild(subtitleEditable);
+      messageDiv.appendChild(lblsubtitleEditable);
       messageDiv.classList.add("myMessageDiv");
       audio_sec_top.appendChild(messageDiv);
     }

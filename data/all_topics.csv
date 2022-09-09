@@ -99,10 +99,10 @@ korean,grammer,99,m120,中級文法120,choose,1,1-20,2,21-40,3,41-60,4,61-80,5,8
 #korean,advanced,99,new_2_1,新視線韓語2_1,conversation,1_1,1.1.\節日,1_2,1.2.\節日,1_3,1.3.\節日,2_1,2.1.\禮節,2_2,2.2.\禮節,2_3,2.3.\禮節,3_1,3.1.\禮物,3_2,3.2.\禮物,3_3,3.3.\禮物,4_1,4.1.\學校,4_2,4.2.\學校,4_3,4.3.\學校,5_1,5.1.\電影,5_2,5.2.\電影,5_3,5.3.\電影,6_1,6.1.\購物,6_2,6.2.\購物,6_3,6.3.\購物,7_1,7.1.\感冒,7_2,7.2.\感冒,7_3,7.3.\感冒,8_1,8.1.\圖書館,8_2,8.2.\圖書館,8_3,8.3.\圖書館,9_1,9.1.\銀行,9_2,9.2.\銀行,9_3,9.3.\銀行,10_1,10.1.\郵局,10_2,10.2.\郵局,10_3,10.3.\郵局
 #korean,advanced,99,new_2_2,新視線韓語2_2,conversation,1_1,1.1.\美髮,1_2,1.2.\美髮,1_3,1.3.\美髮,2_1,2.1.\國外生活,2_2,2.2.\國外生活,2_3,2.3.\國外生活,2_4,2.4.\國外生活,3_1,3.1.\詢問,3_2,3.2.\詢問,3_3,3.3.\詢問,4_1,4.1.\計劃,4_2,4.2.\計劃,4_3,4.3.\計劃,5_1,5.1.\解決問題,5_2,5.2.\解決問題,5_3,5.3.\解決問題,6_1,6.1.\休假計劃,6_2,6.2.\休假計劃,6_3,6.3.\休假計劃,6_4,6.4.\休假計劃,7_1,7.1.\出差,7_2,7.2.\出差,7_3,7.3.\出差,8_1,8.1.\畢業典禮,8_2,8.2.\畢業典禮,8_3,8.3.\畢業典禮,9_1,9.1.\期間,9_2,9.2.\期間,9_3,9.3.\期間,10_1,10.1.\比較,10_2,10.2.\比較,10_2,10.2.\比較
 #korean,advanced,99,new_5_1,新視線韓語5_1,conversation,1_1,1.1.\價值觀,1_2,1.2.成功的老公,1_3,1.3.奧黛莉赫本,2_1,2.1.目標
+korean,video,999,chat,chat,conversation_youtube,all.csv
 korean,video,999,easyKorean,Easy\Korean,conversation_youtube,all.csv
 korean,video,999,pit^a^pat,撲通撲通韓國語,conversation_youtube,all.csv
 korean,video,999,inter^korean,中級韓國語,conversation_youtube,all.csv
-korean,video,999,TalkToMe,TalkTo\Me,conversation_youtube,all.csv
 korean,video,999,yomitabi,yomitabi\日本遊,conversation_youtube,all.csv
 korean,video,999,Tayoni,Tayoni\Podcast,conversation_youtube,all.csv
 korean,video,999,sejong1,世宗韓國會話1,conversation_youtube,all.csv
@@ -111,12 +111,16 @@ korean,video,999,sejong3,世宗韓國會話3,conversation_youtube,all.csv
 korean,video,999,sejong4,世宗韓國會話4,conversation_youtube,all.csv
 korean,video,999,drama,看戲劇學韓語,conversation_youtube,all.csv
 
-### 學習法
-learn,game,5,learn,專注力,game_focus,1,1.\數字方格
-#learn,game,5,learn,國語,game_word_chain,1,1.\字詞接龍
-learn,video,999,hongkong^transpotation,香港交通工具歌🚙,conversation_youtube,all.csv
-
 ### 數學
 math,calc,99,junior1,小一,calc,AddSub^10~1~9,十位數\加減
 math,calc,99,junior21,小二上,calc,AddSub^100~11~99,二位數\加減,clock,時鐘,3digit,三位數,shape,形狀與邊,2step~1~9,兩步驟加減
 math,calc,99,junior22,小二下,calc,2step2~11~99,兩步驟加減2,multi~1~9,個位數乘法
+
+### 電腦
+computer,devops,999,Azure,Azure Devops,conversation_youtube,all.csv
+
+### 幼兒
+learn,game,5,learn,專注力,game_focus,1,1.\數字方格
+#learn,game,5,learn,國語,game_word_chain,1,1.\字詞接龍
+learn,video,999,hongkong^transpotation,香港交通工具歌🚙,conversation_youtube,all.csv
+

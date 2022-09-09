@@ -395,13 +395,16 @@ function showTopic() {
           // alert(tmpMessage);
         }
 
-        tmpMessage += "<span style='color:blue;'>";
-        for (k = 0; k < tmpLevel; k++) {
-          tmpMessage += "★";
-        }
-        for (; k < 3; k++) {
-          tmpMessage += "✩";
-        }
+        // tmpMessage += "<span style='color:blue;'>";
+        tmpMessage =
+          tmpMessage +
+          "<span style='color:blue;'" +
+          'id="' +
+          curClassID +
+          '_star" >';
+
+        tmpMessage += showStar(tmpLevel);
+
         tmpMessage += "</span>";
         c.innerHTML = tmpMessage;
       }
@@ -440,4 +443,15 @@ function getStarLevel(tmpQuiz) {
   }
 
   return i;
+}
+
+function showStar(tmpLevel) {
+  var returnStar = "";
+  for (k = 0; k < tmpLevel; k++) {
+    returnStar += "★";
+  }
+  for (; k < 3; k++) {
+    returnStar += "✩";
+  }
+  return returnStar;
 }
