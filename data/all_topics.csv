@@ -118,6 +118,7 @@ math,calc,99,junior22,小二下,calc,2step2~11~99,兩步驟加減2,multi~1~9,個
 
 ### 電腦
 computer,devops,999,azure,Azure Devops,conversation_youtube,all.csv
+computer,devops,999,cassandra,Cassandra Crash Course,conversation_youtube,all.csv
 
 ### 幼兒
 learn,game,5,learn,專注力,game_focus,1,1.\數字方格
