@@ -2,15 +2,6 @@
 import game_focus from "./game_focus.js";
 import loadWordChain from "./game_word_chain.js";
 
-//disable window scroll
-// const container = document.querySelector(".container")[0];
-// var scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-// var scrollLeft = window.pageXOffset || document.documentElement.scrollLeft;
-// window.onscroll = function () {
-//   container.scrollTo(scrollLeft, scrollTop);
-// };
-//disable window scroll_end
-
 window.pronClick = pronClick;
 window.confirmClick = confirmClick;
 window.optionSelected = optionSelected;
@@ -68,7 +59,7 @@ class Playlist {
 let rowSelected;
 let startTime, finishTime;
 let nowAudioLoop = false;
-var subtitles = "";
+let subtitles = "";
 var subTitleCnt = 0;
 let audio, source;
 let autoRowSelected = 0;
@@ -76,9 +67,9 @@ let myAudioTableRow;
 let bRemainHighlight = false;
 
 //subtitleEditable
-let bSubtitleEditable = true;
+let bSubtitleEditable = false;
 let audio_sec_bottom;
-let delBtn, insBtn, saveBtn;
+let delBtn, insBtn, saveBtn, readBtn;
 
 /*5.2 subtitle youtube */
 let youtube_mode = false,
@@ -334,11 +325,6 @@ function startQuiz() {
   //0.1 disable all test buttons
   disableBtnStatus(true);
 
-  // let small_wrong_links = document.querySelectorAll(".wrong-button");
-  // for (let i = 0; i < small_wrong_links.length; i++) {
-  //   small_wrong_links[i].disabled = true;
-  // }
-
   //0.2. disable all test buttons
   //0.直接聽錄音
   if (curQuizType.includes("conversation_youtube")) {
@@ -396,9 +382,6 @@ function startClass() {
 
   imgContent =
     "<img src='https://photos.google.com/album/AF1QipPZ9tRkjIAhPkRWgoLdUxPD4a-jG0A5d2hFhmF7/photo/AF1QipMGaxE4yUAS8C6kiydVajnag8BZ3ZgCAtJu8APq' />";
-
-  // imgContent =
-  //   "<img src='https://photos.google.com/album/AF1QipPZ9tRkjIAhPkRWgoLdUxPD4a-jG0A5d2hFhmF7/photo/AF1QipMGaxE4yUAS8C6kiydVajnag8BZ3ZgCAtJu8APq'>";
 
   modalContent.innerHTML += imgContent;
 
@@ -695,11 +678,9 @@ function getQuestions() {
         varArr.push(newValue);
       }
       for (var x = 0; x < singQuesArr.length; x++) {
-        // alert(singQuesArr[x]);
         console.log(x + ":(begin):" + singQuesArr[x]);
         singQuesArr[x] = changeVariable(singQuesArr[x], varArr);
         console.log(x + ":(end):" + singQuesArr[x]);
-        // alert(singQuesArr[x]);
       }
     }
 
@@ -1264,25 +1245,30 @@ function raiseStarLevel() {
 
 //3. 播放器
 function readSubtitles(srtFile) {
-  subtitles = [];
-  subTitleCnt = 0;
   if (checkFileExist(srtFile) == false) {
     let subtitle = new Subtitle();
     subtitle.numb = 1;
     subtitle.content = "";
     subtitles.push(subtitle);
-    // alert("Quiz file [" + srtFile + "] does not exist.");
     return false;
   }
   var read = new XMLHttpRequest();
   read.open("GET", srtFile, false);
   read.setRequestHeader("Cache-Control", "no-cache");
   read.send();
+  var displayName = read.responseText;
+  // var displayName = read.responseText.replace(/’/g, "'");
+  // var quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
+  // youtube_url = quesArr[0];
+  setSubtitles(displayName);
+}
 
-  var displayName = read.responseText.replace(/’/g, "'");
-  var quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
+function setSubtitles(contents) {
+  subtitles = [];
+  subTitleCnt = 0;
+
+  var quesArr = contents.replace(/\r\n/g, "\n").split("\n");
   let quesCnt = quesArr.length;
-  youtube_url = quesArr[0];
 
   for (let k = 0; k < quesCnt; k++) {
     if (quesArr[k].includes("-->")) {
@@ -1290,12 +1276,10 @@ function readSubtitles(srtFile) {
       subtitles.push(subtitle);
     }
   }
-  let subtitle = new Subtitle();
-  subtitles.push(subtitle);
-  // if (subtitles.length < 1) return;
 
   subTitleCnt = 0;
   var nowStatus = 0; //0:nothing,1:start
+
   bRemainHighlight = false;
   for (let k = 0; k < quesCnt; k++) {
     if (quesArr[k].includes("-->")) {
@@ -1312,31 +1296,76 @@ function readSubtitles(srtFile) {
           nowStatus = 0;
           subTitleCnt++;
         } else {
-          // if (quesArr[k].includes("<em>")) {
-          //   bRemainHighlight = true;
-          //ben_debug_20220911 }
-          subtitles[subTitleCnt].content =
-            subtitles[subTitleCnt].content + " " + quesArr[k];
+          if (subtitles[subTitleCnt].content.length > 0)
+            subtitles[subTitleCnt].content += "\n";
+          // subtitles[subTitleCnt].content += "<br>";
+          subtitles[subTitleCnt].content += quesArr[k];
         }
       }
     }
   }
-  subtitles[subTitleCnt].numb = subTitleCnt + 1;
-  subtitles[subTitleCnt].content = "";
-  subTitleCnt++;
+  //add one line if last line's content is not null
+  if (subtitles[subTitleCnt - 1].content.length > 0) {
+    let subtitle = new Subtitle();
+    subtitles.push(subtitle);
+    subtitles[subTitleCnt].numb = subTitleCnt + 1;
+    subtitles[subTitleCnt].content = "";
+    subTitleCnt++;
+  }
 }
 
 function highlight_start(content) {
   var return_content;
   if (content.length == 0) return content;
+  return_content = "";
 
-  return_content = content;
+  var lineArr = content.replace(/\r\n/g, "\n").split("\n");
+  for (var x = 0; x < lineArr.length; x++) {
+    var line_content = lineArr[x];
+    if (bSubtitleEditable) {
+      return_content = return_content + line_content + "<br>";
+      continue;
+    }
 
-  return_content = return_content.replaceAll(
-    "<em>",
-    "<span style='background-color:yellow'>"
-  );
-  return_content = return_content.replaceAll("</em>", "</span>");
+    const converter = new showdown.Converter();
+    // alert(line_content);
+    const html = converter.makeHtml(line_content);
+    line_content = html;
+    // alert(html);
+
+    //1.replace <em> </em>
+    // line_content = line_content.replaceAll(
+    //   "<em>",
+    //   "<span style='background-color:yellow'>"
+    // );
+    // line_content = line_content.replaceAll("</em>", "</span>");
+
+    //2. handle Header (#)
+    // if (line_content.substr(0, 1) == "#") {
+    //   line_content =
+    //     "<h3>" + line_content.substr(1, line_content.length - 1) + "</h3>";
+    // } else {
+    //   line_content += "<br>";
+    // }
+
+    //3. handle Incident (>)
+    // if (line_content.trim().substr(0, 1) == ">") {
+    //   line_content =
+    //     "<blockquote>" +
+    //     line_content.trim().substr(1, line_content.trim().length - 1) +
+    //     "</blockquote>";
+    // }
+
+    //4. handle Header (*)
+    // if (line_content.trim().substr(0, 1) == "*") {
+    //   line_content =
+    //     "<li>" +
+    //     line_content.trim().substr(1, line_content.trim().length - 1) +
+    //     "</li>";
+    // }
+
+    return_content += line_content;
+  }
 
   return return_content;
 }
@@ -1376,7 +1405,7 @@ function showTable() {
     c = r.insertCell(-1);
     c.innerHTML = subtitles[k].numb;
     c.onclick = function () {
-      selectRow(this);
+      selectRow(this, 0);
     };
 
     c = r.insertCell(-1);
@@ -1397,48 +1426,40 @@ function showTable() {
       c.style.display = "none";
     }
 
-    // r.onclick = function () {
-    //   selectRow(this);
-    //   tableRowCnt++;
-    // };
     c = r.insertCell(-1);
     c.onclick = function () {
-      selectRow(this);
+      selectRow(this, 3);
     };
     c.onkeyup = function () {
       changeRow(this);
     };
-
     c.innerHTML = highlight_start(subtitles[k].content);
   }
 
-  if (tableRowCnt > 0 || bSubtitleEditable) {
-    th = t.createTHead();
-    r = th.insertRow(0);
+  th = t.createTHead();
+  r = th.insertRow(0);
+  c = r.insertCell(-1);
+  c.style.width = "7%";
+  c.innerHTML = "#";
+  if (bSubtitleEditable) {
     c = r.insertCell(-1);
-    c.style.width = "7%";
-    c.innerHTML = "#";
-    if (bSubtitleEditable) {
-      c = r.insertCell(-1);
-      c.style.width = "10%";
-      c.innerHTML = "開始";
-      c = r.insertCell(-1);
-      c.style.width = "10%";
-      c.innerHTML = "結束";
-    }
+    c.style.width = "10%";
+    c.innerHTML = "開始";
     c = r.insertCell(-1);
-    c.style.width = "93%";
-    c.innerHTML = "句子";
-    audio_sec_bottom = document.createElement("div");
-    audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
-    audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
-    modalContent.appendChild(audio_sec_bottom);
-    audio_sec_bottom.appendChild(t);
-    // if (bSubtitleEditable) {
-    //   insertTableRow(subtitles.length + 1);
-    //   t.rows[subtitles.length + 1].cells[0].innerText = subtitles.length + 1;
-    // }
+    c.style.width = "10%";
+    c.innerHTML = "結束";
   }
+  c = r.insertCell(-1);
+  c.style.width = "93%";
+  c.innerHTML = "句子";
+  audio_sec_bottom = document.createElement("div");
+  audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+  audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
+  modalContent.appendChild(audio_sec_bottom);
+  audio_sec_bottom.appendChild(t);
+  // }
+
+  if (!bSubtitleEditable && tableRowCnt == 0) t.style.display = "none";
 }
 
 function resetTableNum() {
@@ -1461,21 +1482,50 @@ const downloadToFile = (content, filename, contentType) => {
 
 function saveTableContent() {
   var subContent;
+  subContent = youtube_url + "\n";
+  subContent = subContent + getTableContent();
+
+  downloadToFile(subContent, "1.txt", "text/plain");
+}
+
+function getTableContent() {
+  var tableContent;
   var table = document.getElementById("my_audio_table");
 
-  subContent = youtube_url + "\n";
+  tableContent = youtube_url + "\n";
   for (var i = 1, row; (row = table.rows[i]); i++) {
-    subContent = subContent + row.cells[0].innerText + "\n";
-    subContent =
-      subContent +
+    tableContent = tableContent + row.cells[0].innerText + "\n";
+    tableContent =
+      tableContent +
       row.cells[1].innerText +
       " --> " +
       row.cells[2].innerText +
       "\n";
-    subContent = subContent + row.cells[3].innerText + "\n\n";
+    tableContent = tableContent + row.cells[3].innerText + "\n\n";
   }
+  return tableContent;
+}
 
-  downloadToFile(subContent, "1.txt", "text/plain");
+function readTableContent() {
+  var fileSelector = document.createElement("input");
+  fileSelector.setAttribute("type", "file");
+  fileSelector.click();
+
+  fileSelector.onchange = function () {
+    var file = this.files[0];
+    if (file) {
+      const reader = new FileReader();
+      reader.readAsText(file, "UTF-8");
+      reader.onload = (evt) => {
+        var fileContent = evt.target.result;
+        setSubtitles(fileContent);
+        showTable();
+      };
+      reader.onerror = (evt) => {
+        alert("error");
+      };
+    }
+  };
 }
 
 function insertTableRow(insNum) {
@@ -1503,7 +1553,7 @@ function insertTableRow(insNum) {
   };
   cNew = rNew.insertCell(-1);
   cNew.onclick = function () {
-    selectRow(this);
+    selectRow(this, 3);
   };
   cNew.onkeyup = function () {
     changeRow(this);
@@ -1543,7 +1593,6 @@ function startAudio(curQuiz) {
   playlistCnt = 0;
   playlists = [];
 
-  // alert(curQuiz);
   if (curQuiz.includes("Left@@@")) {
     bPlayerList = true;
     parseCsv(base_left_filename + "/all.csv");
@@ -1612,10 +1661,17 @@ function startAudio(curQuiz) {
       insBtn.style.display = "none";
       delBtn.style.display = "none";
       saveBtn.style.display = "none";
+      // readBtn.style.display = "none";
     } else {
       insBtn.style.display = "inline";
       delBtn.style.display = "inline";
       saveBtn.style.display = "inline";
+      // readBtn.style.display = "inline";
+      if (subtitles.length < 1) {
+        insertTableRow(0);
+        var nowTableContent = getTableContent();
+        setSubtitles(nowTableContent);
+      }
     }
     showTable();
   };
@@ -1652,33 +1708,45 @@ function startAudio(curQuiz) {
     }
     messageDiv.appendChild(subtitleEditable);
     messageDiv.appendChild(lblsubtitleEditable);
-    if (bSubtitleEditable) {
-      insBtn = document.createElement("button");
-      insBtn.innerText = "插入上列";
-      insBtn.classList.add("myButton");
-      insBtn.onclick = function () {
-        insertTableRow(autoRowSelected);
-        resetTableNum();
-      };
-      messageDiv.appendChild(insBtn);
+    // if (bSubtitleEditable) {
+    insBtn = document.createElement("button");
+    insBtn.innerText = "插入上列";
+    insBtn.classList.add("myButton");
+    insBtn.onclick = function () {
+      insertTableRow(autoRowSelected);
+      resetTableNum();
+      var nowTableContent = getTableContent();
+      setSubtitles(nowTableContent);
+    };
+    messageDiv.appendChild(insBtn);
 
-      delBtn = document.createElement("button");
-      delBtn.innerText = "刪除此列";
-      delBtn.classList.add("myButton");
-      delBtn.onclick = function () {
-        rowSelected.remove();
-        resetTableNum();
-      };
-      messageDiv.appendChild(delBtn);
+    delBtn = document.createElement("button");
+    delBtn.innerText = "刪除此列";
+    delBtn.classList.add("myButton");
+    delBtn.onclick = function () {
+      rowSelected.remove();
+      resetTableNum();
+      var nowTableContent = getTableContent();
+      setSubtitles(nowTableContent);
+    };
+    messageDiv.appendChild(delBtn);
 
-      saveBtn = document.createElement("button");
-      saveBtn.innerText = "儲存字幕";
-      saveBtn.classList.add("myButton");
-      saveBtn.onclick = function () {
-        saveTableContent();
-      };
-      messageDiv.appendChild(saveBtn);
-    }
+    saveBtn = document.createElement("button");
+    saveBtn.innerText = "儲存字幕";
+    saveBtn.classList.add("myButton");
+    saveBtn.onclick = function () {
+      saveTableContent();
+    };
+    messageDiv.appendChild(saveBtn);
+
+    readBtn = document.createElement("button");
+    readBtn.innerText = "讀取字幕";
+    readBtn.classList.add("myButton");
+    readBtn.onclick = function () {
+      readTableContent();
+    };
+    messageDiv.appendChild(readBtn);
+    // }
     messageDiv.classList.add("myMessageDiv");
     audio_sec_top.appendChild(messageDiv);
 
@@ -1686,6 +1754,7 @@ function startAudio(curQuiz) {
       insBtn.style.display = "none";
       delBtn.style.display = "none";
       saveBtn.style.display = "none";
+      // readBtn.style.display = "none";
     }
 
     // 秀上方訊息-結束
@@ -1800,6 +1869,7 @@ function startAudio(curQuiz) {
     let currentTime;
 
     /*pre-check*/
+    // if (bSubtitleEditable) return;
     if (subtitles.length <= 0) return;
     if (autoRowSelected > subtitles.length) return;
     /*pre-check*/
@@ -1812,27 +1882,34 @@ function startAudio(curQuiz) {
 
     if (!nowAudioLoop) {
       if (bRemainHighlight) return;
-      if (currentTime > subtitles[autoRowSelected - 1].finish) {
-        myAudioTableRow[autoRowSelected - 1].style.color = "blue";
-        while (currentTime > subtitles[autoRowSelected].finish) {
-          if (autoRowSelected < subtitles.length) {
-            autoRowSelected++;
-          }
-        }
 
-        myAudioTableRow[autoRowSelected].style.color = "red";
-        autoRowSelected++;
-        rowSelected = myAudioTableRow[autoRowSelected - 1];
-        // alert("ben_debug_1639");
-        var nowTop =
-          (autoRowSelected - 1) * (audio_sec_bottom.scrollHeight / subTitleCnt);
-        console.log("nowTop:" + nowTop);
-        audio_sec_bottom.scrollTop =
-          (autoRowSelected - 1) * (audio_sec_bottom.scrollHeight / subTitleCnt);
+      if (currentTime > subtitles[autoRowSelected - 1].finish) {
+        if (bSubtitleEditable) {
+          if (youtube_mode) player.stopVideo();
+        } else {
+          myAudioTableRow[autoRowSelected - 1].style.color = "blue";
+          while (currentTime > subtitles[autoRowSelected].finish) {
+            if (autoRowSelected < subtitles.length) {
+              autoRowSelected++;
+            }
+          }
+          myAudioTableRow[autoRowSelected].style.color = "red";
+          autoRowSelected++;
+          rowSelected = myAudioTableRow[autoRowSelected - 1];
+          var nowTop =
+            (autoRowSelected - 1) *
+            (audio_sec_bottom.scrollHeight / subTitleCnt);
+          console.log("nowTop:" + nowTop);
+          audio_sec_bottom.scrollTop =
+            (autoRowSelected - 1) *
+            (audio_sec_bottom.scrollHeight / subTitleCnt);
+        }
       }
     } else {
       if (currentTime > subtitles[autoRowSelected - 1].finish) {
-        if (youtube_mode) {
+        if (bSubtitleEditable) {
+          audio.pause();
+        } else if (youtube_mode) {
           player.seekTo(Math.floor(subtitles[autoRowSelected - 1].start));
           // player.seekToMillis(subtitles[autoRowSelected - 1].start);
         } else {
@@ -1847,8 +1924,8 @@ function startAudio(curQuiz) {
 }
 
 function getSecond(inputTime) {
-  if (inputTime.length < 1) {
-    return 0;
+  if (inputTime.length < 2) {
+    return 99999;
   }
   var secondArr = inputTime.split(":");
   var hour = Number(secondArr[0]);
@@ -1868,6 +1945,9 @@ function getSecond(inputTime) {
 function setSubtitleTime(iSelectedCol, iCol) {
   let time = player.getCurrentTime();
   iSelectedCol.parentNode.children[iCol].innerHTML = changeTimeString(time);
+  var nowRow = Number(iSelectedCol.parentNode.children[0].innerHTML);
+  if (iCol == 1) subtitles[nowRow - 1].start = time;
+  else if (iCol == 2) subtitles[nowRow - 1].finish = time;
 }
 
 function changeTimeString(iTime) {
@@ -1901,7 +1981,7 @@ function changeTimeString(iTime) {
   return returnStr;
 }
 
-function selectRow(c) {
+function selectRow(c, iCol) {
   var r = c.parentNode;
   if (rowSelected !== undefined) {
     rowSelected.style.color = "blue";
@@ -1914,13 +1994,12 @@ function selectRow(c) {
   if (bSubtitleEditable) {
     rowSelected.children[3].setAttribute("contenteditable", "true");
   }
-
   var nowRow = Number(r.children[0].innerHTML);
   var nowSec = getSecond(r.children[1].innerHTML);
   if (youtube_mode) {
-    // player.stopVideo();
-    // player.seekToMillis(subtitles[nowRow - 1].start);
-    player.seekTo(nowSec);
+    if (!(bSubtitleEditable && iCol == 3)) {
+      player.seekTo(nowSec);
+    }
   } else {
     audio.pause();
     audio.currentTime = nowSec;
@@ -1940,9 +2019,12 @@ function changeRow(c) {
   var r = c.parentNode;
   var nowRow = Number(r.children[0].innerHTML);
   var table = document.getElementById("my_audio_table");
+  subtitles[nowRow - 1].content = table.rows[nowRow].children[3].innerText;
   if (nowRow == table.rows.length - 1) {
     if (rowSelected.children[3].innerText.length > 0) {
       insertTableRow(nowRow + 1);
+      var nowTableContent = getTableContent();
+      setSubtitles(nowTableContent);
     }
   }
 }
@@ -1979,11 +2061,6 @@ function changeVariable(inputString, varArr) {
   newString = newString.replaceAll("{c}", varArr[2]);
   // var debug_count = 0;
   while (newString.toString().indexOf("<") > -1) {
-    // debug_count++;
-    // if (debug_count > 10) {
-    //   alert(debug_count + ":" + newString);
-    //   break;
-    // }
     var begin = newString.indexOf("<");
     var end = newString.indexOf(">");
     var length = newString.length;
@@ -1992,11 +2069,7 @@ function changeVariable(inputString, varArr) {
       break;
     }
     var calcString = newString.substring(begin + 1, end);
-    // alert(inputString);
-    // alert(varArr[0] + ":" + varArr[1] + ":" + varArr[2]);
-    // alert(calcString);
     var resultString = eval(calcString);
-    // alert(begin + ":" + end + ":" + length);
     if (begin == 0 && end == length - 1) {
       newString = resultString;
     } else if (begin == 0) {
@@ -2007,7 +2080,6 @@ function changeVariable(inputString, varArr) {
         resultString +
         newString.substring(end + 1, length);
     }
-    // alert(newString);
   }
 
   return newString;
