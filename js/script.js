@@ -6,6 +6,13 @@ window.pronClick = pronClick;
 window.confirmClick = confirmClick;
 window.optionSelected = optionSelected;
 //selecting all required elements
+let arrPlayMode = [
+  { value: "ArticleStop", text: "整篇播放" },
+  { value: "SentenceStop", text: "單句停止" },
+  { value: "SentenceRepeat", text: "單句重覆" },
+];
+let playMode = 0;
+
 const maxQuesCnt = 500;
 const start_btn = document.querySelector(".test-button");
 const quiz_box = document.querySelector(".quiz_box");
@@ -714,7 +721,11 @@ function getQuestions() {
       question.quizType = "spell";
       question.answer = tmpQues.substr(tmpStart + 1, tmpEnd - tmpStart - 1);
       quesTimer = 60;
-    } else if (singQuesArr[2] == "--" || curQuizType.includes("conversation")) {
+    } else if (
+      curQuizType == "spell" ||
+      singQuesArr[2] == "--" ||
+      curQuizType.includes("conversation")
+    ) {
       /* for all spell  */
       question.question =
         "[" + "X".repeat(singQuesArr[0].length) + "]" + singQuesArr[1];
@@ -1326,7 +1337,6 @@ function highlight_start(content) {
       return_content = return_content + line_content + "<br>";
       continue;
     }
-
     const converter = new showdown.Converter();
     // alert(line_content);
     const html = converter.makeHtml(line_content);
@@ -1644,7 +1654,7 @@ function startAudio(curQuiz) {
     showTable();
   };
 
-  /* 2.2. 字幕編輯模式 */
+  /* 2.2.2. 字幕編輯模式 */
   var subtitleEditable = document.createElement("input");
   subtitleEditable.type = "checkbox";
   subtitleEditable.name = "subtitleEditable";
@@ -1702,6 +1712,20 @@ function startAudio(curQuiz) {
     audio_sec_top.appendChild(playerDiv);
 
     // 秀上方訊息
+    /* 2.2.1. 播放模式 */
+    var dropdown = document.createElement("select");
+    dropdown.classList.add("select-dropdown");
+    for (var i = 0; i < arrPlayMode.length; i++) {
+      var opt = document.createElement("option");
+      opt.text = arrPlayMode[i].text;
+      opt.value = arrPlayMode[i].value;
+      dropdown.options.add(opt);
+      messageDiv.appendChild(dropdown);
+    }
+    dropdown.onchange = function () {
+      playMode = this.selectedIndex;
+    };
+    /* 2.2.2. 編輯字幕 */
     if (bRemainHighlight) {
       messageDiv.appendChild(remainHighlight);
       messageDiv.appendChild(lblRemainHighlight);
@@ -1880,12 +1904,21 @@ function startAudio(curQuiz) {
       currentTime = player.playerInfo.currentTime;
     } else currentTime = audio.currentTime;
 
-    if (!nowAudioLoop) {
+    if (
+      arrPlayMode[playMode].value == "ArticleStop" ||
+      arrPlayMode[playMode].value == "SentenceStop"
+    ) {
       if (bRemainHighlight) return;
 
       if (currentTime > subtitles[autoRowSelected - 1].finish) {
-        if (bSubtitleEditable) {
-          if (youtube_mode) player.stopVideo();
+        if (
+          bSubtitleEditable ||
+          arrPlayMode[playMode].value == "SentenceStop"
+        ) {
+          if (youtube_mode) {
+            player.seekTo(subtitles[autoRowSelected - 1].start);
+            player.pauseVideo();
+          }
         } else {
           myAudioTableRow[autoRowSelected - 1].style.color = "blue";
           while (currentTime > subtitles[autoRowSelected].finish) {
@@ -1905,13 +1938,12 @@ function startAudio(curQuiz) {
             (audio_sec_bottom.scrollHeight / subTitleCnt);
         }
       }
-    } else {
+    } else if (arrPlayMode[playMode].value == "SentenceRepeat") {
       if (currentTime > subtitles[autoRowSelected - 1].finish) {
         if (bSubtitleEditable) {
           audio.pause();
         } else if (youtube_mode) {
           player.seekTo(Math.floor(subtitles[autoRowSelected - 1].start));
-          // player.seekToMillis(subtitles[autoRowSelected - 1].start);
         } else {
           audio.pause();
           audio.currentTime = subtitles[autoRowSelected - 1].start;
