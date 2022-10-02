@@ -1284,6 +1284,11 @@ function setSubtitles(contents) {
   var quesArr = contents.replace(/\r\n/g, "\n").split("\n");
   let quesCnt = quesArr.length;
 
+  if (quesArr[0].includes("youtube")) {
+    var videoId = quesArr[0].split("=")[1].split("&")[0].split(",")[0];
+    player.loadVideoById(videoId);
+  }
+
   for (let k = 0; k < quesCnt; k++) {
     if (quesArr[k].includes("-->")) {
       let subtitle = new Subtitle();
@@ -1335,6 +1340,7 @@ function setSubtitles(contents) {
 
 function highlight_start(lineno, content) {
   var return_content;
+  if (content == null) return content;
   if (content.length == 0) return content;
   return_content = "";
   var lineArr = content.replace(/\r\n/g, "\n").split("\n");
