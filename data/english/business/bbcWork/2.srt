@@ -4,7 +4,7 @@ Hold tight please
 
 2
 00:00:10,752 --> 00:00:16,896
-This is Anna on a bus going to an interview for a job as a <em>sales executive(業務經理)</em>
+This is Anna on a bus going to an interview for a job as a [[sales executive(業務經理)]]
 
 3
 00:00:17,152 --> 00:00:18,688
@@ -36,11 +36,11 @@ You'll be fine
 
 10
 00:00:34,048 --> 00:00:36,352
-<em>You need to sell yourself (妳要推銷妳自己)</em>
+[[You need to sell yourself (妳要推銷妳自己)]]
 
 11
 00:00:36,864 --> 00:00:38,656
-<em>Be confident not arrogant (有自信，不自大)</em>
+[[Be confident not arrogant (有自信，不自大)]]
 
 12
 00:00:38,912 --> 00:00:39,936
@@ -52,15 +52,15 @@ Like
 
 14
 00:00:40,960 --> 00:00:43,264
-<em>A good example that comes to mind （我想到個好例子）</em>
+[[A good example that comes to mind （我想到個好例子）]]
 
 15
 00:00:44,032 --> 00:00:45,824
-<em>I'm particularly proud of（我特別自豪的是）</em>
+[[I'm particularly proud of（我特別自豪的是）]]
 
 16
 00:00:46,336 --> 00:00:48,384
-<em>Timekeeping is important to me （守時對我很重要）</em>
+[[Timekeeping is important to me （守時對我很重要）]]
 
 17
 00:00:48,896 --> 00:00:49,664
@@ -112,7 +112,7 @@ Is that it
 
 29
 00:01:21,152 --> 00:01:27,296
-Thanks Hannah <em>your qualifications look impressive（妳的經歷讓人印象深刻）</em> but I was wondering what sales experience
+Thanks Hannah [[your qualifications look impressive（妳的經歷讓人印象深刻）]] but I was wondering what sales experience
 
 30
 00:01:27,552 --> 00:01:28,576
@@ -192,7 +192,7 @@ So you want an example
 
 49
 00:02:16,192 --> 00:02:19,776
-I was<em> a treasure of the debating society at University (大學辯論社會計)</em>
+I was [[ a treasure of the debating society at University (大學辯論社會計)]]
 
 50
 00:02:20,800 --> 00:02:23,616
@@ -200,7 +200,7 @@ That was okay I suppose
 
 51
 00:02:23,872 --> 00:02:25,664
-<em>Be more enthusiastic （再多點熱情）</em>
+[[Be more enthusiastic （再多點熱情）]]
 
 52
 00:02:25,920 --> 00:02:28,992
@@ -228,7 +228,7 @@ I'm particularly proud of
 
 58
 00:02:45,120 --> 00:02:46,912
-<em>Positive but not boasting (正向但沒有吹噓)</em>
+[[Positive but not boasting (正向但沒有吹噓)]]
 
 59
 00:02:47,424 --> 00:02:50,240

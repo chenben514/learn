@@ -257,6 +257,15 @@ function showTopic() {
       }
     }
 
+    var maxLength = 0;
+    for (j = 0; j < topics[i].small_subjs.length; j++) {
+      if (topics[i].small_subj_explains[j].length > maxLength) {
+        maxLength = topics[i].small_subj_explains[j].length;
+        // alert("maxLength:" + maxLength);
+        // alert("content:" + topics[i].small_subj_explains[j]);
+      }
+    }
+
     for (j = 0; j < topics[i].small_subjs.length; j++) {
       var curButton = document.createElement("button");
       var c, r, t;
@@ -278,6 +287,10 @@ function showTopic() {
         topics[i].small_subjs[j];
 
       curButton.setAttribute("class", "test-button");
+      if (maxLength > 10) {
+        curButton.classList.add("test-high-button");
+      }
+
       curButton.setAttribute("background-color", "lightblue");
       curButton.setAttribute("id", curBaseID);
       if (curProcCnt >= topics[i].open_course_cnt) {
@@ -288,17 +301,11 @@ function showTopic() {
           j
         ].replaceAll("\\", "\n");
         curButton.innerText += topics[i].small_subj_explains[j];
-
-        // if (topics[i].small_subj_explains[j].includes("\\")) {
-        //   curButton.innerText =
-        //     topics[i].small_subj_explains[j].split("\\")[0] +
-        //     "\n" +
-        //     topics[i].small_subj_explains[j].split("\\")[1];
-        // } else curButton.innerText = topics[i].small_subj_explains[j];
-
-        // alert(curButton.innerText);
-        // curButton.innerText = "1.1.1  \n節省";
       }
+      // alert(
+      //   curButton.innerText.length -
+      //     curButton.innerText.replace("\n", "").length
+      // );
 
       var tmpLevel = getStarLevel(curButton.id);
       if (tmpLevel >= 3) {

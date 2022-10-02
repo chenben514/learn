@@ -13,6 +13,8 @@ let arrPlayMode = [
 ];
 let playMode = 0;
 
+let audio_sec_top;
+
 const maxQuesCnt = 500;
 const start_btn = document.querySelector(".test-button");
 const quiz_box = document.querySelector(".quiz_box");
@@ -64,6 +66,7 @@ class Playlist {
 
 /*5.1 subtitle audio */
 let rowSelected;
+let actualRow = 1;
 let startTime, finishTime;
 let nowAudioLoop = false;
 let subtitles = "";
@@ -1311,6 +1314,9 @@ function setSubtitles(contents) {
             subtitles[subTitleCnt].content += "\n";
           // subtitles[subTitleCnt].content += "<br>";
           subtitles[subTitleCnt].content += quesArr[k];
+          if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
+            bRemainHighlight = true;
+          }
         }
       }
     }
@@ -1320,59 +1326,51 @@ function setSubtitles(contents) {
     let subtitle = new Subtitle();
     subtitles.push(subtitle);
     subtitles[subTitleCnt].numb = subTitleCnt + 1;
+    subtitles[subTitleCnt].start = subtitles[subTitleCnt - 1].finish;
+    subtitles[subTitleCnt].finish = subtitles[subTitleCnt - 1].finish;
     subtitles[subTitleCnt].content = "";
     subTitleCnt++;
   }
 }
 
-function highlight_start(content) {
+function highlight_start(lineno, content) {
   var return_content;
   if (content.length == 0) return content;
   return_content = "";
-
   var lineArr = content.replace(/\r\n/g, "\n").split("\n");
+
+  var tmpColor;
+  if (lineno % 2 == 1) {
+    tmpColor = "DDD";
+  } else {
+    tmpColor = "EEE";
+  }
+
   for (var x = 0; x < lineArr.length; x++) {
     var line_content = lineArr[x];
     if (bSubtitleEditable) {
       return_content = return_content + line_content + "<br>";
       continue;
     }
+    if (line_content.startsWith("[A]")) {
+      line_content =
+        '反白右側文字看答案：<span style="color:#' +
+        tmpColor +
+        '">' +
+        line_content.substr(3, line_content.length - 3) +
+        "</span>";
+    }
     const converter = new showdown.Converter();
-    // alert(line_content);
     const html = converter.makeHtml(line_content);
     line_content = html;
-    // alert(html);
 
-    //1.replace <em> </em>
-    // line_content = line_content.replaceAll(
-    //   "<em>",
-    //   "<span style='background-color:yellow'>"
-    // );
-    // line_content = line_content.replaceAll("</em>", "</span>");
-
-    //2. handle Header (#)
-    // if (line_content.substr(0, 1) == "#") {
-    //   line_content =
-    //     "<h3>" + line_content.substr(1, line_content.length - 1) + "</h3>";
-    // } else {
-    //   line_content += "<br>";
-    // }
-
-    //3. handle Incident (>)
-    // if (line_content.trim().substr(0, 1) == ">") {
-    //   line_content =
-    //     "<blockquote>" +
-    //     line_content.trim().substr(1, line_content.trim().length - 1) +
-    //     "</blockquote>";
-    // }
-
-    //4. handle Header (*)
-    // if (line_content.trim().substr(0, 1) == "*") {
-    //   line_content =
-    //     "<li>" +
-    //     line_content.trim().substr(1, line_content.trim().length - 1) +
-    //     "</li>";
-    // }
+    //1.replace []
+    var tmpWhiteString = "<span style='color:#" + tmpColor + "'>";
+    line_content = line_content.replaceAll(
+      "[[",
+      "<span style='background-color:yellow'>"
+    );
+    line_content = line_content.replaceAll("]]", "</span>");
 
     return_content += line_content;
   }
@@ -1399,7 +1397,7 @@ function showTable() {
   tableRowCnt = 0;
   for (let k = 0; k < subtitles.length; k++) {
     if (bRemainHighlight) {
-      if (subtitles[k].content.includes("<em>")) {
+      if (subtitles[k].content.includes("[[")) {
         r = t.insertRow(-1);
         tableRowCnt++;
       } else {
@@ -1443,7 +1441,7 @@ function showTable() {
     c.onkeyup = function () {
       changeRow(this);
     };
-    c.innerHTML = highlight_start(subtitles[k].content);
+    c.innerHTML = highlight_start(k, subtitles[k].content);
   }
 
   th = t.createTHead();
@@ -1638,55 +1636,7 @@ function startAudio(curQuiz) {
     '<span class="close" id="closeAudio">&times;</span><p>';
 
   /* 2. audio player */
-  /* 2.1. 過濾只留重點列 */
-  var remainHighlight = document.createElement("input");
-  remainHighlight.type = "checkbox";
-  remainHighlight.name = "remainHighlight";
-  remainHighlight.id = "remainHighlight";
-  remainHighlight.classList.add("remainHighlight");
-  remainHighlight.checked = bRemainHighlight;
-  var lblRemainHighlight = document.createElement("label");
-  lblRemainHighlight.innerText = "過濾只留重點列";
-  lblRemainHighlight.classList.add("lblRemainHighlight");
-  lblRemainHighlight.htmlFor = "remainHighlight";
-  remainHighlight.onclick = function () {
-    bRemainHighlight = remainHighlight.checked;
-    showTable();
-  };
 
-  /* 2.2.2. 字幕編輯模式 */
-  var subtitleEditable = document.createElement("input");
-  subtitleEditable.type = "checkbox";
-  subtitleEditable.name = "subtitleEditable";
-  subtitleEditable.id = "subtitleEditable";
-  subtitleEditable.classList.add("remainHighlight");
-  subtitleEditable.checked = bSubtitleEditable;
-  var lblsubtitleEditable = document.createElement("label");
-  lblsubtitleEditable.innerText = "編輯字幕";
-  lblsubtitleEditable.classList.add("lblsubtitleEditable");
-  lblsubtitleEditable.htmlFor = "subtitleEditable";
-  subtitleEditable.onclick = function () {
-    bSubtitleEditable = subtitleEditable.checked;
-    if (!subtitleEditable.checked) {
-      insBtn.style.display = "none";
-      delBtn.style.display = "none";
-      saveBtn.style.display = "none";
-      // readBtn.style.display = "none";
-    } else {
-      insBtn.style.display = "inline";
-      delBtn.style.display = "inline";
-      saveBtn.style.display = "inline";
-      // readBtn.style.display = "inline";
-      if (subtitles.length < 1) {
-        insertTableRow(0);
-        var nowTableContent = getTableContent();
-        setSubtitles(nowTableContent);
-      }
-    }
-    showTable();
-  };
-
-  let audio_sec_top;
   audio_sec_top = document.createElement("div");
 
   if (curQuizType.includes("youtube")) {
@@ -1708,79 +1658,9 @@ function startAudio(curQuiz) {
     var playerDiv = document.createElement("div");
     playerDiv.setAttribute("id", "player-div");
     playerDiv.classList.add("myPlayerDiv");
-    var messageDiv = document.createElement("div");
     audio_sec_top.appendChild(playerDiv);
 
-    // 秀上方訊息
-    /* 2.2.1. 播放模式 */
-    var dropdown = document.createElement("select");
-    dropdown.classList.add("select-dropdown");
-    for (var i = 0; i < arrPlayMode.length; i++) {
-      var opt = document.createElement("option");
-      opt.text = arrPlayMode[i].text;
-      opt.value = arrPlayMode[i].value;
-      dropdown.options.add(opt);
-      messageDiv.appendChild(dropdown);
-    }
-    dropdown.onchange = function () {
-      playMode = this.selectedIndex;
-    };
-    /* 2.2.2. 編輯字幕 */
-    if (bRemainHighlight) {
-      messageDiv.appendChild(remainHighlight);
-      messageDiv.appendChild(lblRemainHighlight);
-    }
-    messageDiv.appendChild(subtitleEditable);
-    messageDiv.appendChild(lblsubtitleEditable);
-    // if (bSubtitleEditable) {
-    insBtn = document.createElement("button");
-    insBtn.innerText = "插入上列";
-    insBtn.classList.add("myButton");
-    insBtn.onclick = function () {
-      insertTableRow(autoRowSelected);
-      resetTableNum();
-      var nowTableContent = getTableContent();
-      setSubtitles(nowTableContent);
-    };
-    messageDiv.appendChild(insBtn);
-
-    delBtn = document.createElement("button");
-    delBtn.innerText = "刪除此列";
-    delBtn.classList.add("myButton");
-    delBtn.onclick = function () {
-      rowSelected.remove();
-      resetTableNum();
-      var nowTableContent = getTableContent();
-      setSubtitles(nowTableContent);
-    };
-    messageDiv.appendChild(delBtn);
-
-    saveBtn = document.createElement("button");
-    saveBtn.innerText = "儲存字幕";
-    saveBtn.classList.add("myButton");
-    saveBtn.onclick = function () {
-      saveTableContent();
-    };
-    messageDiv.appendChild(saveBtn);
-
-    readBtn = document.createElement("button");
-    readBtn.innerText = "讀取字幕";
-    readBtn.classList.add("myButton");
-    readBtn.onclick = function () {
-      readTableContent();
-    };
-    messageDiv.appendChild(readBtn);
-    // }
-    messageDiv.classList.add("myMessageDiv");
-    audio_sec_top.appendChild(messageDiv);
-
-    if (!subtitleEditable.checked) {
-      insBtn.style.display = "none";
-      delBtn.style.display = "none";
-      saveBtn.style.display = "none";
-      // readBtn.style.display = "none";
-    }
-
+    showMessage();
     // 秀上方訊息-結束
     modalContent.appendChild(audio_sec_top);
 
@@ -1871,6 +1751,7 @@ function startAudio(curQuiz) {
     audio_sec_top.appendChild(audio);
 
     modalContent.appendChild(audio_sec_top);
+    showMessage();
   }
 
   if (!curQuizType.includes("youtube")) {
@@ -1908,11 +1789,11 @@ function startAudio(curQuiz) {
       arrPlayMode[playMode].value == "ArticleStop" ||
       arrPlayMode[playMode].value == "SentenceStop"
     ) {
-      if (bRemainHighlight) return;
+      // if (bRemainHighlight) return;
 
-      if (currentTime > subtitles[autoRowSelected - 1].finish) {
+      if (currentTime > subtitles[actualRow - 1].finish) {
         if (
-          bSubtitleEditable ||
+          // bSubtitleEditable ||
           arrPlayMode[playMode].value == "SentenceStop"
         ) {
           if (youtube_mode) {
@@ -1920,22 +1801,28 @@ function startAudio(curQuiz) {
             player.pauseVideo();
           }
         } else {
-          myAudioTableRow[autoRowSelected - 1].style.color = "blue";
-          while (currentTime > subtitles[autoRowSelected].finish) {
-            if (autoRowSelected < subtitles.length) {
-              autoRowSelected++;
-            }
+          if (autoRowSelected == myAudioTableRow.length) {
+            player.pauseVideo();
+            return;
           }
+
+          myAudioTableRow[autoRowSelected - 1].style.color = "blue";
+          actualRow = Number(
+            myAudioTableRow[autoRowSelected].cells[0].innerText
+          );
+          // if (youtube_mode) {
+          //   player.seekTo(subtitles[actualRow - 1].start);
+          // }
           myAudioTableRow[autoRowSelected].style.color = "red";
           autoRowSelected++;
           rowSelected = myAudioTableRow[autoRowSelected - 1];
+          var tmpTableCnt = myAudioTableRow.length;
           var nowTop =
             (autoRowSelected - 1) *
-            (audio_sec_bottom.scrollHeight / subTitleCnt);
-          console.log("nowTop:" + nowTop);
+            (audio_sec_bottom.scrollHeight / tmpTableCnt);
           audio_sec_bottom.scrollTop =
             (autoRowSelected - 1) *
-            (audio_sec_bottom.scrollHeight / subTitleCnt);
+            (audio_sec_bottom.scrollHeight / tmpTableCnt);
         }
       }
     } else if (arrPlayMode[playMode].value == "SentenceRepeat") {
@@ -1955,6 +1842,126 @@ function startAudio(curQuiz) {
   }
 }
 
+function showMessage() {
+  /* 2.1. 過濾只留重點列 */
+  var remainHighlight = document.createElement("input");
+  remainHighlight.type = "checkbox";
+  remainHighlight.name = "remainHighlight";
+  remainHighlight.id = "remainHighlight";
+  remainHighlight.classList.add("remainHighlight");
+  remainHighlight.checked = bRemainHighlight;
+  var lblRemainHighlight = document.createElement("label");
+  lblRemainHighlight.innerText = "重點列";
+  lblRemainHighlight.classList.add("lblsubtitleEditable");
+  lblRemainHighlight.htmlFor = "remainHighlight";
+  remainHighlight.onclick = function () {
+    bRemainHighlight = remainHighlight.checked;
+    showTable();
+  };
+
+  /* 2.2.2. 字幕編輯模式 */
+  var subtitleEditable = document.createElement("input");
+  subtitleEditable.type = "checkbox";
+  subtitleEditable.name = "subtitleEditable";
+  subtitleEditable.id = "subtitleEditable";
+  subtitleEditable.classList.add("remainHighlight");
+  subtitleEditable.checked = bSubtitleEditable;
+  var lblsubtitleEditable = document.createElement("label");
+  lblsubtitleEditable.innerText = "編輯字幕";
+  lblsubtitleEditable.classList.add("lblsubtitleEditable");
+  lblsubtitleEditable.htmlFor = "subtitleEditable";
+  subtitleEditable.onclick = function () {
+    bSubtitleEditable = subtitleEditable.checked;
+    if (!subtitleEditable.checked) {
+      insBtn.style.display = "none";
+      delBtn.style.display = "none";
+      saveBtn.style.display = "none";
+      // readBtn.style.display = "none";
+    } else {
+      insBtn.style.display = "inline";
+      delBtn.style.display = "inline";
+      saveBtn.style.display = "inline";
+      // readBtn.style.display = "inline";
+      if (subtitles.length < 1) {
+        insertTableRow(0);
+        var nowTableContent = getTableContent();
+        setSubtitles(nowTableContent);
+      }
+    }
+    showTable();
+  };
+  var messageDiv = document.createElement("div");
+
+  // 秀上方訊息
+  /* 2.2.1. 播放模式 */
+  var dropdown = document.createElement("select");
+  dropdown.classList.add("select-dropdown");
+  for (var i = 0; i < arrPlayMode.length; i++) {
+    var opt = document.createElement("option");
+    opt.text = arrPlayMode[i].text;
+    opt.value = arrPlayMode[i].value;
+    dropdown.options.add(opt);
+    messageDiv.appendChild(dropdown);
+  }
+  dropdown.onchange = function () {
+    playMode = this.selectedIndex;
+  };
+  /* 2.2.2. 編輯字幕 */
+  if (bRemainHighlight) {
+    messageDiv.appendChild(remainHighlight);
+    messageDiv.appendChild(lblRemainHighlight);
+  }
+  messageDiv.appendChild(subtitleEditable);
+  messageDiv.appendChild(lblsubtitleEditable);
+  // if (bSubtitleEditable) {
+  insBtn = document.createElement("button");
+  insBtn.innerText = "插入上列";
+  insBtn.classList.add("myButton");
+  insBtn.onclick = function () {
+    insertTableRow(autoRowSelected);
+    resetTableNum();
+    var nowTableContent = getTableContent();
+    setSubtitles(nowTableContent);
+  };
+  messageDiv.appendChild(insBtn);
+
+  delBtn = document.createElement("button");
+  delBtn.innerText = "刪除此列";
+  delBtn.classList.add("myButton");
+  delBtn.onclick = function () {
+    rowSelected.remove();
+    resetTableNum();
+    var nowTableContent = getTableContent();
+    setSubtitles(nowTableContent);
+  };
+  messageDiv.appendChild(delBtn);
+
+  saveBtn = document.createElement("button");
+  saveBtn.innerText = "儲存字幕";
+  saveBtn.classList.add("myButton");
+  saveBtn.onclick = function () {
+    saveTableContent();
+  };
+  messageDiv.appendChild(saveBtn);
+
+  readBtn = document.createElement("button");
+  readBtn.innerText = "讀取字幕";
+  readBtn.classList.add("myButton");
+  readBtn.onclick = function () {
+    readTableContent();
+  };
+  messageDiv.appendChild(readBtn);
+  // }
+  messageDiv.classList.add("myMessageDiv");
+  audio_sec_top.appendChild(messageDiv);
+
+  if (!subtitleEditable.checked) {
+    insBtn.style.display = "none";
+    delBtn.style.display = "none";
+    saveBtn.style.display = "none";
+    // readBtn.style.display = "none";
+  }
+}
 function getSecond(inputTime) {
   if (inputTime.length < 2) {
     return 99999;
@@ -2026,7 +2033,7 @@ function selectRow(c, iCol) {
   if (bSubtitleEditable) {
     rowSelected.children[3].setAttribute("contenteditable", "true");
   }
-  var nowRow = Number(r.children[0].innerHTML);
+  var nowRow = c.closest("tr").rowIndex;
   var nowSec = getSecond(r.children[1].innerHTML);
   if (youtube_mode) {
     if (!(bSubtitleEditable && iCol == 3)) {
@@ -2045,6 +2052,7 @@ function selectRow(c, iCol) {
   } else nowAudioLoop = true;
 
   autoRowSelected = nowRow;
+  actualRow = Number(r.children[0].innerHTML);
 }
 
 function changeRow(c) {
