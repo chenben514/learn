@@ -13,6 +13,12 @@ let arrPlayMode = [
 ];
 let playMode = 0;
 
+let arrSubtitleMode = [
+  { value: "Subtitle1", text: "第一字幕" },
+  { value: "Subtitle2", text: "第二字幕" },
+];
+let subtitleMode = 0;
+
 let audio_sec_top;
 
 const maxQuesCnt = 500;
@@ -54,6 +60,7 @@ let timeoutID;
 class Subtitle {
   numb;
   content;
+  content_2;
   start;
   finish;
 }
@@ -71,6 +78,7 @@ let startTime, finishTime;
 let nowAudioLoop = false;
 let subtitles = "";
 var subTitleCnt = 0;
+var subTitleContent2 = false;
 let audio, source;
 let autoRowSelected = 0;
 let myAudioTableRow;
@@ -1283,13 +1291,22 @@ function setSubtitles(contents) {
 
   var quesArr = contents.replace(/\r\n/g, "\n").split("\n");
   let quesCnt = quesArr.length;
+  let adjustTime = 0;
 
-  if (quesArr[0].includes("youtube")) {
-    var videoId = quesArr[0].split("=")[1].split("&")[0].split(",")[0];
-    player.loadVideoById(videoId);
-  }
+  // if (quesArr[0].includes("youtube")) {
+  //   var videoId = quesArr[0].split("=")[1].split("&")[0].split(",")[0];
+  //   player.loadVideoById(videoId);
+  // }
 
   for (let k = 0; k < quesCnt; k++) {
+    if (quesArr[k].includes("(adjust)")) {
+      var timeArr = quesArr[k].split("-");
+      if (quesArr[k].includes("(minus)")) {
+        adjustTime = getSecond(timeArr[1]) * -1;
+      } else if (quesArr[k].includes("(add)")) {
+        adjustTime = getSecond(timeArr[1]);
+      }
+    }
     if (quesArr[k].includes("-->")) {
       let subtitle = new Subtitle();
       subtitles.push(subtitle);
@@ -1297,17 +1314,19 @@ function setSubtitles(contents) {
   }
 
   subTitleCnt = 0;
+  subTitleContent2 = false;
   var nowStatus = 0; //0:nothing,1:start
 
   bRemainHighlight = false;
   for (let k = 0; k < quesCnt; k++) {
     if (quesArr[k].includes("-->")) {
       var timeArr = quesArr[k].split("-"); //00:01:01,440 --> 00:01:03,232
-      subtitles[subTitleCnt].start = getSecond(timeArr[0]);
+      subtitles[subTitleCnt].start = getSecond(timeArr[0]) + adjustTime;
       var time2Arr = timeArr[2].split(">"); //00:01:01,440 --> 00:01:03,232
-      subtitles[subTitleCnt].finish = getSecond(time2Arr[1]);
+      subtitles[subTitleCnt].finish = getSecond(time2Arr[1]) + adjustTime;
       subtitles[subTitleCnt].numb = subTitleCnt + 1;
       subtitles[subTitleCnt].content = "";
+      subtitles[subTitleCnt].content2 = "";
       nowStatus = 1;
     } else {
       if (nowStatus == 1) {
@@ -1318,7 +1337,14 @@ function setSubtitles(contents) {
           if (subtitles[subTitleCnt].content.length > 0)
             subtitles[subTitleCnt].content += "\n";
           // subtitles[subTitleCnt].content += "<br>";
-          subtitles[subTitleCnt].content += quesArr[k];
+          var contentArr = quesArr[k].split("--"); //00:01:01,440 --> 00:01:03,232
+          if (contentArr.length > 1) {
+            subtitles[subTitleCnt].content += contentArr[0];
+            subtitles[subTitleCnt].content2 += contentArr[1];
+            subTitleContent2 = true;
+          } else {
+            subtitles[subTitleCnt].content += quesArr[k];
+          }
           if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
             bRemainHighlight = true;
           }
@@ -1334,6 +1360,7 @@ function setSubtitles(contents) {
     subtitles[subTitleCnt].start = subtitles[subTitleCnt - 1].finish;
     subtitles[subTitleCnt].finish = subtitles[subTitleCnt - 1].finish;
     subtitles[subTitleCnt].content = "";
+    subtitles[subTitleCnt].content2 = "";
     subTitleCnt++;
   }
 }
@@ -1448,6 +1475,11 @@ function showTable() {
       changeRow(this);
     };
     c.innerHTML = highlight_start(k, subtitles[k].content);
+
+    if (subTitleContent2) {
+      c = r.insertCell(-1);
+      c.innerHTML = subtitles[k].content2;
+    }
   }
 
   th = t.createTHead();
@@ -1463,9 +1495,19 @@ function showTable() {
     c.style.width = "10%";
     c.innerHTML = "結束";
   }
+
   c = r.insertCell(-1);
-  c.style.width = "93%";
-  c.innerHTML = "句子";
+  if (subTitleContent2) {
+    c.style.width = "50%";
+    c.innerHTML = "句子1";
+    c = r.insertCell(-1);
+    c.style.width = "43%";
+    c.innerHTML = "句子2";
+  } else {
+    c.style.width = "93%";
+    c.innerHTML = "句子";
+  }
+
   audio_sec_bottom = document.createElement("div");
   audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
   audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
@@ -1912,6 +1954,21 @@ function showMessage() {
   dropdown.onchange = function () {
     playMode = this.selectedIndex;
   };
+
+  /* 2.2.2. 字幕種類 */
+  var dropdown2 = document.createElement("select");
+  dropdown2.classList.add("select-dropdown");
+  for (var i = 0; i < arrSubtitleMode.length; i++) {
+    var opt = document.createElement("option");
+    opt.text = arrSubtitleMode[i].text;
+    opt.value = arrSubtitleMode[i].value;
+    dropdown2.options.add(opt);
+    messageDiv.appendChild(dropdown2);
+  }
+  dropdown2.onchange = function () {
+    subtitleMode = this.selectedIndex;
+  };
+
   /* 2.2.2. 編輯字幕 */
   if (bRemainHighlight) {
     messageDiv.appendChild(remainHighlight);
