@@ -1,223 +1,217 @@
 0
 00:00:31,500 --> 00:00:32,900
-Making my way down town
+Making my way down town -- 我要去市區
 
 1
 00:00:33,100 --> 00:00:34,100
-Walking fast
+Walking fast -- 我走得很快
 
 2
 00:00:34,300 --> 00:00:35,300
-Faces pass
+Faces pass -- 陌生臉孔飛逝而過
 
 3
 00:00:35,500 --> 00:00:41,100
-And I'm home bound
+And I'm home bound -- 我在尋找回家的路
 
 4
 00:00:41,300 --> 00:00:42,900
-Staring blankly ahead
+Staring blankly ahead -- 但我只能望著前方發呆
 
 5
 00:00:43,100 --> 00:00:44,100
-Just making my way
+Just making my way -- 我知道我該向前走
 
 6
 00:00:44,300 --> 00:00:45,500
-Making a way
+Making a way -- 一直向前走
 
 7
 00:00:45,700 --> 00:00:52,900
-Through the crowd
+Through the crowd -- 穿過這群人
 
 8
 00:00:53,100 --> 00:00:55,200
-And I need you
+And I need you -- 我需要你
 
 9
 00:00:55,400 --> 00:00:57,700
-And I miss you
+And I miss you -- 我想你
 
 10
 00:00:57,900 --> 00:01:01,400
-And now I wonder
+And now I wonder -- 我想知道…
 
 11
 00:01:01,600 --> 00:01:03,700
-If I could fall
+If I could fall -- 如果我能掉進
 
 12
 00:01:03,900 --> 00:01:06,200
-Into the sky
+Into the sky -- 到天空
 
 13
 00:01:06,400 --> 00:01:08,700
-Do you think time
+Do you think time -- 你覺得時間…
 
 14
 00:01:08,900 --> 00:01:11,100
-Would pass me by
+Would pass me by -- 會讓我回到你的身邊嗎
 
 15
 00:01:11,300 --> 00:01:15,800
-'Cause you know I'd walk a
-thousand miles
+'Cause you know I'd walk a thousand miles -- 你知道的，我已經走了幾千哩
 
 16
 00:01:16,000 --> 00:01:24,000
-If I could just see you, tonight
+If I could just see you, tonight -- 我只希望今晚讓我見到你吧！
 
 17
 00:01:26,600 --> 00:01:28,200
-It's always times like these
+It's always times like these -- 我經常有這個困擾…
 
 18
 00:01:28,400 --> 00:01:29,400
-When I think of you
+When I think of you -- 每次，當我想到你的時候…
 
 19
 00:01:29,600 --> 00:01:36,900
-And I wonder If you ever think of me
+And I wonder If you ever think of me -- 我想知道，你是不是也想到了我？
 
 20
 00:01:37,100 --> 00:01:38,200
-'Cause everything's so wrong
+'Cause everything's so wrong -- 因為每件事都錯的離譜
 
 21
 00:01:38,400 --> 00:01:39,500
-And I don't belong
+And I don't belong -- 我也不屬於
 
 22
-00:01:39,700 --> 00:01:40,800
-Living in
+00:01:39,700 --> 00:01:48,400
+Living in Your precious memory -- 你那珍貴回憶裡的一部份.....
 
-23
-00:01:41,000 --> 00:01:48,400
-Your precious memory
 
 24
 00:01:48,600 --> 00:01:50,800
-'Cause I need you
+'Cause I need you -- 因為我需要你
 
 25
 00:01:51,000 --> 00:01:56,900
-And I miss you and now I wonder
+And I miss you and now I wonder -- 我想你, 我想知道…
 
 26
 00:01:57,100 --> 00:01:59,200
-If I could fall
+If I could fall -- 如果我能墜落到
 
 27
 00:01:59,400 --> 00:02:01,800
-Into the sky
+Into the sky -- 掉進天空
 
 28
 00:02:02,000 --> 00:02:04,200
-Do you think time
+Do you think time -- 你覺得時間…
 
 29
 00:02:04,400 --> 00:02:06,800
-Would pass me by, oh
+Would pass me by, oh -- 會讓我回到你的身邊嗎
 
 30
 00:02:07,000 --> 00:02:11,500
-'Cause you know I'd walk a
-thousand miles
+'Cause you know I'd walk a thousand miles  -- 你知道的，我已經走了幾千哩
 
 31
 00:02:11,700 --> 00:02:19,700
-If I could just see you tonight
+If I could just see you tonight -- 我只希望今晚讓我見到你吧！
 
 32
 00:02:27,500 --> 00:02:33,600
-And I, I don't want to let you know I,
+And I, I don't want to let you know I, -- 而且我不希望讓你知道
 
 33
 00:02:33,800 --> 00:02:38,500
-I drown in your memory I,
+I drown in your memory I, -- 我沉醉在你的回憶
 
 34
 00:02:38,700 --> 00:02:42,300
-I don't want to let this go
+I don't want to let this go -- 我不想讓一切流逝
 
 35
 00:02:42,500 --> 00:02:47,600
-I,I don't.
+I,I don't. -- 我不想
 
 36
 00:02:47,800 --> 00:02:50,500
-Making my way down town walking fast
+Making my way down town walking fast -- 我很快走向市區
 
 37
 00:02:50,700 --> 00:02:51,700
-Faces pass
+Faces pass -- 陌生臉孔飛逝而過
 
 38
 00:02:51,600 --> 00:02:57,500
-And I'm home bound
+And I'm home bound -- 我在尋找回家的路
 
 39
 00:02:57,700 --> 00:02:59,300
-Staring blankly ahead
+Staring blankly ahead  -- 但我只能望著前方發呆
 
 40
 00:02:59,500 --> 00:03:00,500
-Making my way
+Making my way -- 我知道我該向前走
 
 41
 00:03:00,700 --> 00:03:01,800
-Making a way
+Making a way -- 一直向前走
 
 42
 00:03:02,000 --> 00:03:09,100
-Through the crowd
+Through the crowd  -- 穿過這群人
 
 43
 00:03:09,300 --> 00:03:11,300
-And I still need you
+And I still need you -- 而我仍然需要你
 
 44
 00:03:11,500 --> 00:03:14,300
-And I still miss you
+And I still miss you -- 我仍然想你
 
 45
 00:03:14,500 --> 00:03:19,000
-And now I wonder
+And now I wonder -- 我想知道…
 
 46
 00:03:19,200 --> 00:03:23,800
-If I could fall into the sky
+If I could fall into the sky  -- 如果我能墜落到天空
 
 47
 00:03:24,000 --> 00:03:28,900
-Do you think time, would pass us by
+Do you think time, would pass us by  -- 你覺得時間會讓我回到你的身邊嗎
+
 
 48
 00:03:29,100 --> 00:03:33,400
-'Cause you know I'd walk a
-thousand miles
+'Cause you know I'd walk a thousand miles  -- 你知道的，我已經走了幾千哩
 
 49
 00:03:33,600 --> 00:03:39,500
-If I could just see you, now
+If I could just see you, now -- 我只希望現在讓我見到你吧！
 
 50
 00:03:39,700 --> 00:03:44,100
-If I could fall into the sky
+If I could fall into the sky -- 如果我能墜落到天空
 
 51
 00:03:44,300 --> 00:03:48,900
-Do you think time would pass me by
+Do you think time would pass me by   -- 你覺得時間會讓我回到你的身邊嗎
 
 52
 00:03:49,100 --> 00:03:53,500
-'Cause you know I'd walk a
-thousand miles
+'Cause you know I'd walk a thousand miles   -- 你知道的，我已經走了幾千哩
 
 53
 00:03:53,700 --> 00:03:58,700
-If I could just see you
+If I could just see you -- 我只希望讓我見到你吧！  
 
 54
 00:03:58,900 --> 00:04:08,000
-If I could just hold you, tonight.
+If I could just hold you, tonight.  -- 我只希望今晚讓我抱你吧！

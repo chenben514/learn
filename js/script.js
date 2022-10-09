@@ -1826,7 +1826,6 @@ function startAudio(curQuiz) {
     if (subtitles.length <= 0) return;
     if (autoRowSelected > subtitles.length) return;
     /*pre-check*/
-
     if (youtube_mode) {
       if (!youtube_ready) return;
       if (player.getPlayerState() != YT.PlayerState.PLAYING) return;
@@ -1838,7 +1837,6 @@ function startAudio(curQuiz) {
       arrPlayMode[playMode].value == "SentenceStop"
     ) {
       // if (bRemainHighlight) return;
-
       if (currentTime > subtitles[actualRow - 1].finish) {
         if (
           // bSubtitleEditable ||

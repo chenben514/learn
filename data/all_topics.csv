@@ -37,6 +37,7 @@ english,grammer,99,100,文法100,choose,1,文法100題
 english,listen,999,phonic5,吉得堡發音5,conversation_m4a,vowel,母音,consonant^double,子音_\雙子音,consonant^ck^ng,子音_\ck_ng,consonant^sh^ch,子音_\sh_ch,consonant^th,子音_\th,consonant^wr^kn^mb,子音_\wr_kn_mb
 english,listen,999,fluent2,流暢英語2,conversation_mp3,002,002,003,003
 english,listen,999,graph,英語圖鑑字典,conversation_mp3,01^104^animal,01_\動物
+english,video,999,song,歌曲,conversation_youtube,all.csv
 english,video,999,business,business\english,conversation_youtube,all.csv
 english,video,999,mmm,mmm\Business,conversation_youtube,all.csv
 english,video,999,success,Speak\Success,conversation_youtube,all.csv
@@ -47,7 +48,6 @@ english,video,999,Lucy,Lucy\StudyMethod,conversation_youtube,all.csv
 english,video,999,vanessa,Vanessa\English,conversation_youtube,all.csv
 english,video,999,TOEIC,TOEIC,conversation_youtube,all.csv
 english,video,999,easyEnglish,Easy\English,conversation_youtube,all.csv
-english,video,999,song,歌曲,conversation_youtube,all.csv
 english,business,999,bbcWork,BBC at Work,conversation_youtube,all.csv
 
 
