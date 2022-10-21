@@ -7,6 +7,16 @@ let search_input = document.getElementById("search__input");
 const topic_view = document.querySelector(".main_subj");
 const subject_view = document.querySelector(".mid_subj");
 let curDetailLeft;
+
+let courseSubjList = [
+  { course: "chinese", subj: "word,video" },
+  { course: "english", subj: "word,spell,grammer,listen,video,business" },
+  { course: "japan", subj: "word,spell,video" },
+  { course: "korean", subj: "word,spell,listen,writing,grammer,video" },
+  { course: "math", subj: "calc" },
+  { course: "computer", subj: "devops" },
+  { course: "learn", subj: "game,video" },
+];
 class Topic {
   numb;
   course;
@@ -29,11 +39,19 @@ curMainSubj = localStorage.getItem(curCourse + "_main_subj");
 if (curMainSubj == "undefined" || curMainSubj == null) curMainSubj = "word";
 
 var element = document.getElementsByClassName("side-nav__item--active");
-getTopic();
+//getTopic(0);
 showTopic();
 
 function getTopic() {
-  var selFile = "./data/all_topics.csv";
+  var selFile =
+    "./data/" +
+    curCourse +
+    "/" +
+    curMainSubj +
+    "/topics_" +
+    curMainSubj +
+    ".csv";
+  // alert(selFile);
 
   var read = new XMLHttpRequest();
   read.open("GET", selFile, false);
@@ -151,24 +169,14 @@ function showTopic() {
     first_subj = subject_view.firstElementChild;
   }
 
-  var bCourse = false;
-
   curMainSubj = localStorage.getItem(curCourse + "_main_subj");
-  var curRightCnt;
-  var curMidCnt = 0;
-  for (i = 0; i < topics.length; i++) {
-    curRightCnt = 0;
-    if (topics[i].course != curCourse) continue;
-    var curFigure = document.createElement("figure");
+  for (var i = 0; i < courseSubjList.length; i++) {
+    if (courseSubjList[i].course != curCourse) continue;
+    var courseSubjArr = courseSubjList[i].subj.split(",");
 
-    // if (topics[i].main_subj == curMainSubj) continue;
-    if (
-      bCourse == false ||
-      (i > 0 && topics[i - 1].main_subj != topics[i].main_subj)
-    ) {
-      bCourse = true;
-      // var curFigure = document.createElement("figure");
-      if (topics[i].main_subj != curMainSubj)
+    for (var j = 0; j < courseSubjArr.length; j++) {
+      var curFigure = document.createElement("figure");
+      if (courseSubjArr[j] != curMainSubj)
         curFigure.setAttribute("class", "main_subj__item");
       else
         curFigure.setAttribute(
@@ -176,21 +184,28 @@ function showTopic() {
           "main_subj__item main_subj__item--active"
         );
 
-      // curFigure.setAttribute("id", topics[i].main_subj);
-
       var curImg = document.createElement("img");
       curImg.setAttribute(
         "src",
-        "img/empty_book_128_" + topics[i].main_subj + ".png"
+        "img/empty_book_128_" + courseSubjArr[j] + ".png"
       );
       curImg.setAttribute("class", "main_subj__photo");
-      curImg.setAttribute("id", topics[i].main_subj);
-      curSubj = topics[i].main_subj;
+      curImg.setAttribute("id", courseSubjArr[j]);
 
       curFigure.appendChild(curImg);
-      // topic_view.appendChild(curFigure);
+      topic_view.appendChild(curFigure);
     }
-    topic_view.appendChild(curFigure);
+  }
+  // 2. show mid_subj / detail view
+
+  getTopic();
+  var bCourse = false;
+
+  var curRightCnt;
+  var curMidCnt = 0;
+  for (i = 0; i < topics.length; i++) {
+    curRightCnt = 0;
+    if (topics[i].course != curCourse) continue;
 
     // 2. show mid_subj view
     if (topics[i].main_subj != curMainSubj) continue;
@@ -222,16 +237,6 @@ function showTopic() {
     curDetailMidSbj.innerText = curMidCnt.toString() + ". \n";
     topics[i].mid_explain = topics[i].mid_explain.replaceAll("\\", "\n");
     curDetailMidSbj.innerText += topics[i].mid_explain;
-    // if (topics[i].mid_explain.includes("\\")) {
-    //   curDetailMidSbj.innerText =
-    //     curDetailMidSbj.innerText +
-    //     topics[i].mid_explain.split("\\")[0] +
-    //     "\n" +
-    //     topics[i].mid_explain.split("\\")[1];
-    // } else {
-    //   curDetailMidSbj.innerText =
-    //     curDetailMidSbj.innerText + topics[i].mid_explain;
-    // }
 
     if (topics[i].quiz_type.includes("youtube")) {
       curDetailLeft.classList.add("detail_left_subj");
@@ -261,8 +266,6 @@ function showTopic() {
     for (j = 0; j < topics[i].small_subjs.length; j++) {
       if (topics[i].small_subj_explains[j].length > maxLength) {
         maxLength = topics[i].small_subj_explains[j].length;
-        // alert("maxLength:" + maxLength);
-        // alert("content:" + topics[i].small_subj_explains[j]);
       }
     }
 
@@ -302,10 +305,6 @@ function showTopic() {
         ].replaceAll("\\", "\n");
         curButton.innerText += topics[i].small_subj_explains[j];
       }
-      // alert(
-      //   curButton.innerText.length -
-      //     curButton.innerText.replace("\n", "").length
-      // );
 
       var tmpLevel = getStarLevel(curButton.id);
       if (tmpLevel >= 3) {
@@ -315,7 +314,6 @@ function showTopic() {
         curButton.setAttribute("class", "test-button test-no-pass");
       } else curProcCnt++;
 
-      // alert(search_input);
       if (search_input.value.length > 0) {
         if (
           !curButton.innerText.includes(search_input.value) > 0 &&
@@ -356,11 +354,6 @@ function showTopic() {
           curButton.innerText = "錯題";
           c.appendChild(curButton);
         }
-
-        // else {
-        //   curButton.setAttribute("class", "wrong-button test-no-pass");
-        //   curButton.innerText = "全題";
-        // }
       }
 
       //3. star
@@ -399,10 +392,8 @@ function showTopic() {
             '<button  class="conversation-test-button" id =" ' +
             curClassID +
             '">課程 </button><span style="color:blue;">';
-          // alert(tmpMessage);
         }
 
-        // tmpMessage += "<span style='color:blue;'>";
         tmpMessage =
           tmpMessage +
           "<span style='color:blue;'" +
