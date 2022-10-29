@@ -1980,8 +1980,12 @@ function showMessage() {
     messageDiv.appendChild(remainHighlight);
     messageDiv.appendChild(lblRemainHighlight);
   }
-  messageDiv.appendChild(subtitleEditable);
-  messageDiv.appendChild(lblsubtitleEditable);
+
+  if (windowWidth > 600) {
+    messageDiv.appendChild(subtitleEditable);
+    messageDiv.appendChild(lblsubtitleEditable);
+  }
+
   // if (bSubtitleEditable) {
   insBtn = document.createElement("button");
   insBtn.innerText = "插入上列";
@@ -2019,7 +2023,10 @@ function showMessage() {
   readBtn.onclick = function () {
     readTableContent();
   };
-  messageDiv.appendChild(readBtn);
+  if (windowWidth > 600) {
+    messageDiv.appendChild(readBtn);
+  }
+
   // }
   messageDiv.classList.add("myMessageDiv");
   audio_sec_top.appendChild(messageDiv);
