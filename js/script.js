@@ -13,12 +13,6 @@ let arrPlayMode = [
 ];
 let playMode = 0;
 
-let arrSubtitleMode = [
-  { value: "Subtitle1", text: "第一字幕" },
-  { value: "Subtitle2", text: "第二字幕" },
-];
-let subtitleMode = 0;
-
 let audio_sec_top;
 
 const maxQuesCnt = 500;
@@ -696,9 +690,7 @@ function getQuestions() {
         varArr.push(newValue);
       }
       for (var x = 0; x < singQuesArr.length; x++) {
-        console.log(x + ":(begin):" + singQuesArr[x]);
         singQuesArr[x] = changeVariable(singQuesArr[x], varArr);
-        console.log(x + ":(end):" + singQuesArr[x]);
       }
     }
 
@@ -990,14 +982,11 @@ function optionSelected(answer) {
     userScore += 1; //upgrading score value with 1
     answer.classList.add("correct"); //adding green color to correct selected option
     answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
-    console.log("Correct Answer");
-    console.log("Your correct answers = " + userScore);
     keepRightAnswer();
   } else {
     keepWrongAnswer();
     answer.classList.add("incorrect"); //adding red color to correct selected option
     answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
-    console.log("Wrong Answer");
 
     for (var i = 0; i < allOptions; i++) {
       if (
@@ -1009,7 +998,6 @@ function optionSelected(answer) {
         //if there is an option which is matched to an array answer
         option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
         option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-        console.log("Auto selected correct answer.");
       }
     }
   }
@@ -1138,7 +1126,6 @@ function startTimer() {
           //if there is an option which is matched to an array answer
           option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
           option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-          console.log("Time Off: Auto selected correct answer.");
         }
       }
       for (var i = 0; i < allOptions; i++) {
@@ -1319,6 +1306,11 @@ function setSubtitles(contents) {
 
   bRemainHighlight = false;
   for (let k = 0; k < quesCnt; k++) {
+    /*judge double subtitles */
+    if (quesArr[k].includes("#Subtitle2")) {
+      subTitleContent2 = true;
+    }
+    /*end*/
     if (quesArr[k].includes("-->")) {
       var timeArr = quesArr[k].split("-"); //00:01:01,440 --> 00:01:03,232
       subtitles[subTitleCnt].start = getSecond(timeArr[0]) + adjustTime;
@@ -1337,11 +1329,12 @@ function setSubtitles(contents) {
           if (subtitles[subTitleCnt].content.length > 0)
             subtitles[subTitleCnt].content += "\n";
           // subtitles[subTitleCnt].content += "<br>";
-          var contentArr = quesArr[k].split("--"); //00:01:01,440 --> 00:01:03,232
-          if (contentArr.length > 1) {
+          if (subTitleContent2) {
+            var contentArr = quesArr[k].split("--"); //00:01:01,440 --> 00:01:03,232
             subtitles[subTitleCnt].content += contentArr[0];
-            subtitles[subTitleCnt].content2 += contentArr[1];
-            subTitleContent2 = true;
+            if (contentArr.length < 2)
+              subtitles[subTitleCnt].content2 += contentArr[0];
+            else subtitles[subTitleCnt].content2 += contentArr[1];
           } else {
             subtitles[subTitleCnt].content += quesArr[k];
           }
@@ -1815,6 +1808,7 @@ function startAudio(curQuiz) {
   myAudioTableRow = document.getElementsByClassName("audio_table_row");
 
   autoRowSelected = 1;
+  actualRow = 1;
   rowSelected = myAudioTableRow[autoRowSelected - 1];
   timeoutID = window.setInterval(handleAudioLoop, 50);
   // audio.addEventListener("timeupdate", function () {
@@ -1837,6 +1831,18 @@ function startAudio(curQuiz) {
       arrPlayMode[playMode].value == "SentenceStop"
     ) {
       // if (bRemainHighlight) return;
+
+      /*handle user manual rewind video */
+      if (actualRow > 1) {
+        while (1) {
+          if (actualRow < 2) break;
+          if (currentTime < subtitles[actualRow - 1].start) {
+            actualRow--;
+          } else break;
+        }
+      }
+      /*end*/
+
       if (currentTime > subtitles[actualRow - 1].finish) {
         if (
           // bSubtitleEditable ||
@@ -1856,9 +1862,18 @@ function startAudio(curQuiz) {
           actualRow = Number(
             myAudioTableRow[autoRowSelected].cells[0].innerText
           );
-          // if (youtube_mode) {
-          //   player.seekTo(subtitles[actualRow - 1].start);
-          // }
+
+          /*handle user manual rewind video */
+          if (autoRowSelected > 1) {
+            while (1) {
+              if (autoRowSelected < 1) break;
+              if (currentTime < subtitles[autoRowSelected - 1].finish) {
+                autoRowSelected--;
+              } else break;
+            }
+          }
+          /*end*/
+
           myAudioTableRow[autoRowSelected].style.color = "red";
           autoRowSelected++;
           rowSelected = myAudioTableRow[autoRowSelected - 1];
@@ -1872,14 +1887,20 @@ function startAudio(curQuiz) {
         }
       }
     } else if (arrPlayMode[playMode].value == "SentenceRepeat") {
-      if (currentTime > subtitles[autoRowSelected - 1].finish) {
+      // if (currentTime > subtitles[autoRowSelected - 1].finish) {
+      if (currentTime > subtitles[actualRow - 1].finish) {
+        // alert("currentTime:" + currentTime);
+        // alert("finish:" + subtitles[autoRowSelected - 1].finish);
         if (bSubtitleEditable) {
           audio.pause();
         } else if (youtube_mode) {
-          player.seekTo(Math.floor(subtitles[autoRowSelected - 1].start));
+          // player.seekTo(Math.floor(subtitles[autoRowSelected - 1].start));
+          player.pauseVideo();
+          player.seekTo(subtitles[actualRow - 1].start);
+          player.playVideo();
         } else {
           audio.pause();
-          audio.currentTime = subtitles[autoRowSelected - 1].start;
+          audio.currentTime = subtitles[actualRow - 1].start;
           syncDelay(1000);
           audio.play();
         }
@@ -1949,22 +1970,9 @@ function showMessage() {
     dropdown.options.add(opt);
     messageDiv.appendChild(dropdown);
   }
+  dropdown.selectedIndex = playMode;
   dropdown.onchange = function () {
     playMode = this.selectedIndex;
-  };
-
-  /* 2.2.2. 字幕種類 */
-  var dropdown2 = document.createElement("select");
-  dropdown2.classList.add("select-dropdown");
-  for (var i = 0; i < arrSubtitleMode.length; i++) {
-    var opt = document.createElement("option");
-    opt.text = arrSubtitleMode[i].text;
-    opt.value = arrSubtitleMode[i].value;
-    dropdown2.options.add(opt);
-    messageDiv.appendChild(dropdown2);
-  }
-  dropdown2.onchange = function () {
-    subtitleMode = this.selectedIndex;
   };
 
   /* 2.2.2. 編輯字幕 */

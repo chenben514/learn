@@ -17,6 +17,20 @@ let courseSubjList = [
   { course: "computer", subj: "devops" },
   { course: "learn", subj: "game,video" },
 ];
+
+let subjMap = new Map([
+  ["word", "字彙"],
+  ["video", "影片"],
+  ["business", "商業"],
+  ["calc", "計算"],
+  ["devops", "devops"],
+  ["game", "遊戲"],
+  ["grammer", "文法"],
+  ["listen", "聽力"],
+  ["spell", "拼寫"],
+  ["writing", "書寫"],
+]);
+
 class Topic {
   numb;
   course;
@@ -184,11 +198,13 @@ function showTopic() {
           "main_subj__item main_subj__item--active"
         );
 
-      var curImg = document.createElement("img");
-      curImg.setAttribute(
-        "src",
-        "img/empty_book_128_" + courseSubjArr[j] + ".png"
-      );
+      // var curImg = document.createElement("img");
+      // curImg.setAttribute(
+      //   "src",
+      //   "img/empty_book_128_" + courseSubjArr[j] + ".png"
+      // );
+      var curImg = document.createElement("a");
+      curImg.innerText = subjMap.get(courseSubjArr[j]);
       curImg.setAttribute("class", "main_subj__photo");
       curImg.setAttribute("id", courseSubjArr[j]);
 
@@ -227,10 +243,11 @@ function showTopic() {
       topics[i].mid_subj;
     curDetailLeft.setAttribute("id", curLeftID);
 
+    /*    
     var curDetailLeftImg = document.createElement("img");
     curDetailLeftImg.setAttribute("class", "category");
     curDetailLeftImg.setAttribute("src", "img/hangul_writing.png");
-
+*/
     var curDetailMidSbj = document.createElement("detail_mid_subj");
     curDetailMidSbj.setAttribute("class", "detail_mid_subj");
 
@@ -244,10 +261,11 @@ function showTopic() {
     }
 
     // alert(windowWidth);
+    /*  
     if (windowWidth > 600) {
       curDetailLeft.appendChild(curDetailLeftImg);
     }
-
+*/
     curDetailLeft.appendChild(curDetailMidSbj);
 
     // 2.2. curDetailRight

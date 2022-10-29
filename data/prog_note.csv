@@ -5,6 +5,8 @@ python main.py english video bbcWork PLcetZ6gSk969oGvAI0e4_PgVnlGbm64bp
 待實作功能：
 ---- 系統面
   -- Bug
+
+
   -- Feature
 X. 線上編輯 Youtube, 音樂字幕檔，編輯結果可下載為檔案，可以匯入
 6. 接詞遊戲
@@ -13,6 +15,9 @@ X. 線上編輯 Youtube, 音樂字幕檔，編輯結果可下載為檔案，可�
 10. 按左可檢索本主題內容
 11. 意見欄
 12. 跟我聯絡
+13. 小主題隨機播放 / 小主題循序播放
+14. 放到我的粉絲團
+
 
 ---- 課程面
 7. 詞彙功能 - 加上簡筆畫
