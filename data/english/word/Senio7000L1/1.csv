@@ -4,9 +4,9 @@ about	關於	在～之上	根據;按照	在對面;向對面
 above	在～之上	根據;按照	在對面;向對面	扮演
 according to	根據;按照	在對面;向對面	扮演	動作
 across	在對面;向對面	扮演	動作	男演員
-act	扮演	動作	男演員	添加
+act	扮演(v)	動作(n)	男演員	添加
 action	動作	男演員	添加	地址
-actor/actress	男演員	添加	地址	成年人
+actor/actress	男演員/女演員	添加	地址	成年人
 add	添加	地址	成年人	害怕的
 address	地址	成年人	害怕的	之後
 adult	成年人	害怕的	之後	下午
@@ -34,7 +34,7 @@ always	總是	是	在～之中	和
 am	是	在～之中	和	生氣
 among	在～之中	和	生氣	生氣的
 and	和	生氣	生氣的	動物
-anger	生氣	生氣的	動物	另一個
+anger	生氣(n)	生氣的(a)	動物	另一個
 angry	生氣的	動物	另一個	回答
 animal	動物	另一個	回答	螞蟻
 another	另一個	回答	螞蟻	任何的

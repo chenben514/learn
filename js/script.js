@@ -77,6 +77,7 @@ let audio, source;
 let autoRowSelected = 0;
 let myAudioTableRow;
 let bRemainHighlight = false;
+let bHasHighlight = false;
 
 //subtitleEditable
 let bSubtitleEditable = false;
@@ -785,7 +786,7 @@ function UrlExists(url) {
 function confirmClick() {
   let inputAnswer = document.querySelector(".direct_input").value.toLowerCase();
   let correctAnswer = "";
-  userInputAns = inputAnswer;
+  inputAnswer = inputAnswer.trim();
   document.querySelector("#confirmButton").disabled = "true";
   if (curQuesType === "direct_input") {
     correctAnswer = questions[que_count].answer.toString().toLowerCase();
@@ -1305,6 +1306,7 @@ function setSubtitles(contents) {
   var nowStatus = 0; //0:nothing,1:start
 
   bRemainHighlight = false;
+  bHasHighlight = false;
   for (let k = 0; k < quesCnt; k++) {
     /*judge double subtitles */
     if (quesArr[k].includes("#Subtitle2")) {
@@ -1339,7 +1341,7 @@ function setSubtitles(contents) {
             subtitles[subTitleCnt].content += quesArr[k];
           }
           if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
-            bRemainHighlight = true;
+            bHasHighlight = true;
           }
         }
       }
@@ -1881,9 +1883,19 @@ function startAudio(curQuiz) {
           var nowTop =
             (autoRowSelected - 1) *
             (audio_sec_bottom.scrollHeight / tmpTableCnt);
+
+          // w.scrollTop(row.offset().top - w.height() / 2);
+
+          // audio_sec_bottom.scrollTop(
+          //   autoRowSelected.offset().top - audio_sec_bottom.height() / 2
+          // );
+          // console.log(myAudioTableRow[autoRowSelected].top);
           audio_sec_bottom.scrollTop =
-            (autoRowSelected - 1) *
-            (audio_sec_bottom.scrollHeight / tmpTableCnt);
+            myAudioTableRow[autoRowSelected - 1].offsetTop;
+
+          // audio_sec_bottom.scrollTop =
+          //   (autoRowSelected - 1) *
+          //   (audio_sec_bottom.scrollHeight / tmpTableCnt);
         }
       }
     } else if (arrPlayMode[playMode].value == "SentenceRepeat") {
@@ -1976,7 +1988,7 @@ function showMessage() {
   };
 
   /* 2.2.2. 編輯字幕 */
-  if (bRemainHighlight) {
+  if (bHasHighlight) {
     messageDiv.appendChild(remainHighlight);
     messageDiv.appendChild(lblRemainHighlight);
   }

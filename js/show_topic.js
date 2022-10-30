@@ -12,7 +12,7 @@ let courseSubjList = [
   { course: "chinese", subj: "word,video" },
   { course: "english", subj: "word,spell,grammer,listen,video,business" },
   { course: "japan", subj: "word,spell,video" },
-  { course: "korean", subj: "word,spell,listen,writing,grammer,video" },
+  { course: "korean", subj: "word,spell,listen,writing,grammer,video,news" },
   { course: "math", subj: "calc" },
   { course: "computer", subj: "devops" },
   { course: "learn", subj: "game,video" },
@@ -29,6 +29,7 @@ let subjMap = new Map([
   ["listen", "聽力"],
   ["spell", "拼寫"],
   ["writing", "書寫"],
+  ["news", "新聞"],
 ]);
 
 class Topic {
@@ -148,20 +149,36 @@ function getTopic() {
         topic.small_subj_html.push("NA");
       }
     } else {
-      for (j = 6; j < singTopicArr.length; j += 2) {
-        topic.small_subjs.push(singTopicArr[j]);
-        topic.small_subj_explains.push(singTopicArr[j + 1]);
-        if (j + 2 < singTopicArr.length) {
-          if (singTopicArr[j + 2].startsWith("http")) {
-            topic.small_subj_html.push(singTopicArr[j + 2]);
-            j += 1;
+      //handle [1-n-x] auto loop case (n:全部,x:己校正)
+      if (singTopicArr[6].includes("-")) {
+        var loopArr = singTopicArr[6].split("-");
+        for (j = loopArr[0]; j <= loopArr[1]; j++) {
+          topic.small_subjs.push(j.toString());
+          topic.small_subj_explains.push(j.toString());
+          topic.small_subj_html.push("NA");
+        }
+        if (loopArr.length > 2) {
+          for (j = loopArr[0]; j <= loopArr[2]; j++) {
+            topic.small_subj_explains[j - 1] = "*" + j.toString();
+          }
+        }
+      } else {
+        for (j = 6; j < singTopicArr.length; j += 2) {
+          topic.small_subjs.push(singTopicArr[j]);
+          topic.small_subj_explains.push(singTopicArr[j + 1]);
+          if (j + 2 < singTopicArr.length) {
+            if (singTopicArr[j + 2].startsWith("http")) {
+              topic.small_subj_html.push(singTopicArr[j + 2]);
+              j += 1;
+            } else {
+              topic.small_subj_html.push("NA");
+            }
           } else {
             topic.small_subj_html.push("NA");
           }
-        } else {
-          topic.small_subj_html.push("NA");
         }
       }
+      //end
     }
     topics[i] = topic;
   }
@@ -281,7 +298,9 @@ function showTopic() {
     }
 
     var maxLength = 0;
+    // alert(topics[i].small_subjs.length);
     for (j = 0; j < topics[i].small_subjs.length; j++) {
+      // alert(topics[i].small_subj_explains);
       if (topics[i].small_subj_explains[j].length > maxLength) {
         maxLength = topics[i].small_subj_explains[j].length;
       }
@@ -314,6 +333,7 @@ function showTopic() {
 
       curButton.setAttribute("background-color", "lightblue");
       curButton.setAttribute("id", curBaseID);
+      // curButton.setAttribute("class", "test-button");
       if (curProcCnt >= topics[i].open_course_cnt) {
         curButton.innerText = "🔒";
         curButton.disabled = true;
@@ -321,15 +341,21 @@ function showTopic() {
         topics[i].small_subj_explains[j] = topics[i].small_subj_explains[
           j
         ].replaceAll("\\", "\n");
+        if (topics[i].small_subj_explains[j].includes("*")) {
+          topics[i].small_subj_explains[j] = topics[i].small_subj_explains[
+            j
+          ].replaceAll("*", "");
+          curButton.classList.add("class", "test-checked");
+        }
         curButton.innerText += topics[i].small_subj_explains[j];
       }
 
       var tmpLevel = getStarLevel(curButton.id);
       if (tmpLevel >= 3) {
-        curButton.setAttribute("class", "test-button test-finish");
+        curButton.classList.add("test-finish");
         curButton.innerText += "😃";
       } else if (tmpLevel > 0) {
-        curButton.setAttribute("class", "test-button test-no-pass");
+        curButton.classList.add("test-no-pass");
       } else curProcCnt++;
 
       if (search_input.value.length > 0) {
