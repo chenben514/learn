@@ -629,6 +629,20 @@ section .correct_list {
   }
 }
 
+.plain_sec_top {
+  background-color: rgb(220, 237, 216);
+
+  padding: 0.5rem 1rem;
+  width: 95%;
+  height: 50px;
+}
+
+@media (max-width: 600px) {
+  .plain_sec_top {
+    height: 50px;
+  }
+}
+
 .audio {
   /* background-color: pink; */
   background-color: rgb(220, 237, 216);

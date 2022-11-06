@@ -10,26 +10,32 @@ let curDetailLeft;
 
 let courseSubjList = [
   { course: "chinese", subj: "word,video" },
-  { course: "english", subj: "word,spell,grammer,listen,video,business" },
+  {
+    course: "english",
+    subj: "word,spell,grammer,listen,video,business,person",
+  },
   { course: "japan", subj: "word,spell,video" },
   { course: "korean", subj: "word,spell,listen,writing,grammer,video,news" },
-  { course: "math", subj: "calc" },
-  { course: "computer", subj: "devops" },
-  { course: "learn", subj: "game,video" },
+  { course: "computer", subj: "devops,cloud,db" },
+  { course: "learn", subj: "calc,game,video" },
 ];
 
 let subjMap = new Map([
   ["word", "字彙"],
   ["video", "影片"],
+  ["person", "個人"],
   ["business", "商業"],
-  ["calc", "計算"],
-  ["devops", "devops"],
+  ["calc", "數學"],
   ["game", "遊戲"],
   ["grammer", "文法"],
   ["listen", "聽力"],
   ["spell", "拼寫"],
   ["writing", "書寫"],
   ["news", "新聞"],
+  //電腦
+  ["devops", "devops"],
+  ["cloud", "雲服務"],
+  ["db", "資料庫"],
 ]);
 
 class Topic {
@@ -122,6 +128,9 @@ function getTopic() {
       for (j = 0; j < allTopicArr.length; j++) {
         var allSingTopicArr = allTopicArr[j].split(",");
         if (allTopicArr[j].length < 2) continue;
+        if (!allSingTopicArr[2].includes("=")) {
+          alert("lack of = error :", allSingTopicArr[2]);
+        }
         var eqlVideoId = allSingTopicArr[2].split("=")[1];
         if (eqlVideoId == undefined) {
           alert("video url error:" + allTopicArr[j]);
@@ -150,6 +159,10 @@ function getTopic() {
       }
     } else {
       //handle [1-n-x] auto loop case (n:全部,x:己校正)
+      // alert("153:" + singTopicArr[6]);
+      if (singTopicArr[6] == undefined) {
+        alert("逗點分隔，找不到第7欄位，或第7欄位非 all.csv -- " + topicArr[i]);
+      }
       if (singTopicArr[6].includes("-")) {
         var loopArr = singTopicArr[6].split("-");
         for (j = loopArr[0]; j <= loopArr[1]; j++) {
@@ -292,7 +305,12 @@ function showTopic() {
 
     var midSearch = false;
     if (search_input.value.length > 0) {
-      if (topics[i].mid_explain.includes(search_input.value) > 0) {
+      // alert(topics[i].mid_explain);
+      if (
+        topics[i].mid_explain
+          .toLowerCase()
+          .includes(search_input.value.toLowerCase()) > 0
+      ) {
         midSearch = true;
       }
     }
@@ -408,12 +426,12 @@ function showTopic() {
       var tmpMessage = "";
 
       var k;
-
       if (
         curProcCnt < topics[i].open_course_cnt &&
         topics[i].main_subj != "game" &&
         topics[i].main_subj != "advanced" &&
-        topics[i].main_subj != "video"
+        topics[i].main_subj != "video" &&
+        !topics[i].quiz_type.includes("conversation")
       ) {
         var curClassID = curBaseID + "_class";
         if (topics[i].small_subj_html[j].startsWith("http")) {

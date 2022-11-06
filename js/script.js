@@ -129,7 +129,6 @@ function setCourse() {
   localStorage.setItem("lastCourse", curCourse);
   var element = document.getElementById(this.id).parentNode;
   element.classList.add("side-nav__item--active");
-
   showTopic();
 
   //0.3. Set Main Subject
@@ -145,6 +144,7 @@ function setCourse() {
   }
 
   //0.2. Set Subject
+
   let small_test_links = document.querySelectorAll(".test-button");
   for (let i = 0; i < small_test_links.length; i++) {
     small_test_links[i].addEventListener("click", startQuiz);
@@ -340,10 +340,11 @@ function startQuiz() {
 
   //0.2. disable all test buttons
   //0.直接聽錄音
-  if (curQuizType.includes("conversation_youtube")) {
+  if (curQuizType.includes("conversation")) {
     startAudio(this.id);
     return;
   }
+
   // } else {
   //   let small_test_links = document.querySelectorAll(".test-button");
   //   for (let i = 0; i < small_test_links.length; i++) {
@@ -1348,6 +1349,10 @@ function setSubtitles(contents) {
     }
   }
   //add one line if last line's content is not null
+  if (subTitleCnt < 1) {
+    alert("No subtitles inside");
+    return;
+  }
   if (subtitles[subTitleCnt - 1].content.length > 0) {
     let subtitle = new Subtitle();
     subtitles.push(subtitle);
@@ -1406,7 +1411,7 @@ function highlight_start(lineno, content) {
   return return_content;
 }
 
-function showTable() {
+function showTable(isMedia) {
   var modalContent = document.getElementById("modal-content-audio");
   var tmpAudio_sec_bottom = document.getElementById("audio_sec_bottom");
   if (tmpAudio_sec_bottom != null) {
@@ -1449,7 +1454,7 @@ function showTable() {
     c.onclick = function () {
       setSubtitleTime(this, 1);
     };
-    if (!bSubtitleEditable) {
+    if (bSubtitleEditable == false || isMedia == false) {
       c.style.display = "none";
     }
 
@@ -1458,7 +1463,7 @@ function showTable() {
     c.onclick = function () {
       setSubtitleTime(this, 2);
     };
-    if (!bSubtitleEditable) {
+    if (bSubtitleEditable == false || isMedia == false) {
       c.style.display = "none";
     }
 
@@ -1480,9 +1485,9 @@ function showTable() {
   th = t.createTHead();
   r = th.insertRow(0);
   c = r.insertCell(-1);
-  c.style.width = "7%";
+  c.style.width = "5%";
   c.innerHTML = "#";
-  if (bSubtitleEditable) {
+  if (bSubtitleEditable == true && isMedia == true) {
     c = r.insertCell(-1);
     c.style.width = "10%";
     c.innerHTML = "開始";
@@ -1496,10 +1501,10 @@ function showTable() {
     c.style.width = "50%";
     c.innerHTML = "句子1";
     c = r.insertCell(-1);
-    c.style.width = "43%";
+    c.style.width = "45%";
     c.innerHTML = "句子2";
   } else {
-    c.style.width = "93%";
+    c.style.width = "95%";
     c.innerHTML = "句子";
   }
 
@@ -1557,7 +1562,7 @@ function getTableContent() {
   return tableContent;
 }
 
-function readTableContent() {
+function readTableContent(isMedia) {
   var fileSelector = document.createElement("input");
   fileSelector.setAttribute("type", "file");
   fileSelector.click();
@@ -1570,7 +1575,7 @@ function readTableContent() {
       reader.onload = (evt) => {
         var fileContent = evt.target.result;
         setSubtitles(fileContent);
-        showTable();
+        showTable(isMedia);
       };
       reader.onerror = (evt) => {
         alert("error");
@@ -1615,6 +1620,7 @@ function insertTableRow(insNum) {
 
 function startAudio(curQuiz) {
   var bPlayerList = false;
+  var isMedia = true;
   subtitles = [];
   //2.generate questions
   document.getElementById(curQuiz).classList.add("test-pressed");
@@ -1703,7 +1709,7 @@ function startAudio(curQuiz) {
     playerDiv.classList.add("myPlayerDiv");
     audio_sec_top.appendChild(playerDiv);
 
-    showMessage();
+    showMessage(true);
     // 秀上方訊息-結束
     modalContent.appendChild(audio_sec_top);
 
@@ -1781,7 +1787,7 @@ function startAudio(curQuiz) {
       // 前進10秒：目前秒數 + 10
       e.target.seekTo(current + 10);
     }
-  } else {
+  } else if (curQuizType.includes("mp3") || curQuizType.includes("m4a")) {
     audio_sec_top.classList.add("audio_sec_top");
     if (curQuizType.includes("m4a")) {
       audio_filename = base_filename + ".m4a";
@@ -1794,7 +1800,12 @@ function startAudio(curQuiz) {
     audio_sec_top.appendChild(audio);
 
     modalContent.appendChild(audio_sec_top);
-    showMessage();
+    showMessage(true);
+  } else {
+    isMedia = false;
+    audio_sec_top.classList.add("plain_sec_top");
+    modalContent.appendChild(audio_sec_top);
+    showMessage(false);
   }
 
   if (!curQuizType.includes("youtube")) {
@@ -1803,7 +1814,7 @@ function startAudio(curQuiz) {
   } else {
   }
 
-  showTable();
+  showTable(isMedia);
 
   if (subtitles.length < 1) return; //no subtitle, exit
 
@@ -1921,7 +1932,7 @@ function startAudio(curQuiz) {
   }
 }
 
-function showMessage() {
+function showMessage(isMedia) {
   /* 2.1. 過濾只留重點列 */
   var remainHighlight = document.createElement("input");
   remainHighlight.type = "checkbox";
@@ -1935,7 +1946,7 @@ function showMessage() {
   lblRemainHighlight.htmlFor = "remainHighlight";
   remainHighlight.onclick = function () {
     bRemainHighlight = remainHighlight.checked;
-    showTable();
+    showTable(isMedia);
   };
 
   /* 2.2.2. 字幕編輯模式 */
@@ -1967,25 +1978,27 @@ function showMessage() {
         setSubtitles(nowTableContent);
       }
     }
-    showTable();
+    showTable(isMedia);
   };
   var messageDiv = document.createElement("div");
 
   // 秀上方訊息
   /* 2.2.1. 播放模式 */
-  var dropdown = document.createElement("select");
-  dropdown.classList.add("select-dropdown");
-  for (var i = 0; i < arrPlayMode.length; i++) {
-    var opt = document.createElement("option");
-    opt.text = arrPlayMode[i].text;
-    opt.value = arrPlayMode[i].value;
-    dropdown.options.add(opt);
-    messageDiv.appendChild(dropdown);
+  if (isMedia == true) {
+    var dropdown = document.createElement("select");
+    dropdown.classList.add("select-dropdown");
+    for (var i = 0; i < arrPlayMode.length; i++) {
+      var opt = document.createElement("option");
+      opt.text = arrPlayMode[i].text;
+      opt.value = arrPlayMode[i].value;
+      dropdown.options.add(opt);
+      messageDiv.appendChild(dropdown);
+    }
+    dropdown.selectedIndex = playMode;
+    dropdown.onchange = function () {
+      playMode = this.selectedIndex;
+    };
   }
-  dropdown.selectedIndex = playMode;
-  dropdown.onchange = function () {
-    playMode = this.selectedIndex;
-  };
 
   /* 2.2.2. 編輯字幕 */
   if (bHasHighlight) {
@@ -2033,7 +2046,7 @@ function showMessage() {
   readBtn.innerText = "讀取字幕";
   readBtn.classList.add("myButton");
   readBtn.onclick = function () {
-    readTableContent();
+    readTableContent(isMedia);
   };
   if (windowWidth > 600) {
     messageDiv.appendChild(readBtn);
