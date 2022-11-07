@@ -214,6 +214,7 @@ function showTopic() {
   }
 
   curMainSubj = localStorage.getItem(curCourse + "_main_subj");
+  if (curMainSubj == "undefined" || curMainSubj == null) curMainSubj = "word";
   for (var i = 0; i < courseSubjList.length; i++) {
     if (courseSubjList[i].course != curCourse) continue;
     var courseSubjArr = courseSubjList[i].subj.split(",");
