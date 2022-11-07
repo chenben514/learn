@@ -16,7 +16,7 @@ let courseSubjList = [
   },
   { course: "japan", subj: "word,spell,video" },
   { course: "korean", subj: "word,spell,listen,writing,grammer,video,news" },
-  { course: "computer", subj: "devops,cloud,db" },
+  { course: "computer", subj: "os,db,programming,data,devops,web" },
   { course: "learn", subj: "calc,game,video" },
 ];
 
@@ -33,9 +33,12 @@ let subjMap = new Map([
   ["writing", "書寫"],
   ["news", "新聞"],
   //電腦
-  ["devops", "devops"],
-  ["cloud", "雲服務"],
-  ["db", "資料庫"],
+  ["os", "OS"],
+  ["db", "DB"],
+  ["data", "Data"],
+  ["programming", "Programming"],
+  ["web", "Web"],
+  ["devops", "DevOps"],
 ]);
 
 class Topic {
