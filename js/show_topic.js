@@ -20,6 +20,15 @@ let courseSubjList = [
   { course: "learn", subj: "calc,game,video" },
 ];
 
+let defaultCourseSubjMap = new Map([
+  ["chinese", "word"],
+  ["english", "word"],
+  ["japan", "word"],
+  ["korean", "word"],
+  ["computer", "os"],
+  ["learn", "calc"],
+]);
+
 let subjMap = new Map([
   ["word", "字彙"],
   ["video", "影片"],
@@ -60,7 +69,8 @@ if (curCourse == "undefined" || curCourse == null || curCourse.length == 0)
   curCourse = "korean";
 
 curMainSubj = localStorage.getItem(curCourse + "_main_subj");
-if (curMainSubj == "undefined" || curMainSubj == null) curMainSubj = "word";
+if (curMainSubj == "undefined" || curMainSubj == null)
+  curMainSubj = defaultCourseSubjMap.get(curCourse);
 
 var element = document.getElementsByClassName("side-nav__item--active");
 //getTopic(0);
@@ -217,7 +227,8 @@ function showTopic() {
   }
 
   curMainSubj = localStorage.getItem(curCourse + "_main_subj");
-  if (curMainSubj == "undefined" || curMainSubj == null) curMainSubj = "word";
+  if (curMainSubj == "undefined" || curMainSubj == null)
+    curMainSubj = defaultCourseSubjMap.get(curCourse);
   for (var i = 0; i < courseSubjList.length; i++) {
     if (courseSubjList[i].course != curCourse) continue;
     var courseSubjArr = courseSubjList[i].subj.split(",");
