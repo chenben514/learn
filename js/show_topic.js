@@ -45,7 +45,7 @@ let subjMap = new Map([
   ["os", "OS"],
   ["db", "DB"],
   ["data", "Data"],
-  ["programming", "Programming"],
+  ["programming", "程式"],
   ["web", "Web"],
   ["devops", "DevOps"],
 ]);

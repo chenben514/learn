@@ -80,7 +80,7 @@ let bRemainHighlight = false;
 let bHasHighlight = false;
 
 //subtitleEditable
-let bSubtitleEditable = false;
+let bSubtitleEditable = true;
 let audio_sec_bottom;
 let delBtn, insBtn, saveBtn, readBtn;
 
@@ -1978,8 +1978,27 @@ function showMessage(isMedia) {
         setSubtitles(nowTableContent);
       }
     }
+
     showTable(isMedia);
   };
+
+  /* 2.2.3. 字幕搜尋介面 */
+
+  var subtitleSearchTxt = document.createElement("text");
+  var subtitleSearchBtn = document.createElement("button");
+  var subtitleSearchIcon = document.createElement("svg");
+  var subtitleSearchUse = document.createElement("use");
+
+  subtitleSearchTxt.classList.add("search__input");
+  subtitleSearchBtn.classList.add("search__button");
+  subtitleSearchIcon.classList.add("search__icon");
+  subtitleSearchUse.setAttribute(
+    "xlink:href",
+    "img/sprite.svg#icon-magnifying-glass"
+  );
+  subtitleSearchIcon.appendChild(subtitleSearchUse);
+  subtitleSearchBtn.appendChild(subtitleSearchIcon);
+
   var messageDiv = document.createElement("div");
 
   // 秀上方訊息
@@ -2051,6 +2070,10 @@ function showMessage(isMedia) {
   if (windowWidth > 600) {
     messageDiv.appendChild(readBtn);
   }
+
+  // messageDiv.appendChild(subtitleSearchBtn);
+  // subtitleSearchTxt.innerText = "aaaaa";
+  // messageDiv.appendChild(subtitleSearchTxt);
 
   // }
   messageDiv.classList.add("myMessageDiv");
