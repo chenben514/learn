@@ -141,7 +141,7 @@ function getTopic() {
       for (j = 0; j < allTopicArr.length; j++) {
         var allSingTopicArr = allTopicArr[j].split(",");
         if (allSingTopicArr.length < 2) {
-          alert(allTopicArr);
+          // alert(allTopicArr);
           continue;
         }
         if (!allSingTopicArr[2].includes("=")) {
