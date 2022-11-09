@@ -81,6 +81,9 @@ let bHasHighlight = false;
 
 //subtitleEditable
 let bSubtitleEditable = true;
+if (windowWidth < 600) {
+  bSubtitleEditable = false;
+}
 let audio_sec_bottom;
 let delBtn, insBtn, saveBtn, readBtn;
 
