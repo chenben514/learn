@@ -140,7 +140,10 @@ function getTopic() {
       var allTopicArr = allDisplayName.replace(/\r\n/g, "\n").split("\n");
       for (j = 0; j < allTopicArr.length; j++) {
         var allSingTopicArr = allTopicArr[j].split(",");
-        if (allTopicArr[j].length < 2) continue;
+        if (allSingTopicArr.length < 2) {
+          alert(allTopicArr);
+          continue;
+        }
         if (!allSingTopicArr[2].includes("=")) {
           alert("lack of = error :", allSingTopicArr[2]);
         }
