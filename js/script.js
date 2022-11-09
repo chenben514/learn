@@ -81,6 +81,7 @@ let bHasHighlight = false;
 
 //subtitleEditable
 let bSubtitleEditable = true;
+var windowWidth = window.innerWidth;
 if (windowWidth < 600) {
   bSubtitleEditable = false;
 }
