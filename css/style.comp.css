@@ -49,7 +49,7 @@ body {
   margin: 2rem auto;
   background-color: var(--color-grey-light-1);
   box-shadow: var(--shadow-dark);
-  min-height: 50rem; }
+  min-height: 100rem; }
   @media only screen and (max-width: 75em) {
     .container {
       margin: 0;

@@ -679,14 +679,28 @@ section .correct_list {
 .audio_sec_bottom {
   background-color: lightblue;
   padding: 0.5rem 1rem;
-  width: 95%;
-  height: 360px;
   /* height: 40%; */
   overflow-y: scroll;
 }
+
+.audio_sec_bottom_height {
+  width: 95%;
+  height: 360px;
+}
 @media (max-width: 600px) {
-  .audio_sec_bottom {
+  .audio_sec_bottom_height {
     height: 300px;
+  }
+}
+
+.lesson_sec_bottom_height {
+  width: 95%;
+  height: 90%;
+}
+@media (max-width: 600px) {
+  .lesson_sec_bottom_height {
+    height: 300px;
+    height: 90%;
   }
 }
 
