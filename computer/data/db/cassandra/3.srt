@@ -1,0 +1,52 @@
+https://www.youtube-nocookie.com/watch?v=8AoWhAhfuYk
+https://www.youtube-nocookie.com/watch?v=8AoWhAhfuYk
+1
+00:00:54,314 --> 00:02:15,313
+Partition
+
+
+2
+00:02:15,313 --> 00:02:42,71
+Keyspace (equal to DB)
+
+
+3
+00:02:42,71 --> 00:05:56,374
+Table
+
+
+4
+00:05:56,382 --> 00:08:56,722
+Primary Key 
+
+
+5
+00:08:56,722 --> 00:08:56,722
+### Rules of a Good Partition
+---
+
+
+6
+00:09:00,436 --> 00:08:56,722
+1. Store together what you retrieve together
+
+
+7
+00:10:02,408 --> 27:46:39,0
+2. Avoid big partitions
+
+
+8
+00:11:40,184 --> 00:12:54,99
+3. Avoid unbounded partitions
+
+
+9
+00:12:53,90 --> 00:13:58,967
+4. Avoid hot partitions
+
+
+10
+00:13:59,60 --> 00:14:11,336
+
+

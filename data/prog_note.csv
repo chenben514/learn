@@ -1,5 +1,8 @@
 --> only download mp3
-youtube-dl --extract-audio --audio-format mp3 https://www.youtube.com/watch?v=hN5MBlGv2Ac&ab_channel=Official%E9%AB%AD%E7%94%B7dism
+youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=QaOM-82fb10&ab_channel=JFlaMusic'
+youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=nfWlot6h_JM&ab_channel=TaylorSwiftVEVO'
+youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=fWNaR-rxAic&ab_channel=CarlyRaeJepsenVEVO'
+
 
 python main.py english video bbcWork PLcetZ6gSk969oGvAI0e4_PgVnlGbm64bp
 

@@ -708,6 +708,7 @@ section .correct_list {
   width: 95%;
   border-collapse: collapse;
   margin: 10px auto;
+  table-layout: fixed;
 }
 
 .audio_table tr:nth-of-type(odd) {
@@ -729,6 +730,11 @@ section .correct_list {
   border: 1px solid #ccc;
   text-align: left;
   font-size: 18px;
+}
+
+.audio_table_time_column {
+  font-size: 1.7rem !important;
+  padding: 8px !important;
 }
 
 .table_font_common {

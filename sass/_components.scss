@@ -728,11 +728,14 @@ select-dropdown,
 .select-dropdown {
   position: relative;
   // background-color: #e6e6e6;
-  background-color: #2e466e;
-  color: #ffffff;
+  // background-color: #2e466e;
+  background-color: lightsteelblue;
+  color: darkblue;
+  // color: #ffffff;
   border-radius: 4px;
   font-size: 1.5rem;
   text-align: center;
+  margin: 2px 4px;
 }
 .select-dropdown select {
   font-size: 1rem;

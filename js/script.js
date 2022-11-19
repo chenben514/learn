@@ -14,6 +14,13 @@ let arrPlayMode = [
 let playMode = 0;
 
 //subtitleMode
+let arrSubtitleMode = [
+  { value: "SingleSrt", text: "單一字幕" },
+  { value: "DoubleSrt", text: "雙字幕" },
+  { value: "MD", text: "文章筆記" },
+];
+let susplayMode = 0;
+
 let subtitleMode = ""; //srt, md
 
 let audio_sec_top;
@@ -75,7 +82,6 @@ let startTime, finishTime;
 let nowAudioLoop = false;
 let subtitles = "";
 var subTitleCnt = 0;
-var subTitleContent2 = false;
 let audio, source;
 let autoRowSelected = 0;
 let myAudioTableRow;
@@ -133,7 +139,7 @@ function setCourse() {
   preElement.classList.remove("side-nav__item--active");
 
   curCourse = this.id;
-  localStorage.setItem("lastCourse", curCourse);
+  localStorage.setItem(curWeb + "lastCourse", curCourse);
   var element = document.getElementById(this.id).parentNode;
   element.classList.add("side-nav__item--active");
   showTopic();
@@ -443,11 +449,11 @@ function startWrong() {
     curQuizType.includes("conversation_m4a") ||
     curQuizType.includes("conversation_mp3")
   ) {
-    subtitleMode = "srt";
+    subtitleMode = "SingleSrt";
     parseSrt(base_filename + ".srt");
   } else {
-    subtitleMode = "csv";
-    parseCsv(base_filename + ".csv");
+    subtitleMode = "MD";
+    parseCsv(base_filename + ".md");
   }
 
   modalContent.innerHTML = '<span class="close">&times;</span><p>';
@@ -620,11 +626,11 @@ function getQuestions() {
     curQuizType.includes("conversation_m4a") ||
     curQuizType.includes("conversation_mp3")
   ) {
-    subtitleMode = "srt";
+    subtitleMode = "SingleSrt";
     parseSrt(base_filename + ".srt");
   } else {
-    subtitleMode = "csv";
-    parseCsv(base_filename + ".csv");
+    subtitleMode = "MD";
+    parseCsv(base_filename + ".md");
   }
 
   var quesList = [];
@@ -1271,6 +1277,7 @@ function readSubtitles(srtFile) {
     let subtitle = new Subtitle();
     subtitle.numb = 1;
     subtitle.content = "";
+    subtitle.content2 = "";
     subtitles.push(subtitle);
     return false;
   }
@@ -1301,12 +1308,12 @@ function setSubtitles(contents) {
         adjustTime = getSecond(timeArr[1]);
       }
     }
-    if (subtitleMode.includes("srt")) {
+    if (subtitleMode.includes("Srt")) {
       if (quesArr[k].includes("-->")) {
         let subtitle = new Subtitle();
         subtitles.push(subtitle);
       }
-    } else if (subtitleMode.includes("md")) {
+    } else if (subtitleMode.includes("MD")) {
       if (quesArr[k].startsWith("#")) {
         let subtitle = new Subtitle();
         subtitles.push(subtitle);
@@ -1315,27 +1322,29 @@ function setSubtitles(contents) {
   }
 
   subTitleCnt = 0;
-  subTitleContent2 = false;
   var nowStatus = 0; //0:nothing,1:start
 
   bRemainHighlight = false;
   bHasHighlight = false;
+  var bSubtitle2 = false;
   for (let k = 0; k < quesCnt; k++) {
     /*judge double subtitles */
     if (quesArr[k].includes("#Subtitle2")) {
-      subTitleContent2 = true;
+      subtitleMode = "DoubleSrt";
     }
     /*end*/
-    if (subtitleMode.includes("srt") && quesArr[k].includes("-->")) {
+    if (subtitleMode.includes("Srt") && quesArr[k].includes("-->")) {
+      subTitleCnt++;
       var timeArr = quesArr[k].split("-"); //00:01:01,440 --> 00:01:03,232
-      subtitles[subTitleCnt].start = getSecond(timeArr[0]) + adjustTime;
+      subtitles[subTitleCnt - 1].start = getSecond(timeArr[0]) + adjustTime;
       var time2Arr = timeArr[2].split(">"); //00:01:01,440 --> 00:01:03,232
-      subtitles[subTitleCnt].finish = getSecond(time2Arr[1]) + adjustTime;
-      subtitles[subTitleCnt].numb = subTitleCnt + 1;
-      subtitles[subTitleCnt].content = "";
-      subtitles[subTitleCnt].content2 = "";
+      subtitles[subTitleCnt - 1].finish = getSecond(time2Arr[1]) + adjustTime;
+      subtitles[subTitleCnt - 1].numb = subTitleCnt;
+      subtitles[subTitleCnt - 1].content = "";
+      subtitles[subTitleCnt - 1].content2 = "";
       nowStatus = 1;
-    } else if (subtitleMode.includes("md") && quesArr[k].startsWith("#")) {
+      bSubtitle2 = false;
+    } else if (subtitleMode.includes("MD") && quesArr[k].startsWith("#")) {
       if (nowStatus == 1) {
         subTitleCnt++;
       }
@@ -1345,20 +1354,33 @@ function setSubtitles(contents) {
       nowStatus = 1;
     } else {
       if (nowStatus == 1 && quesArr[k] != undefined) {
-        if (subtitleMode.includes("srt") && quesArr[k].length == 0) {
+        if (subtitleMode.includes("Srt") && quesArr[k].length == 0) {
           nowStatus = 0;
-          subTitleCnt++;
+          // subTitleCnt++;
         } else {
-          if (subtitles[subTitleCnt].content.length > 0)
-            subtitles[subTitleCnt].content += "\n";
-          if (subTitleContent2) {
+          // if (subtitles[subTitleCnt].content.length > 0)
+          //   subtitles[subTitleCnt].content += "\n";
+          if (subtitleMode.includes("DoubleSrt")) {
             var contentArr = quesArr[k].split("--"); //00:01:01,440 --> 00:01:03,232
-            subtitles[subTitleCnt].content += contentArr[0];
-            if (contentArr.length < 2)
-              subtitles[subTitleCnt].content2 += contentArr[0];
-            else subtitles[subTitleCnt].content2 += contentArr[1];
+
+            if (contentArr.length > 1) {
+              subtitles[subTitleCnt - 1].content += contentArr[0];
+              subtitles[subTitleCnt - 1].content2 += contentArr[1];
+              bSubtitle2 = true;
+            } else {
+              if (k < quesCnt - 1) {
+                if (quesArr[k + 1].includes("-->")) {
+                  continue;
+                }
+              }
+              if (bSubtitle2) {
+                subtitles[subTitleCnt - 1].content2 += quesArr[k];
+              } else {
+                subtitles[subTitleCnt - 1].content += quesArr[k];
+              }
+            }
           } else {
-            subtitles[subTitleCnt].content += quesArr[k];
+            subtitles[subTitleCnt - 1].content += quesArr[k];
           }
           if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
             bHasHighlight = true;
@@ -1373,7 +1395,7 @@ function setSubtitles(contents) {
     return;
   }
 
-  if (subtitleMode.includes("md")) {
+  if (subtitleMode.includes("MD")) {
     subTitleCnt++;
   }
   if (subtitles[subTitleCnt - 1].content.length > 0) {
@@ -1469,14 +1491,17 @@ function showTable(isMedia) {
     r.setAttribute("class", "audio_table_row");
     if (k == 0) r.classList.add("table_font_highlight");
     else r.classList.remove("table_font_highlight");
+    //1.行號
     c = r.insertCell(-1);
     c.innerHTML = subtitles[k].numb;
     c.onclick = function () {
       selectRow(this, 0);
     };
 
+    //2.開始時間
     c = r.insertCell(-1);
     c.innerHTML = changeTimeString(subtitles[k].start);
+    c.classList.add("audio_table_time_column");
     c.onclick = function () {
       setSubtitleTime(this, 1);
     };
@@ -1484,7 +1509,9 @@ function showTable(isMedia) {
       c.style.display = "none";
     }
 
+    //3.結束時間
     c = r.insertCell(-1);
+    c.classList.add("audio_table_time_column");
     c.innerHTML = changeTimeString(subtitles[k].finish);
     c.onclick = function () {
       setSubtitleTime(this, 2);
@@ -1493,6 +1520,7 @@ function showTable(isMedia) {
       c.style.display = "none";
     }
 
+    //4.句子1
     c = r.insertCell(-1);
     c.onclick = function () {
       selectRow(this, 3);
@@ -1502,8 +1530,15 @@ function showTable(isMedia) {
     };
     c.innerHTML = highlight_start(k, subtitles[k].content);
 
-    if (subTitleContent2) {
+    //5.句子2
+    if (subtitleMode.includes("DoubleSrt")) {
       c = r.insertCell(-1);
+      c.onclick = function () {
+        selectRow(this, 4);
+      };
+      c.onkeyup = function () {
+        changeRow(this);
+      };
       c.innerHTML = subtitles[k].content2;
     }
   }
@@ -1511,7 +1546,7 @@ function showTable(isMedia) {
   th = t.createTHead();
   r = th.insertRow(0);
   c = r.insertCell(-1);
-  c.style.width = "5%";
+  c.style.width = "4%";
   c.innerHTML = "#";
   if (bSubtitleEditable == true && isMedia == true) {
     c = r.insertCell(-1);
@@ -1523,14 +1558,14 @@ function showTable(isMedia) {
   }
 
   c = r.insertCell(-1);
-  if (subTitleContent2) {
-    c.style.width = "50%";
+  if (subtitleMode.includes("DoubleSrt")) {
+    c.style.width = "38%";
     c.innerHTML = "句子1";
     c = r.insertCell(-1);
-    c.style.width = "45%";
+    c.style.width = "38%";
     c.innerHTML = "句子2";
   } else {
-    c.style.width = "95%";
+    c.style.width = "76%";
     c.innerHTML = "句子";
   }
 
@@ -1568,19 +1603,27 @@ const downloadToFile = (content, filename, contentType) => {
 };
 
 function saveTableContent() {
-  var subContent;
-  subContent = youtube_url + "\n";
+  var subContent = "";
+  // subContent = youtube_url + "\n";
   subContent = subContent + getTableContent();
 
   downloadToFile(subContent, "1.txt", "text/plain");
 }
 
 function getTableContent() {
-  var tableContent;
+  var tableContent = "";
   var table = document.getElementById("my_audio_table");
 
-  tableContent = youtube_url + "\n";
+  // tableContent = youtube_url + "\n";
+  if (subtitleMode.includes("DoubleSrt")) {
+    tableContent = "#Subtitle2\n";
+  }
+
   for (var i = 1, row; (row = table.rows[i]); i++) {
+    // alert(row.cells[3].innerText);
+    // if (row.cells[3].innerText.length == 0) {
+    //   continue;
+    // }
     tableContent = tableContent + row.cells[0].innerText + "\n";
     tableContent =
       tableContent +
@@ -1588,8 +1631,13 @@ function getTableContent() {
       " --> " +
       row.cells[2].innerText +
       "\n";
-    tableContent = tableContent + row.cells[3].innerText + "\n\n";
+    tableContent = tableContent + row.cells[3].innerText;
+    if (subtitleMode.includes("DoubleSrt")) {
+      tableContent = tableContent + " -- " + row.cells[4].innerText;
+    }
+    tableContent = tableContent + "\n";
   }
+  // alert(tableContent);
   return tableContent;
 }
 
@@ -1619,9 +1667,10 @@ function insertTableRow(insNum) {
   var table = document.getElementById("my_audio_table");
   var rNew = table.insertRow(insNum);
   rNew.setAttribute("class", "audio_table_row");
+  //1.行號
   var cNew = rNew.insertCell(-1);
   cNew.innerHTML = insNum;
-
+  //2.開始時間
   cNew = rNew.insertCell(-1);
   if (insNum > 1) {
     cNew.innerHTML = table.rows[insNum - 1].cells[2].innerText;
@@ -1629,7 +1678,7 @@ function insertTableRow(insNum) {
   cNew.onclick = function () {
     setSubtitleTime(this, 1);
   };
-
+  //3.結束時間
   cNew = rNew.insertCell(-1);
 
   if (insNum < table.rows.length - 1) {
@@ -1638,6 +1687,8 @@ function insertTableRow(insNum) {
   cNew.onclick = function () {
     setSubtitleTime(this, 2);
   };
+
+  //4.句子1
   cNew = rNew.insertCell(-1);
   cNew.onclick = function () {
     selectRow(this, 3);
@@ -1647,6 +1698,18 @@ function insertTableRow(insNum) {
   };
 
   cNew.setAttribute("contenteditable", "true");
+
+  //5.句子2
+  if (subtitleMode.includes("DoubleSrt")) {
+    cNew = rNew.insertCell(-1);
+    cNew.onclick = function () {
+      selectRow(this, 4);
+    };
+    cNew.onkeyup = function () {
+      changeRow(this);
+    };
+    cNew.setAttribute("contenteditable", "true");
+  }
 }
 
 function startAudio(curQuiz) {
@@ -1706,15 +1769,15 @@ function startAudio(curQuiz) {
       .replace(/&/g, "_")
       .replace(/~/g, "-");
     base_filename = base_left_filename + "/" + curTopicArr[3].split("@")[2];
-    subtitleMode = "srt";
+    subtitleMode = "SingleSrt";
     readSubtitles(base_filename + ".srt");
     youtube_url = "https://www.youtube-nocookie.com/watch?v=" + tmpID;
   } else {
     if (curQuizType.includes("conversation_lesson")) {
-      subtitleMode = "md";
+      subtitleMode = "MD";
       readSubtitles(base_filename + ".md");
     } else {
-      subtitleMode = "srt";
+      subtitleMode = "SingleSrt";
       readSubtitles(base_filename + ".srt");
     }
   }
@@ -2002,11 +2065,13 @@ function showMessage(isMedia) {
   subtitleEditable.onclick = function () {
     bSubtitleEditable = subtitleEditable.checked;
     if (!subtitleEditable.checked) {
+      dropdownSubtitle.style.display = "none";
       insBtn.style.display = "none";
       delBtn.style.display = "none";
       saveBtn.style.display = "none";
       // readBtn.style.display = "none";
     } else {
+      dropdownSubtitle.style.display = "inline";
       insBtn.style.display = "inline";
       delBtn.style.display = "inline";
       saveBtn.style.display = "inline";
@@ -2069,6 +2134,23 @@ function showMessage(isMedia) {
     messageDiv.appendChild(lblsubtitleEditable);
   }
 
+  /* 2.2.2.1. 編輯模式 */
+
+  var dropdownSubtitle = document.createElement("select");
+  dropdownSubtitle.classList.add("select-dropdown");
+  for (var i = 0; i < arrSubtitleMode.length; i++) {
+    var opt = document.createElement("option");
+    opt.text = arrSubtitleMode[i].text;
+    opt.value = arrSubtitleMode[i].value;
+    dropdownSubtitle.options.add(opt);
+  }
+  dropdownSubtitle.selectedIndex = subtitleMode;
+  dropdownSubtitle.onchange = function () {
+    subtitleMode = this[this.selectedIndex].value;
+    showTable(isMedia);
+  };
+  messageDiv.appendChild(dropdownSubtitle);
+
   // if (bSubtitleEditable) {
   insBtn = document.createElement("button");
   insBtn.innerText = "插入上列";
@@ -2119,6 +2201,7 @@ function showMessage(isMedia) {
   audio_sec_top.appendChild(messageDiv);
 
   if (!subtitleEditable.checked) {
+    dropdownSubtitle.style.display = "none";
     insBtn.style.display = "none";
     delBtn.style.display = "none";
     saveBtn.style.display = "none";
@@ -2130,13 +2213,24 @@ function getSecond(inputTime) {
     return 99999;
   }
   var secondArr = inputTime.split(":");
-  var hour = Number(secondArr[0]);
-  var minute = Number(secondArr[1]);
-  var second2Arr;
-  if (secondArr[2].includes(",")) {
-    second2Arr = secondArr[2].split(",");
+  var hour = 0;
+  var minute = 0;
+  var secondString = "";
+
+  if (secondArr.length > 2) {
+    hour = Number(secondArr[0]);
+    minute = Number(secondArr[1]);
+    secondString = secondArr[2];
+  } else {
+    minute = Number(secondArr[0]);
+    secondString = secondArr[1];
+  }
+
+  var second2Arr = "";
+  if (secondString.includes(",")) {
+    second2Arr = secondString.split(",");
   } else if (secondArr[2].includes(".")) {
-    second2Arr = secondArr[2].split(".");
+    second2Arr = secondString.split(".");
   }
   var second = Number(second2Arr[0]);
   var milliSecond = Number(second2Arr[1]);
@@ -2153,7 +2247,7 @@ function setSubtitleTime(iSelectedCol, iCol) {
 }
 
 function changeTimeString(iTime) {
-  if (iTime == undefined) return "00:00:00,000";
+  if (iTime == undefined) return "00:00,000";
   let hours = iTime / 3600;
   let minutes = (hours - Math.floor(hours)) * 60;
   let seconds = iTime % 60;
@@ -2176,9 +2270,13 @@ function changeTimeString(iTime) {
 
   let millsecond = Math.floor((iTime * 1000) % 1000);
 
-  var returnStr;
+  var returnStr = "";
 
-  returnStr = hours + ":" + minutes + ":" + seconds + "," + millsecond;
+  if (!hours.includes("00")) {
+    returnStr = returnStr + hours + ":";
+  }
+
+  returnStr = returnStr + minutes + ":" + seconds + "," + millsecond;
 
   return returnStr;
 }
@@ -2187,19 +2285,22 @@ function selectRow(c, iCol) {
   var r = c.parentNode;
   if (rowSelected !== undefined) {
     rowSelected.style.color = "blue";
-    if (bSubtitleEditable && rowSelected != r) {
-      rowSelected.children[3].setAttribute("contenteditable", "false");
+    if (bSubtitleEditable && rowSelected != r && iCol >= 3) {
+      rowSelected.children[iCol].setAttribute("contenteditable", "false");
     }
   }
   rowSelected = r;
   rowSelected.style.color = "red";
   if (bSubtitleEditable) {
     rowSelected.children[3].setAttribute("contenteditable", "true");
+    if (subtitleMode.includes("DoubleSrt")) {
+      rowSelected.children[4].setAttribute("contenteditable", "true");
+    }
   }
   var nowRow = c.closest("tr").rowIndex;
   var nowSec = getSecond(r.children[1].innerHTML);
   if (youtube_mode) {
-    if (!(bSubtitleEditable && iCol == 3)) {
+    if (!(bSubtitleEditable && iCol >= 3)) {
       player.seekTo(nowSec);
     }
   } else {
@@ -2222,9 +2323,16 @@ function changeRow(c) {
   var r = c.parentNode;
   var nowRow = Number(r.children[0].innerHTML);
   var table = document.getElementById("my_audio_table");
+  // alert("subtitles length=" + subtitles.length);
+  // alert("nowRow=" + nowRow);
+  // alert("table.rows.length=" + table.rows.length);
   subtitles[nowRow - 1].content = table.rows[nowRow].children[3].innerText;
+  if (subtitleMode.includes("DoubleSrt")) {
+    subtitles[nowRow - 1].content2 = table.rows[nowRow].children[4].innerText;
+  }
   if (nowRow == table.rows.length - 1) {
     if (rowSelected.children[3].innerText.length > 0) {
+      // alert("insertTableRow=" + nowRow);
       insertTableRow(nowRow + 1);
       var nowTableContent = getTableContent();
       setSubtitles(nowTableContent);
