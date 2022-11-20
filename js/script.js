@@ -578,7 +578,6 @@ function checkFileExist(urlToFile) {
 }
 function parseCsv(filename) {
   var displayName;
-
   if (checkFileExist(filename) == false) {
     // alert("Quiz file [" + filename + "] does not exist.");
     return false;
@@ -1320,7 +1319,7 @@ function setSubtitles(contents) {
       }
     }
   }
-
+  console.log("subtitle.length=" + subtitles.length);
   subTitleCnt = 0;
   var nowStatus = 0; //0:nothing,1:start
 
@@ -1345,12 +1344,12 @@ function setSubtitles(contents) {
       nowStatus = 1;
       bSubtitle2 = false;
     } else if (subtitleMode.includes("MD") && quesArr[k].startsWith("#")) {
-      if (nowStatus == 1) {
-        subTitleCnt++;
-      }
-      subtitles[subTitleCnt].numb = subTitleCnt + 1;
-      subtitles[subTitleCnt].content = quesArr[k];
-      subtitles[subTitleCnt].content2 = "";
+      // if (nowStatus == 1) {
+      subTitleCnt++;
+      // }
+      subtitles[subTitleCnt - 1].numb = subTitleCnt;
+      subtitles[subTitleCnt - 1].content = quesArr[k];
+      subtitles[subTitleCnt - 1].content2 = "";
       nowStatus = 1;
     } else {
       if (nowStatus == 1 && quesArr[k] != undefined) {
@@ -1380,7 +1379,8 @@ function setSubtitles(contents) {
               }
             }
           } else {
-            subtitles[subTitleCnt - 1].content += quesArr[k];
+            subtitles[subTitleCnt - 1].content =
+              subtitles[subTitleCnt - 1].content + "\n" + quesArr[k];
           }
           if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
             bHasHighlight = true;
@@ -1395,9 +1395,9 @@ function setSubtitles(contents) {
     return;
   }
 
-  if (subtitleMode.includes("MD")) {
-    subTitleCnt++;
-  }
+  // if (subtitleMode.includes("MD")) {
+  //   subTitleCnt++;
+  // }
   if (subtitles[subTitleCnt - 1].content.length > 0) {
     let subtitle = new Subtitle();
     subtitles.push(subtitle);
@@ -2256,8 +2256,10 @@ function changeTimeString(iTime) {
   minutes = Math.floor(minutes);
   seconds = Math.floor(seconds);
 
+  var returnStr = "";
   if ((hours + "").length == 1) {
     hours = "0" + hours;
+    returnStr = returnStr + hours + ":";
   }
 
   if ((minutes + "").length == 1) {
@@ -2269,12 +2271,6 @@ function changeTimeString(iTime) {
   }
 
   let millsecond = Math.floor((iTime * 1000) % 1000);
-
-  var returnStr = "";
-
-  if (!hours.includes("00")) {
-    returnStr = returnStr + hours + ":";
-  }
 
   returnStr = returnStr + minutes + ":" + seconds + "," + millsecond;
 

@@ -44,6 +44,7 @@ function getTopic() {
     "/topics_" +
     curMainSubj +
     ".csv";
+
   var read = new XMLHttpRequest();
   read.open("GET", selFile, false);
   read.setRequestHeader("Cache-Control", "no-cache");
@@ -131,9 +132,8 @@ function getTopic() {
       }
     } else {
       //handle [1-n-x] auto loop case (n:全部,x:己校正)
-      // alert("153:" + singTopicArr[6]);
       if (singTopicArr[6] == undefined) {
-        alert("逗點分隔，找不到第7欄位，或第7欄位非 all.csv -- " + topicArr[i]);
+        alert("逗點分隔，找不到第7欄位，或第7欄位非 all.csv -- " + selFile);
       }
       if (singTopicArr[6].includes("-")) {
         var loopArr = singTopicArr[6].split("-");
@@ -246,7 +246,6 @@ function showTopic() {
       "_" +
       topics[i].mid_subj;
     curDetailLeft.setAttribute("id", curLeftID);
-
     /*    
     var curDetailLeftImg = document.createElement("img");
     curDetailLeftImg.setAttribute("class", "category");
@@ -271,7 +270,6 @@ function showTopic() {
     }
 */
     curDetailLeft.appendChild(curDetailMidSbj);
-
     // 2.2. curDetailRight
     var curDetailRight = document.createElement("detail-right-side");
     curDetailRight.setAttribute("class", "detail-right-side");
@@ -297,11 +295,9 @@ function showTopic() {
         maxLength = topics[i].small_subj_explains[j].length;
       }
     }
-
     for (j = 0; j < topics[i].small_subjs.length; j++) {
       var curButton = document.createElement("button");
       var c, r, t;
-
       t = document.createElement("table");
 
       //1.test button
@@ -322,7 +318,6 @@ function showTopic() {
       if (maxLength > 10) {
         curButton.classList.add("test-high-button");
       }
-
       curButton.setAttribute("background-color", "lightblue");
       curButton.setAttribute("id", curBaseID);
       // curButton.setAttribute("class", "test-button");
@@ -341,7 +336,6 @@ function showTopic() {
         }
         curButton.innerText += topics[i].small_subj_explains[j];
       }
-
       var tmpLevel = getStarLevel(curButton.id);
       if (tmpLevel >= 3) {
         curButton.classList.add("test-finish");
@@ -358,7 +352,6 @@ function showTopic() {
           continue;
         }
       }
-
       c.appendChild(curButton);
       curRightCnt++;
 
