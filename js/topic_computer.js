@@ -1,4 +1,4 @@
-let curWeb = "Computer";
+let curWeb = "computer";
 let defaultCourse = "db";
 
 let courseSubjList = [

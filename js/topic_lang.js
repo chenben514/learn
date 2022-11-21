@@ -1,4 +1,4 @@
-let curWeb = "Learn";
+let curWeb = "learn";
 let defaultCourse = "korean";
 
 let courseSubjList = [
