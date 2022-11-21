@@ -36,8 +36,14 @@ var element = document.getElementsByClassName("side-nav__item--active");
 showTopic();
 
 function getTopic() {
+  var selFile = "./";
+
+  if (curWeb.includes("computer")) {
+    selFile = "../computer/";
+  }
   var selFile =
-    "./data/" +
+    selFile +
+    "/data/" +
     curCourse +
     "/" +
     curMainSubj +
@@ -78,8 +84,15 @@ function getTopic() {
     topic.quiz_type = singTopicArr[5];
 
     if (singTopicArr[6] == "all.csv") {
+      var allFile = "./";
+
+      if (curWeb.includes("computer")) {
+        allFile = "../computer/";
+      }
+
       var allFile =
-        "./data/" +
+        allFile +
+        "data/" +
         topic.course +
         "/" +
         topic.main_subj +
