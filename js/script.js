@@ -440,8 +440,20 @@ function startWrong() {
   var curTopicArr = curQuizArr[1].split("_");
   curQuizType = curQuizArr[0];
 
+  var base_left_filename = "./";
+
+  if (curWeb.includes("computer")) {
+    base_left_filename = "../computer/";
+  }
+
   var base_left_filename =
-    "./data/" + curTopicArr[0] + "/" + curTopicArr[1] + "/" + curTopicArr[2];
+    base_left_filename +
+    "data/" +
+    curTopicArr[0] +
+    "/" +
+    curTopicArr[1] +
+    "/" +
+    curTopicArr[2];
 
   base_filename = base_left_filename + "/" + curTopicArr[3];
 
@@ -616,8 +628,20 @@ function getQuestions() {
   var curTopicArr = curQuizArr[1].split("_");
   curQuizType = curQuizArr[0];
 
+  var base_left_filename = "./";
+
+  if (curWeb.includes("computer")) {
+    base_left_filename = "../computer/";
+  }
+
   var base_left_filename =
-    "./data/" + curTopicArr[0] + "/" + curTopicArr[1] + "/" + curTopicArr[2];
+    base_left_filename +
+    "data/" +
+    curTopicArr[0] +
+    "/" +
+    curTopicArr[1] +
+    "/" +
+    curTopicArr[2];
 
   base_filename = base_left_filename + "/" + curTopicArr[3];
 
@@ -1735,8 +1759,20 @@ function startAudio(curQuiz) {
   var curTopicArr = curQuizArr[1].split("_");
   var base_filename, audio_filename, selFile, txtFileName;
 
+  var base_left_filename = "./";
+
+  if (curWeb.includes("computer")) {
+    base_left_filename = "../computer/";
+  }
+
   var base_left_filename =
-    "./data/" + curTopicArr[0] + "/" + curTopicArr[1] + "/" + curTopicArr[2];
+    base_left_filename +
+    "data/" +
+    curTopicArr[0] +
+    "/" +
+    curTopicArr[1] +
+    "/" +
+    curTopicArr[2];
 
   base_filename = base_left_filename + "/" + curTopicArr[3];
 
