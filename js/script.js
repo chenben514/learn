@@ -655,7 +655,7 @@ function getQuestions() {
     subtitleMode = "MD";
     parseCsv(base_filename + ".md");
   }
-
+  alert(base_filename);
   var quesList = [];
   let quesCnt = quesArr.length;
   let ansList = [];
@@ -1301,6 +1301,8 @@ function readSubtitles(srtFile) {
     subtitle.numb = 1;
     subtitle.content = "";
     subtitle.content2 = "";
+    subtitle.content3 = "";
+    subtitle.content4 = "";
     subtitles.push(subtitle);
     return false;
   }
@@ -1338,7 +1340,14 @@ function setSubtitles(contents) {
       }
     } else if (subtitleMode.includes("MD")) {
       if (quesArr[k].startsWith("#")) {
+        if (quesArr[k].includes("#Subtitle4")) {
+          continue;
+        }
         let subtitle = new Subtitle();
+        subtitle.content = "";
+        subtitle.content2 = "";
+        subtitle.content3 = "";
+        subtitle.content4 = "";
         subtitles.push(subtitle);
       }
     }
@@ -1350,10 +1359,15 @@ function setSubtitles(contents) {
   bRemainHighlight = false;
   bHasHighlight = false;
   var bSubtitle2 = false;
+  var bSubtitle4 = false;
   for (let k = 0; k < quesCnt; k++) {
     /*judge double subtitles */
     if (quesArr[k].includes("#Subtitle2")) {
       subtitleMode = "DoubleSrt";
+    }
+    if (quesArr[k].includes("#Subtitle4")) {
+      subtitleMode = "MD4";
+      continue;
     }
     /*end*/
     if (subtitleMode.includes("Srt") && quesArr[k].includes("-->")) {
@@ -1372,9 +1386,10 @@ function setSubtitles(contents) {
       subTitleCnt++;
       // }
       subtitles[subTitleCnt - 1].numb = subTitleCnt;
-      subtitles[subTitleCnt - 1].content = quesArr[k];
-      subtitles[subTitleCnt - 1].content2 = "";
       nowStatus = 1;
+      if (!subtitleMode.includes("MD4")) {
+        subtitles[subTitleCnt - 1].content = quesArr[k];
+      }
     } else {
       if (nowStatus == 1 && quesArr[k] != undefined) {
         if (subtitleMode.includes("Srt") && quesArr[k].length == 0) {
@@ -1401,6 +1416,16 @@ function setSubtitles(contents) {
               } else {
                 subtitles[subTitleCnt - 1].content += quesArr[k];
               }
+            }
+          } else if (subtitleMode.includes("MD4")) {
+            var contentArr = quesArr[k].split("--");
+            if (contentArr.length > 1) {
+              subtitles[subTitleCnt - 1].content =
+                subtitles[subTitleCnt - 1].content + contentArr[0];
+              subtitles[subTitleCnt - 1].content2 += contentArr[1];
+              subtitles[subTitleCnt - 1].content3 += contentArr[2];
+              subtitles[subTitleCnt - 1].content4 += contentArr[3];
+              bSubtitle4 = true;
             }
           } else {
             subtitles[subTitleCnt - 1].content =
@@ -1430,6 +1455,8 @@ function setSubtitles(contents) {
     subtitles[subTitleCnt].finish = subtitles[subTitleCnt - 1].finish;
     subtitles[subTitleCnt].content = "";
     subtitles[subTitleCnt].content2 = "";
+    subtitles[subTitleCnt].content3 = "";
+    subtitles[subTitleCnt].content4 = "";
     subTitleCnt++;
   }
 }
@@ -1465,8 +1492,14 @@ function highlight_start(lineno, content) {
         line_content.substr(3, line_content.length - 3) +
         "</span>";
     }
-    const converter = new showdown.Converter();
-    const html = converter.makeHtml(line_content);
+
+    var html;
+    if (!subtitleMode.includes("MD4")) {
+      const converter = new showdown.Converter();
+      html = converter.makeHtml(line_content);
+    } else {
+      html = line_content;
+    }
     line_content = html;
 
     //1.replace []
@@ -1555,7 +1588,7 @@ function showTable(isMedia) {
     c.innerHTML = highlight_start(k, subtitles[k].content);
 
     //5.句子2
-    if (subtitleMode.includes("DoubleSrt")) {
+    if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
       c = r.insertCell(-1);
       c.onclick = function () {
         selectRow(this, 4);
@@ -1564,6 +1597,24 @@ function showTable(isMedia) {
         changeRow(this);
       };
       c.innerHTML = subtitles[k].content2;
+      if (subtitleMode.includes("MD4")) {
+        c = r.insertCell(-1);
+        c.onclick = function () {
+          selectRow(this, 5);
+        };
+        c.onkeyup = function () {
+          changeRow(this);
+        };
+        c.innerHTML = subtitles[k].content3;
+        c = r.insertCell(-1);
+        c.onclick = function () {
+          selectRow(this, 6);
+        };
+        c.onkeyup = function () {
+          changeRow(this);
+        };
+        c.innerHTML = subtitles[k].content4;
+      }
     }
   }
 
@@ -1582,7 +1633,19 @@ function showTable(isMedia) {
   }
 
   c = r.insertCell(-1);
-  if (subtitleMode.includes("DoubleSrt")) {
+  if (subtitleMode.includes("MD4")) {
+    c.style.width = "19%";
+    c.innerHTML = "中文";
+    c = r.insertCell(-1);
+    c.style.width = "19%";
+    c.innerHTML = "英文";
+    c = r.insertCell(-1);
+    c.style.width = "19%";
+    c.innerHTML = "日文";
+    c = r.insertCell(-1);
+    c.style.width = "19%";
+    c.innerHTML = "韓文";
+  } else if (subtitleMode.includes("DoubleSrt")) {
     c.style.width = "38%";
     c.innerHTML = "句子1";
     c = r.insertCell(-1);
@@ -1722,9 +1785,8 @@ function insertTableRow(insNum) {
   };
 
   cNew.setAttribute("contenteditable", "true");
-
   //5.句子2
-  if (subtitleMode.includes("DoubleSrt")) {
+  if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
     cNew = rNew.insertCell(-1);
     cNew.onclick = function () {
       selectRow(this, 4);
@@ -1733,6 +1795,25 @@ function insertTableRow(insNum) {
       changeRow(this);
     };
     cNew.setAttribute("contenteditable", "true");
+    if (subtitleMode.includes("MD4")) {
+      cNew = rNew.insertCell(-1);
+      cNew.onclick = function () {
+        selectRow(this, 5);
+      };
+      cNew.onkeyup = function () {
+        changeRow(this);
+      };
+      cNew.setAttribute("contenteditable", "true");
+
+      cNew = rNew.insertCell(-1);
+      cNew.onclick = function () {
+        selectRow(this, 6);
+      };
+      cNew.onkeyup = function () {
+        changeRow(this);
+      };
+      cNew.setAttribute("contenteditable", "true");
+    }
   }
 }
 
@@ -2325,8 +2406,12 @@ function selectRow(c, iCol) {
   rowSelected.style.color = "red";
   if (bSubtitleEditable) {
     rowSelected.children[3].setAttribute("contenteditable", "true");
-    if (subtitleMode.includes("DoubleSrt")) {
+    if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
       rowSelected.children[4].setAttribute("contenteditable", "true");
+      if (subtitleMode.includes("MD4")) {
+        rowSelected.children[5].setAttribute("contenteditable", "true");
+        rowSelected.children[6].setAttribute("contenteditable", "true");
+      }
     }
   }
   var nowRow = c.closest("tr").rowIndex;
@@ -2359,8 +2444,12 @@ function changeRow(c) {
   // alert("nowRow=" + nowRow);
   // alert("table.rows.length=" + table.rows.length);
   subtitles[nowRow - 1].content = table.rows[nowRow].children[3].innerText;
-  if (subtitleMode.includes("DoubleSrt")) {
+  if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
     subtitles[nowRow - 1].content2 = table.rows[nowRow].children[4].innerText;
+    if (subtitleMode.includes("MD4")) {
+      subtitles[nowRow - 1].content3 = table.rows[nowRow].children[5].innerText;
+      subtitles[nowRow - 1].content4 = table.rows[nowRow].children[6].innerText;
+    }
   }
   if (nowRow == table.rows.length - 1) {
     if (rowSelected.children[3].innerText.length > 0) {
