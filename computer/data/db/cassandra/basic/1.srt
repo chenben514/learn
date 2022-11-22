@@ -1,0 +1,69 @@
+https://www.youtube-nocookie.com/watch?v=YjYWsN1vek8
+1
+00:00:22,858 --> 00:01:29,948
+### Introduction: 
+---
+Cassandra is a "NoSQL Distributed DataBase"
+* 1 installation = 1 node
+* capacity = 2~4 TB
+* thousands of operations a second per core
+* leaderless peer-to-peer system through **gossip**
+* all node belong to the same data center
+
+
+2
+00:01:42,991 --> 00:03:00,587
+### Characteristic:
+---
+1. Perabyte Database
+2. High Availability
+3. Geographic Distribution
+4. Performance
+5. Vendor Independant
+
+
+3
+00:03:14,686 --> 00:04:28,131
+### Partition
+---
+* 相同 Partition 的資料實體放在一起
+
+
+4
+00:04:28,131 --> 00:07:49,175
+### Replication
+---
+* Each node has Partition Tokens
+* Replication Factor (RF) 表示存幾份相同 Partition 的資料, 3 is the standard
+* Coordinator Node 處理 request 
+
+
+5
+00:07:49,175 --> 00:09:49,530
+### Consistency
+---
+* Consistency Level (CL) of Quorum, 以 RF=3 為例, 寫成功要3個都成功，讀成功則至少要2個
+
+
+6
+00:09:56,730 --> 00:12:02,338
+### Use Case
+---
+1. Scalability
+2. Availability
+3. Distributed
+4. Cloud-native
+
+
+7
+00:12:02,338 --> 27:46:39,0
+### What's Next
+---
+* [免費 catacoda free 課程] (https://katacoda.com/datastax/courses/cassandra-intro)
+
+
+
+8
+27:46:39,0 --> 27:46:39,0
+
+

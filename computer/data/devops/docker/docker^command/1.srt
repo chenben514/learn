@@ -1,0 +1,9 @@
+#Subtitle2
+-->
+docker version -- 顯示 docker 版本
+
+-->
+docker-compose version  -- 顯示 docker-compose 版本
+
+-->
+docker container rm -f $ (docker container ls -aq) -- 執行完移除 container
