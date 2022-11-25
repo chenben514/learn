@@ -7,17 +7,17 @@ window.confirmClick = confirmClick;
 window.optionSelected = optionSelected;
 //selecting all required elements
 let arrPlayMode = [
-  { value: "ArticleStop", text: "整篇播放" },
-  { value: "SentenceStop", text: "單句停止" },
-  { value: "SentenceRepeat", text: "單句重覆" },
+	{ value: "ArticleStop", text: "整篇播放" },
+	{ value: "SentenceStop", text: "單句停止" },
+	{ value: "SentenceRepeat", text: "單句重覆" },
 ];
 let playMode = 0;
 
 //subtitleMode
 let arrSubtitleMode = [
-  { value: "SingleSrt", text: "單一字幕" },
-  { value: "DoubleSrt", text: "雙字幕" },
-  { value: "MD", text: "文章筆記" },
+	{ value: "SingleSrt", text: "單一字幕" },
+	{ value: "DoubleSrt", text: "雙字幕" },
+	{ value: "MD", text: "文章筆記" },
 ];
 let susplayMode = 0;
 
@@ -62,17 +62,17 @@ let quesArr;
 /*5. subtitle */
 let timeoutID;
 class Subtitle {
-  numb;
-  content;
-  content_2;
-  start;
-  finish;
+	numb;
+	content;
+	content_2;
+	start;
+	finish;
 }
 
 class Playlist {
-  numb;
-  content;
-  video_id;
+	numb;
+	content;
+	video_id;
 }
 
 /*5.1 subtitle audio */
@@ -92,14 +92,14 @@ let bHasHighlight = false;
 let bSubtitleEditable = false;
 var windowWidth = window.innerWidth;
 if (windowWidth < 600) {
-  bSubtitleEditable = false;
+	bSubtitleEditable = false;
 }
 let audio_sec_bottom;
 let delBtn, insBtn, saveBtn, readBtn;
 
 /*5.2 subtitle youtube */
 let youtube_mode = false,
-  youtube_ready = false;
+	youtube_ready = false;
 var player;
 let youtube_url;
 
@@ -121,155 +121,155 @@ let oldSearchValue = "";
 let curSelected = "";
 
 function showSearch() {
-  if (oldSearchValue != search_input.value) {
-    var tmpID = document.getElementById(curMainSubj);
-    oldSearchValue = search_input.value;
-    tmpID.click();
-  }
+	if (oldSearchValue != search_input.value) {
+		var tmpID = document.getElementById(curMainSubj);
+		oldSearchValue = search_input.value;
+		tmpID.click();
+	}
 }
 
 //0.1. Set Subject
 const subject_links = document.querySelectorAll(".side-nav__link");
 for (let i = 0; i < subject_links.length; i++) {
-  subject_links[i].addEventListener("click", setCourse);
+	subject_links[i].addEventListener("click", setCourse);
 }
 
 function setCourse() {
-  var preElement = document.getElementById(curCourse).parentNode;
-  preElement.classList.remove("side-nav__item--active");
+	var preElement = document.getElementById(curCourse).parentNode;
+	preElement.classList.remove("side-nav__item--active");
 
-  curCourse = this.id;
-  localStorage.setItem(curWeb + "lastCourse", curCourse);
-  var element = document.getElementById(this.id).parentNode;
-  element.classList.add("side-nav__item--active");
-  showTopic();
+	curCourse = this.id;
+	localStorage.setItem(curWeb + "lastCourse", curCourse);
+	var element = document.getElementById(this.id).parentNode;
+	element.classList.add("side-nav__item--active");
+	showTopic();
 
-  //0.3. Set Main Subject
-  const main_subject_links = document.querySelectorAll(".main_subj__photo");
-  for (let i = 0; i < main_subject_links.length; i++) {
-    main_subject_links[i].addEventListener("click", setMainSubject);
-  }
+	//0.3. Set Main Subject
+	const main_subject_links = document.querySelectorAll(".main_subj__photo");
+	for (let i = 0; i < main_subject_links.length; i++) {
+		main_subject_links[i].addEventListener("click", setMainSubject);
+	}
 
-  //0.3. Set Left Subject
-  let left_test_links = document.querySelectorAll(".detail_left_subj");
-  for (let i = 0; i < left_test_links.length; i++) {
-    left_test_links[i].addEventListener("click", startLeft);
-  }
+	//0.3. Set Left Subject
+	let left_test_links = document.querySelectorAll(".detail_left_subj");
+	for (let i = 0; i < left_test_links.length; i++) {
+		left_test_links[i].addEventListener("click", startLeft);
+	}
 
-  //0.2. Set Subject
+	//0.2. Set Subject
 
-  let small_test_links = document.querySelectorAll(".test-button");
-  for (let i = 0; i < small_test_links.length; i++) {
-    small_test_links[i].addEventListener("click", startQuiz);
-  }
+	let small_test_links = document.querySelectorAll(".test-button");
+	for (let i = 0; i < small_test_links.length; i++) {
+		small_test_links[i].addEventListener("click", startQuiz);
+	}
 
-  let conver_test_links = document.querySelectorAll(
-    ".conversation-test-button"
-  );
-  for (let i = 0; i < conver_test_links.length; i++) {
-    conver_test_links[i].addEventListener(
-      "click",
-      function () {
-        startAudio(conver_test_links[i].id);
-      },
-      false
-    );
-  }
+	let conver_test_links = document.querySelectorAll(
+		".conversation-test-button"
+	);
+	for (let i = 0; i < conver_test_links.length; i++) {
+		conver_test_links[i].addEventListener(
+			"click",
+			function () {
+				startAudio(conver_test_links[i].id);
+			},
+			false
+		);
+	}
 
-  let small_wrong_links = document.querySelectorAll(".wrong-button");
-  for (let i = 0; i < small_wrong_links.length; i++) {
-    small_wrong_links[i].addEventListener("click", startWrong);
-  }
+	let small_wrong_links = document.querySelectorAll(".wrong-button");
+	for (let i = 0; i < small_wrong_links.length; i++) {
+		small_wrong_links[i].addEventListener("click", startWrong);
+	}
 }
 
 //0.2. Set Last Course
 var tmpElement = document.getElementById(curCourse);
 if (tmpElement != null) {
-  var element = document.getElementById(curCourse).parentNode;
-  element.classList.add("side-nav__item--active");
+	var element = document.getElementById(curCourse).parentNode;
+	element.classList.add("side-nav__item--active");
 }
 
 //0.3. Set Main Subject
 const main_subject_links = document.querySelectorAll(".main_subj__photo");
 for (let i = 0; i < main_subject_links.length; i++) {
-  main_subject_links[i].addEventListener("click", setMainSubject);
+	main_subject_links[i].addEventListener("click", setMainSubject);
 }
 
 function setMainSubject() {
-  curMainSubj = this.id;
-  var preElement = document.getElementById(curMainSubj).parentNode;
-  preElement.classList.remove("main_subj__item--active");
+	curMainSubj = this.id;
+	var preElement = document.getElementById(curMainSubj).parentNode;
+	preElement.classList.remove("main_subj__item--active");
 
-  var element = document.getElementById(this.id).parentNode;
-  element.classList.add("main_subj__item--active");
+	var element = document.getElementById(this.id).parentNode;
+	element.classList.add("main_subj__item--active");
 
-  localStorage.setItem(curCourse + "_main_subj", curMainSubj);
-  showTopic();
+	localStorage.setItem(curCourse + "_main_subj", curMainSubj);
+	showTopic();
 
-  const tmp_main_subject_links = document.querySelectorAll(".main_subj__photo");
-  for (let i = 0; i < tmp_main_subject_links.length; i++) {
-    tmp_main_subject_links[i].addEventListener("click", setMainSubject);
-  }
+	const tmp_main_subject_links = document.querySelectorAll(".main_subj__photo");
+	for (let i = 0; i < tmp_main_subject_links.length; i++) {
+		tmp_main_subject_links[i].addEventListener("click", setMainSubject);
+	}
 
-  let left_test_links = document.querySelectorAll(".detail_left_subj");
-  for (let i = 0; i < left_test_links.length; i++) {
-    left_test_links[i].addEventListener("click", startLeft);
-  }
+	let left_test_links = document.querySelectorAll(".detail_left_subj");
+	for (let i = 0; i < left_test_links.length; i++) {
+		left_test_links[i].addEventListener("click", startLeft);
+	}
 
-  let small_test_links = document.querySelectorAll(".test-button");
-  for (let i = 0; i < small_test_links.length; i++) {
-    small_test_links[i].addEventListener("click", startQuiz);
-  }
+	let small_test_links = document.querySelectorAll(".test-button");
+	for (let i = 0; i < small_test_links.length; i++) {
+		small_test_links[i].addEventListener("click", startQuiz);
+	}
 
-  let conver_test_links = document.querySelectorAll(
-    ".conversation-test-button"
-  );
-  for (let i = 0; i < conver_test_links.length; i++) {
-    conver_test_links[i].addEventListener(
-      "click",
-      function () {
-        startAudio(conver_test_links[i].id);
-      },
-      false
-    );
-  }
+	let conver_test_links = document.querySelectorAll(
+		".conversation-test-button"
+	);
+	for (let i = 0; i < conver_test_links.length; i++) {
+		conver_test_links[i].addEventListener(
+			"click",
+			function () {
+				startAudio(conver_test_links[i].id);
+			},
+			false
+		);
+	}
 
-  let small_wrong_links = document.querySelectorAll(".wrong-button");
-  for (let i = 0; i < small_wrong_links.length; i++) {
-    small_wrong_links[i].addEventListener("click", startWrong);
-  }
+	let small_wrong_links = document.querySelectorAll(".wrong-button");
+	for (let i = 0; i < small_wrong_links.length; i++) {
+		small_wrong_links[i].addEventListener("click", startWrong);
+	}
 
-  // let small_class_links = document.querySelectorAll(".class-button");
-  // for (let i = 0; i < small_class_links.length; i++) {
-  //   small_class_links[i].addEventListener("click", startClass);
-  // }
+	// let small_class_links = document.querySelectorAll(".class-button");
+	// for (let i = 0; i < small_class_links.length; i++) {
+	//   small_class_links[i].addEventListener("click", startClass);
+	// }
 }
 
 let left_test_links = document.querySelectorAll(".detail_left_subj");
 for (let i = 0; i < left_test_links.length; i++) {
-  left_test_links[i].addEventListener("click", startLeft);
+	left_test_links[i].addEventListener("click", startLeft);
 }
 
 //0.4. Set Small Course
 let small_test_links = document.querySelectorAll(".test-button");
 for (let i = 0; i < small_test_links.length; i++) {
-  small_test_links[i].addEventListener("click", startQuiz);
+	small_test_links[i].addEventListener("click", startQuiz);
 }
 
 let conver_test_links = document.querySelectorAll(".conversation-test-button");
 for (let i = 0; i < conver_test_links.length; i++) {
-  conver_test_links[i].addEventListener(
-    "click",
-    function () {
-      startAudio(conver_test_links[i].id);
-    },
-    false
-  );
+	conver_test_links[i].addEventListener(
+		"click",
+		function () {
+			startAudio(conver_test_links[i].id);
+		},
+		false
+	);
 }
 
 let small_wrong_links = document.querySelectorAll(".wrong-button");
 for (let i = 0; i < small_wrong_links.length; i++) {
-  small_wrong_links[i].addEventListener("click", startWrong);
+	small_wrong_links[i].addEventListener("click", startWrong);
 }
 
 // let small_class_links = document.querySelectorAll(".class-button");
@@ -278,240 +278,241 @@ for (let i = 0; i < small_wrong_links.length; i++) {
 // }
 
 function pronClick() {
-  var audioFile;
-  if (curQuizType.includes("mp3")) {
-    audioFile = base_filename + ".mp3";
-  } else {
-    audioFile = base_filename + ".m4a";
-  }
+	var audioFile;
+	if (curQuizType.includes("mp3")) {
+		audioFile = base_filename + ".mp3";
+	} else {
+		audioFile = base_filename + ".m4a";
+	}
 
-  if (UrlExists(audioFile)) {
-    var quizPlayer = document.getElementById("radio");
-    quizPlayer.hidden = false;
-    quizPlayer.src = audioFile;
-    quizPlayer.currentTime = questions[que_count].option1; // jumps to 29th secs
-    quizPlayer.ontimeupdate = function () {
-      if (quizPlayer.currentTime > questions[que_count].option2) {
-        quizPlayer.pause();
-      }
-    };
-    quizPlayer.play();
-    // }
-  } else {
-    var msg = new SpeechSynthesisUtterance();
+	if (UrlExists(audioFile)) {
+		var quizPlayer = document.getElementById("radio");
+		quizPlayer.hidden = false;
+		quizPlayer.src = audioFile;
+		quizPlayer.currentTime = questions[que_count].option1; // jumps to 29th secs
+		quizPlayer.ontimeupdate = function () {
+			if (quizPlayer.currentTime > questions[que_count].option2) {
+				quizPlayer.pause();
+			}
+		};
+		quizPlayer.play();
+		// }
+	} else {
+		var msg = new SpeechSynthesisUtterance();
 
-    // Set the text.
-    msg.text = questions[que_count].question.replace(".mp3", "");
+		// Set the text.
+		msg.text = questions[que_count].question.replace(".mp3", "");
 
-    // Set the attributes.
-    msg.volume = 1;
-    msg.rate = 1;
-    msg.pitch = 1;
-    if (curCourse == "chinese") msg.lang = "zh-CN";
-    else if (curCourse == "korean") msg.lang = "ko-KR";
-    else if (curCourse == "japan") msg.lang = "ja-JP";
-    else if (curCourse == "english") msg.lang = "en-US";
-    window.speechSynthesis.speak(msg);
-  }
+		// Set the attributes.
+		msg.volume = 1;
+		msg.rate = 1;
+		msg.pitch = 1;
+		if (curCourse == "chinese") msg.lang = "zh-CN";
+		else if (curCourse == "korean") msg.lang = "ko-KR";
+		else if (curCourse == "japan") msg.lang = "ja-JP";
+		else if (curCourse == "english") msg.lang = "en-US";
+		window.speechSynthesis.speak(msg);
+	}
 }
 
 // if Left button clicked
 function startLeft() {
-  startAudio(this.id);
+	startAudio(this.id);
 }
 
 function disableBtnStatus(status) {
-  let small_wrong_links = document.querySelectorAll(".wrong-button");
-  for (let i = 0; i < small_wrong_links.length; i++) {
-    small_wrong_links[i].disabled = status;
-  }
-  let small_test_links = document.querySelectorAll(".test-button");
-  for (let i = 0; i < small_test_links.length; i++) {
-    small_test_links[i].disabled = status;
-  }
+	let small_wrong_links = document.querySelectorAll(".wrong-button");
+	for (let i = 0; i < small_wrong_links.length; i++) {
+		small_wrong_links[i].disabled = status;
+	}
+	let small_test_links = document.querySelectorAll(".test-button");
+	for (let i = 0; i < small_test_links.length; i++) {
+		small_test_links[i].disabled = status;
+	}
 }
 
 // if startQuiz button clicked
 function startQuiz() {
-  que_count = 0;
-  userScore = 0; //upgrading score value with 1
-  que_numb = 1;
-  curQuiz = this.id;
-  var curQuizArr = curQuiz.split("-");
-  curQuizType = curQuizArr[0];
-  if (curSelected.length != 0) {
-    var tmpSelected;
-    tmpSelected = document.getElementById(curSelected);
-    if (tmpSelected != undefined) {
-      tmpSelected.classList.remove("test-pressed");
-    }
-  }
-  this.classList.add("test-pressed");
-  curSelected = curQuiz;
-  //0.1 disable all test buttons
-  disableBtnStatus(true);
+	que_count = 0;
+	userScore = 0; //upgrading score value with 1
+	que_numb = 1;
+	curQuiz = this.id;
+	var curQuizArr = curQuiz.split("-");
+	curQuizType = curQuizArr[0];
+	if (curSelected.length != 0) {
+		var tmpSelected;
+		tmpSelected = document.getElementById(curSelected);
+		if (tmpSelected != undefined) {
+			tmpSelected.classList.remove("test-pressed");
+		}
+	}
+	this.classList.add("test-pressed");
+	curSelected = curQuiz;
+	//0.1 disable all test buttons
+	disableBtnStatus(true);
 
-  //0.2. disable all test buttons
-  //0.直接聽錄音
-  if (curQuizType.includes("conversation")) {
-    startAudio(this.id);
-    return;
-  }
+	//0.2. disable all test buttons
+	//0.直接聽錄音
+	if (curQuizType.includes("conversation")) {
+		startAudio(this.id);
+		return;
+	}
 
-  // } else {
-  //   let small_test_links = document.querySelectorAll(".test-button");
-  //   for (let i = 0; i < small_test_links.length; i++) {
-  //     small_test_links[i].disabled = true;
-  //   }
-  // }
+	// } else {
+	//   let small_test_links = document.querySelectorAll(".test-button");
+	//   for (let i = 0; i < small_test_links.length; i++) {
+	//     small_test_links[i].disabled = true;
+	//   }
+	// }
 
-  if (curQuizType == "game_focus") {
-    game_focus();
-    return;
-  }
-  if (curQuizType == "game_word_chain") {
-    loadWordChain();
-    return;
-  }
+	if (curQuizType == "game_focus") {
+		game_focus();
+		return;
+	}
+	if (curQuizType == "game_word_chain") {
+		loadWordChain();
+		return;
+	}
 
-  if (getQuestions() == false) return;
-  ansQuesCnt = 0;
-  quiz_box.classList.add("activeQuiz"); //show quiz box
-  showQuestions(0); //calling showQestions function
-  queCounter(1); //passing 1 parameter to queCounter
-  startTimer(); //calling startTimer function
-  startTimerLine(); //calling startTimerLine function
+	if (getQuestions() == false) return;
+	ansQuesCnt = 0;
+	quiz_box.classList.add("activeQuiz"); //show quiz box
+	showQuestions(0); //calling showQestions function
+	queCounter(1); //passing 1 parameter to queCounter
+	startTimer(); //calling startTimer function
+	startTimerLine(); //calling startTimerLine function
 }
 
 function startClass() {
-  content.classList.add("slight_opacity");
+	content.classList.add("slight_opacity");
 
-  curQuiz = this.id.substr(0, this.id.length - 5);
+	curQuiz = this.id.substr(0, this.id.length - 5);
 
-  // Get the modal
-  var modal = document.getElementById("myModal");
+	// Get the modal
+	var modal = document.getElementById("myModal");
 
-  var modalContent = document.getElementsByClassName("modal-content")[0];
-  var myWidth = "600px";
-  var myHeight = "600px";
-  // When the user clicks on <span> (x), close the modal
-  modal.style.display = "block";
+	var modalContent = document.getElementsByClassName("modal-content")[0];
+	var myWidth = "600px";
+	var myHeight = "600px";
+	// When the user clicks on <span> (x), close the modal
+	modal.style.display = "block";
 
-  modalContent.innerHTML = '<span class="close">&times;</span><p>';
+	modalContent.innerHTML = '<span class="close">&times;</span><p>';
 
-  modalContent.innerHTML = modalContent.innerHTML + "</p>";
-  var imgContent =
-    "<img width=" +
-    myWidth +
-    " height=" +
-    myHeight +
-    "src='https://indigo-gourd-012.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0c0b51b8-d77c-4071-80b9-6c081ad9691d%2F002.png?table=block&id=16f8c6eb-d5c7-49fd-b4c0-19ce41ede31b&spaceId=983002ac-733f-40cf-b34f-d13e171ec134&width=1340&userId=&cache=v2'>";
+	modalContent.innerHTML = modalContent.innerHTML + "</p>";
+	var imgContent =
+		"<img width=" +
+		myWidth +
+		" height=" +
+		myHeight +
+		"src='https://indigo-gourd-012.notion.site/image/https%3A%2F%2Fs3-us-west-2.amazonaws.com%2Fsecure.notion-static.com%2F0c0b51b8-d77c-4071-80b9-6c081ad9691d%2F002.png?table=block&id=16f8c6eb-d5c7-49fd-b4c0-19ce41ede31b&spaceId=983002ac-733f-40cf-b34f-d13e171ec134&width=1340&userId=&cache=v2'>";
 
-  imgContent =
-    "<img src='https://photos.google.com/album/AF1QipPZ9tRkjIAhPkRWgoLdUxPD4a-jG0A5d2hFhmF7/photo/AF1QipMGaxE4yUAS8C6kiydVajnag8BZ3ZgCAtJu8APq' />";
+	imgContent =
+		"<img src='https://photos.google.com/album/AF1QipPZ9tRkjIAhPkRWgoLdUxPD4a-jG0A5d2hFhmF7/photo/AF1QipMGaxE4yUAS8C6kiydVajnag8BZ3ZgCAtJu8APq' />";
 
-  modalContent.innerHTML += imgContent;
+	modalContent.innerHTML += imgContent;
 
-  var span = document.getElementsByClassName("close")[0];
-  span.addEventListener("click", closeClass);
+	var span = document.getElementsByClassName("close")[0];
+	span.addEventListener("click", closeClass);
 }
 
 function closeClass() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-  content.classList.remove("slight_opacity");
+	var modal = document.getElementById("myModal");
+	modal.style.display = "none";
+	content.classList.remove("slight_opacity");
 }
 
 function startWrong() {
-  content.classList.add("slight_opacity");
+	content.classList.add("slight_opacity");
 
-  curQuiz = this.id.substr(0, this.id.length - 5);
-  // content.classList.add("slight_opacity");
+	curQuiz = this.id.substr(0, this.id.length - 5);
+	// content.classList.add("slight_opacity");
 
-  // Get the modal
-  var modal = document.getElementById("myModal");
+	// Get the modal
+	var modal = document.getElementById("myModal");
 
-  var modalContent = document.getElementsByClassName("modal-content")[0];
-  // When the user clicks on <span> (x), close the modal
-  modal.style.display = "block";
+	var modalContent = document.getElementsByClassName("modal-content")[0];
+	// When the user clicks on <span> (x), close the modal
+	modal.style.display = "block";
 
-  var curQuizArr = curQuiz.split("-");
+	var curQuizArr = curQuiz.split("-");
 
-  var curTopicArr = curQuizArr[1].split("_");
-  curQuizType = curQuizArr[0];
+	var curTopicArr = curQuizArr[1].split("_");
+	curQuizType = curQuizArr[0];
 
-  var base_left_filename = "./";
+	var base_left_filename = "./";
 
-  if (curWeb.includes("computer")) {
-    base_left_filename = "../computer/";
-  }
+	if (curWeb.includes("computer")) {
+		base_left_filename = "../computer/";
+	}
 
-  var base_left_filename =
-    base_left_filename +
-    "data/" +
-    curTopicArr[0] +
-    "/" +
-    curTopicArr[1] +
-    "/" +
-    curTopicArr[2];
+	var base_left_filename =
+		base_left_filename +
+		"data/" +
+		curTopicArr[0] +
+		"/" +
+		curTopicArr[1] +
+		"/" +
+		curTopicArr[2];
 
-  base_filename = base_left_filename + "/" + curTopicArr[3];
+	var fileNameArr = curTopicArr[3].split("^");
+	base_filename = base_left_filename + "/" + fileNameArr[0];
 
-  if (
-    curQuizType.includes("conversation_m4a") ||
-    curQuizType.includes("conversation_mp3")
-  ) {
-    subtitleMode = "SingleSrt";
-    parseSrt(base_filename + ".srt");
-  } else {
-    subtitleMode = "MD";
-    parseCsv(base_filename + ".md");
-  }
+	if (
+		curQuizType.includes("conversation_m4a") ||
+		curQuizType.includes("conversation_mp3")
+	) {
+		subtitleMode = "SingleSrt";
+		parseSrt(base_filename + ".srt");
+	} else {
+		subtitleMode = "MD";
+		parseCsv(base_filename + ".md");
+	}
 
-  modalContent.innerHTML = '<span class="close">&times;</span><p>';
+	modalContent.innerHTML = '<span class="close">&times;</span><p>';
 
-  var wrongStorage = localStorage.getItem(curQuiz + "_wrong");
-  if (wrongStorage == null || wrongStorage == "undefined")
-    wrongStorage = "nothing";
-  let tmpMessage = "";
+	var wrongStorage = localStorage.getItem(curQuiz + "_wrong");
+	if (wrongStorage == null || wrongStorage == "undefined")
+		wrongStorage = "nothing";
+	let tmpMessage = "";
 
-  var quesList = [];
-  let quesCnt = quesArr.length;
-  let ansList = [];
-  let tmpCnt = 0;
+	var quesList = [];
+	let quesCnt = quesArr.length;
+	let ansList = [];
+	let tmpCnt = 0;
 
-  for (let k = 0; k < quesCnt; k++) {
-    if (quesArr[k].length < 2) continue;
-    tmpMessage = k + ",";
-    var checkMessage = "," + tmpMessage;
-    if (
-      wrongStorage != null &&
-      wrongStorage != "undefined" &&
-      wrongStorage.length > 1
-    ) {
-      if (!wrongStorage.includes(checkMessage)) {
-        continue;
-      }
-    }
-    var curQuizArr = quesArr[k].split("\t");
-    modalContent.innerHTML =
-      modalContent.innerHTML +
-      (k + 1) +
-      ". " +
-      curQuizArr[0] +
-      " : " +
-      curQuizArr[1] +
-      "<br>";
-  }
-  modalContent.innerHTML = modalContent.innerHTML + "</p>";
-  var span = document.getElementsByClassName("close")[0];
-  span.addEventListener("click", closeWrong);
+	for (let k = 0; k < quesCnt; k++) {
+		if (quesArr[k].length < 2) continue;
+		tmpMessage = k + ",";
+		var checkMessage = "," + tmpMessage;
+		if (
+			wrongStorage != null &&
+			wrongStorage != "undefined" &&
+			wrongStorage.length > 1
+		) {
+			if (!wrongStorage.includes(checkMessage)) {
+				continue;
+			}
+		}
+		var curQuizArr = quesArr[k].split("\t");
+		modalContent.innerHTML =
+			modalContent.innerHTML +
+			(k + 1) +
+			". " +
+			curQuizArr[0] +
+			" : " +
+			curQuizArr[1] +
+			"<br>";
+	}
+	modalContent.innerHTML = modalContent.innerHTML + "</p>";
+	var span = document.getElementsByClassName("close")[0];
+	span.addEventListener("click", closeWrong);
 }
 
 function closeWrong() {
-  var modal = document.getElementById("myModal");
-  modal.style.display = "none";
-  content.classList.remove("slight_opacity");
+	var modal = document.getElementById("myModal");
+	modal.style.display = "none";
+	content.classList.remove("slight_opacity");
 }
 
 let que_count = 0;
@@ -527,22 +528,22 @@ const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // if restartQuiz button clicked
 restart_quiz.onclick = () => {
-  localStorage.setItem(curQuiz + "_right", "");
-  result_box.classList.remove("activeResult"); //show result box
-  content.classList.remove("slight_opacity");
-  disableBtnStatus(false);
-  // window.location.reload(); //reload the current window
-  return;
-  //no-way-here
+	localStorage.setItem(curQuiz + "_right", "");
+	result_box.classList.remove("activeResult"); //show result box
+	content.classList.remove("slight_opacity");
+	disableBtnStatus(false);
+	// window.location.reload(); //reload the current window
+	return;
+	//no-way-here
 };
 
 // if quitQuiz button clicked
 quit_quiz.onclick = () => {
-  // quiz_box.classList.remove("activeQuiz"); //show quiz box
-  result_box.classList.remove("activeResult"); //show result box
-  content.classList.remove("slight_opacity");
-  disableBtnStatus(false);
-  // window.location.reload(); //reload the current window
+	// quiz_box.classList.remove("activeQuiz"); //show quiz box
+	result_box.classList.remove("activeResult"); //show result box
+	content.classList.remove("slight_opacity");
+	disableBtnStatus(false);
+	// window.location.reload(); //reload the current window
 };
 
 const next_btn = document.querySelector("footer .next_btn");
@@ -551,1968 +552,2018 @@ const bottom_ques_counter = document.querySelector("footer .total_que");
 
 // if Next Que button clicked
 next_btn.onclick = () => {
-  if (que_count < questions.length - 1 && que_count < maxQuesCnt - 1) {
-    //if question count is less than total question length
-    que_count++; //increment the que_count value
-    que_numb++; //increment the que_numb value
-    showQuestions(que_count); //calling showQestions function
-    queCounter(que_numb); //passing que_numb value to queCounter
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
-    startTimer(); //calling startTimer function
-    startTimerLine(); //calling startTimerLine function
-    timeText.textContent = "還剩"; //change the timeText to Time Left
-    next_btn.classList.remove("show"); //hide the next button
-  } else {
-    clearInterval(counter); //clear counter
-    clearInterval(counterLine); //clear counterLine
-    showResult(); //calling showResult function
-  }
+	if (que_count < questions.length - 1 && que_count < maxQuesCnt - 1) {
+		//if question count is less than total question length
+		que_count++; //increment the que_count value
+		que_numb++; //increment the que_numb value
+		showQuestions(que_count); //calling showQestions function
+		queCounter(que_numb); //passing que_numb value to queCounter
+		clearInterval(counter); //clear counter
+		clearInterval(counterLine); //clear counterLine
+		startTimer(); //calling startTimer function
+		startTimerLine(); //calling startTimerLine function
+		timeText.textContent = "還剩"; //change the timeText to Time Left
+		next_btn.classList.remove("show"); //hide the next button
+	} else {
+		clearInterval(counter); //clear counter
+		clearInterval(counterLine); //clear counterLine
+		showResult(); //calling showResult function
+	}
 };
 
 // if Quit Que button clicked
 quit_btn.onclick = () => {
-  clearInterval(counter); //clear counter
-  clearInterval(counterLine); //clear counterLine
-  showResult(); //calling showResult function
+	clearInterval(counter); //clear counter
+	clearInterval(counterLine); //clear counterLine
+	showResult(); //calling showResult function
 };
 
 function checkFileExist(urlToFile) {
-  var xhr = new XMLHttpRequest();
-  xhr.open("HEAD", urlToFile, false);
-  xhr.send();
+	var xhr = new XMLHttpRequest();
+	xhr.open("HEAD", urlToFile, false);
+	xhr.send();
 
-  if (xhr.status == "404") {
-    return false;
-  } else {
-    return true;
-  }
+	if (xhr.status == "404") {
+		return false;
+	} else {
+		return true;
+	}
 }
 function parseCsv(filename) {
-  var displayName;
-  if (checkFileExist(filename) == false) {
-    // alert("Quiz file [" + filename + "] does not exist.");
-    return false;
-  }
+	var displayName;
+	if (checkFileExist(filename) == false) {
+		// alert("Quiz file [" + filename + "] does not exist.");
+		return false;
+	}
 
-  var read = new XMLHttpRequest();
-  read.open("GET", filename, false);
-  read.setRequestHeader("Cache-Control", "no-cache");
-  read.send();
+	var read = new XMLHttpRequest();
+	read.open("GET", filename, false);
+	read.setRequestHeader("Cache-Control", "no-cache");
+	read.send();
 
-  displayName = read.responseText.replace(/’/g, "'");
+	displayName = read.responseText.replace(/’/g, "'");
 
-  quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
+	quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
 }
 
 function parseSrt(filename) {
-  readSubtitles(filename);
-  quesArr = [];
-  for (let k = 0; k < subtitles.length; k++) {
-    quesArr.push(
-      subtitles[k].content +
-        "\t\t" +
-        subtitles[k].start +
-        "\t" +
-        subtitles[k].finish
-    );
-  }
+	readSubtitles(filename);
+	quesArr = [];
+	for (let k = 0; k < subtitles.length; k++) {
+		quesArr.push(
+			subtitles[k].content +
+				"\t\t" +
+				subtitles[k].start +
+				"\t" +
+				subtitles[k].finish
+		);
+	}
 }
 
 function getQuestions() {
-  var curQuizArr = curQuiz.split("-");
+	var curQuizArr = curQuiz.split("-");
 
-  cursubject = curQuizArr[1].split("_")[0];
-  correctCnt = 0;
+	cursubject = curQuizArr[1].split("_")[0];
+	correctCnt = 0;
 
-  var curTopicArr = curQuizArr[1].split("_");
-  curQuizType = curQuizArr[0];
+	var curTopicArr = curQuizArr[1].split(/_()/);
+	curQuizType = curQuizArr[0];
 
-  var base_left_filename = "./";
+	var base_left_filename = "./";
 
-  if (curWeb.includes("computer")) {
-    base_left_filename = "../computer/";
-  }
+	if (curWeb.includes("computer")) {
+		base_left_filename = "../computer/";
+	}
 
-  var base_left_filename =
-    base_left_filename +
-    "data/" +
-    curTopicArr[0] +
-    "/" +
-    curTopicArr[1] +
-    "/" +
-    curTopicArr[2];
+	var base_left_filename =
+		base_left_filename +
+		"data/" +
+		curTopicArr[0] +
+		"/" +
+		curTopicArr[1] +
+		"/" +
+		curTopicArr[2];
 
-  base_filename = base_left_filename + "/" + curTopicArr[3];
+	base_filename = base_left_filename + "/" + curTopicArr[3];
 
-  if (
-    curQuizType.includes("conversation_m4a") ||
-    curQuizType.includes("conversation_mp3")
-  ) {
-    subtitleMode = "SingleSrt";
-    parseSrt(base_filename + ".srt");
-  } else {
-    subtitleMode = "MD";
-    parseCsv(base_filename + ".md");
-  }
-  alert(base_filename);
-  var quesList = [];
-  let quesCnt = quesArr.length;
-  let ansList = [];
-  let tmpCnt = 0;
+	if (
+		curQuizType.includes("conversation_m4a") ||
+		curQuizType.includes("conversation_mp3")
+	) {
+		subtitleMode = "SingleSrt";
+		parseSrt(base_filename + ".srt");
+	} else {
+		subtitleMode = "MD";
+		parseCsv(base_filename + ".md");
+	}
 
-  let tmpArr = [];
-  let k = 0;
+	var quesList = [];
+	let quesCnt = quesArr.length;
+	let ansList = [];
+	let tmpCnt = 0;
 
-  var rightStorage = localStorage.getItem(curQuiz + "_right");
-  if (rightStorage == null || rightStorage == "undefined")
-    rightStorage = "nothing";
-  let tmpMessage = "";
-  for (let k = 0; k < quesCnt; k++) {
-    if (quesArr[k].length < 2) continue;
-    tmpMessage = k + ",";
-    var checkMessage = "," + tmpMessage;
-    if (rightStorage.includes(checkMessage)) {
-      correctCnt++;
-      continue;
-    }
-    tmpArr.push(tmpMessage + quesArr[k]);
-  }
-  quesArr = tmpArr;
-  quesCnt = quesArr.length;
-  if (quesCnt == 0) {
-    curStatus = "allQuesPass";
-    showResult();
-    return false;
-  }
+	let tmpArr = [];
+	let k = 0;
 
-  //1.get random list from file
-  while (quesList.length < quesCnt) {
-    var r = Math.floor(Math.random() * quesCnt);
-    if (quesList.indexOf(r) === -1) quesList.push(r);
-  }
+	var rightStorage = localStorage.getItem(curQuiz + "_right");
+	if (rightStorage == null || rightStorage == "undefined")
+		rightStorage = "nothing";
+	let tmpMessage = "";
+	for (let k = 0; k < quesCnt; k++) {
+		if (quesArr[k].length < 2) continue;
+		tmpMessage = k + ",";
+		var checkMessage = "," + tmpMessage;
+		if (rightStorage.includes(checkMessage)) {
+			correctCnt++;
+			continue;
+		}
+		tmpArr.push(tmpMessage + quesArr[k]);
+	}
+	quesArr = tmpArr;
+	quesCnt = quesArr.length;
+	if (quesCnt == 0) {
+		curStatus = "allQuesPass";
+		showResult();
+		return false;
+	}
 
-  class Question {
-    numb;
-    question;
-    answer;
-    option1;
-    option2;
-    option3;
-    option4;
-    direct_answers = [];
-    quizType;
-  }
-  //2.generate questions
+	//1.get random list from file
+	while (quesList.length < quesCnt) {
+		var r = Math.floor(Math.random() * quesCnt);
+		if (quesList.indexOf(r) === -1) quesList.push(r);
+	}
 
-  questions = [];
-  var i;
-  var j;
-  for (i = 0; i < quesCnt; i++) {
-    var ques_comma_pos = quesArr[quesList[i]].indexOf(",");
-    var ques_length = quesArr[quesList[i]].length;
-    var singQuesArr = quesArr[quesList[i]]
-      .substr(ques_comma_pos + 1, ques_length - ques_comma_pos - 1)
-      .split("\t");
-    let question = new Question();
+	class Question {
+		numb;
+		question;
+		answer;
+		option1;
+		option2;
+		option3;
+		option4;
+		direct_answers = [];
+		quizType;
+	}
+	//2.generate questions
 
-    question.numb = quesArr[quesList[i]].substr(0, ques_comma_pos);
+	questions = [];
+	var i;
+	var j;
+	for (i = 0; i < quesCnt; i++) {
+		var ques_comma_pos = quesArr[quesList[i]].indexOf(",");
+		var ques_length = quesArr[quesList[i]].length;
+		var singQuesArr = quesArr[quesList[i]]
+			.substr(ques_comma_pos + 1, ques_length - ques_comma_pos - 1)
+			.split("\t");
+		let question = new Question();
 
-    if (curQuizType.startsWith("calc")) {
-      /* for Math, with random number */
-      var digitArr = curTopicArr[3].split("~");
-      var varArr = [];
-      for (j = 0; j < 3; j++) {
-        var newValue = Math.floor(
-          //get_random_range_from_filename
-          Math.random() * (parseInt(digitArr[2]) - parseInt(digitArr[1]) + 1) +
-            parseInt(digitArr[1])
-        );
+		question.numb = quesArr[quesList[i]].substr(0, ques_comma_pos);
 
-        varArr.push(newValue);
-      }
-      for (var x = 0; x < singQuesArr.length; x++) {
-        singQuesArr[x] = changeVariable(singQuesArr[x], varArr);
-      }
-    }
+		if (curQuizType.startsWith("calc")) {
+			/* for Math, with random number */
+			var digitArr = curTopicArr[3].split("~");
+			var varArr = [];
+			for (j = 0; j < 3; j++) {
+				var newValue = Math.floor(
+					//get_random_range_from_filename
+					Math.random() * (parseInt(digitArr[2]) - parseInt(digitArr[1]) + 1) +
+						parseInt(digitArr[1])
+				);
 
-    /*prepare question & answers*/
-    if (singQuesArr[0].includes("[")) {
-      /* for partial spell with [] */
-      var tmpQues = singQuesArr[0];
-      var tmpStart = tmpQues.indexOf("[");
-      var tmpEnd = tmpQues.indexOf("]");
+				varArr.push(newValue);
+			}
+			for (var x = 0; x < singQuesArr.length; x++) {
+				singQuesArr[x] = changeVariable(singQuesArr[x], varArr);
+			}
+		}
 
-      question.question =
-        '<span style="color:blue;font-size:20px;">' +
-        tmpQues.substr(0, tmpStart) +
-        "[";
+		/*prepare question & answers*/
+		if (singQuesArr[0].includes("[")) {
+			/* for partial spell with [] */
+			var tmpQues = singQuesArr[0];
+			var tmpStart = tmpQues.indexOf("[");
+			var tmpEnd = tmpQues.indexOf("]");
 
-      for (var z = 0; z < tmpEnd - tmpStart - 1; z++) {
-        if (tmpQues.substr(tmpStart + z + 1, 1) == " ")
-          question.question = question.question + "_";
-        else question.question = question.question + "X";
-      }
+			question.question =
+				'<span style="color:blue;font-size:20px;">' +
+				tmpQues.substr(0, tmpStart) +
+				"[";
 
-      question.question =
-        question.question +
-        "]" +
-        tmpQues.substr(tmpEnd + 1, tmpQues.length - tmpEnd - 1) +
-        "</span> : " +
-        '<span style="color:grey;font-size:20px;">' +
-        singQuesArr[1] +
-        "</span>";
+			for (var z = 0; z < tmpEnd - tmpStart - 1; z++) {
+				if (tmpQues.substr(tmpStart + z + 1, 1) == " ")
+					question.question = question.question + "_";
+				else question.question = question.question + "X";
+			}
 
-      question.quizType = "spell";
-      question.answer = tmpQues.substr(tmpStart + 1, tmpEnd - tmpStart - 1);
-      quesTimer = 60;
-    } else if (
-      curQuizType == "spell" ||
-      singQuesArr[2] == "--" ||
-      curQuizType.includes("conversation")
-    ) {
-      /* for all spell  */
-      question.question =
-        "[" + "X".repeat(singQuesArr[0].length) + "]" + singQuesArr[1];
-      question.answer = singQuesArr[0];
-      if (curQuizType.includes("conversation")) {
-        question.quizType = "audio";
-        question.option1 = singQuesArr[2];
-        question.option2 = singQuesArr[3];
-      } else question.quizType = "spell";
-      quesTimer = 60;
-    } else if (curQuizType.startsWith("calc") && singQuesArr.length < 3) {
-      question.question = singQuesArr[0];
-      question.answer = singQuesArr[1];
+			question.question =
+				question.question +
+				"]" +
+				tmpQues.substr(tmpEnd + 1, tmpQues.length - tmpEnd - 1) +
+				"</span> : " +
+				'<span style="color:grey;font-size:20px;">' +
+				singQuesArr[1] +
+				"</span>";
 
-      question.quizType = "spell";
-      quesTimer = 60;
-    } else if (curQuizType == "audio") {
-      /* for listen Audio */
-      question.question = singQuesArr[0];
-      question.answer = singQuesArr[0];
-      question.quizType = "audio";
-      quesTimer = 60;
-      question.option1 = singQuesArr[1];
-    } else {
-      /* for choose  */
-      question.question = singQuesArr[0];
-      question.answer = singQuesArr[1];
-      question.quizType = "choose";
-      quesTimer = 60;
+			question.quizType = "spell";
+			question.answer = tmpQues.substr(tmpStart + 1, tmpEnd - tmpStart - 1);
+			quesTimer = 60;
+		} else if (
+			curQuizType == "spell" ||
+			singQuesArr[2] == "--" ||
+			curQuizType.includes("conversation")
+		) {
+			/* for all spell  */
+			question.question =
+				"[" + "X".repeat(singQuesArr[0].length) + "]" + singQuesArr[1];
+			question.answer = singQuesArr[0];
+			if (curQuizType.includes("conversation")) {
+				question.quizType = "audio";
+				question.option1 = singQuesArr[2];
+				question.option2 = singQuesArr[3];
+			} else question.quizType = "spell";
+			quesTimer = 60;
+		} else if (curQuizType.startsWith("calc") && singQuesArr.length < 3) {
+			question.question = singQuesArr[0];
+			question.answer = singQuesArr[1];
 
-      ansList = [];
-      while (ansList.length < 4) {
-        var r = Math.floor(Math.random() * 4) + 1;
-        if (ansList.indexOf(r) === -1) ansList.push(r);
-      }
+			question.quizType = "spell";
+			quesTimer = 60;
+		} else if (curQuizType == "audio") {
+			/* for listen Audio */
+			question.question = singQuesArr[0];
+			question.answer = singQuesArr[0];
+			question.quizType = "audio";
+			quesTimer = 60;
+			question.option1 = singQuesArr[1];
+		} else {
+			/* for choose  */
+			question.question = singQuesArr[0];
+			question.answer = singQuesArr[1];
+			question.quizType = "choose";
+			quesTimer = 60;
 
-      question.option1 = singQuesArr[ansList[0]];
-      question.option2 = singQuesArr[ansList[1]];
-      question.option3 = singQuesArr[ansList[2]];
-      question.option4 = singQuesArr[ansList[3]];
-    }
+			ansList = [];
+			while (ansList.length < 4) {
+				var r = Math.floor(Math.random() * 4) + 1;
+				if (ansList.indexOf(r) === -1) ansList.push(r);
+			}
 
-    questions[i] = question;
-  }
+			question.option1 = singQuesArr[ansList[0]];
+			question.option2 = singQuesArr[ansList[1]];
+			question.option3 = singQuesArr[ansList[2]];
+			question.option4 = singQuesArr[ansList[3]];
+		}
+
+		questions[i] = question;
+	}
 }
 
 function UrlExists(url) {
-  var http = new XMLHttpRequest();
-  http.open("HEAD", url, false);
-  http.send();
-  return http.status != 404;
+	var http = new XMLHttpRequest();
+	http.open("HEAD", url, false);
+	http.send();
+	return http.status != 404;
 }
 
 function confirmClick() {
-  let inputAnswer = document.querySelector(".direct_input").value.toLowerCase();
-  let correctAnswer = "";
-  inputAnswer = inputAnswer.trim();
-  document.querySelector("#confirmButton").disabled = "true";
-  if (curQuesType === "direct_input") {
-    correctAnswer = questions[que_count].answer.toString().toLowerCase();
-  } else {
-    correctAnswer = questions[que_count].question
-      .toString()
-      .toLowerCase()
-      .replace(".mp3", "");
-  }
-  if (inputAnswer === correctAnswer || inputAnswer == "qqq")
-    directSelected("correct", correctAnswer);
-  else directSelected("incorrect", correctAnswer);
+	let inputAnswer = document.querySelector(".direct_input").value.toLowerCase();
+	let correctAnswer = "";
+	inputAnswer = inputAnswer.trim();
+	document.querySelector("#confirmButton").disabled = "true";
+	if (curQuesType === "direct_input") {
+		correctAnswer = questions[que_count].answer.toString().toLowerCase();
+	} else {
+		correctAnswer = questions[que_count].question
+			.toString()
+			.toLowerCase()
+			.replace(".mp3", "");
+	}
+	if (inputAnswer === correctAnswer || inputAnswer == "qqq")
+		directSelected("correct", correctAnswer);
+	else directSelected("incorrect", correctAnswer);
 }
 
 // getting questions and options from array
 function showQuestions(index) {
-  content.classList.add("slight_opacity");
+	content.classList.add("slight_opacity");
 
-  const que_text = document.querySelector(".que_text");
-  ansQuesCnt++;
-  nowCursorFocus = 0;
-  //creating a new span and div tag for question and option and passing the value using array index
-  let que_tag = "<span>" + questions[index].question + "</span>";
+	const que_text = document.querySelector(".que_text");
+	ansQuesCnt++;
+	nowCursorFocus = 0;
+	//creating a new span and div tag for question and option and passing the value using array index
+	let que_tag = "<span>" + questions[index].question + "</span>";
 
-  let option_tag =
-    '<div class="option" id="option1"><span>' +
-    "1." +
-    questions[index].option1 +
-    "</span></div>" +
-    '<div class="option"  id="option2"><span>' +
-    "2." +
-    questions[index].option2 +
-    "</span></div>" +
-    '<div class="option"  id="option3"><span>' +
-    "3." +
-    questions[index].option3 +
-    "</span></div>" +
-    '<div class="option"  id="option4"><span>' +
-    "4." +
-    questions[index].option4 +
-    "</span></div>" +
-    '<div class="option"  id="option5""><span>' +
-    "5.不知道答案" +
-    "</span></div>";
-  let confirm_button = "";
+	let option_tag =
+		'<div class="option" id="option1"><span>' +
+		"1." +
+		questions[index].option1 +
+		"</span></div>" +
+		'<div class="option"  id="option2"><span>' +
+		"2." +
+		questions[index].option2 +
+		"</span></div>" +
+		'<div class="option"  id="option3"><span>' +
+		"3." +
+		questions[index].option3 +
+		"</span></div>" +
+		'<div class="option"  id="option4"><span>' +
+		"4." +
+		questions[index].option4 +
+		"</span></div>" +
+		'<div class="option"  id="option5""><span>' +
+		"5.不知道答案" +
+		"</span></div>";
+	let confirm_button = "";
 
-  if (
-    questions[index].quizType == "spell" ||
-    questions[index].quizType == "audio"
-  ) {
-    curStatus = "spell";
-    let answer_target =
-      '<div><input type="text" class="direct_input" name="direct_input" id="direct_input" value="" placeholder="輸入答案" style="width:40%;height:40px;font-size:20px;padding:10px;">';
-    answer_target +=
-      "<span> <button id='confirmButton' onclick='confirmClick()' style='width:70px;height:40px;' >確認</button></span> </div>";
-    curQuesType = "direct_input";
-    if (questions[index].quizType == "audio") {
-      // if (questions[index].option1 == null) {
-      //   que_tag =
-      //     "<span>答案請按右邊發音鈕  <button onclick='pronClick()' class='pronButton' style='width:70px;height:40px;' >發音</button></span>";
-      // } else
-      que_tag =
-        "<span>" +
-        questions[index].question +
-        // questions[index].option1 +
-        "  <button onclick='pronClick();' class='pronButton' style='width:70px;height:40px;' >發音</button></span>";
-      que_text.innerHTML = que_tag; //adding new span tag inside que_tag
-      pronClick();
-    } else if (questions[index].quizType == "spell") {
-      que_text.innerHTML = questions[index].question; //adding new span tag inside que_tag
-    }
+	if (
+		questions[index].quizType == "spell" ||
+		questions[index].quizType == "audio"
+	) {
+		curStatus = "spell";
+		let answer_target =
+			'<div><input type="text" class="direct_input" name="direct_input" id="direct_input" value="" placeholder="輸入答案" style="width:40%;height:40px;font-size:20px;padding:10px;">';
+		answer_target +=
+			"<span> <button id='confirmButton' onclick='confirmClick()' style='width:70px;height:40px;' >確認</button></span> </div>";
+		curQuesType = "direct_input";
+		if (questions[index].quizType == "audio") {
+			// if (questions[index].option1 == null) {
+			//   que_tag =
+			//     "<span>答案請按右邊發音鈕  <button onclick='pronClick()' class='pronButton' style='width:70px;height:40px;' >發音</button></span>";
+			// } else
+			que_tag =
+				"<span>" +
+				questions[index].question +
+				// questions[index].option1 +
+				"  <button onclick='pronClick();' class='pronButton' style='width:70px;height:40px;' >發音</button></span>";
+			que_text.innerHTML = que_tag; //adding new span tag inside que_tag
+			pronClick();
+		} else if (questions[index].quizType == "spell") {
+			que_text.innerHTML = questions[index].question; //adding new span tag inside que_tag
+		}
 
-    option_list.innerHTML = answer_target;
+		option_list.innerHTML = answer_target;
 
-    document.querySelector(".direct_input").focus();
-    document.removeEventListener("keydown", keydown);
-  } else {
-    curStatus = "choose";
-    que_text.innerHTML = que_tag; //adding new span tag inside que_tag
-    option_list.innerHTML = option_tag; //adding new div tag inside option_tag
-    const option = option_list.querySelectorAll(".option");
+		document.querySelector(".direct_input").focus();
+		document.removeEventListener("keydown", keydown);
+	} else {
+		curStatus = "choose";
+		que_text.innerHTML = que_tag; //adding new span tag inside que_tag
+		option_list.innerHTML = option_tag; //adding new div tag inside option_tag
+		const option = option_list.querySelectorAll(".option");
 
-    // set onclick attribute to all available options
-    for (var i = 0; i < option.length; i++) {
-      option[i].setAttribute("onclick", "optionSelected(this)");
-    }
-    document.addEventListener("keydown", keydown);
-  }
+		// set onclick attribute to all available options
+		for (var i = 0; i < option.length; i++) {
+			option[i].setAttribute("onclick", "optionSelected(this)");
+		}
+		document.addEventListener("keydown", keydown);
+	}
 
-  quit_btn.classList.add("show"); //show the next button if user selected any option
+	quit_btn.classList.add("show"); //show the next button if user selected any option
 }
 
 // creating the new div tags which for icons
 let tickIconTag = '<div class="icon tick"><i class="fas fa-check"></i></div>  ';
 let crossIconTag =
-  '<div class="icon cross"><div class="diag1"></div><div class="diag2"></div><i class="fas fa-times"></i></div>';
+	'<div class="icon cross"><div class="diag1"></div><div class="diag2"></div><i class="fas fa-times"></i></div>';
 
 function directSelected(userAns, correctAns) {
-  clearInterval(counter); //clear counter
-  clearInterval(counterLine); //clear counterLine
+	clearInterval(counter); //clear counter
+	clearInterval(counterLine); //clear counterLine
 
-  if (userAns === "correct") {
-    //if user selected option is equal to array's correct answer
-    userScore += 1; //upgrading score value with 1
-    if (curQuesType === "direct_input") {
-      document.querySelector(".direct_input").style.backgroundColor = "green";
-    }
-    keepRightAnswer();
+	if (userAns === "correct") {
+		//if user selected option is equal to array's correct answer
+		userScore += 1; //upgrading score value with 1
+		if (curQuesType === "direct_input") {
+			document.querySelector(".direct_input").style.backgroundColor = "green";
+		}
+		keepRightAnswer();
 
-    if (userInputAns == "168") {
-      option_list.innerHTML =
-        option_list.innerHTML +
-        '<div name="answer" style="width:100%;height:40px;font-size:20px;padding:10px;color:blue">' +
-        '<span style="color:blue">' +
-        "正確答案：" +
-        correctAns +
-        "</span>";
-    }
-  } else {
-    keepWrongAnswer();
-    if (curQuesType !== "direct_input") {
-      document.querySelector(".option").classList.add("incorrect");
-    } //adding red color to correct selected option
-    else {
-      // document.querySelector(".direct_input").style.backgroundColor = "red";
+		if (userInputAns == "168") {
+			option_list.innerHTML =
+				option_list.innerHTML +
+				'<div name="answer" style="width:100%;height:40px;font-size:20px;padding:10px;color:blue">' +
+				'<span style="color:blue">' +
+				"正確答案：" +
+				correctAns +
+				"</span>";
+		}
+	} else {
+		keepWrongAnswer();
+		if (curQuesType !== "direct_input") {
+			document.querySelector(".option").classList.add("incorrect");
+		} //adding red color to correct selected option
+		else {
+			// document.querySelector(".direct_input").style.backgroundColor = "red";
 
-      let answer_target = (option_list.innerHTML =
-        option_list.innerHTML +
-        '<div name="answer" style="width:100%;height:40px;font-size:20px;padding:10px;color:blue">' +
-        '<span style="color:blue">' +
-        "正確答案：" +
-        correctAns +
-        "</span>" +
-        '<br><span style="color:blue">' +
-        "你的答案：" +
-        compWrongChar(correctAns, userInputAns) +
-        "</span" +
-        "</div>");
-    }
-  }
-  next_btn.classList.add("show"); //show the next button if user selected any option
-  next_btn.focus();
+			let answer_target = (option_list.innerHTML =
+				option_list.innerHTML +
+				'<div name="answer" style="width:100%;height:40px;font-size:20px;padding:10px;color:blue">' +
+				'<span style="color:blue">' +
+				"正確答案：" +
+				correctAns +
+				"</span>" +
+				'<br><span style="color:blue">' +
+				"你的答案：" +
+				compWrongChar(correctAns, userInputAns) +
+				"</span" +
+				"</div>");
+		}
+	}
+	next_btn.classList.add("show"); //show the next button if user selected any option
+	next_btn.focus();
 }
 
 function compWrongChar(answer, user) {
-  var result = "<span style='color:blue'>";
-  var correct = true;
-  var word_cnt = 0;
-  var correct_cnt = 0;
-  var final_score = 0;
-  for (var s = 0; s < answer.length; s++) {
-    word_cnt++;
-    if (s >= user.length) break;
-    if (s > user.length || answer.substr(s, 1) != user.substr(s, 1)) {
-      if (correct == true) {
-        result = result + "</span><span style='color:red'>";
-        correct = false;
-      }
-      if (s >= user.length) {
-        result = result + answer.substr(s, 1);
-      } else {
-        result = result + user.substr(s, 1);
-      }
-    } else {
-      correct_cnt++;
-      if (correct == false) {
-        result =
-          result + "</span><span style='color:blue'>" + user.substr(s, 1);
-        correct = true;
-      } else result = result + user.substr(s, 1);
-    }
-  }
-  final_score = (correct_cnt * 100) / word_cnt;
-  result =
-    result +
-    "</span><span style='color:green'><br>" +
-    "本題得分：" +
-    Math.round(final_score);
-  return result;
+	var result = "<span style='color:blue'>";
+	var correct = true;
+	var word_cnt = 0;
+	var correct_cnt = 0;
+	var final_score = 0;
+	for (var s = 0; s < answer.length; s++) {
+		word_cnt++;
+		if (s >= user.length) break;
+		if (s > user.length || answer.substr(s, 1) != user.substr(s, 1)) {
+			if (correct == true) {
+				result = result + "</span><span style='color:red'>";
+				correct = false;
+			}
+			if (s >= user.length) {
+				result = result + answer.substr(s, 1);
+			} else {
+				result = result + user.substr(s, 1);
+			}
+		} else {
+			correct_cnt++;
+			if (correct == false) {
+				result =
+					result + "</span><span style='color:blue'>" + user.substr(s, 1);
+				correct = true;
+			} else result = result + user.substr(s, 1);
+		}
+	}
+	final_score = (correct_cnt * 100) / word_cnt;
+	result =
+		result +
+		"</span><span style='color:green'><br>" +
+		"本題得分：" +
+		Math.round(final_score);
+	return result;
 }
 
 //if user clicked on option
 function optionSelected(answer) {
-  clearInterval(counter); //clear counter
-  clearInterval(counterLine); //clear counterLine
-  let userAns = answer.textContent.substr(2, answer.textContent.length - 2); //getting user selected option
-  let correcAns = questions[que_count].answer; //getting correct answer from array
-  const allOptions = option_list.children.length; //getting all option items
+	clearInterval(counter); //clear counter
+	clearInterval(counterLine); //clear counterLine
+	let userAns = answer.textContent.substr(2, answer.textContent.length - 2); //getting user selected option
+	let correcAns = questions[que_count].answer; //getting correct answer from array
+	const allOptions = option_list.children.length; //getting all option items
 
-  if (answer === "correct") userAns = correcAns;
+	if (answer === "correct") userAns = correcAns;
 
-  if (userAns == correcAns) {
-    //if user selected option is equal to array's correct answer
-    userScore += 1; //upgrading score value with 1
-    answer.classList.add("correct"); //adding green color to correct selected option
-    answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
-    keepRightAnswer();
-  } else {
-    keepWrongAnswer();
-    answer.classList.add("incorrect"); //adding red color to correct selected option
-    answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
+	if (userAns == correcAns) {
+		//if user selected option is equal to array's correct answer
+		userScore += 1; //upgrading score value with 1
+		answer.classList.add("correct"); //adding green color to correct selected option
+		answer.insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to correct selected option
+		keepRightAnswer();
+	} else {
+		keepWrongAnswer();
+		answer.classList.add("incorrect"); //adding red color to correct selected option
+		answer.insertAdjacentHTML("beforeend", crossIconTag); //adding cross icon to correct selected option
 
-    for (var i = 0; i < allOptions; i++) {
-      if (
-        option_list.children[i].textContent.substr(
-          2,
-          option_list.children[i].textContent.length - 2
-        ) == correcAns
-      ) {
-        //if there is an option which is matched to an array answer
-        option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-        option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-      }
-    }
-  }
-  for (i = 0; i < allOptions; i++) {
-    option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-  }
-  next_btn.classList.add("show"); //show the next button if user selected any option
-  curStatus = "nextQues";
+		for (var i = 0; i < allOptions; i++) {
+			if (
+				option_list.children[i].textContent.substr(
+					2,
+					option_list.children[i].textContent.length - 2
+				) == correcAns
+			) {
+				//if there is an option which is matched to an array answer
+				option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
+				option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
+			}
+		}
+	}
+	for (i = 0; i < allOptions; i++) {
+		option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+	}
+	next_btn.classList.add("show"); //show the next button if user selected any option
+	curStatus = "nextQues";
 }
 
 function keepRightAnswer() {
-  var rightStorage = localStorage.getItem(curQuiz + "_right");
-  if (
-    rightStorage == null ||
-    rightStorage == "undefined" ||
-    rightStorage.length < 2
-  ) {
-    rightStorage = "," + questions[que_count].numb + ",";
-  } else rightStorage = rightStorage + questions[que_count].numb + ",";
-  localStorage.setItem(curQuiz + "_right", rightStorage);
+	var rightStorage = localStorage.getItem(curQuiz + "_right");
+	if (
+		rightStorage == null ||
+		rightStorage == "undefined" ||
+		rightStorage.length < 2
+	) {
+		rightStorage = "," + questions[que_count].numb + ",";
+	} else rightStorage = rightStorage + questions[que_count].numb + ",";
+	localStorage.setItem(curQuiz + "_right", rightStorage);
 }
 
 function keepWrongAnswer() {
-  var wrongStorage = localStorage.getItem(curQuiz + "_wrong");
-  var tmpMessage;
-  if (
-    wrongStorage == null ||
-    wrongStorage == "undefined" ||
-    wrongStorage.length < 2
-  ) {
-    wrongStorage = "," + questions[que_count].numb + ",";
-  } else {
-    tmpMessage = questions[que_count].numb + ",";
-    var checkMessage = "," + tmpMessage;
-    if (wrongStorage.includes(checkMessage)) return;
-    wrongStorage = wrongStorage + questions[que_count].numb + ",";
-  }
-  localStorage.setItem(curQuiz + "_wrong", wrongStorage);
+	var wrongStorage = localStorage.getItem(curQuiz + "_wrong");
+	var tmpMessage;
+	if (
+		wrongStorage == null ||
+		wrongStorage == "undefined" ||
+		wrongStorage.length < 2
+	) {
+		wrongStorage = "," + questions[que_count].numb + ",";
+	} else {
+		tmpMessage = questions[que_count].numb + ",";
+		var checkMessage = "," + tmpMessage;
+		if (wrongStorage.includes(checkMessage)) return;
+		wrongStorage = wrongStorage + questions[que_count].numb + ",";
+	}
+	localStorage.setItem(curQuiz + "_wrong", wrongStorage);
 }
 
 function showResult() {
-  quiz_box.classList.remove("activeQuiz"); //hide quiz box
-  result_box.classList.add("activeResult"); //show result box
-  if (curStatus == "allQuesPass") {
-    return;
-  }
-  const scoreText = result_box.querySelector(".score_text");
-  const resultICON = result_box.querySelector(".icon");
+	quiz_box.classList.remove("activeQuiz"); //hide quiz box
+	result_box.classList.add("activeResult"); //show result box
+	if (curStatus == "allQuesPass") {
+		return;
+	}
+	const scoreText = result_box.querySelector(".score_text");
+	const resultICON = result_box.querySelector(".icon");
 
-  //let final_score = Math.floor((userScore * 100) / questions.length);
-  var tmpQuesCnt;
-  if (questions.length > maxQuesCnt) tmpQuesCnt = maxQuesCnt;
-  else tmpQuesCnt = questions.length;
-  let final_score = Math.floor((userScore * 100) / ansQuesCnt);
+	//let final_score = Math.floor((userScore * 100) / questions.length);
+	var tmpQuesCnt;
+	if (questions.length > maxQuesCnt) tmpQuesCnt = maxQuesCnt;
+	else tmpQuesCnt = questions.length;
+	let final_score = Math.floor((userScore * 100) / ansQuesCnt);
 
-  // if (myNewScore > myStorageScore)
-  //   localStorage.setItem(selCategory + "_" + selLevel, myNewScore);
+	// if (myNewScore > myStorageScore)
+	//   localStorage.setItem(selCategory + "_" + selLevel, myNewScore);
 
-  if (final_score === 100) {
-    // if user scored more than 3
-    resultICON.innerHTML = '<i class="fas fa-crown"></i>';
-    //creating a new span tag and passing the user score number and total question number
-    let scoreTag =
-      "<span>恭喜 " +
-      userName.innerHTML +
-      "🎉, 你得到 <p>" +
-      final_score +
-      "</p> 分 </span>";
+	if (final_score === 100) {
+		// if user scored more than 3
+		resultICON.innerHTML = '<i class="fas fa-crown"></i>';
+		//creating a new span tag and passing the user score number and total question number
+		let scoreTag =
+			"<span>恭喜 " +
+			userName.innerHTML +
+			"🎉, 你得到 <p>" +
+			final_score +
+			"</p> 分 </span>";
 
-    if (userScore == questions.length) {
-      scoreTag += "<span>恭喜";
-      scoreTag += userName.innerHTML;
-      scoreTag +=
-        " ! , 你完成本課程了！！！</span><span style='font-size:6rem;text-align:center'>";
-      raiseStarLevel();
-      for (var i = 0; i < curLevel; i++) {
-        scoreTag += "🏆";
-      }
-      scoreTag += "</span>";
-      var starMessage = document.getElementById(curQuiz + "_class_star");
-      starMessage.innerText = showStar(curLevel);
-    }
-    scoreText.innerHTML = scoreTag; //adding new span tag inside score_Text
-  } else if (final_score >= 80) {
-    // if user scored more than 1
-    resultICON.innerHTML = '<i class="fas fa-grin-beam-sweat"></i>';
-    let scoreTag =
-      "<span>不錯 😎, 你得到 <p>" + final_score + "</p> 分 </span>";
-    scoreText.innerHTML = scoreTag;
-  } else {
-    // if user scored less than 1
-    resultICON.innerHTML = '<i class="fas fa-tired"></i>';
-    let scoreTag =
-      "<span>很可惜 😐, 你只得到 <p>" + final_score + "</p> 分 </span>";
-    scoreText.innerHTML = scoreTag;
-  }
+		if (userScore == questions.length) {
+			scoreTag += "<span>恭喜";
+			scoreTag += userName.innerHTML;
+			scoreTag +=
+				" ! , 你完成本課程了！！！</span><span style='font-size:6rem;text-align:center'>";
+			raiseStarLevel();
+			for (var i = 0; i < curLevel; i++) {
+				scoreTag += "🏆";
+			}
+			scoreTag += "</span>";
+			var starMessage = document.getElementById(curQuiz + "_class_star");
+			starMessage.innerText = showStar(curLevel);
+		}
+		scoreText.innerHTML = scoreTag; //adding new span tag inside score_Text
+	} else if (final_score >= 80) {
+		// if user scored more than 1
+		resultICON.innerHTML = '<i class="fas fa-grin-beam-sweat"></i>';
+		let scoreTag =
+			"<span>不錯 😎, 你得到 <p>" + final_score + "</p> 分 </span>";
+		scoreText.innerHTML = scoreTag;
+	} else {
+		// if user scored less than 1
+		resultICON.innerHTML = '<i class="fas fa-tired"></i>';
+		let scoreTag =
+			"<span>很可惜 😐, 你只得到 <p>" + final_score + "</p> 分 </span>";
+		scoreText.innerHTML = scoreTag;
+	}
 }
 
 function startTimer() {
-  var timeSec = document.getElementsByClassName("timer_sec")[0];
-  timeSec.innerHTML = quesTimer;
-  counter = setInterval(timer, 1000);
+	var timeSec = document.getElementsByClassName("timer_sec")[0];
+	timeSec.innerHTML = quesTimer;
+	counter = setInterval(timer, 1000);
 
-  var d = new Date();
-  startSecond = d.getTime();
+	var d = new Date();
+	startSecond = d.getTime();
 
-  function timer() {
-    var time;
-    var d = new Date();
-    nowSecond = d.getTime();
-    time = quesTimer - Math.floor((nowSecond - startSecond) / 1000);
-    if (time >= 0) timeCount.textContent = time; //changing the value of timeCount with time value
-    if (time < 10 && time > 0) {
-      //if timer is less than 9
-      let addZero = timeCount.textContent;
-      timeCount.textContent = "0" + addZero; //add a 0 before time value
-    }
-    if (time < 0) {
-      //if timer is less than 0
-      clearInterval(counter); //clear counter
-      timeText.textContent = "時間到"; //change the time text to time off
-      const allOptions = option_list.children.length; //getting all option items
-      let correcAns = questions[que_count].answer; //getting correct answer from array
-      for (i = 0; i < allOptions; i++) {
-        if (option_list.children[i].textContent == correcAns) {
-          //if there is an option which is matched to an array answer
-          option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
-          option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
-        }
-      }
-      for (var i = 0; i < allOptions; i++) {
-        option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
-      }
-      next_btn.classList.add("show"); //show the next button if user selected any option
-    }
-  }
+	function timer() {
+		var time;
+		var d = new Date();
+		nowSecond = d.getTime();
+		time = quesTimer - Math.floor((nowSecond - startSecond) / 1000);
+		if (time >= 0) timeCount.textContent = time; //changing the value of timeCount with time value
+		if (time < 10 && time > 0) {
+			//if timer is less than 9
+			let addZero = timeCount.textContent;
+			timeCount.textContent = "0" + addZero; //add a 0 before time value
+		}
+		if (time < 0) {
+			//if timer is less than 0
+			clearInterval(counter); //clear counter
+			timeText.textContent = "時間到"; //change the time text to time off
+			const allOptions = option_list.children.length; //getting all option items
+			let correcAns = questions[que_count].answer; //getting correct answer from array
+			for (i = 0; i < allOptions; i++) {
+				if (option_list.children[i].textContent == correcAns) {
+					//if there is an option which is matched to an array answer
+					option_list.children[i].setAttribute("class", "option correct"); //adding green color to matched option
+					option_list.children[i].insertAdjacentHTML("beforeend", tickIconTag); //adding tick icon to matched option
+				}
+			}
+			for (var i = 0; i < allOptions; i++) {
+				option_list.children[i].classList.add("disabled"); //once user select an option then disabled all options
+			}
+			next_btn.classList.add("show"); //show the next button if user selected any option
+		}
+	}
 }
 
 function startTimerLine() {
-  var tmpCount = 100;
-  counterLine = setInterval(timer, tmpCount);
-  var d = new Date();
-  startMilisecond = d.getTime();
-  miliWidth = quizWidth / quesTimer / 1000;
+	var tmpCount = 100;
+	counterLine = setInterval(timer, tmpCount);
+	var d = new Date();
+	startMilisecond = d.getTime();
+	miliWidth = quizWidth / quesTimer / 1000;
 
-  function timer() {
-    var d = new Date();
-    nowMilisecond = d.getTime();
+	function timer() {
+		var d = new Date();
+		nowMilisecond = d.getTime();
 
-    var time;
-    var oneStep = (nowMilisecond - startMilisecond) * miliWidth;
+		var time;
+		var oneStep = (nowMilisecond - startMilisecond) * miliWidth;
 
-    time = Math.floor(oneStep);
-    // time += 1; //upgrading time value with 1
-    if (time > quizWidth) {
-      //if time value is greater than 549
-      time = quizWidth;
-      clearInterval(counterLine); //clear counterLine
-    }
+		time = Math.floor(oneStep);
+		// time += 1; //upgrading time value with 1
+		if (time > quizWidth) {
+			//if time value is greater than 549
+			time = quizWidth;
+			clearInterval(counterLine); //clear counterLine
+		}
 
-    time_line.style.width = time + "px"; //increasing width of time_line with px by time value
-  }
+		time_line.style.width = time + "px"; //increasing width of time_line with px by time value
+	}
 }
 
 function queCounter(index) {
-  //creating a new span tag and passing the question number and total question
-  var tmpCorrect = correctCnt + userScore;
-  var tmpTotal = correctCnt + questions.length;
-  var tmpScore = (tmpCorrect * 100) / tmpTotal;
-  let totalQueCounTag =
-    "<span> 問題 (	&nbsp; <p>" +
-    index +
-    "</p> / <p>" +
-    questions.length +
-    " )" +
-    " -- 總題數 (" +
-    tmpTotal +
-    ") 己答對 (" +
-    tmpCorrect +
-    "題) </p></span>";
-  bottom_ques_counter.innerHTML = totalQueCounTag; //adding new span tag inside bottom_ques_counter
+	//creating a new span tag and passing the question number and total question
+	var tmpCorrect = correctCnt + userScore;
+	var tmpTotal = correctCnt + questions.length;
+	var tmpScore = (tmpCorrect * 100) / tmpTotal;
+	let totalQueCounTag =
+		"<span> 問題 (	&nbsp; <p>" +
+		index +
+		"</p> / <p>" +
+		questions.length +
+		" )" +
+		" -- 總題數 (" +
+		tmpTotal +
+		") 己答對 (" +
+		tmpCorrect +
+		"題) </p></span>";
+	bottom_ques_counter.innerHTML = totalQueCounTag; //adding new span tag inside bottom_ques_counter
 }
 
 function keydown(e) {
-  e.preventDefault();
-  switch (e.code) {
-    case "Enter":
-      if (curStatus == "nextQues") {
-        next_btn.click();
-      }
-      break;
-    case "Digit1":
-      if (curStatus == "choose") {
-        document.getElementById("option1").click();
-      }
-      break;
-    case "Digit2":
-      if (curStatus == "choose") {
-        document.getElementById("option2").click();
-      }
-      break;
-    case "Digit3":
-      if (curStatus == "choose") {
-        document.getElementById("option3").click();
-      }
-      break;
-    case "Digit4":
-      if (curStatus == "choose") {
-        document.getElementById("option4").click();
-      }
-      break;
-    case "Digit5":
-      if (curStatus == "choose") {
-        document.getElementById("option5").click();
-      }
-      break;
-    default:
-      if (curStatus == "spell") {
-        document.querySelector(".direct_input").value =
-          document.querySelector(".direct_input").value + e.code;
-      }
-  }
+	e.preventDefault();
+	switch (e.code) {
+		case "Enter":
+			if (curStatus == "nextQues") {
+				next_btn.click();
+			}
+			break;
+		case "Digit1":
+			if (curStatus == "choose") {
+				document.getElementById("option1").click();
+			}
+			break;
+		case "Digit2":
+			if (curStatus == "choose") {
+				document.getElementById("option2").click();
+			}
+			break;
+		case "Digit3":
+			if (curStatus == "choose") {
+				document.getElementById("option3").click();
+			}
+			break;
+		case "Digit4":
+			if (curStatus == "choose") {
+				document.getElementById("option4").click();
+			}
+			break;
+		case "Digit5":
+			if (curStatus == "choose") {
+				document.getElementById("option5").click();
+			}
+			break;
+		default:
+			if (curStatus == "spell") {
+				document.querySelector(".direct_input").value =
+					document.querySelector(".direct_input").value + e.code;
+			}
+	}
 }
 
 function raiseStarLevel() {
-  var i;
-  var prevLevelStorage;
-  var curLevelStorage;
-  for (i = 3; i > 0; i--) {
-    curLevelStorage = localStorage.getItem(cursubject + "_level_" + i);
-    if (
-      curLevelStorage == null ||
-      curLevelStorage == "undefined" ||
-      curLevelStorage.length < 2
-    ) {
-      prevLevelStorage = "";
-      continue;
-    }
-    if (curLevelStorage.includes(curQuiz + ";")) {
-      break;
-    }
-    prevLevelStorage = curLevelStorage;
-  }
-  curLevel = i;
+	var i;
+	var prevLevelStorage;
+	var curLevelStorage;
+	for (i = 3; i > 0; i--) {
+		curLevelStorage = localStorage.getItem(cursubject + "_level_" + i);
+		if (
+			curLevelStorage == null ||
+			curLevelStorage == "undefined" ||
+			curLevelStorage.length < 2
+		) {
+			prevLevelStorage = "";
+			continue;
+		}
+		if (curLevelStorage.includes(curQuiz + ";")) {
+			break;
+		}
+		prevLevelStorage = curLevelStorage;
+	}
+	curLevel = i;
 
-  if (curLevel < 3) {
-    curLevel++;
-    prevLevelStorage = prevLevelStorage + curQuiz + ";";
-    localStorage.setItem(cursubject + "_level_" + curLevel, prevLevelStorage);
-  }
-  localStorage.setItem(curQuiz + "_right", "");
-  return;
+	if (curLevel < 3) {
+		curLevel++;
+		prevLevelStorage = prevLevelStorage + curQuiz + ";";
+		localStorage.setItem(cursubject + "_level_" + curLevel, prevLevelStorage);
+	}
+	localStorage.setItem(curQuiz + "_right", "");
+	return;
 }
 
 //3. 播放器
 function readSubtitles(srtFile) {
-  if (checkFileExist(srtFile) == false) {
-    let subtitle = new Subtitle();
-    subtitle.numb = 1;
-    subtitle.content = "";
-    subtitle.content2 = "";
-    subtitle.content3 = "";
-    subtitle.content4 = "";
-    subtitles.push(subtitle);
-    return false;
-  }
-  var read = new XMLHttpRequest();
-  read.open("GET", srtFile, false);
-  read.setRequestHeader("Cache-Control", "no-cache");
-  read.send();
-  var displayName = read.responseText;
-  // var displayName = read.responseText.replace(/’/g, "'");
-  // var quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
-  // youtube_url = quesArr[0];
-  setSubtitles(displayName);
+	if (checkFileExist(srtFile) == false) {
+		let subtitle = new Subtitle();
+		subtitle.numb = 1;
+		subtitle.content = "";
+		subtitle.content2 = "";
+		subtitle.content3 = "";
+		subtitle.content4 = "";
+		subtitles.push(subtitle);
+		return false;
+	}
+	var read = new XMLHttpRequest();
+	read.open("GET", srtFile, false);
+	read.setRequestHeader("Cache-Control", "no-cache");
+	read.send();
+	var displayName = read.responseText;
+	// var displayName = read.responseText.replace(/’/g, "'");
+	// var quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
+	// youtube_url = quesArr[0];
+	setSubtitles(displayName);
+}
+
+function add_new_line(line1, line2) {
+	var resultStr;
+	if (line2.length < 2) return line1;
+
+	if (line1.length > 0) {
+		resultStr = line1;
+		if (line1.includes("▪")) {
+			resultStr += "<br>";
+		}
+		resultStr += "&#20;&#20;▪ ";
+		resultStr += line2;
+	} else {
+		resultStr = "<h4>" + line2 + "</h4>";
+	}
+	return resultStr;
 }
 
 function setSubtitles(contents) {
-  subtitles = [];
-  subTitleCnt = 0;
-  var quesArr = contents.replace(/\r\n/g, "\n").split("\n");
-  let quesCnt = quesArr.length;
-  let adjustTime = 0;
+	subtitles = [];
+	subTitleCnt = 0;
+	var quesArr = contents.replace(/\r\n/g, "\n").split("\n");
+	let quesCnt = quesArr.length;
+	let adjustTime = 0;
 
-  for (let k = 0; k < quesCnt; k++) {
-    if (quesArr[k].includes("(adjust)")) {
-      var timeArr = quesArr[k].split("-");
-      if (quesArr[k].includes("(minus)")) {
-        adjustTime = getSecond(timeArr[1]) * -1;
-      } else if (quesArr[k].includes("(add)")) {
-        adjustTime = getSecond(timeArr[1]);
-      }
-    }
-    if (subtitleMode.includes("Srt")) {
-      if (quesArr[k].includes("-->")) {
-        let subtitle = new Subtitle();
-        subtitles.push(subtitle);
-      }
-    } else if (subtitleMode.includes("MD")) {
-      if (quesArr[k].startsWith("#")) {
-        if (quesArr[k].includes("#Subtitle4")) {
-          continue;
-        }
-        let subtitle = new Subtitle();
-        subtitle.content = "";
-        subtitle.content2 = "";
-        subtitle.content3 = "";
-        subtitle.content4 = "";
-        subtitles.push(subtitle);
-      }
-    }
-  }
-  console.log("subtitle.length=" + subtitles.length);
-  subTitleCnt = 0;
-  var nowStatus = 0; //0:nothing,1:start
+	for (let k = 0; k < quesCnt; k++) {
+		if (quesArr[k].includes("(adjust)")) {
+			var timeArr = quesArr[k].split("-");
+			if (quesArr[k].includes("(minus)")) {
+				adjustTime = getSecond(timeArr[1]) * -1;
+			} else if (quesArr[k].includes("(add)")) {
+				adjustTime = getSecond(timeArr[1]);
+			}
+		}
+		if (subtitleMode.includes("Srt")) {
+			if (quesArr[k].includes("-->")) {
+				let subtitle = new Subtitle();
+				subtitles.push(subtitle);
+			}
+		} else if (subtitleMode.includes("MD")) {
+			if (quesArr[k].startsWith("#")) {
+				if (quesArr[k].includes("#Subtitle4")) {
+					continue;
+				}
+				let subtitle = new Subtitle();
+				subtitle.content = "";
+				subtitle.content2 = "";
+				subtitle.content3 = "";
+				subtitle.content4 = "";
+				subtitles.push(subtitle);
+			}
+		}
+	}
+	console.log("subtitle.length=" + subtitles.length);
+	subTitleCnt = 0;
+	var nowStatus = 0; //0:nothing,1:start
 
-  bRemainHighlight = false;
-  bHasHighlight = false;
-  var bSubtitle2 = false;
-  var bSubtitle4 = false;
-  for (let k = 0; k < quesCnt; k++) {
-    /*judge double subtitles */
-    if (quesArr[k].includes("#Subtitle2")) {
-      subtitleMode = "DoubleSrt";
-    }
-    if (quesArr[k].includes("#Subtitle4")) {
-      subtitleMode = "MD4";
-      continue;
-    }
-    /*end*/
-    if (subtitleMode.includes("Srt") && quesArr[k].includes("-->")) {
-      subTitleCnt++;
-      var timeArr = quesArr[k].split("-"); //00:01:01,440 --> 00:01:03,232
-      subtitles[subTitleCnt - 1].start = getSecond(timeArr[0]) + adjustTime;
-      var time2Arr = timeArr[2].split(">"); //00:01:01,440 --> 00:01:03,232
-      subtitles[subTitleCnt - 1].finish = getSecond(time2Arr[1]) + adjustTime;
-      subtitles[subTitleCnt - 1].numb = subTitleCnt;
-      subtitles[subTitleCnt - 1].content = "";
-      subtitles[subTitleCnt - 1].content2 = "";
-      nowStatus = 1;
-      bSubtitle2 = false;
-    } else if (subtitleMode.includes("MD") && quesArr[k].startsWith("#")) {
-      // if (nowStatus == 1) {
-      subTitleCnt++;
-      // }
-      subtitles[subTitleCnt - 1].numb = subTitleCnt;
-      nowStatus = 1;
-      if (!subtitleMode.includes("MD4")) {
-        subtitles[subTitleCnt - 1].content = quesArr[k];
-      }
-    } else {
-      if (nowStatus == 1 && quesArr[k] != undefined) {
-        if (subtitleMode.includes("Srt") && quesArr[k].length == 0) {
-          nowStatus = 0;
-          // subTitleCnt++;
-        } else {
-          // if (subtitles[subTitleCnt].content.length > 0)
-          //   subtitles[subTitleCnt].content += "\n";
-          if (subtitleMode.includes("DoubleSrt")) {
-            var contentArr = quesArr[k].split("--"); //00:01:01,440 --> 00:01:03,232
+	bRemainHighlight = false;
+	bHasHighlight = false;
+	var bSubtitle2 = false;
+	var bSubtitle4 = false;
+	for (let k = 0; k < quesCnt; k++) {
+		/*judge double subtitles */
+		if (quesArr[k].includes("#Subtitle2")) {
+			subtitleMode = "DoubleSrt";
+		}
+		if (quesArr[k].includes("#Subtitle4")) {
+			subtitleMode = "MD4";
+			continue;
+		}
+		/*end*/
+		if (subtitleMode.includes("Srt") && quesArr[k].includes("-->")) {
+			subTitleCnt++;
+			var timeArr = quesArr[k].split("-"); //00:01:01,440 --> 00:01:03,232
+			subtitles[subTitleCnt - 1].start = getSecond(timeArr[0]) + adjustTime;
+			var time2Arr = timeArr[2].split(">"); //00:01:01,440 --> 00:01:03,232
+			subtitles[subTitleCnt - 1].finish = getSecond(time2Arr[1]) + adjustTime;
+			subtitles[subTitleCnt - 1].numb = subTitleCnt;
+			subtitles[subTitleCnt - 1].content = "";
+			subtitles[subTitleCnt - 1].content2 = "";
+			nowStatus = 1;
+			bSubtitle2 = false;
+		} else if (subtitleMode.includes("MD") && quesArr[k].startsWith("#")) {
+			// if (nowStatus == 1) {
+			subTitleCnt++;
+			// }
+			subtitles[subTitleCnt - 1].numb = subTitleCnt;
+			nowStatus = 1;
+			if (!subtitleMode.includes("MD4")) {
+				subtitles[subTitleCnt - 1].content = quesArr[k];
+			}
+		} else {
+			if (nowStatus == 1 && quesArr[k] != undefined) {
+				if (subtitleMode.includes("Srt") && quesArr[k].length == 0) {
+					nowStatus = 0;
+					// subTitleCnt++;
+				} else {
+					// if (subtitles[subTitleCnt].content.length > 0)
+					//   subtitles[subTitleCnt].content += "\n";
+					if (subtitleMode.includes("DoubleSrt")) {
+						var contentArr = quesArr[k].split("--"); //00:01:01,440 --> 00:01:03,232
 
-            if (contentArr.length > 1) {
-              subtitles[subTitleCnt - 1].content += contentArr[0];
-              subtitles[subTitleCnt - 1].content2 += contentArr[1];
-              bSubtitle2 = true;
-            } else {
-              if (k < quesCnt - 1) {
-                if (quesArr[k + 1].includes("-->")) {
-                  continue;
-                }
-              }
-              if (bSubtitle2) {
-                subtitles[subTitleCnt - 1].content2 += quesArr[k];
-              } else {
-                subtitles[subTitleCnt - 1].content += quesArr[k];
-              }
-            }
-          } else if (subtitleMode.includes("MD4")) {
-            var contentArr = quesArr[k].split("--");
-            if (contentArr.length > 1) {
-              subtitles[subTitleCnt - 1].content =
-                subtitles[subTitleCnt - 1].content + contentArr[0];
-              subtitles[subTitleCnt - 1].content2 += contentArr[1];
-              subtitles[subTitleCnt - 1].content3 += contentArr[2];
-              subtitles[subTitleCnt - 1].content4 += contentArr[3];
-              bSubtitle4 = true;
-            }
-          } else {
-            subtitles[subTitleCnt - 1].content =
-              subtitles[subTitleCnt - 1].content + "\n" + quesArr[k];
-          }
-          if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
-            bHasHighlight = true;
-          }
-        }
-      }
-    }
-  }
-  //add one line if last line's content is not null
-  if (subTitleCnt < 1) {
-    alert("No subtitles inside");
-    return;
-  }
+						if (contentArr.length > 1) {
+							subtitles[subTitleCnt - 1].content += contentArr[0];
+							subtitles[subTitleCnt - 1].content2 += contentArr[1];
+							bSubtitle2 = true;
+						} else {
+							if (k < quesCnt - 1) {
+								if (quesArr[k + 1].includes("-->")) {
+									continue;
+								}
+							}
+							if (bSubtitle2) {
+								subtitles[subTitleCnt - 1].content2 += quesArr[k];
+							} else {
+								subtitles[subTitleCnt - 1].content += quesArr[k];
+							}
+						}
+					} else if (subtitleMode.includes("MD4")) {
+						var contentArr = quesArr[k].split("--");
+						if (contentArr.length > 1) {
+							subtitles[subTitleCnt - 1].content = add_new_line(
+								subtitles[subTitleCnt - 1].content,
+								contentArr[0]
+							);
+							subtitles[subTitleCnt - 1].content2 = add_new_line(
+								subtitles[subTitleCnt - 1].content2,
+								contentArr[1]
+							);
+							subtitles[subTitleCnt - 1].content3 = add_new_line(
+								subtitles[subTitleCnt - 1].content3,
+								contentArr[2]
+							);
+							subtitles[subTitleCnt - 1].content4 = add_new_line(
+								subtitles[subTitleCnt - 1].content4,
+								contentArr[3]
+							);
+							bSubtitle4 = true;
+						}
+					} else {
+						subtitles[subTitleCnt - 1].content =
+							subtitles[subTitleCnt - 1].content + "\n" + quesArr[k];
+					}
+					if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
+						bHasHighlight = true;
+					}
+				}
+			}
+		}
+	}
+	//add one line if last line's content is not null
+	if (subTitleCnt < 1) {
+		alert("No subtitles inside");
+		return;
+	}
 
-  // if (subtitleMode.includes("MD")) {
-  //   subTitleCnt++;
-  // }
-  if (subtitles[subTitleCnt - 1].content.length > 0) {
-    let subtitle = new Subtitle();
-    subtitles.push(subtitle);
-    subtitles[subTitleCnt].numb = subTitleCnt + 1;
-    subtitles[subTitleCnt].start = subtitles[subTitleCnt - 1].finish;
-    subtitles[subTitleCnt].finish = subtitles[subTitleCnt - 1].finish;
-    subtitles[subTitleCnt].content = "";
-    subtitles[subTitleCnt].content2 = "";
-    subtitles[subTitleCnt].content3 = "";
-    subtitles[subTitleCnt].content4 = "";
-    subTitleCnt++;
-  }
+	// if (subtitleMode.includes("MD")) {
+	//   subTitleCnt++;
+	// }
+	if (subtitles[subTitleCnt - 1].content.length > 0) {
+		let subtitle = new Subtitle();
+		subtitles.push(subtitle);
+		subtitles[subTitleCnt].numb = subTitleCnt + 1;
+		subtitles[subTitleCnt].start = subtitles[subTitleCnt - 1].finish;
+		subtitles[subTitleCnt].finish = subtitles[subTitleCnt - 1].finish;
+		subtitles[subTitleCnt].content = "";
+		subtitles[subTitleCnt].content2 = "";
+		subtitles[subTitleCnt].content3 = "";
+		subtitles[subTitleCnt].content4 = "";
+		subTitleCnt++;
+	}
 }
 
 function highlight_start(lineno, content) {
-  var return_content;
+	var return_content;
 
-  if (content == null) return content;
-  if (content.length == 0) return content;
-  return_content = "";
-  var lineArr = content.replace(/\r\n/g, "\n").split("\n");
+	if (content == null) return content;
+	if (content.length == 0) return content;
+	return_content = "";
+	var lineArr = content.replace(/\r\n/g, "\n").split("\n");
 
-  var tmpColor;
-  if (lineno % 2 == 1) {
-    tmpColor = "DDD";
-  } else {
-    tmpColor = "EEE";
-  }
+	var tmpColor;
+	if (lineno % 2 == 1) {
+		tmpColor = "DDD";
+	} else {
+		tmpColor = "EEE";
+	}
 
-  for (var x = 0; x < lineArr.length; x++) {
-    var line_content = lineArr[x];
+	for (var x = 0; x < lineArr.length; x++) {
+		var line_content = lineArr[x];
 
-    if (bSubtitleEditable) {
-      return_content = return_content + line_content + "<br>";
-      continue;
-    }
+		if (bSubtitleEditable) {
+			return_content = return_content + line_content + "<br>";
+			continue;
+		}
 
-    if (line_content.startsWith("[A]")) {
-      line_content =
-        '反白右側文字看答案：<span style="color:#' +
-        tmpColor +
-        '">' +
-        line_content.substr(3, line_content.length - 3) +
-        "</span>";
-    }
+		if (line_content.startsWith("[A]")) {
+			line_content =
+				'反白右側文字看答案：<span style="color:#' +
+				tmpColor +
+				'">' +
+				line_content.substr(3, line_content.length - 3) +
+				"</span>";
+		}
 
-    var html;
-    if (!subtitleMode.includes("MD4")) {
-      const converter = new showdown.Converter();
-      html = converter.makeHtml(line_content);
-    } else {
-      html = line_content;
-    }
-    line_content = html;
+		var html;
+		if (!subtitleMode.includes("MD4")) {
+			const converter = new showdown.Converter();
+			html = converter.makeHtml(line_content);
+		} else {
+			html = line_content;
+		}
+		line_content = html;
 
-    //1.replace []
-    var tmpWhiteString = "<span style='color:#" + tmpColor + "'>";
-    line_content = line_content.replaceAll(
-      "[[",
-      "<span style='background-color:yellow'>"
-    );
-    line_content = line_content.replaceAll("]]", "</span>");
+		//1.replace []
+		var tmpWhiteString = "<span style='color:#" + tmpColor + "'>";
+		line_content = line_content.replaceAll(
+			"[[",
+			"<span style='background-color:yellow'>"
+		);
+		line_content = line_content.replaceAll("]]", "</span>");
 
-    return_content += line_content;
-  }
+		return_content += line_content;
+	}
 
-  return return_content;
+	return return_content;
 }
 
 function showTable(isMedia) {
-  var modalContent = document.getElementById("modal-content-audio");
-  var tmpAudio_sec_bottom = document.getElementById("audio_sec_bottom");
-  if (tmpAudio_sec_bottom != null) {
-    modalContent.removeChild(tmpAudio_sec_bottom);
-  }
+	var modalContent = document.getElementById("modal-content-audio");
+	var tmpAudio_sec_bottom = document.getElementById("audio_sec_bottom");
+	if (tmpAudio_sec_bottom != null) {
+		modalContent.removeChild(tmpAudio_sec_bottom);
+	}
 
-  /* 3. table */
-  let t, th, c, r;
-  t = document.createElement("table");
-  t.setAttribute("class", "audio_table");
-  t.setAttribute("id", "my_audio_table");
+	/* 3. table */
+	let t, th, c, r;
+	t = document.createElement("table");
+	t.setAttribute("class", "audio_table");
+	t.setAttribute("id", "my_audio_table");
 
-  var span = document.getElementById("closeAudio");
-  span.addEventListener("click", closeAudio);
+	var span = document.getElementById("closeAudio");
+	span.addEventListener("click", closeAudio);
 
-  tableRowCnt = 0;
-  for (let k = 0; k < subtitles.length; k++) {
-    if (bRemainHighlight) {
-      if (subtitles[k].content.includes("[[")) {
-        r = t.insertRow(-1);
-        tableRowCnt++;
-      } else {
-        continue;
-      }
-    } else {
-      r = t.insertRow(-1);
-      tableRowCnt++;
-    }
-    r.setAttribute("class", "audio_table_row");
-    if (k == 0) r.classList.add("table_font_highlight");
-    else r.classList.remove("table_font_highlight");
-    //1.行號
-    c = r.insertCell(-1);
-    c.innerHTML = subtitles[k].numb;
-    c.onclick = function () {
-      selectRow(this, 0);
-    };
+	tableRowCnt = 0;
+	for (let k = 0; k < subtitles.length; k++) {
+		if (bRemainHighlight) {
+			if (subtitles[k].content.includes("[[")) {
+				r = t.insertRow(-1);
+				tableRowCnt++;
+			} else {
+				continue;
+			}
+		} else {
+			r = t.insertRow(-1);
+			tableRowCnt++;
+		}
+		r.setAttribute("class", "audio_table_row");
+		if (k == 0) r.classList.add("table_font_highlight");
+		else r.classList.remove("table_font_highlight");
+		//1.行號
+		c = r.insertCell(-1);
+		c.innerHTML = subtitles[k].numb;
+		c.onclick = function () {
+			selectRow(this, 0);
+		};
 
-    //2.開始時間
-    c = r.insertCell(-1);
-    c.innerHTML = changeTimeString(subtitles[k].start);
-    c.classList.add("audio_table_time_column");
-    c.onclick = function () {
-      setSubtitleTime(this, 1);
-    };
-    if (bSubtitleEditable == false || isMedia == false) {
-      c.style.display = "none";
-    }
+		//2.開始時間
+		c = r.insertCell(-1);
+		c.innerHTML = changeTimeString(subtitles[k].start);
+		c.classList.add("audio_table_time_column");
+		c.onclick = function () {
+			setSubtitleTime(this, 1);
+		};
+		if (bSubtitleEditable == false || isMedia == false) {
+			c.style.display = "none";
+		}
 
-    //3.結束時間
-    c = r.insertCell(-1);
-    c.classList.add("audio_table_time_column");
-    c.innerHTML = changeTimeString(subtitles[k].finish);
-    c.onclick = function () {
-      setSubtitleTime(this, 2);
-    };
-    if (bSubtitleEditable == false || isMedia == false) {
-      c.style.display = "none";
-    }
+		//3.結束時間
+		c = r.insertCell(-1);
+		c.classList.add("audio_table_time_column");
+		c.innerHTML = changeTimeString(subtitles[k].finish);
+		c.onclick = function () {
+			setSubtitleTime(this, 2);
+		};
+		if (bSubtitleEditable == false || isMedia == false) {
+			c.style.display = "none";
+		}
 
-    //4.句子1
-    c = r.insertCell(-1);
-    c.onclick = function () {
-      selectRow(this, 3);
-    };
-    c.onkeyup = function () {
-      changeRow(this);
-    };
-    c.innerHTML = highlight_start(k, subtitles[k].content);
+		//4.句子1
+		c = r.insertCell(-1);
+		c.onclick = function () {
+			selectRow(this, 3);
+		};
+		c.onkeyup = function () {
+			changeRow(this);
+		};
+		c.innerHTML = highlight_start(k, subtitles[k].content);
 
-    //5.句子2
-    if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
-      c = r.insertCell(-1);
-      c.onclick = function () {
-        selectRow(this, 4);
-      };
-      c.onkeyup = function () {
-        changeRow(this);
-      };
-      c.innerHTML = subtitles[k].content2;
-      if (subtitleMode.includes("MD4")) {
-        c = r.insertCell(-1);
-        c.onclick = function () {
-          selectRow(this, 5);
-        };
-        c.onkeyup = function () {
-          changeRow(this);
-        };
-        c.innerHTML = subtitles[k].content3;
-        c = r.insertCell(-1);
-        c.onclick = function () {
-          selectRow(this, 6);
-        };
-        c.onkeyup = function () {
-          changeRow(this);
-        };
-        c.innerHTML = subtitles[k].content4;
-      }
-    }
-  }
+		//5.句子2
+		if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
+			c = r.insertCell(-1);
+			c.onclick = function () {
+				selectRow(this, 4);
+			};
+			c.onkeyup = function () {
+				changeRow(this);
+			};
+			c.innerHTML = subtitles[k].content2;
+			if (subtitleMode.includes("MD4")) {
+				c = r.insertCell(-1);
+				c.onclick = function () {
+					selectRow(this, 5);
+				};
+				c.onkeyup = function () {
+					changeRow(this);
+				};
+				c.innerHTML = subtitles[k].content3;
+				c = r.insertCell(-1);
+				c.onclick = function () {
+					selectRow(this, 6);
+				};
+				c.onkeyup = function () {
+					changeRow(this);
+				};
+				c.innerHTML = subtitles[k].content4;
+			}
+		}
+	}
 
-  th = t.createTHead();
-  r = th.insertRow(0);
-  c = r.insertCell(-1);
-  c.style.width = "4%";
-  c.innerHTML = "#";
-  if (bSubtitleEditable == true && isMedia == true) {
-    c = r.insertCell(-1);
-    c.style.width = "10%";
-    c.innerHTML = "開始";
-    c = r.insertCell(-1);
-    c.style.width = "10%";
-    c.innerHTML = "結束";
-  }
+	th = t.createTHead();
+	r = th.insertRow(0);
+	c = r.insertCell(-1);
+	c.style.width = "4%";
+	c.innerHTML = "#";
+	if (bSubtitleEditable == true && isMedia == true) {
+		c = r.insertCell(-1);
+		c.style.width = "10%";
+		c.innerHTML = "開始";
+		c = r.insertCell(-1);
+		c.style.width = "10%";
+		c.innerHTML = "結束";
+	}
 
-  c = r.insertCell(-1);
-  if (subtitleMode.includes("MD4")) {
-    c.style.width = "19%";
-    c.innerHTML = "中文";
-    c = r.insertCell(-1);
-    c.style.width = "19%";
-    c.innerHTML = "英文";
-    c = r.insertCell(-1);
-    c.style.width = "19%";
-    c.innerHTML = "日文";
-    c = r.insertCell(-1);
-    c.style.width = "19%";
-    c.innerHTML = "韓文";
-  } else if (subtitleMode.includes("DoubleSrt")) {
-    c.style.width = "38%";
-    c.innerHTML = "句子1";
-    c = r.insertCell(-1);
-    c.style.width = "38%";
-    c.innerHTML = "句子2";
-  } else {
-    c.style.width = "76%";
-    c.innerHTML = "句子";
-  }
+	c = r.insertCell(-1);
+	if (subtitleMode.includes("MD4")) {
+		c.style.width = "19%";
+		c.innerHTML = "中文";
+		c = r.insertCell(-1);
+		c.style.width = "19%";
+		c.innerHTML = "英文";
+		c = r.insertCell(-1);
+		c.style.width = "19%";
+		c.innerHTML = "日文";
+		c = r.insertCell(-1);
+		c.style.width = "19%";
+		c.innerHTML = "韓文";
+	} else if (subtitleMode.includes("DoubleSrt")) {
+		c.style.width = "38%";
+		c.innerHTML = "句子1";
+		c = r.insertCell(-1);
+		c.style.width = "38%";
+		c.innerHTML = "句子2";
+	} else {
+		c.style.width = "76%";
+		c.innerHTML = "句子";
+	}
 
-  audio_sec_bottom = document.createElement("div");
-  audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
-  if (isMedia == true) {
-    audio_sec_bottom.classList.add("audio_sec_bottom_height");
-  } else {
-    audio_sec_bottom.classList.add("lesson_sec_bottom_height");
-  }
-  audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
-  modalContent.appendChild(audio_sec_bottom);
-  audio_sec_bottom.appendChild(t);
-  // }
+	audio_sec_bottom = document.createElement("div");
+	audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+	if (isMedia == true) {
+		audio_sec_bottom.classList.add("audio_sec_bottom_height");
+	} else {
+		audio_sec_bottom.classList.add("lesson_sec_bottom_height");
+	}
+	audio_sec_bottom.setAttribute("id", "audio_sec_bottom");
+	modalContent.appendChild(audio_sec_bottom);
+	audio_sec_bottom.appendChild(t);
+	// }
 
-  if (!bSubtitleEditable && tableRowCnt == 0) t.style.display = "none";
+	if (!bSubtitleEditable && tableRowCnt == 0) t.style.display = "none";
 }
 
 function resetTableNum() {
-  var table = document.getElementById("my_audio_table");
-  for (var i = 1, row; (row = table.rows[i]); i++) {
-    row.cells[0].innerText = i;
-  }
+	var table = document.getElementById("my_audio_table");
+	for (var i = 1, row; (row = table.rows[i]); i++) {
+		row.cells[0].innerText = i;
+	}
 }
 
 const downloadToFile = (content, filename, contentType) => {
-  const a = document.createElement("a");
-  const file = new Blob([content], { type: contentType });
+	const a = document.createElement("a");
+	const file = new Blob([content], { type: contentType });
 
-  a.href = URL.createObjectURL(file);
-  a.download = filename;
-  a.click();
+	a.href = URL.createObjectURL(file);
+	a.download = filename;
+	a.click();
 
-  URL.revokeObjectURL(a.href);
+	URL.revokeObjectURL(a.href);
 };
 
 function saveTableContent() {
-  var subContent = "";
-  // subContent = youtube_url + "\n";
-  subContent = subContent + getTableContent();
+	var subContent = "";
+	// subContent = youtube_url + "\n";
+	subContent = subContent + getTableContent();
 
-  downloadToFile(subContent, "1.txt", "text/plain");
+	downloadToFile(subContent, "1.txt", "text/plain");
 }
 
 function getTableContent() {
-  var tableContent = "";
-  var table = document.getElementById("my_audio_table");
+	var tableContent = "";
+	var table = document.getElementById("my_audio_table");
 
-  // tableContent = youtube_url + "\n";
-  if (subtitleMode.includes("DoubleSrt")) {
-    tableContent = "#Subtitle2\n";
-  }
+	// tableContent = youtube_url + "\n";
+	if (subtitleMode.includes("DoubleSrt")) {
+		tableContent = "#Subtitle2\n";
+	}
 
-  for (var i = 1, row; (row = table.rows[i]); i++) {
-    // alert(row.cells[3].innerText);
-    // if (row.cells[3].innerText.length == 0) {
-    //   continue;
-    // }
-    tableContent = tableContent + row.cells[0].innerText + "\n";
-    tableContent =
-      tableContent +
-      row.cells[1].innerText +
-      " --> " +
-      row.cells[2].innerText +
-      "\n";
-    tableContent = tableContent + row.cells[3].innerText;
-    if (subtitleMode.includes("DoubleSrt")) {
-      tableContent = tableContent + " -- " + row.cells[4].innerText;
-    }
-    tableContent = tableContent + "\n";
-  }
-  // alert(tableContent);
-  return tableContent;
+	for (var i = 1, row; (row = table.rows[i]); i++) {
+		// alert(row.cells[3].innerText);
+		// if (row.cells[3].innerText.length == 0) {
+		//   continue;
+		// }
+		tableContent = tableContent + row.cells[0].innerText + "\n";
+		tableContent =
+			tableContent +
+			row.cells[1].innerText +
+			" --> " +
+			row.cells[2].innerText +
+			"\n";
+		tableContent = tableContent + row.cells[3].innerText;
+		if (subtitleMode.includes("DoubleSrt")) {
+			tableContent = tableContent + " -- " + row.cells[4].innerText;
+		}
+		tableContent = tableContent + "\n";
+	}
+	// alert(tableContent);
+	return tableContent;
 }
 
 function readTableContent(isMedia) {
-  var fileSelector = document.createElement("input");
-  fileSelector.setAttribute("type", "file");
-  fileSelector.click();
+	var fileSelector = document.createElement("input");
+	fileSelector.setAttribute("type", "file");
+	fileSelector.click();
 
-  fileSelector.onchange = function () {
-    var file = this.files[0];
-    if (file) {
-      const reader = new FileReader();
-      reader.readAsText(file, "UTF-8");
-      reader.onload = (evt) => {
-        var fileContent = evt.target.result;
-        setSubtitles(fileContent);
-        showTable(isMedia);
-      };
-      reader.onerror = (evt) => {
-        alert("error");
-      };
-    }
-  };
+	fileSelector.onchange = function () {
+		var file = this.files[0];
+		if (file) {
+			const reader = new FileReader();
+			reader.readAsText(file, "UTF-8");
+			reader.onload = (evt) => {
+				var fileContent = evt.target.result;
+				setSubtitles(fileContent);
+				showTable(isMedia);
+			};
+			reader.onerror = (evt) => {
+				alert("error");
+			};
+		}
+	};
 }
 
 function insertTableRow(insNum) {
-  var table = document.getElementById("my_audio_table");
-  var rNew = table.insertRow(insNum);
-  rNew.setAttribute("class", "audio_table_row");
-  //1.行號
-  var cNew = rNew.insertCell(-1);
-  cNew.innerHTML = insNum;
-  //2.開始時間
-  cNew = rNew.insertCell(-1);
-  if (insNum > 1) {
-    cNew.innerHTML = table.rows[insNum - 1].cells[2].innerText;
-  }
-  cNew.onclick = function () {
-    setSubtitleTime(this, 1);
-  };
-  //3.結束時間
-  cNew = rNew.insertCell(-1);
+	var table = document.getElementById("my_audio_table");
+	var rNew = table.insertRow(insNum);
+	rNew.setAttribute("class", "audio_table_row");
+	//1.行號
+	var cNew = rNew.insertCell(-1);
+	cNew.innerHTML = insNum;
+	//2.開始時間
+	cNew = rNew.insertCell(-1);
+	if (insNum > 1) {
+		cNew.innerHTML = table.rows[insNum - 1].cells[2].innerText;
+	}
+	cNew.onclick = function () {
+		setSubtitleTime(this, 1);
+	};
+	//3.結束時間
+	cNew = rNew.insertCell(-1);
 
-  if (insNum < table.rows.length - 1) {
-    cNew.innerHTML = table.rows[insNum + 1].cells[1].innerText;
-  }
-  cNew.onclick = function () {
-    setSubtitleTime(this, 2);
-  };
+	if (insNum < table.rows.length - 1) {
+		cNew.innerHTML = table.rows[insNum + 1].cells[1].innerText;
+	}
+	cNew.onclick = function () {
+		setSubtitleTime(this, 2);
+	};
 
-  //4.句子1
-  cNew = rNew.insertCell(-1);
-  cNew.onclick = function () {
-    selectRow(this, 3);
-  };
-  cNew.onkeyup = function () {
-    changeRow(this);
-  };
+	//4.句子1
+	cNew = rNew.insertCell(-1);
+	cNew.onclick = function () {
+		selectRow(this, 3);
+	};
+	cNew.onkeyup = function () {
+		changeRow(this);
+	};
 
-  cNew.setAttribute("contenteditable", "true");
-  //5.句子2
-  if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
-    cNew = rNew.insertCell(-1);
-    cNew.onclick = function () {
-      selectRow(this, 4);
-    };
-    cNew.onkeyup = function () {
-      changeRow(this);
-    };
-    cNew.setAttribute("contenteditable", "true");
-    if (subtitleMode.includes("MD4")) {
-      cNew = rNew.insertCell(-1);
-      cNew.onclick = function () {
-        selectRow(this, 5);
-      };
-      cNew.onkeyup = function () {
-        changeRow(this);
-      };
-      cNew.setAttribute("contenteditable", "true");
+	cNew.setAttribute("contenteditable", "true");
+	//5.句子2
+	if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
+		cNew = rNew.insertCell(-1);
+		cNew.onclick = function () {
+			selectRow(this, 4);
+		};
+		cNew.onkeyup = function () {
+			changeRow(this);
+		};
+		cNew.setAttribute("contenteditable", "true");
+		if (subtitleMode.includes("MD4")) {
+			cNew = rNew.insertCell(-1);
+			cNew.onclick = function () {
+				selectRow(this, 5);
+			};
+			cNew.onkeyup = function () {
+				changeRow(this);
+			};
+			cNew.setAttribute("contenteditable", "true");
 
-      cNew = rNew.insertCell(-1);
-      cNew.onclick = function () {
-        selectRow(this, 6);
-      };
-      cNew.onkeyup = function () {
-        changeRow(this);
-      };
-      cNew.setAttribute("contenteditable", "true");
-    }
-  }
+			cNew = rNew.insertCell(-1);
+			cNew.onclick = function () {
+				selectRow(this, 6);
+			};
+			cNew.onkeyup = function () {
+				changeRow(this);
+			};
+			cNew.setAttribute("contenteditable", "true");
+		}
+	}
 }
 
 function startAudio(curQuiz) {
-  var bPlayerList = false;
-  var isMedia = true;
-  subtitles = [];
-  //2.generate questions
-  document.getElementById(curQuiz).classList.add("test-pressed");
-  content.classList.add("slight_opacity");
+	var bPlayerList = false;
+	var isMedia = true;
+	var imageName = "";
+	subtitles = [];
+	//2.generate questions
+	document.getElementById(curQuiz).classList.add("test-pressed");
+	content.classList.add("slight_opacity");
 
-  var curQuizArr = curQuiz.split("-");
-  curQuizType = curQuizArr[0];
+	var curQuizArr = curQuiz.split("-");
+	curQuizType = curQuizArr[0];
 
-  // Get the modal
-  var modal = document.getElementById("myAudio");
+	// Get the modal
+	var modal = document.getElementById("myAudio");
 
-  var modalContent = document.getElementById("modal-content-audio");
-  modalContent.setAttribute("Height", "200px");
-  // When the user clicks on <span> (x), close the modal
-  modal.style.display = "block";
+	var modalContent = document.getElementById("modal-content-audio");
+	modalContent.setAttribute("Height", "200px");
+	// When the user clicks on <span> (x), close the modal
+	modal.style.display = "block";
 
-  var curQuizArr = curQuiz.split("-");
-  var curTopicArr = curQuizArr[1].split("_");
-  var base_filename, audio_filename, selFile, txtFileName;
+	var curQuizArr = curQuiz.split("-");
+	var curTopicArr = curQuizArr[1].split("_");
 
-  var base_left_filename = "./";
+	var base_filename, audio_filename, selFile, txtFileName;
 
-  if (curWeb.includes("computer")) {
-    base_left_filename = "../computer/";
-  }
+	var base_left_filename = "./";
 
-  var base_left_filename =
-    base_left_filename +
-    "data/" +
-    curTopicArr[0] +
-    "/" +
-    curTopicArr[1] +
-    "/" +
-    curTopicArr[2];
+	if (curWeb.includes("computer")) {
+		base_left_filename = "../computer/";
+	}
 
-  base_filename = base_left_filename + "/" + curTopicArr[3];
+	var base_left_filename =
+		base_left_filename +
+		"data/" +
+		curTopicArr[0] +
+		"/" +
+		curTopicArr[1] +
+		"/" +
+		curTopicArr[2];
 
-  /*read src file*/
-  playlistCnt = 0;
-  playlists = [];
+	var fileNameArr = curTopicArr[3].split("^");
+	base_filename = base_left_filename + "/" + fileNameArr[0];
+	if (fileNameArr.length > 1) {
+		imageName = "./img/" + fileNameArr[1] + "_" + fileNameArr[2];
+	}
 
-  if (curQuiz.includes("Left@@@")) {
-    bPlayerList = true;
-    parseCsv(base_left_filename + "/all.csv");
-    var detailCnt = quesArr.length;
-    var r = Math.floor(Math.random() * detailCnt);
-    var videoId = quesArr[r].split("=")[1].split("&")[0].split(",")[0];
-    youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoId;
+	/*read src file*/
+	playlistCnt = 0;
+	playlists = [];
 
-    for (var x = 0; x < quesArr.length; x++) {
-      if (quesArr[x].length < 5) {
-        continue;
-      }
-      let playlist = new Playlist();
-      playlist.numb = playlistCnt + 1;
-      playlist.content = quesArr[x].split(",")[1];
-      playlist.video_id = quesArr[x].split(",")[2].split("=")[1].split("&")[0];
-      playlists.push(playlist);
-      playlistCnt++;
-    }
-  } else if (curTopicArr[3].includes("all@")) {
-    var tmpID = curTopicArr[3]
-      .split("@")[1]
-      .replace(/&/g, "_")
-      .replace(/~/g, "-");
-    base_filename = base_left_filename + "/" + curTopicArr[3].split("@")[2];
-    subtitleMode = "SingleSrt";
-    readSubtitles(base_filename + ".srt");
-    youtube_url = "https://www.youtube-nocookie.com/watch?v=" + tmpID;
-  } else {
-    if (curQuizType.includes("conversation_lesson")) {
-      subtitleMode = "MD";
-      readSubtitles(base_filename + ".md");
-    } else {
-      subtitleMode = "SingleSrt";
-      readSubtitles(base_filename + ".srt");
-    }
-  }
+	if (curQuiz.includes("Left@@@")) {
+		bPlayerList = true;
+		parseCsv(base_left_filename + "/all.csv");
+		var detailCnt = quesArr.length;
+		var r = Math.floor(Math.random() * detailCnt);
+		var videoId = quesArr[r].split("=")[1].split("&")[0].split(",")[0];
+		youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoId;
 
-  modalContent.innerHTML =
-    '<span class="close" id="closeAudio">&times;</span><p>';
+		for (var x = 0; x < quesArr.length; x++) {
+			if (quesArr[x].length < 5) {
+				continue;
+			}
+			let playlist = new Playlist();
+			playlist.numb = playlistCnt + 1;
+			playlist.content = quesArr[x].split(",")[1];
+			playlist.video_id = quesArr[x].split(",")[2].split("=")[1].split("&")[0];
+			playlists.push(playlist);
+			playlistCnt++;
+		}
+	} else if (curTopicArr[3].includes("all@")) {
+		var tmpID = curTopicArr[3]
+			.split("@")[1]
+			.replace(/&/g, "_")
+			.replace(/~/g, "-");
+		base_filename = base_left_filename + "/" + curTopicArr[3].split("@")[2];
+		subtitleMode = "SingleSrt";
+		readSubtitles(base_filename + ".srt");
+		youtube_url = "https://www.youtube-nocookie.com/watch?v=" + tmpID;
+	} else {
+		if (curQuizType.includes("conversation_lesson")) {
+			subtitleMode = "MD";
+			readSubtitles(base_filename + ".md");
+		} else {
+			subtitleMode = "SingleSrt";
+			readSubtitles(base_filename + ".srt");
+		}
+	}
 
-  /* 2. audio player */
+	modalContent.innerHTML =
+		'<span class="close" id="closeAudio">&times;</span><p>';
 
-  audio_sec_top = document.createElement("div");
+	/* 2. audio player */
 
-  if (curQuizType.includes("youtube")) {
-    youtube_mode = true;
-    audio = document.createElement("video");
-  } else {
-    youtube_mode = false;
-    audio = document.createElement("audio");
-    audio.setAttribute("controls", "true");
-    audio.setAttribute("display", "true");
-    audio.setAttribute("class", "audio");
-    source = document.createElement("source");
-  }
+	audio_sec_top = document.createElement("div");
 
-  var audio_filename;
-  if (curQuizType.includes("youtube")) {
-    audio_sec_top.classList.add("video_sec_top");
-    // x.1. This code loads the IFrame Player API code asynchronously.
-    var playerDiv = document.createElement("div");
-    playerDiv.setAttribute("id", "player-div");
-    playerDiv.classList.add("myPlayerDiv");
-    audio_sec_top.appendChild(playerDiv);
+	if (curQuizType.includes("youtube")) {
+		youtube_mode = true;
+		audio = document.createElement("video");
+	} else {
+		youtube_mode = false;
+		audio = document.createElement("audio");
+		audio.setAttribute("controls", "true");
+		audio.setAttribute("display", "true");
+		audio.setAttribute("class", "audio");
+		source = document.createElement("source");
+	}
 
-    showMessage(true);
-    // 秀上方訊息-結束
-    modalContent.appendChild(audio_sec_top);
+	var audio_filename;
+	if (curQuizType.includes("youtube")) {
+		audio_sec_top.classList.add("video_sec_top");
+		// x.1. This code loads the IFrame Player API code asynchronously.
+		var playerDiv = document.createElement("div");
+		playerDiv.setAttribute("id", "player-div");
+		playerDiv.classList.add("myPlayerDiv");
+		audio_sec_top.appendChild(playerDiv);
 
-    // 秀右邊縮圖
-    var audio_sec_img = document.createElement("img");
-    audio_sec_img.setAttribute("class", "category");
-    audio_sec_img.setAttribute("src", "img/hangul_writing.png");
+		showMessage(true);
+		// 秀上方訊息-結束
+		modalContent.appendChild(audio_sec_top);
 
-    var flex_container = document.createElement("div");
-    flex_container.setAttribute("class", "flex-container");
-    for (var z = 0; z < playlistCnt; z++) {
-      let playlist = new Playlist();
-      var src =
-        "linear-gradient(to bottom, rgba(217,167,199,0.4), rgba(255,252,220,0.4)), url('https://img.youtube.com/vi/" +
-        playlists[z].video_id +
-        "/default.jpg'";
+		// 秀右邊縮圖
+		var audio_sec_img = document.createElement("img");
+		audio_sec_img.setAttribute("class", "category");
+		audio_sec_img.setAttribute("src", "img/hangul_writing.png");
 
-      var flex_box = document.createElement("div");
-      flex_box.setAttribute("class", "flex-box");
-      flex_box.style.backgroundImage = src;
-      flex_box.innerText = playlists[z].content;
-      flex_box.setAttribute("id", playlists[z].video_id);
+		var flex_container = document.createElement("div");
+		flex_container.setAttribute("class", "flex-container");
+		for (var z = 0; z < playlistCnt; z++) {
+			let playlist = new Playlist();
+			var src =
+				"linear-gradient(to bottom, rgba(217,167,199,0.4), rgba(255,252,220,0.4)), url('https://img.youtube.com/vi/" +
+				playlists[z].video_id +
+				"/default.jpg'";
 
-      flex_box.addEventListener("click", function () {
-        player.stopVideo();
-        player.loadVideoById(this.id);
-        player.playVideo();
-      });
+			var flex_box = document.createElement("div");
+			flex_box.setAttribute("class", "flex-box");
+			flex_box.style.backgroundImage = src;
+			flex_box.innerText = playlists[z].content;
+			flex_box.setAttribute("id", playlists[z].video_id);
 
-      flex_container.appendChild(flex_box);
-    }
+			flex_box.addEventListener("click", function () {
+				player.stopVideo();
+				player.loadVideoById(this.id);
+				player.playVideo();
+			});
 
-    if (bPlayerList) {
-      var tmp_audio_sec_bottom = document.createElement("div");
-      tmp_audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
-      tmp_audio_sec_bottom.classList.add("audio_sec_bottom_height");
-      tmp_audio_sec_bottom.appendChild(flex_container);
-      modalContent.appendChild(tmp_audio_sec_bottom);
-    }
+			flex_container.appendChild(flex_box);
+		}
 
-    // 秀右邊縮圖--結束
+		if (bPlayerList) {
+			var tmp_audio_sec_bottom = document.createElement("div");
+			tmp_audio_sec_bottom.setAttribute("class", "audio_sec_bottom");
+			tmp_audio_sec_bottom.classList.add("audio_sec_bottom_height");
+			tmp_audio_sec_bottom.appendChild(flex_container);
+			modalContent.appendChild(tmp_audio_sec_bottom);
+		}
 
-    // 3. This function creates an <iframe> (and YouTube player)
-    //    after the API code downloads.
-    var videoId = youtube_url.split("=")[1].split("&")[0];
+		// 秀右邊縮圖--結束
 
-    window.YT.ready(function () {
-      player = new window.YT.Player("player-div", {
-        // height: YT_height,
-        // width: YT_width,
-        videoId: videoId,
-        events: {
-          onReady: onPlayerReady,
-          // onStateChange: onPlayerStateChange,
-        },
-      });
-    });
+		// 3. This function creates an <iframe> (and YouTube player)
+		//    after the API code downloads.
+		var videoId = youtube_url.split("=")[1].split("&")[0];
 
-    // 4. The API will call this function when the video player is ready.
-    function onPlayerReady(e) {
-      e.target.playVideo();
-      youtube_ready = true;
-    }
+		window.YT.ready(function () {
+			player = new window.YT.Player("player-div", {
+				// height: YT_height,
+				// width: YT_width,
+				videoId: videoId,
+				events: {
+					onReady: onPlayerReady,
+					// onStateChange: onPlayerStateChange,
+				},
+			});
+		});
 
-    function stopVideo() {
-      player.stopVideo();
-    }
+		// 4. The API will call this function when the video player is ready.
+		function onPlayerReady(e) {
+			e.target.playVideo();
+			youtube_ready = true;
+		}
 
-    function playVideo() {
-      player.playVideo();
-    }
+		function stopVideo() {
+			player.stopVideo();
+		}
 
-    function forwardVideo() {
-      // 先抓到目前秒數
-      let current = e.target.getCurrentTime();
-      // 前進10秒：目前秒數 + 10
-      e.target.seekTo(current + 10);
-    }
-  } else if (curQuizType.includes("mp3") || curQuizType.includes("m4a")) {
-    audio_sec_top.classList.add("audio_sec_top");
-    if (curQuizType.includes("m4a")) {
-      audio_filename = base_filename + ".m4a";
-    } else {
-      audio_filename = base_filename + ".mp3";
-    }
-    source.setAttribute("type", "audio/wav");
-    source.setAttribute("src", audio_filename);
-    audio.appendChild(source);
-    audio_sec_top.appendChild(audio);
+		function playVideo() {
+			player.playVideo();
+		}
 
-    modalContent.appendChild(audio_sec_top);
-    showMessage(true);
-  } else {
-    isMedia = false;
-    audio_sec_top.classList.add("plain_sec_top");
-    modalContent.appendChild(audio_sec_top);
-    showMessage(false);
-  }
+		function forwardVideo() {
+			// 先抓到目前秒數
+			let current = e.target.getCurrentTime();
+			// 前進10秒：目前秒數 + 10
+			e.target.seekTo(current + 10);
+		}
+	} else if (curQuizType.includes("mp3") || curQuizType.includes("m4a")) {
+		audio_sec_top.classList.add("audio_sec_top");
+		if (curQuizType.includes("m4a")) {
+			audio_filename = base_filename + ".m4a";
+		} else {
+			audio_filename = base_filename + ".mp3";
+		}
+		source.setAttribute("type", "audio/wav");
+		source.setAttribute("src", audio_filename);
+		audio.appendChild(source);
+		audio_sec_top.appendChild(audio);
 
-  if (!curQuizType.includes("youtube")) {
-    audio.load();
-    audio.play();
-  } else {
-  }
+		modalContent.appendChild(audio_sec_top);
+		showMessage(true);
+	} else {
+		if (imageName.length > 0) {
+			audio_sec_top.classList.add("video_sec_top");
+			// x.1. This code loads the IFrame Player API code asynchronously.
+			var playerDiv = document.createElement("div");
+			playerDiv.setAttribute("id", "player-div");
+			playerDiv.classList.add("myPlayerDiv");
+			var imageDiv = document.createElement("img");
+			imageDiv.setAttribute("height", "87%");
+			imageDiv.setAttribute("width", "60%");
+			imageDiv.setAttribute("object-fit", "scale-down");
+			imageDiv.src = imageName;
+			playerDiv.appendChild(imageDiv);
+			audio_sec_top.appendChild(playerDiv);
+			isMedia = true;
+		} else {
+			isMedia = false;
+			audio_sec_top.classList.add("plain_sec_top");
+		}
+		modalContent.appendChild(audio_sec_top);
+		showMessage(isMedia);
+	}
 
-  showTable(isMedia);
+	if (!curQuizType.includes("youtube")) {
+		audio.load();
+		audio.play();
+	} else {
+	}
 
-  if (subtitles.length < 1) return; //no subtitle, exit
+	showTable(isMedia);
 
-  myAudioTableRow = document.getElementsByClassName("audio_table_row");
+	if (subtitles.length < 1) return; //no subtitle, exit
 
-  autoRowSelected = 1;
-  actualRow = 1;
-  rowSelected = myAudioTableRow[autoRowSelected - 1];
-  timeoutID = window.setInterval(handleAudioLoop, 50);
-  // audio.addEventListener("timeupdate", function () {
-  function handleAudioLoop() {
-    let currentTime;
+	myAudioTableRow = document.getElementsByClassName("audio_table_row");
 
-    /*pre-check*/
-    // if (bSubtitleEditable) return;
-    if (subtitles.length <= 0) return;
-    if (autoRowSelected > subtitles.length) return;
-    /*pre-check*/
-    if (youtube_mode) {
-      if (!youtube_ready) return;
-      if (player.getPlayerState() != YT.PlayerState.PLAYING) return;
-      currentTime = player.playerInfo.currentTime;
-    } else currentTime = audio.currentTime;
+	autoRowSelected = 1;
+	actualRow = 1;
+	rowSelected = myAudioTableRow[autoRowSelected - 1];
+	timeoutID = window.setInterval(handleAudioLoop, 50);
+	// audio.addEventListener("timeupdate", function () {
+	function handleAudioLoop() {
+		let currentTime;
 
-    if (
-      arrPlayMode[playMode].value == "ArticleStop" ||
-      arrPlayMode[playMode].value == "SentenceStop"
-    ) {
-      // if (bRemainHighlight) return;
+		/*pre-check*/
+		// if (bSubtitleEditable) return;
+		if (subtitles.length <= 0) return;
+		if (autoRowSelected > subtitles.length) return;
+		/*pre-check*/
+		if (youtube_mode) {
+			if (!youtube_ready) return;
+			if (player.getPlayerState() != YT.PlayerState.PLAYING) return;
+			currentTime = player.playerInfo.currentTime;
+		} else currentTime = audio.currentTime;
 
-      /*handle user manual rewind video */
-      if (actualRow > 1) {
-        while (1) {
-          if (actualRow < 2) break;
-          if (currentTime < subtitles[actualRow - 1].start) {
-            actualRow--;
-          } else break;
-        }
-      }
-      /*end*/
+		if (
+			arrPlayMode[playMode].value == "ArticleStop" ||
+			arrPlayMode[playMode].value == "SentenceStop"
+		) {
+			// if (bRemainHighlight) return;
 
-      if (currentTime > subtitles[actualRow - 1].finish) {
-        if (
-          // bSubtitleEditable ||
-          arrPlayMode[playMode].value == "SentenceStop"
-        ) {
-          if (youtube_mode) {
-            player.seekTo(subtitles[autoRowSelected - 1].start);
-            player.pauseVideo();
-          }
-        } else {
-          if (autoRowSelected == myAudioTableRow.length) {
-            player.pauseVideo();
-            return;
-          }
+			/*handle user manual rewind video */
+			if (actualRow > 1) {
+				while (1) {
+					if (actualRow < 2) break;
+					if (currentTime < subtitles[actualRow - 1].start) {
+						actualRow--;
+					} else break;
+				}
+			}
+			/*end*/
 
-          myAudioTableRow[autoRowSelected - 1].style.color = "blue";
-          actualRow = Number(
-            myAudioTableRow[autoRowSelected].cells[0].innerText
-          );
+			if (currentTime > subtitles[actualRow - 1].finish) {
+				if (
+					// bSubtitleEditable ||
+					arrPlayMode[playMode].value == "SentenceStop"
+				) {
+					if (youtube_mode) {
+						player.seekTo(subtitles[autoRowSelected - 1].start);
+						player.pauseVideo();
+					}
+				} else {
+					if (autoRowSelected == myAudioTableRow.length) {
+						player.pauseVideo();
+						return;
+					}
 
-          /*handle user manual rewind video */
-          if (autoRowSelected > 1) {
-            while (1) {
-              if (autoRowSelected < 1) break;
-              if (currentTime < subtitles[autoRowSelected - 1].finish) {
-                autoRowSelected--;
-              } else break;
-            }
-          }
-          /*end*/
+					myAudioTableRow[autoRowSelected - 1].style.color = "blue";
+					actualRow = Number(
+						myAudioTableRow[autoRowSelected].cells[0].innerText
+					);
 
-          myAudioTableRow[autoRowSelected].style.color = "red";
-          autoRowSelected++;
-          rowSelected = myAudioTableRow[autoRowSelected - 1];
-          var tmpTableCnt = myAudioTableRow.length;
-          var nowTop =
-            (autoRowSelected - 1) *
-            (audio_sec_bottom.scrollHeight / tmpTableCnt);
+					/*handle user manual rewind video */
+					if (autoRowSelected > 1) {
+						while (1) {
+							if (autoRowSelected < 1) break;
+							if (currentTime < subtitles[autoRowSelected - 1].finish) {
+								autoRowSelected--;
+							} else break;
+						}
+					}
+					/*end*/
 
-          // w.scrollTop(row.offset().top - w.height() / 2);
+					myAudioTableRow[autoRowSelected].style.color = "red";
+					autoRowSelected++;
+					rowSelected = myAudioTableRow[autoRowSelected - 1];
+					var tmpTableCnt = myAudioTableRow.length;
+					var nowTop =
+						(autoRowSelected - 1) *
+						(audio_sec_bottom.scrollHeight / tmpTableCnt);
 
-          // audio_sec_bottom.scrollTop(
-          //   autoRowSelected.offset().top - audio_sec_bottom.height() / 2
-          // );
-          // console.log(myAudioTableRow[autoRowSelected].top);
-          audio_sec_bottom.scrollTop =
-            myAudioTableRow[autoRowSelected - 1].offsetTop;
+					// w.scrollTop(row.offset().top - w.height() / 2);
 
-          // audio_sec_bottom.scrollTop =
-          //   (autoRowSelected - 1) *
-          //   (audio_sec_bottom.scrollHeight / tmpTableCnt);
-        }
-      }
-    } else if (arrPlayMode[playMode].value == "SentenceRepeat") {
-      // if (currentTime > subtitles[autoRowSelected - 1].finish) {
-      if (currentTime > subtitles[actualRow - 1].finish) {
-        // alert("currentTime:" + currentTime);
-        // alert("finish:" + subtitles[autoRowSelected - 1].finish);
-        if (bSubtitleEditable) {
-          audio.pause();
-        } else if (youtube_mode) {
-          // player.seekTo(Math.floor(subtitles[autoRowSelected - 1].start));
-          player.pauseVideo();
-          player.seekTo(subtitles[actualRow - 1].start);
-          player.playVideo();
-        } else {
-          audio.pause();
-          audio.currentTime = subtitles[actualRow - 1].start;
-          syncDelay(1000);
-          audio.play();
-        }
-      }
-    }
-  }
+					// audio_sec_bottom.scrollTop(
+					//   autoRowSelected.offset().top - audio_sec_bottom.height() / 2
+					// );
+					// console.log(myAudioTableRow[autoRowSelected].top);
+					audio_sec_bottom.scrollTop =
+						myAudioTableRow[autoRowSelected - 1].offsetTop;
+
+					// audio_sec_bottom.scrollTop =
+					//   (autoRowSelected - 1) *
+					//   (audio_sec_bottom.scrollHeight / tmpTableCnt);
+				}
+			}
+		} else if (arrPlayMode[playMode].value == "SentenceRepeat") {
+			// if (currentTime > subtitles[autoRowSelected - 1].finish) {
+			if (currentTime > subtitles[actualRow - 1].finish) {
+				// alert("currentTime:" + currentTime);
+				// alert("finish:" + subtitles[autoRowSelected - 1].finish);
+				if (bSubtitleEditable) {
+					audio.pause();
+				} else if (youtube_mode) {
+					// player.seekTo(Math.floor(subtitles[autoRowSelected - 1].start));
+					player.pauseVideo();
+					player.seekTo(subtitles[actualRow - 1].start);
+					player.playVideo();
+				} else {
+					audio.pause();
+					audio.currentTime = subtitles[actualRow - 1].start;
+					syncDelay(1000);
+					audio.play();
+				}
+			}
+		}
+	}
 }
 
 function showMessage(isMedia) {
-  /* 2.1. 過濾只留重點列 */
-  var remainHighlight = document.createElement("input");
-  remainHighlight.type = "checkbox";
-  remainHighlight.name = "remainHighlight";
-  remainHighlight.id = "remainHighlight";
-  remainHighlight.classList.add("remainHighlight");
-  remainHighlight.checked = bRemainHighlight;
-  var lblRemainHighlight = document.createElement("label");
-  lblRemainHighlight.innerText = "重點列";
-  lblRemainHighlight.classList.add("lblsubtitleEditable");
-  lblRemainHighlight.htmlFor = "remainHighlight";
-  remainHighlight.onclick = function () {
-    bRemainHighlight = remainHighlight.checked;
-    showTable(isMedia);
-  };
+	/* 2.1. 過濾只留重點列 */
+	var remainHighlight = document.createElement("input");
+	remainHighlight.type = "checkbox";
+	remainHighlight.name = "remainHighlight";
+	remainHighlight.id = "remainHighlight";
+	remainHighlight.classList.add("remainHighlight");
+	remainHighlight.checked = bRemainHighlight;
+	var lblRemainHighlight = document.createElement("label");
+	lblRemainHighlight.innerText = "重點列";
+	lblRemainHighlight.classList.add("lblsubtitleEditable");
+	lblRemainHighlight.htmlFor = "remainHighlight";
+	remainHighlight.onclick = function () {
+		bRemainHighlight = remainHighlight.checked;
+		showTable(isMedia);
+	};
 
-  /* 2.2.2. 字幕編輯模式 */
-  var subtitleEditable = document.createElement("input");
-  subtitleEditable.type = "checkbox";
-  subtitleEditable.name = "subtitleEditable";
-  subtitleEditable.id = "subtitleEditable";
-  subtitleEditable.classList.add("remainHighlight");
-  subtitleEditable.checked = bSubtitleEditable;
-  var lblsubtitleEditable = document.createElement("label");
-  lblsubtitleEditable.innerText = "編輯字幕";
-  lblsubtitleEditable.classList.add("lblsubtitleEditable");
-  lblsubtitleEditable.htmlFor = "subtitleEditable";
-  subtitleEditable.onclick = function () {
-    bSubtitleEditable = subtitleEditable.checked;
-    if (!subtitleEditable.checked) {
-      dropdownSubtitle.style.display = "none";
-      insBtn.style.display = "none";
-      delBtn.style.display = "none";
-      saveBtn.style.display = "none";
-      // readBtn.style.display = "none";
-    } else {
-      dropdownSubtitle.style.display = "inline";
-      insBtn.style.display = "inline";
-      delBtn.style.display = "inline";
-      saveBtn.style.display = "inline";
-      // readBtn.style.display = "inline";
-      if (subtitles.length < 1) {
-        insertTableRow(0);
-        var nowTableContent = getTableContent();
-        setSubtitles(nowTableContent);
-      }
-    }
+	/* 2.2.2. 字幕編輯模式 */
+	var subtitleEditable = document.createElement("input");
+	subtitleEditable.type = "checkbox";
+	subtitleEditable.name = "subtitleEditable";
+	subtitleEditable.id = "subtitleEditable";
+	subtitleEditable.classList.add("remainHighlight");
+	subtitleEditable.checked = bSubtitleEditable;
+	var lblsubtitleEditable = document.createElement("label");
+	lblsubtitleEditable.innerText = "編輯字幕";
+	lblsubtitleEditable.classList.add("lblsubtitleEditable");
+	lblsubtitleEditable.htmlFor = "subtitleEditable";
+	subtitleEditable.onclick = function () {
+		bSubtitleEditable = subtitleEditable.checked;
+		if (!subtitleEditable.checked) {
+			dropdownSubtitle.style.display = "none";
+			insBtn.style.display = "none";
+			delBtn.style.display = "none";
+			saveBtn.style.display = "none";
+			// readBtn.style.display = "none";
+		} else {
+			dropdownSubtitle.style.display = "inline";
+			insBtn.style.display = "inline";
+			delBtn.style.display = "inline";
+			saveBtn.style.display = "inline";
+			// readBtn.style.display = "inline";
+			if (subtitles.length < 1) {
+				insertTableRow(0);
+				var nowTableContent = getTableContent();
+				setSubtitles(nowTableContent);
+			}
+		}
 
-    showTable(isMedia);
-  };
+		showTable(isMedia);
+	};
 
-  /* 2.2.3. 字幕搜尋介面 */
+	/* 2.2.3. 字幕搜尋介面 */
 
-  var subtitleSearchTxt = document.createElement("text");
-  var subtitleSearchBtn = document.createElement("button");
-  var subtitleSearchIcon = document.createElement("svg");
-  var subtitleSearchUse = document.createElement("use");
+	var subtitleSearchTxt = document.createElement("text");
+	var subtitleSearchBtn = document.createElement("button");
+	var subtitleSearchIcon = document.createElement("svg");
+	var subtitleSearchUse = document.createElement("use");
 
-  subtitleSearchTxt.classList.add("search__input");
-  subtitleSearchBtn.classList.add("search__button");
-  subtitleSearchIcon.classList.add("search__icon");
-  subtitleSearchUse.setAttribute(
-    "xlink:href",
-    "img/sprite.svg#icon-magnifying-glass"
-  );
-  subtitleSearchIcon.appendChild(subtitleSearchUse);
-  subtitleSearchBtn.appendChild(subtitleSearchIcon);
+	subtitleSearchTxt.classList.add("search__input");
+	subtitleSearchBtn.classList.add("search__button");
+	subtitleSearchIcon.classList.add("search__icon");
+	subtitleSearchUse.setAttribute(
+		"xlink:href",
+		"img/sprite.svg#icon-magnifying-glass"
+	);
+	subtitleSearchIcon.appendChild(subtitleSearchUse);
+	subtitleSearchBtn.appendChild(subtitleSearchIcon);
 
-  var messageDiv = document.createElement("div");
+	var messageDiv = document.createElement("div");
 
-  // 秀上方訊息
-  /* 2.2.1. 播放模式 */
-  if (isMedia == true) {
-    var dropdown = document.createElement("select");
-    dropdown.classList.add("select-dropdown");
-    for (var i = 0; i < arrPlayMode.length; i++) {
-      var opt = document.createElement("option");
-      opt.text = arrPlayMode[i].text;
-      opt.value = arrPlayMode[i].value;
-      dropdown.options.add(opt);
-      messageDiv.appendChild(dropdown);
-    }
-    dropdown.selectedIndex = playMode;
-    dropdown.onchange = function () {
-      playMode = this.selectedIndex;
-    };
-  }
+	// 秀上方訊息
+	/* 2.2.1. 播放模式 */
+	if (isMedia == true) {
+		var dropdown = document.createElement("select");
+		dropdown.classList.add("select-dropdown");
+		for (var i = 0; i < arrPlayMode.length; i++) {
+			var opt = document.createElement("option");
+			opt.text = arrPlayMode[i].text;
+			opt.value = arrPlayMode[i].value;
+			dropdown.options.add(opt);
+			messageDiv.appendChild(dropdown);
+		}
+		dropdown.selectedIndex = playMode;
+		dropdown.onchange = function () {
+			playMode = this.selectedIndex;
+		};
+	}
 
-  /* 2.2.2. 編輯字幕 */
-  if (bHasHighlight) {
-    messageDiv.appendChild(remainHighlight);
-    messageDiv.appendChild(lblRemainHighlight);
-  }
+	/* 2.2.2. 編輯字幕 */
+	if (bHasHighlight) {
+		messageDiv.appendChild(remainHighlight);
+		messageDiv.appendChild(lblRemainHighlight);
+	}
 
-  if (windowWidth > 600) {
-    messageDiv.appendChild(subtitleEditable);
-    messageDiv.appendChild(lblsubtitleEditable);
-  }
+	if (windowWidth > 600) {
+		messageDiv.appendChild(subtitleEditable);
+		messageDiv.appendChild(lblsubtitleEditable);
+	}
 
-  /* 2.2.2.1. 編輯模式 */
+	/* 2.2.2.1. 編輯模式 */
 
-  var dropdownSubtitle = document.createElement("select");
-  dropdownSubtitle.classList.add("select-dropdown");
-  for (var i = 0; i < arrSubtitleMode.length; i++) {
-    var opt = document.createElement("option");
-    opt.text = arrSubtitleMode[i].text;
-    opt.value = arrSubtitleMode[i].value;
-    dropdownSubtitle.options.add(opt);
-  }
-  dropdownSubtitle.selectedIndex = subtitleMode;
-  dropdownSubtitle.onchange = function () {
-    subtitleMode = this[this.selectedIndex].value;
-    showTable(isMedia);
-  };
-  messageDiv.appendChild(dropdownSubtitle);
+	var dropdownSubtitle = document.createElement("select");
+	dropdownSubtitle.classList.add("select-dropdown");
+	for (var i = 0; i < arrSubtitleMode.length; i++) {
+		var opt = document.createElement("option");
+		opt.text = arrSubtitleMode[i].text;
+		opt.value = arrSubtitleMode[i].value;
+		dropdownSubtitle.options.add(opt);
+	}
+	dropdownSubtitle.selectedIndex = subtitleMode;
+	dropdownSubtitle.onchange = function () {
+		subtitleMode = this[this.selectedIndex].value;
+		showTable(isMedia);
+	};
+	messageDiv.appendChild(dropdownSubtitle);
 
-  // if (bSubtitleEditable) {
-  insBtn = document.createElement("button");
-  insBtn.innerText = "插入上列";
-  insBtn.classList.add("myButton");
-  insBtn.onclick = function () {
-    insertTableRow(autoRowSelected);
-    resetTableNum();
-    var nowTableContent = getTableContent();
-    setSubtitles(nowTableContent);
-  };
-  messageDiv.appendChild(insBtn);
+	// if (bSubtitleEditable) {
+	insBtn = document.createElement("button");
+	insBtn.innerText = "插入上列";
+	insBtn.classList.add("myButton");
+	insBtn.onclick = function () {
+		insertTableRow(autoRowSelected);
+		resetTableNum();
+		var nowTableContent = getTableContent();
+		setSubtitles(nowTableContent);
+	};
+	messageDiv.appendChild(insBtn);
 
-  delBtn = document.createElement("button");
-  delBtn.innerText = "刪除此列";
-  delBtn.classList.add("myButton");
-  delBtn.onclick = function () {
-    rowSelected.remove();
-    resetTableNum();
-    var nowTableContent = getTableContent();
-    setSubtitles(nowTableContent);
-  };
-  messageDiv.appendChild(delBtn);
+	delBtn = document.createElement("button");
+	delBtn.innerText = "刪除此列";
+	delBtn.classList.add("myButton");
+	delBtn.onclick = function () {
+		rowSelected.remove();
+		resetTableNum();
+		var nowTableContent = getTableContent();
+		setSubtitles(nowTableContent);
+	};
+	messageDiv.appendChild(delBtn);
 
-  saveBtn = document.createElement("button");
-  saveBtn.innerText = "儲存字幕";
-  saveBtn.classList.add("myButton");
-  saveBtn.onclick = function () {
-    saveTableContent();
-  };
-  messageDiv.appendChild(saveBtn);
+	saveBtn = document.createElement("button");
+	saveBtn.innerText = "儲存字幕";
+	saveBtn.classList.add("myButton");
+	saveBtn.onclick = function () {
+		saveTableContent();
+	};
+	messageDiv.appendChild(saveBtn);
 
-  readBtn = document.createElement("button");
-  readBtn.innerText = "讀取字幕";
-  readBtn.classList.add("myButton");
-  readBtn.onclick = function () {
-    readTableContent(isMedia);
-  };
-  if (windowWidth > 600) {
-    messageDiv.appendChild(readBtn);
-  }
+	readBtn = document.createElement("button");
+	readBtn.innerText = "讀取字幕";
+	readBtn.classList.add("myButton");
+	readBtn.onclick = function () {
+		readTableContent(isMedia);
+	};
+	if (windowWidth > 600) {
+		messageDiv.appendChild(readBtn);
+	}
 
-  // messageDiv.appendChild(subtitleSearchBtn);
-  // subtitleSearchTxt.innerText = "aaaaa";
-  // messageDiv.appendChild(subtitleSearchTxt);
+	// messageDiv.appendChild(subtitleSearchBtn);
+	// subtitleSearchTxt.innerText = "aaaaa";
+	// messageDiv.appendChild(subtitleSearchTxt);
 
-  // }
-  messageDiv.classList.add("myMessageDiv");
-  audio_sec_top.appendChild(messageDiv);
+	// }
+	messageDiv.classList.add("myMessageDiv");
+	audio_sec_top.appendChild(messageDiv);
 
-  if (!subtitleEditable.checked) {
-    dropdownSubtitle.style.display = "none";
-    insBtn.style.display = "none";
-    delBtn.style.display = "none";
-    saveBtn.style.display = "none";
-    // readBtn.style.display = "none";
-  }
+	if (!subtitleEditable.checked) {
+		dropdownSubtitle.style.display = "none";
+		insBtn.style.display = "none";
+		delBtn.style.display = "none";
+		saveBtn.style.display = "none";
+		// readBtn.style.display = "none";
+	}
 }
 function getSecond(inputTime) {
-  if (inputTime.length < 2) {
-    return 99999;
-  }
-  var secondArr = inputTime.split(":");
-  var hour = 0;
-  var minute = 0;
-  var secondString = "";
+	if (inputTime.length < 2) {
+		return 99999;
+	}
+	var secondArr = inputTime.split(":");
+	var hour = 0;
+	var minute = 0;
+	var secondString = "";
 
-  if (secondArr.length > 2) {
-    hour = Number(secondArr[0]);
-    minute = Number(secondArr[1]);
-    secondString = secondArr[2];
-  } else {
-    minute = Number(secondArr[0]);
-    secondString = secondArr[1];
-  }
+	if (secondArr.length > 2) {
+		hour = Number(secondArr[0]);
+		minute = Number(secondArr[1]);
+		secondString = secondArr[2];
+	} else {
+		minute = Number(secondArr[0]);
+		secondString = secondArr[1];
+	}
 
-  var second2Arr = "";
-  if (secondString.includes(",")) {
-    second2Arr = secondString.split(",");
-  } else if (secondArr[2].includes(".")) {
-    second2Arr = secondString.split(".");
-  }
-  var second = Number(second2Arr[0]);
-  var milliSecond = Number(second2Arr[1]);
-  second = second + minute * 60 + hour * 3600 + milliSecond * 0.001;
-  return second;
+	var second2Arr = "";
+	if (secondString.includes(",")) {
+		second2Arr = secondString.split(",");
+	} else if (secondArr[2].includes(".")) {
+		second2Arr = secondString.split(".");
+	}
+	var second = Number(second2Arr[0]);
+	var milliSecond = Number(second2Arr[1]);
+	second = second + minute * 60 + hour * 3600 + milliSecond * 0.001;
+	return second;
 }
 
 function setSubtitleTime(iSelectedCol, iCol) {
-  let time = player.getCurrentTime();
-  iSelectedCol.parentNode.children[iCol].innerHTML = changeTimeString(time);
-  var nowRow = Number(iSelectedCol.parentNode.children[0].innerHTML);
-  if (iCol == 1) subtitles[nowRow - 1].start = time;
-  else if (iCol == 2) subtitles[nowRow - 1].finish = time;
+	let time = player.getCurrentTime();
+	iSelectedCol.parentNode.children[iCol].innerHTML = changeTimeString(time);
+	var nowRow = Number(iSelectedCol.parentNode.children[0].innerHTML);
+	if (iCol == 1) subtitles[nowRow - 1].start = time;
+	else if (iCol == 2) subtitles[nowRow - 1].finish = time;
 }
 
 function changeTimeString(iTime) {
-  if (iTime == undefined) return "00:00,000";
-  let hours = iTime / 3600;
-  let minutes = (hours - Math.floor(hours)) * 60;
-  let seconds = iTime % 60;
+	if (iTime == undefined) return "00:00,000";
+	let hours = iTime / 3600;
+	let minutes = (hours - Math.floor(hours)) * 60;
+	let seconds = iTime % 60;
 
-  hours = Math.floor(hours);
-  minutes = Math.floor(minutes);
-  seconds = Math.floor(seconds);
+	hours = Math.floor(hours);
+	minutes = Math.floor(minutes);
+	seconds = Math.floor(seconds);
 
-  var returnStr = "";
-  if ((hours + "").length == 1) {
-    hours = "0" + hours;
-    returnStr = returnStr + hours + ":";
-  }
+	var returnStr = "";
+	if ((hours + "").length == 1) {
+		hours = "0" + hours;
+		returnStr = returnStr + hours + ":";
+	}
 
-  if ((minutes + "").length == 1) {
-    minutes = "0" + minutes;
-  }
+	if ((minutes + "").length == 1) {
+		minutes = "0" + minutes;
+	}
 
-  if ((seconds + "").length == 1) {
-    seconds = "0" + seconds;
-  }
+	if ((seconds + "").length == 1) {
+		seconds = "0" + seconds;
+	}
 
-  let millsecond = Math.floor((iTime * 1000) % 1000);
+	let millsecond = Math.floor((iTime * 1000) % 1000);
 
-  returnStr = returnStr + minutes + ":" + seconds + "," + millsecond;
+	returnStr = returnStr + minutes + ":" + seconds + "," + millsecond;
 
-  return returnStr;
+	return returnStr;
 }
 
 function selectRow(c, iCol) {
-  var r = c.parentNode;
-  if (rowSelected !== undefined) {
-    rowSelected.style.color = "blue";
-    if (bSubtitleEditable && rowSelected != r && iCol >= 3) {
-      rowSelected.children[iCol].setAttribute("contenteditable", "false");
-    }
-  }
-  rowSelected = r;
-  rowSelected.style.color = "red";
-  if (bSubtitleEditable) {
-    rowSelected.children[3].setAttribute("contenteditable", "true");
-    if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
-      rowSelected.children[4].setAttribute("contenteditable", "true");
-      if (subtitleMode.includes("MD4")) {
-        rowSelected.children[5].setAttribute("contenteditable", "true");
-        rowSelected.children[6].setAttribute("contenteditable", "true");
-      }
-    }
-  }
-  var nowRow = c.closest("tr").rowIndex;
-  var nowSec = getSecond(r.children[1].innerHTML);
-  if (youtube_mode) {
-    if (!(bSubtitleEditable && iCol >= 3)) {
-      player.seekTo(nowSec);
-    }
-  } else {
-    audio.pause();
-    audio.currentTime = nowSec;
-    audio.play();
-  }
+	var r = c.parentNode;
+	if (rowSelected !== undefined) {
+		rowSelected.style.color = "blue";
+		if (bSubtitleEditable && rowSelected != r && iCol >= 3) {
+			rowSelected.children[iCol].setAttribute("contenteditable", "false");
+		}
+	}
+	rowSelected = r;
+	rowSelected.style.color = "red";
+	if (bSubtitleEditable) {
+		rowSelected.children[3].setAttribute("contenteditable", "true");
+		if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
+			rowSelected.children[4].setAttribute("contenteditable", "true");
+			if (subtitleMode.includes("MD4")) {
+				rowSelected.children[5].setAttribute("contenteditable", "true");
+				rowSelected.children[6].setAttribute("contenteditable", "true");
+			}
+		}
+	}
+	var nowRow = c.closest("tr").rowIndex;
+	var nowSec = getSecond(r.children[1].innerHTML);
+	if (youtube_mode) {
+		if (!(bSubtitleEditable && iCol >= 3)) {
+			player.seekTo(nowSec);
+		}
+	} else {
+		audio.pause();
+		audio.currentTime = nowSec;
+		audio.play();
+	}
 
-  finishTime = getSecond(r.children[2].innerHTML);
+	finishTime = getSecond(r.children[2].innerHTML);
 
-  if (nowAudioLoop) {
-    if (autoRowSelected == nowRow) nowAudioLoop = !nowAudioLoop;
-  } else nowAudioLoop = true;
+	if (nowAudioLoop) {
+		if (autoRowSelected == nowRow) nowAudioLoop = !nowAudioLoop;
+	} else nowAudioLoop = true;
 
-  autoRowSelected = nowRow;
-  actualRow = Number(r.children[0].innerHTML);
+	autoRowSelected = nowRow;
+	actualRow = Number(r.children[0].innerHTML);
 }
 
 function changeRow(c) {
-  var r = c.parentNode;
-  var nowRow = Number(r.children[0].innerHTML);
-  var table = document.getElementById("my_audio_table");
-  // alert("subtitles length=" + subtitles.length);
-  // alert("nowRow=" + nowRow);
-  // alert("table.rows.length=" + table.rows.length);
-  subtitles[nowRow - 1].content = table.rows[nowRow].children[3].innerText;
-  if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
-    subtitles[nowRow - 1].content2 = table.rows[nowRow].children[4].innerText;
-    if (subtitleMode.includes("MD4")) {
-      subtitles[nowRow - 1].content3 = table.rows[nowRow].children[5].innerText;
-      subtitles[nowRow - 1].content4 = table.rows[nowRow].children[6].innerText;
-    }
-  }
-  if (nowRow == table.rows.length - 1) {
-    if (rowSelected.children[3].innerText.length > 0) {
-      // alert("insertTableRow=" + nowRow);
-      insertTableRow(nowRow + 1);
-      var nowTableContent = getTableContent();
-      setSubtitles(nowTableContent);
-    }
-  }
+	var r = c.parentNode;
+	var nowRow = Number(r.children[0].innerHTML);
+	var table = document.getElementById("my_audio_table");
+	// alert("subtitles length=" + subtitles.length);
+	// alert("nowRow=" + nowRow);
+	// alert("table.rows.length=" + table.rows.length);
+	subtitles[nowRow - 1].content = table.rows[nowRow].children[3].innerText;
+	if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
+		subtitles[nowRow - 1].content2 = table.rows[nowRow].children[4].innerText;
+		if (subtitleMode.includes("MD4")) {
+			subtitles[nowRow - 1].content3 = table.rows[nowRow].children[5].innerText;
+			subtitles[nowRow - 1].content4 = table.rows[nowRow].children[6].innerText;
+		}
+	}
+	if (nowRow == table.rows.length - 1) {
+		if (rowSelected.children[3].innerText.length > 0) {
+			// alert("insertTableRow=" + nowRow);
+			insertTableRow(nowRow + 1);
+			var nowTableContent = getTableContent();
+			setSubtitles(nowTableContent);
+		}
+	}
 }
 
 function closeAudio() {
-  var modal = document.getElementById("myAudio");
-  modal.style.display = "none";
-  content.classList.remove("slight_opacity");
-  disableBtnStatus(false);
-  if (youtube_mode) {
-    player.stopVideo();
-  } else {
-    audio.pause();
-  }
+	var modal = document.getElementById("myAudio");
+	modal.style.display = "none";
+	content.classList.remove("slight_opacity");
+	disableBtnStatus(false);
+	if (youtube_mode) {
+		player.stopVideo();
+	} else {
+		audio.pause();
+	}
 
-  clearInterval(timeoutID);
-  nowAudioLoop = false;
+	clearInterval(timeoutID);
+	nowAudioLoop = false;
 }
 
 function syncDelay(milliseconds) {
-  var start = new Date().getTime();
-  var end = 0;
-  while (end - start < milliseconds) {
-    end = new Date().getTime();
-  }
+	var start = new Date().getTime();
+	var end = 0;
+	while (end - start < milliseconds) {
+		end = new Date().getTime();
+	}
 }
 
 /*+++ Math Calc */
 function changeVariable(inputString, varArr) {
-  var newString;
-  if (inputString === undefined) return inputString;
-  newString = inputString.replaceAll("{a}", varArr[0]);
-  newString = newString.replaceAll("{b}", varArr[1]);
-  newString = newString.replaceAll("{c}", varArr[2]);
-  // var debug_count = 0;
-  while (newString.toString().indexOf("<") > -1) {
-    var begin = newString.indexOf("<");
-    var end = newString.indexOf(">");
-    var length = newString.length;
-    if (end < begin) {
-      alert("no } match to {");
-      break;
-    }
-    var calcString = newString.substring(begin + 1, end);
-    var resultString = eval(calcString);
-    if (begin == 0 && end == length - 1) {
-      newString = resultString;
-    } else if (begin == 0) {
-      newString = resultString + newString.substring(end + 1, length);
-    } else {
-      newString =
-        newString.substring(0, begin - 1) +
-        resultString +
-        newString.substring(end + 1, length);
-    }
-  }
+	var newString;
+	if (inputString === undefined) return inputString;
+	newString = inputString.replaceAll("{a}", varArr[0]);
+	newString = newString.replaceAll("{b}", varArr[1]);
+	newString = newString.replaceAll("{c}", varArr[2]);
+	// var debug_count = 0;
+	while (newString.toString().indexOf("<") > -1) {
+		var begin = newString.indexOf("<");
+		var end = newString.indexOf(">");
+		var length = newString.length;
+		if (end < begin) {
+			alert("no } match to {");
+			break;
+		}
+		var calcString = newString.substring(begin + 1, end);
+		var resultString = eval(calcString);
+		if (begin == 0 && end == length - 1) {
+			newString = resultString;
+		} else if (begin == 0) {
+			newString = resultString + newString.substring(end + 1, length);
+		} else {
+			newString =
+				newString.substring(0, begin - 1) +
+				resultString +
+				newString.substring(end + 1, length);
+		}
+	}
 
-  return newString;
+	return newString;
 }
