@@ -1912,10 +1912,16 @@ function startAudio(curQuiz) {
 		"/" +
 		curTopicArr[2];
 
-	var fileNameArr = curTopicArr[3].split("^");
-	base_filename = base_left_filename + "/" + fileNameArr[0];
-	if (fileNameArr.length > 1) {
-		imageName = "./img/" + fileNameArr[1] + "_" + fileNameArr[2];
+	if (curTopicArr.length > 3) {
+		if (curTopicArr[3].contains("^")) {
+			var fileNameArr = curTopicArr[3].split("^");
+			base_filename = base_left_filename + "/" + fileNameArr[0];
+			if (fileNameArr.length > 1) {
+				imageName = "./img/" + fileNameArr[1] + "_" + fileNameArr[2];
+			}
+		} else {
+			base_filename = base_left_filename + "/" + curTopicArr[3];
+		}
 	}
 
 	/*read src file*/
