@@ -90,9 +90,11 @@ let bHasHighlight = false;
 
 //subtitleEditable
 let bSubtitleEditable = false;
+let bSmallWindows = false;
 var windowWidth = window.innerWidth;
 if (windowWidth < 600) {
 	bSubtitleEditable = false;
+	bSmallWindows = true;
 }
 let audio_sec_bottom;
 let delBtn, insBtn, saveBtn, readBtn;
@@ -1324,10 +1326,18 @@ function add_new_line(line1, line2) {
 
 	if (line1.length > 0) {
 		resultStr = line1;
-		if (line1.includes("▪")) {
-			resultStr += "<br>";
+		if (bSmallWindows) {
+			if (line1.includes("*")) {
+				resultStr += "<br>";
+			}
+			resultStr += " * ";
+		} else {
+			if (line1.includes("▪")) {
+				resultStr += "<br>";
+			}
+			resultStr += "&#20;&#20;▪ ";
 		}
-		resultStr += "&#20;&#20;▪ ";
+
 		resultStr += line2;
 	} else {
 		resultStr = "<h4>" + line2 + "</h4>";
@@ -1583,6 +1593,9 @@ function showTable(isMedia) {
 		c.onclick = function () {
 			selectRow(this, 0);
 		};
+		if (bSmallWindows) {
+			c.style.display = "none";
+		}
 
 		//2.開始時間
 		c = r.insertCell(-1);
@@ -1652,6 +1665,10 @@ function showTable(isMedia) {
 	c = r.insertCell(-1);
 	c.style.width = "4%";
 	c.innerHTML = "#";
+	if (bSmallWindows) {
+		c.style.display = "none";
+	}
+
 	if (bSubtitleEditable == true && isMedia == true) {
 		c = r.insertCell(-1);
 		c.style.width = "10%";
@@ -2056,7 +2073,7 @@ function startAudio(curQuiz) {
 		modalContent.appendChild(audio_sec_top);
 		showMessage(true);
 	} else {
-		if (imageName.length > 0) {
+		if (imageName.length > 0 && !bSmallWindows) {
 			audio_sec_top.classList.add("video_sec_top");
 			// x.1. This code loads the IFrame Player API code asynchronously.
 			var playerDiv = document.createElement("div");

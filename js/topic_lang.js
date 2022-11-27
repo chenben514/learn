@@ -9,7 +9,7 @@ let courseSubjList = [
 	},
 	{ course: "japan", subj: "word,spell,video,news" },
 	{ course: "korean", subj: "word,spell,listen,writing,grammer,video,news" },
-	{ course: "cejk", subj: "speak,grammer,song" },
+	{ course: "cejk", subj: "speak,word,grammer,song" },
 	{ course: "computer", subj: "os,db,programming,data,devops,web" },
 	{ course: "learn", subj: "calc,game,video" },
 ];
