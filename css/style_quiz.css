@@ -661,6 +661,10 @@ section .correct_list {
 	width: 60%;
 	height: 87%;
 }
+/* .myPlayerDescDiv {
+	width: 20%;
+	height: 87%;
+} */
 @media only screen and (max-width: 37.5em) {
 	.myPlayerDiv {
 		width: 95%;
@@ -668,6 +672,7 @@ section .correct_list {
 }
 
 .myMessageDiv {
+	display: block;
 	width: 100%;
 	height: 8%;
 }

@@ -1989,10 +1989,26 @@ function startAudio(curQuiz) {
 	if (curQuizType.includes("youtube")) {
 		audio_sec_top.classList.add("video_sec_top");
 		// x.1. This code loads the IFrame Player API code asynchronously.
-		var playerDiv = document.createElement("div");
+		var playerDiv = document.createElement("span");
 		playerDiv.setAttribute("id", "player-div");
 		playerDiv.classList.add("myPlayerDiv");
 		audio_sec_top.appendChild(playerDiv);
+
+		// if (!bSmallWindows) {
+		// 	var playerDescDiv = document.createElement("span");
+		// 	playerDescDiv.classList.add("myPlayerDescDiv");
+
+		// 	let pt, pc, pr;
+		// 	pt = document.createElement("table");
+		// 	pt.setAttribute("class", "audio_table");
+		// 	pr = pt.insertRow(-1);
+		// 	pc = pr.insertCell(-1);
+		// 	pc.innerHTML = "this is a table message";
+		// 	// playerDescDiv.innerHTML = "hahaasdfsadfsdf";
+
+		// 	playerDescDiv.appendChild(pt);
+		// 	audio_sec_top.appendChild(playerDescDiv);
+		// }
 
 		showMessage(true);
 		// 秀上方訊息-結束
