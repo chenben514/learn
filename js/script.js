@@ -1913,7 +1913,7 @@ function startAudio(curQuiz) {
 		curTopicArr[2];
 
 	if (curTopicArr.length > 3) {
-		if (curTopicArr[3].contains("^")) {
+		if (curTopicArr[3].includes("^")) {
 			var fileNameArr = curTopicArr[3].split("^");
 			base_filename = base_left_filename + "/" + fileNameArr[0];
 			if (fileNameArr.length > 1) {
