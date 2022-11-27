@@ -555,9 +555,9 @@ section .correct_list {
 /* The Close Button */
 .close {
 	color: #aaaaaa;
-	padding: 0;
+	/* padding: 0; */
 	margin: 0;
-	/* padding-right: 10px; */
+	padding-right: 10px;
 	float: right;
 	font-size: 32px;
 	font-weight: bold;
@@ -654,7 +654,7 @@ section .correct_list {
 	/* background-color: pink; */
 	background-color: rgb(220, 237, 216);
 	padding: 0.5rem 1rem;
-	width: 95%;
+	width: 90%;
 }
 
 .myPlayerDiv {
@@ -663,7 +663,7 @@ section .correct_list {
 }
 @media only screen and (max-width: 37.5em) {
 	.myPlayerDiv {
-		width: 100%;
+		width: 95%;
 	}
 }
 
