@@ -628,7 +628,14 @@ function getQuestions() {
 	cursubject = curQuizArr[1].split("_")[0];
 	correctCnt = 0;
 
-	var curTopicArr = curQuizArr[1].split(/_()/);
+	// var
+	var curTopicArr;
+	if (curQuizArr[1].includes("(")) {
+		curTopicArr = curQuizArr[1].split(/_()/);
+	} else {
+		curTopicArr = curQuizArr[1].split(/_/);
+	}
+
 	curQuizType = curQuizArr[0];
 
 	var base_left_filename = "./";
@@ -654,9 +661,11 @@ function getQuestions() {
 	) {
 		subtitleMode = "SingleSrt";
 		parseSrt(base_filename + ".srt");
-	} else {
+	} else if (curQuizType.includes("conversation_lesson")) {
 		subtitleMode = "MD";
 		parseCsv(base_filename + ".md");
+	} else {
+		parseCsv(base_filename + ".csv");
 	}
 
 	var quesList = [];
