@@ -14,13 +14,17 @@ class Question {
 	answer;
 }
 let bGameStart = false;
+let rowLen, colLen;
+let cardWidth, fontWidth;
+let nowQuiz, prevTimer;
 
 const gameHeight = document.querySelector("body").offsetHeight;
+const gameWidth = document.querySelector("body").offsetWidth;
 
 const content = document.querySelector(".content");
 var game = document.getElementsByClassName("game-content")[0];
 var digitPos = [];
-var nowOrder = 1;
+var nowOrder = 0;
 var nowMax = 0;
 var quesTimer = 0;
 var counter;
@@ -44,12 +48,9 @@ function closeWrong() {
 }
 
 function pressCard() {
-	if (this.id == "card" + nowOrder) {
-		document.getElementById(this.id).classList.add("card_ok"); //show quiz box;
-	} else {
-		document.getElementById(this.id).classList.add("card_ng"); //show quiz box;
-	}
+	if (this.id.length < 1) return;
 	if (bGameStart == false) {
+		document.getElementById(this.id).classList.add("card_ok"); //show quiz box;
 		var pressID = this.id.substring(4, this.id.length);
 
 		var msg = new SpeechSynthesisUtterance();
@@ -63,20 +64,34 @@ function pressCard() {
 		msg.pitch = 1;
 		if (curCourse == "chinese") msg.lang = "zh-CN";
 		window.speechSynthesis.speak(msg);
+	} else {
+		if (this.id == "card" + nowOrder) {
+			document.getElementById(this.id).classList.add("card_ok"); //show quiz box;
+		} else {
+			document.getElementById(this.id).classList.add("card_ng"); //show quiz box;
+		}
 	}
 }
 
 function pressCardup() {
+	if (bGameStart == false) {
+		document.getElementById(this.id).classList.remove("card_ok");
+		return;
+	}
 	if (this.id == "card" + nowOrder) {
 		document.getElementById(this.id).classList.remove("card_ok"); //show quiz box;
 		nowOrder++;
-		speakAnswer();
 		var target = document.getElementById("nowOrder");
-		target.innerText = "己完成 " + (nowOrder - 1) + " / " + quesCnt;
-		if (nowOrder == nowMax + 1) {
+		target.innerText = "己完成 " + nowOrder + " / " + quesCnt;
+		if (nowOrder == nowMax) {
 			clearInterval(counter); //clear counter
-			target.innerText = "你花了 " + quesTimer + " 秒完成";
+			prevTimer = quesTimer;
+			game_match(nowQuiz);
+			var target = document.getElementById("nowOrder");
+			target.innerText = "你花了 " + prevTimer + " 秒完成";
+			return;
 		}
+		speakAnswer();
 	} else {
 		document.getElementById(this.id).classList.remove("card_ng"); //show quiz box;
 	}
@@ -87,17 +102,21 @@ function digitFocus() {
 		var gameButton = document.querySelector(".game_button");
 		gameButton.innerText = "停止游戲";
 		bGameStart = true;
+		var target = document.getElementById("nowOrder");
+		target.innerText = "己完成 " + nowOrder + " / " + quesCnt;
+
 		startTimer();
 		speakAnswer();
 	} else {
 		var gameButton = document.querySelector(".game_button");
-		gameButton.innerText = "繼續游戲";
+		gameButton.innerText = "重新游戲";
 		bGameStart = false;
 		clearInterval(counter);
 	}
 }
 
 function game_match(curQuiz) {
+	nowQuiz = curQuiz;
 	bGameStart = false;
 	//0.set UI
 	content.classList.add("slight_opacity");
@@ -131,12 +150,9 @@ function game_match(curQuiz) {
 	//2.generate table
 	var game_table = document.getElementById("game_table");
 	var target = document.getElementById("nowOrder");
-	target.innerText = "請依聲音按下圖片";
+	target.innerText = "己完成 " + nowOrder + " / " + quesCnt;
 
-	nowOrder = 1;
-
-	var tmpResult;
-	tmpResult = "<table id='game_table' class='table-top'>";
+	nowOrder = 0;
 
 	if (game_table != null) game_table.remove();
 
@@ -145,7 +161,6 @@ function game_match(curQuiz) {
 	var d = new Date();
 	startSecond = Math.floor(d.getTime() / 1000);
 
-	var rowLen, colLen;
 	if (quesCnt <= 1) {
 		colLen = 1;
 	} else if (quesCnt <= 4) {
@@ -168,12 +183,33 @@ function game_match(curQuiz) {
 		alert("太多項目，看表格是否再擴充");
 	}
 	rowLen = quesCnt / colLen;
-	var cardWidth = Math.round((gameHeight - 300) / colLen);
-	var fontWidth = cardWidth - 50;
+	cardWidth = Math.min(
+		Math.round((gameHeight - 300) / colLen),
+		Math.round((gameWidth - 300) / colLen)
+	);
+	// cardWidth = Math.round((gameHeight - 300) / colLen);
+
+	fontWidth = cardWidth * 0.5;
 
 	nowMax = quesCnt;
+	showCard();
+}
 
+function showCard() {
+	var tmpResult;
 	var nowCnt;
+	var game_table = document.getElementById("game_table");
+	if (game_table != null) game_table.remove();
+
+	tmpResult = "<table id='game_table' class='table-top'>";
+
+	var shuffleArr = [];
+
+	for (var i = 0; i < quesCnt; i++) {
+		shuffleArr.push(i);
+	}
+	shuffle(shuffleArr);
+
 	for (var i = 0; i < rowLen; i++) {
 		tmpResult += "<tr>";
 		for (var j = 0; j < colLen; j++) {
@@ -184,11 +220,15 @@ function game_match(curQuiz) {
 			tmpResult += cardWidth;
 			tmpResult += "px;font-size:";
 			tmpResult += fontWidth;
-			tmpResult += "px' id='card";
-			tmpResult += nowCnt.toString();
-			tmpResult += "'>";
+			tmpResult += "px'";
 			if (nowCnt < quesCnt) {
-				tmpResult += quesArr[nowCnt].question;
+				tmpResult += " id='card";
+				tmpResult += shuffleArr[nowCnt].toString();
+				tmpResult += "'";
+			}
+			tmpResult += ">";
+			if (nowCnt < quesCnt) {
+				tmpResult += quesArr[shuffleArr[nowCnt]].question;
 			}
 
 			tmpResult += "</td>";
@@ -257,15 +297,16 @@ function parseCsv(filename) {
 	var tmpArr = displayName.replace(/\r\n/g, "\n").split("\n");
 	tmpCnt = tmpArr.length;
 
-	shuffle(tmpArr);
-
 	quesArr = [];
 	for (var i = 0; i < tmpCnt; i++) {
 		let question = new Question();
 		question.numb = i;
-		question.question = tmpArr[i].split("\t")[0];
-		question.answer = tmpArr[i].split("\t")[1];
-		quesArr.push(question);
+		var tmpArr2 = tmpArr[i].split("\t");
+		if (tmpArr2.length > 1) {
+			question.question = tmpArr2[0];
+			question.answer = tmpArr2[1];
+			quesArr.push(question);
+		}
 	}
 	quesCnt = quesArr.length;
 }
