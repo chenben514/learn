@@ -3,6 +3,8 @@ import disableBtnStatus from "./common.js";
 window.closeWrong = closeWrong;
 window.digitFocus = digitFocus;
 window.pressCard = pressCard;
+var windowWidth = window.innerWidth;
+var windowHeight = window.innerHeight;
 
 let multiple;
 let value;
@@ -17,9 +19,6 @@ let bGameStart = false;
 let rowLen, colLen;
 let cardWidth, fontWidth;
 let nowQuiz, prevTimer;
-
-const gameHeight = document.querySelector("body").offsetHeight;
-const gameWidth = document.querySelector("body").offsetWidth;
 
 const content = document.querySelector(".content");
 var game = document.getElementsByClassName("game-content")[0];
@@ -183,10 +182,12 @@ function game_match(curQuiz) {
 		alert("太多項目，看表格是否再擴充");
 	}
 	rowLen = quesCnt / colLen;
-	cardWidth = Math.min(
-		Math.round((gameHeight - 300) / colLen),
-		Math.round((gameWidth - 300) / colLen)
-	);
+	cardWidth =
+		0.7 *
+		Math.min(
+			Math.round(windowHeight / colLen),
+			Math.round(windowWidth / colLen)
+		);
 	// cardWidth = Math.round((gameHeight - 300) / colLen);
 
 	fontWidth = cardWidth * 0.5;
