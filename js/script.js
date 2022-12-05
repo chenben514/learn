@@ -1,5 +1,7 @@
 /*history: test_0822_0120*/
+import disableBtnStatus from "./common.js";
 import game_focus from "./game_focus.js";
+import game_match from "./game_match.js";
 import loadWordChain from "./game_word_chain.js";
 
 window.pronClick = pronClick;
@@ -80,7 +82,7 @@ let rowSelected;
 let actualRow = 1;
 let startTime, finishTime;
 let nowAudioLoop = false;
-let subtitles = "";
+let subtitles = [];
 var subTitleCnt = 0;
 let audio, source;
 let autoRowSelected = 0;
@@ -171,10 +173,11 @@ function setCourse() {
 	for (let i = 0; i < conver_test_links.length; i++) {
 		conver_test_links[i].addEventListener(
 			"click",
-			function () {
-				startAudio(conver_test_links[i].id);
-			},
-			false
+			startQuiz
+			// function () {
+			// 	startAudio(conver_test_links[i].id);
+			// },
+			// false
 		);
 	}
 
@@ -229,10 +232,12 @@ function setMainSubject() {
 	for (let i = 0; i < conver_test_links.length; i++) {
 		conver_test_links[i].addEventListener(
 			"click",
-			function () {
-				startAudio(conver_test_links[i].id);
-			},
-			false
+			startQuiz
+			// function () {
+			// 	startAudio(conver_test_links[i].id);
+
+			// },
+			// false
 		);
 	}
 
@@ -262,10 +267,11 @@ let conver_test_links = document.querySelectorAll(".conversation-test-button");
 for (let i = 0; i < conver_test_links.length; i++) {
 	conver_test_links[i].addEventListener(
 		"click",
-		function () {
-			startAudio(conver_test_links[i].id);
-		},
-		false
+		startQuiz
+		// function () {
+		// 	startAudio(conver_test_links[i].id);
+		// },
+		// false
 	);
 }
 
@@ -322,16 +328,16 @@ function startLeft() {
 	startAudio(this.id);
 }
 
-function disableBtnStatus(status) {
-	let small_wrong_links = document.querySelectorAll(".wrong-button");
-	for (let i = 0; i < small_wrong_links.length; i++) {
-		small_wrong_links[i].disabled = status;
-	}
-	let small_test_links = document.querySelectorAll(".test-button");
-	for (let i = 0; i < small_test_links.length; i++) {
-		small_test_links[i].disabled = status;
-	}
-}
+// function disableBtnStatus(status) {
+// 	let small_wrong_links = document.querySelectorAll(".wrong-button");
+// 	for (let i = 0; i < small_wrong_links.length; i++) {
+// 		small_wrong_links[i].disabled = status;
+// 	}
+// 	let small_test_links = document.querySelectorAll(".test-button");
+// 	for (let i = 0; i < small_test_links.length; i++) {
+// 		small_test_links[i].disabled = status;
+// 	}
+// }
 
 // if startQuiz button clicked
 function startQuiz() {
@@ -355,20 +361,18 @@ function startQuiz() {
 
 	//0.2. disable all test buttons
 	//0.直接聽錄音
-	if (curQuizType.includes("conversation")) {
+	// alert(curQuiz);
+	if (curQuizType.startsWith("conversation")) {
 		startAudio(this.id);
 		return;
 	}
 
-	// } else {
-	//   let small_test_links = document.querySelectorAll(".test-button");
-	//   for (let i = 0; i < small_test_links.length; i++) {
-	//     small_test_links[i].disabled = true;
-	//   }
-	// }
-
 	if (curQuizType == "game_focus") {
 		game_focus();
+		return;
+	}
+	if (curQuizType == "game_match") {
+		game_match(curQuiz);
 		return;
 	}
 	if (curQuizType == "game_word_chain") {
@@ -482,9 +486,16 @@ function startWrong() {
 	let quesCnt = quesArr.length;
 	let ansList = [];
 	let tmpCnt = 0;
-
 	for (let k = 0; k < quesCnt; k++) {
 		if (quesArr[k].length < 2) continue;
+		if (
+			curQuizType.includes("conversation_m4a") ||
+			curQuizType.includes("conversation_mp3")
+		) {
+			if (!quesArr[k].includes("[")) {
+				continue;
+			}
+		}
 		tmpMessage = k + ",";
 		var checkMessage = "," + tmpMessage;
 		if (
@@ -612,6 +623,7 @@ function parseSrt(filename) {
 	readSubtitles(filename);
 	quesArr = [];
 	for (let k = 0; k < subtitles.length; k++) {
+		if (subtitles[k].content.length < 2) continue;
 		quesArr.push(
 			subtitles[k].content +
 				"\t\t" +
@@ -657,7 +669,8 @@ function getQuestions() {
 
 	if (
 		curQuizType.includes("conversation_m4a") ||
-		curQuizType.includes("conversation_mp3")
+		curQuizType.includes("conversation_mp3") ||
+		curQuizType.includes("conversation_youtube")
 	) {
 		subtitleMode = "SingleSrt";
 		parseSrt(base_filename + ".srt");
@@ -681,7 +694,11 @@ function getQuestions() {
 		rightStorage = "nothing";
 	let tmpMessage = "";
 	for (let k = 0; k < quesCnt; k++) {
+		// alert(quesArr[k] + ":" + quesArr[k].length);
 		if (quesArr[k].length < 2) continue;
+		if (curQuizType.includes("conversation")) {
+			if (!quesArr[k].includes("[")) continue;
+		}
 		tmpMessage = k + ",";
 		var checkMessage = "," + tmpMessage;
 		if (rightStorage.includes(checkMessage)) {
@@ -691,9 +708,9 @@ function getQuestions() {
 		tmpArr.push(tmpMessage + quesArr[k]);
 	}
 	quesArr = tmpArr;
-	quesCnt = quesArr.length;
+	quesCnt = tmpArr.length;
 	if (quesCnt == 0) {
-		curStatus = "allQuesPass";
+		alert("錯誤！！沒有任何的題目");
 		showResult();
 		return false;
 	}
@@ -749,8 +766,7 @@ function getQuestions() {
 		}
 
 		/*prepare question & answers*/
-		if (singQuesArr[0].includes("[")) {
-			/* for partial spell with [] */
+		if (curQuizType.includes("conversation")) {
 			var tmpQues = singQuesArr[0];
 			var tmpStart = tmpQues.indexOf("[");
 			var tmpEnd = tmpQues.indexOf("]");
@@ -777,6 +793,13 @@ function getQuestions() {
 
 			question.quizType = "spell";
 			question.answer = tmpQues.substr(tmpStart + 1, tmpEnd - tmpStart - 1);
+
+			if (curQuizType.includes("conversation")) {
+				question.quizType = "audio";
+				question.option1 = singQuesArr[2];
+				question.option2 = singQuesArr[3];
+			}
+
 			quesTimer = 60;
 		} else if (
 			curQuizType == "spell" ||
@@ -849,6 +872,7 @@ function confirmClick() {
 			.toLowerCase()
 			.replace(".mp3", "");
 	}
+	userInputAns = inputAnswer;
 	if (inputAnswer === correctAnswer || inputAnswer == "qqq")
 		directSelected("correct", correctAnswer);
 	else directSelected("incorrect", correctAnswer);
@@ -965,7 +989,6 @@ function directSelected(userAns, correctAns) {
 		} //adding red color to correct selected option
 		else {
 			// document.querySelector(".direct_input").style.backgroundColor = "red";
-
 			let answer_target = (option_list.innerHTML =
 				option_list.innerHTML +
 				'<div name="answer" style="width:100%;height:40px;font-size:20px;padding:10px;color:blue">' +
@@ -1131,7 +1154,15 @@ function showResult() {
 				scoreTag += "🏆";
 			}
 			scoreTag += "</span>";
-			var starMessage = document.getElementById(curQuiz + "_class_star");
+
+			var starMessage;
+			if (curQuiz.startsWith("test_")) {
+				starMessage = document.getElementById(
+					curQuiz.substr(5, curQuiz.length - 5) + "_star"
+				);
+			} else {
+				starMessage = document.getElementById(curQuiz + "_star");
+			}
 			starMessage.innerText = showStar(curLevel);
 		}
 		scoreText.innerHTML = scoreTag; //adding new span tag inside score_Text
@@ -1308,6 +1339,10 @@ function raiseStarLevel() {
 
 //3. 播放器
 function readSubtitles(srtFile) {
+	if (srtFile.includes("all@")) {
+		var srtArr = srtFile.split("@");
+		srtFile = srtArr[0].replace(/all/g, "") + srtArr[srtArr.length - 1];
+	}
 	if (checkFileExist(srtFile) == false) {
 		let subtitle = new Subtitle();
 		subtitle.numb = 1;
@@ -1389,7 +1424,6 @@ function setSubtitles(contents) {
 			}
 		}
 	}
-	console.log("subtitle.length=" + subtitles.length);
 	subTitleCnt = 0;
 	var nowStatus = 0; //0:nothing,1:start
 
@@ -1479,7 +1513,10 @@ function setSubtitles(contents) {
 						subtitles[subTitleCnt - 1].content =
 							subtitles[subTitleCnt - 1].content + "\n" + quesArr[k];
 					}
-					if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
+					// if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
+					// 	bHasHighlight = true;
+					// }
+					if (quesArr[k].includes("[") && quesArr[k].includes("]")) {
 						bHasHighlight = true;
 					}
 				}
@@ -1553,10 +1590,10 @@ function highlight_start(lineno, content) {
 		//1.replace []
 		var tmpWhiteString = "<span style='color:#" + tmpColor + "'>";
 		line_content = line_content.replaceAll(
-			"[[",
+			"[",
 			"<span style='background-color:yellow'>"
 		);
-		line_content = line_content.replaceAll("]]", "</span>");
+		line_content = line_content.replaceAll("]", "</span>");
 
 		return_content += line_content;
 	}
@@ -1583,7 +1620,7 @@ function showTable(isMedia) {
 	tableRowCnt = 0;
 	for (let k = 0; k < subtitles.length; k++) {
 		if (bRemainHighlight) {
-			if (subtitles[k].content.includes("[[")) {
+			if (subtitles[k].content.includes("[")) {
 				r = t.insertRow(-1);
 				tableRowCnt++;
 			} else {
@@ -1647,7 +1684,7 @@ function showTable(isMedia) {
 			c.onkeyup = function () {
 				changeRow(this);
 			};
-			c.innerHTML = subtitles[k].content2;
+			c.innerHTML = highlight_start(k, subtitles[k].content2);
 			if (subtitleMode.includes("MD4")) {
 				c = r.insertCell(-1);
 				c.onclick = function () {
@@ -1779,7 +1816,6 @@ function getTableContent() {
 		}
 		tableContent = tableContent + "\n";
 	}
-	// alert(tableContent);
 	return tableContent;
 }
 
@@ -1994,22 +2030,6 @@ function startAudio(curQuiz) {
 		playerDiv.classList.add("myPlayerDiv");
 		audio_sec_top.appendChild(playerDiv);
 
-		// if (!bSmallWindows) {
-		// 	var playerDescDiv = document.createElement("span");
-		// 	playerDescDiv.classList.add("myPlayerDescDiv");
-
-		// 	let pt, pc, pr;
-		// 	pt = document.createElement("table");
-		// 	pt.setAttribute("class", "audio_table");
-		// 	pr = pt.insertRow(-1);
-		// 	pc = pr.insertCell(-1);
-		// 	pc.innerHTML = "this is a table message";
-		// 	// playerDescDiv.innerHTML = "hahaasdfsadfsdf";
-
-		// 	playerDescDiv.appendChild(pt);
-		// 	audio_sec_top.appendChild(playerDescDiv);
-		// }
-
 		showMessage(true);
 		// 秀上方訊息-結束
 		modalContent.appendChild(audio_sec_top);
@@ -2185,7 +2205,12 @@ function startAudio(curQuiz) {
 					}
 				} else {
 					if (autoRowSelected == myAudioTableRow.length) {
-						player.pauseVideo();
+						if (youtube_mode) {
+							player.pauseVideo();
+						} else {
+							audio.pause();
+						}
+
 						return;
 					}
 
@@ -2213,29 +2238,15 @@ function startAudio(curQuiz) {
 						(autoRowSelected - 1) *
 						(audio_sec_bottom.scrollHeight / tmpTableCnt);
 
-					// w.scrollTop(row.offset().top - w.height() / 2);
-
-					// audio_sec_bottom.scrollTop(
-					//   autoRowSelected.offset().top - audio_sec_bottom.height() / 2
-					// );
-					// console.log(myAudioTableRow[autoRowSelected].top);
 					audio_sec_bottom.scrollTop =
 						myAudioTableRow[autoRowSelected - 1].offsetTop;
-
-					// audio_sec_bottom.scrollTop =
-					//   (autoRowSelected - 1) *
-					//   (audio_sec_bottom.scrollHeight / tmpTableCnt);
 				}
 			}
 		} else if (arrPlayMode[playMode].value == "SentenceRepeat") {
-			// if (currentTime > subtitles[autoRowSelected - 1].finish) {
 			if (currentTime > subtitles[actualRow - 1].finish) {
-				// alert("currentTime:" + currentTime);
-				// alert("finish:" + subtitles[autoRowSelected - 1].finish);
 				if (bSubtitleEditable) {
 					audio.pause();
 				} else if (youtube_mode) {
-					// player.seekTo(Math.floor(subtitles[autoRowSelected - 1].start));
 					player.pauseVideo();
 					player.seekTo(subtitles[actualRow - 1].start);
 					player.playVideo();
@@ -2367,7 +2378,6 @@ function showMessage(isMedia) {
 	};
 	messageDiv.appendChild(dropdownSubtitle);
 
-	// if (bSubtitleEditable) {
 	insBtn = document.createElement("button");
 	insBtn.innerText = "插入上列";
 	insBtn.classList.add("myButton");
@@ -2408,11 +2418,6 @@ function showMessage(isMedia) {
 		messageDiv.appendChild(readBtn);
 	}
 
-	// messageDiv.appendChild(subtitleSearchBtn);
-	// subtitleSearchTxt.innerText = "aaaaa";
-	// messageDiv.appendChild(subtitleSearchTxt);
-
-	// }
 	messageDiv.classList.add("myMessageDiv");
 	audio_sec_top.appendChild(messageDiv);
 
@@ -2421,7 +2426,6 @@ function showMessage(isMedia) {
 		insBtn.style.display = "none";
 		delBtn.style.display = "none";
 		saveBtn.style.display = "none";
-		// readBtn.style.display = "none";
 	}
 }
 function getSecond(inputTime) {
@@ -2455,7 +2459,12 @@ function getSecond(inputTime) {
 }
 
 function setSubtitleTime(iSelectedCol, iCol) {
-	let time = player.getCurrentTime();
+	let time;
+	if (youtube_mode) {
+		time = player.getCurrentTime();
+	} else {
+		time = audio.currentTime;
+	}
 	iSelectedCol.parentNode.children[iCol].innerHTML = changeTimeString(time);
 	var nowRow = Number(iSelectedCol.parentNode.children[0].innerHTML);
 	if (iCol == 1) subtitles[nowRow - 1].start = time;
@@ -2473,9 +2482,11 @@ function changeTimeString(iTime) {
 	seconds = Math.floor(seconds);
 
 	var returnStr = "";
-	if ((hours + "").length == 1) {
-		hours = "0" + hours;
-		returnStr = returnStr + hours + ":";
+	if (hours > 0) {
+		if ((hours + "").length == 1) {
+			hours = "0" + hours;
+			returnStr = returnStr + hours + ":";
+		}
 	}
 
 	if ((minutes + "").length == 1) {
@@ -2520,9 +2531,9 @@ function selectRow(c, iCol) {
 			player.seekTo(nowSec);
 		}
 	} else {
-		audio.pause();
-		audio.currentTime = nowSec;
-		audio.play();
+		if (!(bSubtitleEditable && iCol >= 3)) {
+			audio.currentTime = nowSec;
+		}
 	}
 
 	finishTime = getSecond(r.children[2].innerHTML);
@@ -2539,9 +2550,6 @@ function changeRow(c) {
 	var r = c.parentNode;
 	var nowRow = Number(r.children[0].innerHTML);
 	var table = document.getElementById("my_audio_table");
-	// alert("subtitles length=" + subtitles.length);
-	// alert("nowRow=" + nowRow);
-	// alert("table.rows.length=" + table.rows.length);
 	subtitles[nowRow - 1].content = table.rows[nowRow].children[3].innerText;
 	if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
 		subtitles[nowRow - 1].content2 = table.rows[nowRow].children[4].innerText;
@@ -2552,7 +2560,6 @@ function changeRow(c) {
 	}
 	if (nowRow == table.rows.length - 1) {
 		if (rowSelected.children[3].innerText.length > 0) {
-			// alert("insertTableRow=" + nowRow);
 			insertTableRow(nowRow + 1);
 			var nowTableContent = getTableContent();
 			setSubtitles(nowTableContent);
