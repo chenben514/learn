@@ -766,7 +766,10 @@ function getQuestions() {
 		}
 
 		/*prepare question & answers*/
-		if (curQuizType.includes("conversation")) {
+		if (
+			curQuizType.includes("conversation") ||
+			(curQuizType == "spell" && singQuesArr[0].includes("["))
+		) {
 			var tmpQues = singQuesArr[0];
 			var tmpStart = tmpQues.indexOf("[");
 			var tmpEnd = tmpQues.indexOf("]");
