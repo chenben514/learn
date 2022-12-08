@@ -1,7 +1,7 @@
 import disableBtnStatus from "./common.js";
 
 window.closeWrong = closeWrong;
-window.digitFocus = digitFocus;
+window.matchFocus = matchFocus;
 window.pressCard = pressCard;
 var windowWidth = window.innerWidth;
 var windowHeight = window.innerHeight;
@@ -96,7 +96,7 @@ function pressCardup() {
 	}
 }
 
-function digitFocus() {
+function matchFocus() {
 	if (bGameStart == false) {
 		var gameButton = document.querySelector(".game_button");
 		gameButton.innerText = "停止游戲";
@@ -123,7 +123,7 @@ function game_match(curQuiz) {
 	game_modal.style.display = "block";
 
 	game.innerHTML =
-		"<button class='game_button' onclick='digitFocus()'>開始遊戲</button>" +
+		"<button class='game_button' onclick='matchFocus()'>開始遊戲</button>" +
 		'<span class="label_text">己花</span>' +
 		'<span class="timer_sec label_text" id="my_game_sec">00</span>' +
 		'<span class="label_text" >秒</span>' +
@@ -309,6 +309,7 @@ function parseCsv(filename) {
 			quesArr.push(question);
 		}
 	}
+	shuffle(quesArr);
 	quesCnt = quesArr.length;
 }
 
