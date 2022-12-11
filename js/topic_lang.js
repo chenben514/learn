@@ -2,16 +2,19 @@ let curWeb = "learn";
 let defaultCourse = "korean";
 
 let courseSubjList = [
-	{ course: "chinese", subj: "word,video" },
+	{ course: "chinese", subj: "word,video,match" },
 	{
 		course: "english",
-		subj: "word,spell,grammer,listen,video,business,person",
+		subj: "word,spell,grammer,listen,video,business,person,match",
 	},
-	{ course: "japan", subj: "word,spell,video,news" },
-	{ course: "korean", subj: "word,spell,listen,writing,grammer,video,news" },
+	{ course: "japan", subj: "word,spell,video,news,match" },
+	{
+		course: "korean",
+		subj: "word,spell,listen,writing,grammer,video,news,match",
+	},
 	{ course: "cejk", subj: "speak,word,grammer,song" },
 	{ course: "computer", subj: "os,db,programming,data,devops,web" },
-	{ course: "learn", subj: "calc,game,video" },
+	{ course: "learn", subj: "graph,calc,game,video" },
 ];
 
 let defaultCourseSubjMap = new Map([
@@ -21,12 +24,13 @@ let defaultCourseSubjMap = new Map([
 	["korean", "word"],
 	["cejk", "speak"],
 	["computer", "os"],
-	["learn", "calc"],
+	["learn", "graph"],
 ]);
 
 let subjMap = new Map([
 	["word", "字彙"],
 	["video", "影片"],
+	["match", "配對"],
 	["person", "個人"],
 	["business", "商業"],
 	["calc", "數學"],
@@ -38,6 +42,7 @@ let subjMap = new Map([
 	["news", "新聞"],
 	["speak", "會話"],
 	["song", "歌曲"],
+	["graph", "圖型"],
 	//電腦
 	["os", "OS"],
 	["db", "DB"],

@@ -308,7 +308,11 @@ function showTopic() {
 				maxLength = topics[i].small_subj_explains[j].length;
 			}
 		}
+		key = 0;
 		for (j = 0; j < topics[i].small_subjs.length; j++) {
+			if (key > 4) {
+				continue;
+			}
 			var curButton = document.createElement("button");
 			var c, r, t;
 			t = document.createElement("table");
@@ -337,6 +341,7 @@ function showTopic() {
 			if (curProcCnt >= topics[i].open_course_cnt) {
 				curButton.innerText = "🔒";
 				curButton.disabled = true;
+				key += 1;
 			} else {
 				topics[i].small_subj_explains[j] = topics[i].small_subj_explains[
 					j
@@ -417,21 +422,10 @@ function showTopic() {
 				var curClassID;
 
 				curClassID = curBaseID;
-				// if (topics[i].small_subj_html[j].startsWith("http")) {
-				// 	tmpMessage =
-				// 		'<button  onclick="location.href =' +
-				// 		"'" +
-				// 		topics[i].small_subj_html[j] +
-				// 		"'" +
-				// 		'"' +
-				// 		'class="class-button" id ="" ' +
-				// 		curClassID +
-				// 		">課程 </button><span style='color:blue;'>";
-				// }
 				if (
-					topics[i].quiz_type.includes("conversation_m4a") ||
-					topics[i].quiz_type.includes("conversation_mp3") ||
-					topics[i].quiz_type.includes("conversation_youtube")
+					topics[i].quiz_type.includes("conversation_m4a_test") ||
+					topics[i].quiz_type.includes("conversation_mp3_test") ||
+					topics[i].quiz_type.includes("conversation_youtube_test")
 				) {
 					tmpMessage =
 						'<button  class="conversation-test-button" id ="' +

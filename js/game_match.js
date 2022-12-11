@@ -62,6 +62,10 @@ function pressCard() {
 		msg.rate = 1;
 		msg.pitch = 1;
 		if (curCourse == "chinese") msg.lang = "zh-CN";
+		else if (curCourse == "english") msg.lang = "en-US";
+		else if (curCourse == "japan") msg.lang = "ja-JP";
+		else if (curCourse == "korean") msg.lang = "ko-KR";
+
 		window.speechSynthesis.speak(msg);
 	} else {
 		if (this.id == "card" + nowOrder) {
@@ -254,12 +258,17 @@ function speakAnswer() {
 
 	// Set the text.
 	msg.text = quesArr[nowOrder].answer;
+	// alert(msg.text);
 
 	// Set the attributes.
 	msg.volume = 1;
 	msg.rate = 1;
 	msg.pitch = 1;
 	if (curCourse == "chinese") msg.lang = "zh-CN";
+	else if (curCourse == "english") msg.lang = "en-US";
+	else if (curCourse == "japan") msg.lang = "ja-JP";
+	else if (curCourse == "korean") msg.lang = "ko-KR";
+	// alert(msg.lang);
 	window.speechSynthesis.speak(msg);
 }
 

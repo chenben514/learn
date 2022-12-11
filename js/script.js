@@ -771,31 +771,43 @@ function getQuestions() {
 			(curQuizType == "spell" && singQuesArr[0].includes("["))
 		) {
 			var tmpQues = singQuesArr[0];
-			var tmpStart = tmpQues.indexOf("[");
-			var tmpEnd = tmpQues.indexOf("]");
+			question.question = '<span style="color:blue;font-size:20px;">';
+			question.answer = "";
+			while (tmpQues.includes("[")) {
+				var tmpStart = tmpQues.indexOf("[");
+				var tmpEnd = tmpQues.indexOf("]");
+				var tmpNewQues;
 
-			question.question =
-				'<span style="color:blue;font-size:20px;">' +
-				tmpQues.substr(0, tmpStart) +
-				"[";
+				question.question =
+					question.question + tmpQues.substr(0, tmpStart) + "[";
 
-			for (var z = 0; z < tmpEnd - tmpStart - 1; z++) {
-				if (tmpQues.substr(tmpStart + z + 1, 1) == " ")
-					question.question = question.question + "_";
-				else question.question = question.question + "X";
+				for (var z = 0; z < tmpEnd - tmpStart - 1; z++) {
+					if (tmpQues.substr(tmpStart + z + 1, 1) == " ")
+						question.question = question.question + "_";
+					else question.question = question.question + "X";
+				}
+				question.question = question.question + "]";
+				if (question.answer.length > 0) question.answer += " / ";
+				question.answer =
+					question.answer + tmpQues.substr(tmpStart + 1, tmpEnd - tmpStart - 1);
+
+				if (tmpQues.length > tmpEnd) {
+					var tmpNewQues = tmpQues.substr(tmpEnd + 1, tmpQues.length - tmpEnd);
+					if (tmpNewQues.includes("[")) {
+						tmpQues = tmpNewQues;
+					} else {
+						question.question = question.question + tmpNewQues;
+						tmpQues = "";
+					}
+				} else tmpQues = "";
+				question.quizType = "spell";
 			}
-
 			question.question =
 				question.question +
-				"]" +
-				tmpQues.substr(tmpEnd + 1, tmpQues.length - tmpEnd - 1) +
 				"</span> : " +
 				'<span style="color:grey;font-size:20px;">' +
 				singQuesArr[1] +
 				"</span>";
-
-			question.quizType = "spell";
-			question.answer = tmpQues.substr(tmpStart + 1, tmpEnd - tmpStart - 1);
 
 			if (curQuizType.includes("conversation")) {
 				question.quizType = "audio";
@@ -863,11 +875,20 @@ function UrlExists(url) {
 }
 
 function confirmClick() {
-	let inputAnswer = document.querySelector(".direct_input").value.toLowerCase();
+	let inputAnswer = "";
 	let correctAnswer = "";
-	inputAnswer = inputAnswer.trim();
 	document.querySelector("#confirmButton").disabled = "true";
 	if (curQuesType === "direct_input") {
+		var ansCnt = questions[que_count].answer.split("/").length;
+		for (var j = 0; j < ansCnt; j++) {
+			if (j > 0) inputAnswer = inputAnswer + " / ";
+			inputAnswer =
+				inputAnswer +
+				document
+					.querySelector("#direct_input" + j.toString())
+					.value.toLowerCase()
+					.trim();
+		}
 		correctAnswer = questions[que_count].answer.toString().toLowerCase();
 	} else {
 		correctAnswer = questions[que_count].question
@@ -876,6 +897,7 @@ function confirmClick() {
 			.replace(".mp3", "");
 	}
 	userInputAns = inputAnswer;
+
 	if (inputAnswer === correctAnswer || inputAnswer == "qqq")
 		directSelected("correct", correctAnswer);
 	else directSelected("incorrect", correctAnswer);
@@ -918,10 +940,17 @@ function showQuestions(index) {
 		questions[index].quizType == "audio"
 	) {
 		curStatus = "spell";
-		let answer_target =
-			'<div><input type="text" class="direct_input" name="direct_input" id="direct_input" value="" placeholder="輸入答案" style="width:40%;height:40px;font-size:20px;padding:10px;">';
+		var ansCnt = questions[index].answer.split("/").length;
+		let answer_target = "";
+		for (var j = 0; j < ansCnt; j++) {
+			answer_target =
+				answer_target +
+				'<span><input type="text" class="direct_input" name="direct_input" id="direct_input' +
+				j.toString() +
+				'" value="" placeholder="輸入答案" style="width:15%;height:40px;font-size:20px;padding:10px;margin:5px"></span>';
+		}
 		answer_target +=
-			"<span> <button id='confirmButton' onclick='confirmClick()' style='width:70px;height:40px;' >確認</button></span> </div>";
+			"<span> <button id='confirmButton' onclick='confirmClick()' style='width:70px;height:40px;' >確認</button></span> ";
 		curQuesType = "direct_input";
 		if (questions[index].quizType == "audio") {
 			// if (questions[index].option1 == null) {
@@ -972,7 +1001,12 @@ function directSelected(userAns, correctAns) {
 		//if user selected option is equal to array's correct answer
 		userScore += 1; //upgrading score value with 1
 		if (curQuesType === "direct_input") {
-			document.querySelector(".direct_input").style.backgroundColor = "green";
+			var ansCnt = correctAns.split("/").length;
+			for (var j = 0; j < ansCnt; j++) {
+				document.querySelector(
+					"#direct_input" + j.toString()
+				).style.backgroundColor = "green";
+			}
 		}
 		keepRightAnswer();
 
