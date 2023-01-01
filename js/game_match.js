@@ -30,6 +30,9 @@ var counter;
 var curLevelIdx = 0;
 var startSecond;
 var nowSecond;
+let matchQuesType = "";
+let imagePos = "";
+let shuffleArr = [];
 
 function shuffle(array) {
 	for (let i = array.length - 1; i > 0; i--) {
@@ -52,21 +55,31 @@ function pressCard() {
 		document.getElementById(this.id).classList.add("card_ok"); //show quiz box;
 		var pressID = this.id.substring(4, this.id.length);
 
-		var msg = new SpeechSynthesisUtterance();
+		var audioName =
+			"./data/music/" +
+			imagePos +
+			"/" +
+			curCourse +
+			"/" +
+			quesArr[pressID].answer +
+			".mp3";
+		var audio = new Audio(audioName);
+		audio.play();
+		// var msg = new SpeechSynthesisUtterance();
 
 		// Set the text.
-		msg.text = quesArr[pressID].answer;
+		// msg.text = quesArr[pressID].answer;
 
 		// Set the attributes.
-		msg.volume = 1;
-		msg.rate = 1;
-		msg.pitch = 1;
-		if (curCourse == "chinese") msg.lang = "zh-CN";
-		else if (curCourse == "english") msg.lang = "en-US";
-		else if (curCourse == "japan") msg.lang = "ja-JP";
-		else if (curCourse == "korean") msg.lang = "ko-KR";
+		// msg.volume = 1;
+		// msg.rate = 1;
+		// msg.pitch = 1;
+		// if (curCourse == "chinese") msg.lang = "zh-CN";
+		// else if (curCourse == "english") msg.lang = "en-US";
+		// else if (curCourse == "japan") msg.lang = "ja-JP";
+		// else if (curCourse == "korean") msg.lang = "ko-KR";
 
-		window.speechSynthesis.speak(msg);
+		// window.speechSynthesis.speak(msg);
 	} else {
 		if (this.id == "card" + nowOrder) {
 			document.getElementById(this.id).classList.add("card_ok"); //show quiz box;
@@ -91,7 +104,17 @@ function pressCardup() {
 			prevTimer = quesTimer;
 			game_match(nowQuiz);
 			var target = document.getElementById("nowOrder");
-			target.innerText = "你花了 " + prevTimer + " 秒完成";
+			target.innerText = "完成配對游戲，你花了 " + prevTimer + " 秒完成";
+
+			var msg = new SpeechSynthesisUtterance();
+
+			msg.text = target.innerText;
+			msg.volume = 1;
+			msg.rate = 1;
+			msg.pitch = 1;
+			msg.lang = "zh-CN";
+			window.speechSynthesis.speak(msg);
+
 			return;
 		}
 		speakAnswer();
@@ -192,7 +215,8 @@ function game_match(curQuiz) {
 			Math.round(windowHeight / colLen),
 			Math.round(windowWidth / colLen)
 		);
-	// cardWidth = Math.round((gameHeight - 300) / colLen);
+
+	cardWidth = Math.round(cardWidth);
 
 	fontWidth = cardWidth * 0.5;
 
@@ -208,7 +232,7 @@ function showCard() {
 
 	tmpResult = "<table id='game_table' class='table-top'>";
 
-	var shuffleArr = [];
+	shuffleArr = [];
 
 	for (var i = 0; i < quesCnt; i++) {
 		shuffleArr.push(i);
@@ -223,9 +247,10 @@ function showCard() {
 			tmpResult += cardWidth;
 			tmpResult += "px;height:";
 			tmpResult += cardWidth;
-			tmpResult += "px;font-size:";
-			tmpResult += fontWidth;
-			tmpResult += "px'";
+			tmpResult += "px;'";
+			//tmpResult += "font-size:";
+			//tmpResult += fontWidth;
+			//tmpResult += "px'";
 			if (nowCnt < quesCnt) {
 				tmpResult += " id='card";
 				tmpResult += shuffleArr[nowCnt].toString();
@@ -233,7 +258,25 @@ function showCard() {
 			}
 			tmpResult += ">";
 			if (nowCnt < quesCnt) {
-				tmpResult += quesArr[shuffleArr[nowCnt]].question;
+				if ((matchQuesType = "image")) {
+					var imageName =
+						"./data/image/" +
+						imagePos +
+						"/" +
+						quesArr[shuffleArr[nowCnt]].question +
+						".jpg";
+					var imgContent =
+						//'<figure style="width:70%; height:70%;">' +
+						'<img style="width:100%; height:100%; object-fit:fill;" ' +
+						'  src="' +
+						imageName +
+						'">';
+					//'</figure>';
+
+					tmpResult += imgContent;
+				} else {
+					tmpResult += quesArr[shuffleArr[nowCnt]].question;
+				}
 			}
 
 			tmpResult += "</td>";
@@ -254,22 +297,29 @@ function showCard() {
 }
 
 function speakAnswer() {
-	var msg = new SpeechSynthesisUtterance();
+	var audioName =
+		"./data/music/" +
+		imagePos +
+		"/" +
+		curCourse +
+		"/" +
+		quesArr[nowOrder].answer +
+		".mp3";
+	var audio = new Audio(audioName);
+	audio.play();
+	// var msg = new SpeechSynthesisUtterance();
 
-	// Set the text.
-	msg.text = quesArr[nowOrder].answer;
-	// alert(msg.text);
+	// msg.text = quesArr[nowOrder].answer;
 
-	// Set the attributes.
-	msg.volume = 1;
-	msg.rate = 1;
-	msg.pitch = 1;
-	if (curCourse == "chinese") msg.lang = "zh-CN";
-	else if (curCourse == "english") msg.lang = "en-US";
-	else if (curCourse == "japan") msg.lang = "ja-JP";
-	else if (curCourse == "korean") msg.lang = "ko-KR";
+	// msg.volume = 1;
+	// msg.rate = 1;
+	// msg.pitch = 1;
+	// if (curCourse == "chinese") msg.lang = "zh-CN";
+	// else if (curCourse == "english") msg.lang = "en-US";
+	// else if (curCourse == "japan") msg.lang = "ja-JP";
+	// else if (curCourse == "korean") msg.lang = "ko-KR";
 	// alert(msg.lang);
-	window.speechSynthesis.speak(msg);
+	// window.speechSynthesis.speak(msg);
 }
 
 function startTimer() {
@@ -308,13 +358,17 @@ function parseCsv(filename) {
 	tmpCnt = tmpArr.length;
 
 	quesArr = [];
-	for (var i = 0; i < tmpCnt; i++) {
+	matchQuesType = "";
+	if (tmpArr[0].includes("image")) {
+		matchQuesType = "image";
+		imagePos = tmpArr[0].split(":")[1];
+	}
+	for (var i = 1; i < tmpCnt; i++) {
 		let question = new Question();
 		question.numb = i;
-		var tmpArr2 = tmpArr[i].split("\t");
-		if (tmpArr2.length > 1) {
-			question.question = tmpArr2[0];
-			question.answer = tmpArr2[1];
+		if (tmpArr[i].length > 1) {
+			question.question = tmpArr[i];
+			question.answer = tmpArr[i];
 			quesArr.push(question);
 		}
 	}
