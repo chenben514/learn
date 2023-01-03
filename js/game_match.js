@@ -57,9 +57,9 @@ function pressCard() {
 
 		var audioName =
 			"./data/music/" +
-			imagePos +
-			"/" +
 			curCourse +
+			"/" +
+			imagePos +
 			"/" +
 			quesArr[pressID].answer +
 			".mp3";
@@ -210,7 +210,7 @@ function game_match(curQuiz) {
 	}
 	rowLen = quesCnt / colLen;
 	cardWidth =
-		0.7 *
+		0.65 *
 		Math.min(
 			Math.round(windowHeight / colLen),
 			Math.round(windowWidth / colLen)
@@ -299,9 +299,9 @@ function showCard() {
 function speakAnswer() {
 	var audioName =
 		"./data/music/" +
-		imagePos +
-		"/" +
 		curCourse +
+		"/" +
+		imagePos +
 		"/" +
 		quesArr[nowOrder].answer +
 		".mp3";

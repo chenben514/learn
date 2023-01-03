@@ -33,6 +33,7 @@ const quiz_box = document.querySelector(".quiz_box");
 const result_box = document.querySelector(".result_box");
 const option_list = document.querySelector(".option_list");
 const select_list = document.querySelector(".select_list");
+// const correct_list = document.querySelector(".correct_list");
 const time_line = document.querySelector("header .time_line");
 const timeText = document.querySelector(".timer .time_left_txt");
 const timeCount = document.querySelector(".timer .timer_sec");
@@ -123,6 +124,8 @@ let oldSearchValue = "";
 
 //7.1. Set Selected
 let curSelected = "";
+
+let ansList = [];
 
 function showSearch() {
 	if (oldSearchValue != search_input.value) {
@@ -484,7 +487,7 @@ function startWrong() {
 
 	var quesList = [];
 	let quesCnt = quesArr.length;
-	let ansList = [];
+	ansList = [];
 	let tmpCnt = 0;
 	for (let k = 0; k < quesCnt; k++) {
 		if (quesArr[k].length < 2) continue;
@@ -844,6 +847,12 @@ function getQuestions() {
 			question.quizType = "audio";
 			quesTimer = 60;
 			question.option1 = singQuesArr[1];
+		} else if (curQuizType == "rearrange") {
+			question.question = singQuesArr[0];
+			question.answer = singQuesArr[0];
+			question.quizType = "rearrange";
+			quesTimer = 60;
+			question.option1 = singQuesArr[1];
 		} else {
 			/* for choose  */
 			question.question = singQuesArr[0];
@@ -935,6 +944,9 @@ function showQuestions(index) {
 		"</span></div>";
 	let confirm_button = "";
 
+	// correct_list.innerHTML = "";
+	select_list.innerHTML = "";
+
 	if (
 		questions[index].quizType == "spell" ||
 		questions[index].quizType == "audio"
@@ -972,6 +984,80 @@ function showQuestions(index) {
 
 		document.querySelector(".direct_input").focus();
 		document.removeEventListener("keydown", keydown);
+	} else if (questions[index].quizType == "rearrange") {
+		let answer_target = '<div class="option">';
+		let answer_option = '<div class="answer" "option">';
+		const sentence = questions[index].answer;
+		// let wordArr = sentence.split(/([,.\s])/);
+		let wordArr = sentence.split("");
+		let option_tag;
+
+		let finalWordArr = [];
+		for (const word of wordArr) {
+			if (word !== " " && word !== "") {
+				finalWordArr.push(word);
+			}
+		}
+		let i = 0;
+		for (const word of finalWordArr) {
+			answer_target += '<span class="target';
+			answer_target += " target" + String(i) + '"';
+			answer_target += ">&nbsp;</span>";
+			questions[index].direct_answers[i++] = word;
+		}
+
+		ansList = [];
+		while (ansList.length < finalWordArr.length) {
+			var r = Math.floor(Math.random() * finalWordArr.length);
+			if (ansList.indexOf(r) === -1) ansList.push(r);
+		}
+		console.log(ansList);
+		for (i = 0; i < finalWordArr.length; i++) {
+			answer_option += '<span class="my_option"';
+			answer_option += ' class="select' + i + '" >';
+			answer_option += finalWordArr[ansList[i]];
+			answer_option += "</span>";
+		}
+		console.log(answer_option);
+		answer_option += "</div>";
+		option_list.innerHTML = answer_target;
+		select_list.innerHTML = answer_option;
+		// correct_list.innerHTML = "";
+		console.log(answer_option);
+
+		for (i = 0; i < finalWordArr.length; i++) {
+			answer_option += '<span class="my_option">';
+			answer_option += finalWordArr[ansList[i]];
+			answer_option += "</span>";
+		}
+
+		const answer_options = document.querySelectorAll(".my_option");
+		let answer_result = true;
+		for (let i = 0; i < answer_options.length; i++) {
+			answer_options[i].addEventListener("click", function () {
+				let tmpClassName = ".target" + String(nowCursorFocus);
+				document.querySelector(tmpClassName).innerText = this.innerText;
+				nowCursorFocus++;
+				if (nowCursorFocus === answer_options.length) {
+					for (let j = 0; j < answer_options.length; j++) {
+						if (
+							document.querySelector(".target" + String(j)).innerText !==
+							questions[index].direct_answers[j]
+						) {
+							answer_result = false;
+						}
+					}
+					if (answer_result === true) directSelected("correct");
+					else directSelected("incorrect");
+				}
+			});
+		}
+		const option = option_list.querySelectorAll(".option");
+
+		// set onclick attribute to all available options
+		for (i = 0; i < option.length; i++) {
+			option[i].setAttribute("onclick", "optionSelected(this)");
+		}
 	} else {
 		curStatus = "choose";
 		que_text.innerHTML = que_tag; //adding new span tag inside que_tag
