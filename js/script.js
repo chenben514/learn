@@ -1633,8 +1633,10 @@ function setSubtitles(contents) {
 							bSubtitle4 = true;
 						}
 					} else {
-						subtitles[subTitleCnt - 1].content =
-							subtitles[subTitleCnt - 1].content + "\n" + quesArr[k];
+						if (subtitles[subTitleCnt - 1].content.length > 0) {
+							subtitles[subTitleCnt - 1].content += "\n";
+						}
+						subtitles[subTitleCnt - 1].content += quesArr[k];
 					}
 					// if (quesArr[k].includes("[[") && quesArr[k].includes("]]")) {
 					// 	bHasHighlight = true;
@@ -1796,7 +1798,9 @@ function showTable(isMedia) {
 		c.onkeyup = function () {
 			changeRow(this);
 		};
+		//alert(subtitles[k].content);
 		c.innerHTML = highlight_start(k, subtitles[k].content);
+		//alert(c.innerHTML);
 
 		//5.句子2
 		if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {

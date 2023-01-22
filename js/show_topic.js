@@ -114,18 +114,17 @@ function getTopic() {
 					// alert(allTopicArr);
 					continue;
 				}
-				if (!allSingTopicArr[2].includes("=")) {
-					alert("lack of = error :", allSingTopicArr[2]);
+
+				var allVideoId;
+				if (allSingTopicArr[2].includes("=")) {
+					allVideoId = allSingTopicArr[2]
+						.split("=")[1]
+						.split("&")[0]
+						.replace(/_/g, "&")
+						.replace(/-/g, "~");
+				} else {
+					allVideoId = allSingTopicArr[2];
 				}
-				var eqlVideoId = allSingTopicArr[2].split("=")[1];
-				if (eqlVideoId == undefined) {
-					alert("video url error:" + allTopicArr[j]);
-				}
-				var allVideoId = allSingTopicArr[2]
-					.split("=")[1]
-					.split("&")[0]
-					.replace(/_/g, "&")
-					.replace(/-/g, "~");
 				topic.small_subjs.push("all@" + allVideoId + "@" + allSingTopicArr[0]);
 
 				if (
@@ -411,13 +410,12 @@ function showTopic() {
 			var tmpMessage = "";
 
 			var k;
-
 			if (
 				curProcCnt < topics[i].open_course_cnt &&
 				topics[i].main_subj != "game" &&
 				topics[i].main_subj != "advanced" &&
-				topics[i].main_subj != "video" &&
-				topics[i].quiz_type.includes("conversation")
+				topics[i].main_subj != "video" //&&
+				//topics[i].quiz_type.includes("conversation")
 			) {
 				var curClassID;
 
@@ -440,7 +438,6 @@ function showTopic() {
 					'id="' +
 					curClassID +
 					'_star" >';
-
 				tmpMessage += showStar(tmpLevel);
 
 				tmpMessage += "</span>";

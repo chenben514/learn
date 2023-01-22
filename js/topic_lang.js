@@ -2,7 +2,7 @@ let curWeb = "learn";
 let defaultCourse = "korean";
 
 let courseSubjList = [
-	{ course: "chinese", subj: "word,video,match" },
+	{ course: "chinese", subj: "word,idiom,video,match" },
 	{
 		course: "english",
 		subj: "word,spell,grammer,listen,video,business,person,match",
@@ -30,6 +30,7 @@ let defaultCourseSubjMap = new Map([
 let subjMap = new Map([
 	["word", "字彙"],
 	["video", "影片"],
+	["idiom", "成語"],
 	["match", "配對"],
 	["person", "創作"],
 	["business", "商業"],
