@@ -2055,7 +2055,10 @@ function startAudio(curQuiz) {
 	// When the user clicks on <span> (x), close the modal
 	modal.style.display = "block";
 
+	var videoID = curQuiz.split("@")[1];
+
 	var curQuizArr = curQuiz.split("-");
+
 	var curTopicArr = curQuizArr[1].split("_");
 
 	var base_filename, audio_filename, selFile, txtFileName;
@@ -2096,7 +2099,12 @@ function startAudio(curQuiz) {
 		parseCsv(base_left_filename + "/all.csv");
 		var detailCnt = quesArr.length;
 		var r = Math.floor(Math.random() * detailCnt);
-		var videoId = quesArr[r].split("=")[1].split("&")[0].split(",")[0];
+		if (quesArr[r].includes("=")) {
+			videoId = quesArr[r].split("=")[1].split("&")[0].split(",")[0];
+		} else {
+			videoId = quesArr[r].split(",")[2];
+		}
+
 		youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoId;
 
 		for (var x = 0; x < quesArr.length; x++) {
@@ -2106,7 +2114,15 @@ function startAudio(curQuiz) {
 			let playlist = new Playlist();
 			playlist.numb = playlistCnt + 1;
 			playlist.content = quesArr[x].split(",")[1];
-			playlist.video_id = quesArr[x].split(",")[2].split("=")[1].split("&")[0];
+
+			if (quesArr[x].includes("=")) {
+				playlist.video_id = quesArr[x]
+					.split(",")[2]
+					.split("=")[1]
+					.split("&")[0];
+			} else {
+				playlist.video_id = quesArr[x].split(",")[2];
+			}
 			playlists.push(playlist);
 			playlistCnt++;
 		}
@@ -2118,7 +2134,8 @@ function startAudio(curQuiz) {
 		base_filename = base_left_filename + "/" + curTopicArr[3].split("@")[2];
 		subtitleMode = "SingleSrt";
 		readSubtitles(base_filename + ".srt");
-		youtube_url = "https://www.youtube-nocookie.com/watch?v=" + tmpID;
+		//tmpID = tmpID.replacee(/#/g, "_");
+		youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoID;
 	} else {
 		if (curQuizType.includes("conversation_lesson")) {
 			subtitleMode = "MD";
