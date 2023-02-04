@@ -2057,6 +2057,8 @@ function startAudio(curQuiz) {
 	modal.style.display = "block";
 
 	var videoID = curQuiz.split("@")[1];
+	videoID = videoID.replace(/_/g, "&").replace(/~/g, "-");
+	// alert(videoID);
 	var srtID = curQuiz.split("@")[2];
 
 	var curQuizArr = curQuiz.split("-");
@@ -2136,7 +2138,7 @@ function startAudio(curQuiz) {
 		base_filename = base_left_filename + "/" + srtID;
 		subtitleMode = "SingleSrt";
 		readSubtitles(base_filename + ".srt");
-		//tmpID = tmpID.replacee(/#/g, "_");
+		//tmpID = tmpID.replacee(/~/g, "_");
 		youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoID;
 	} else {
 		if (curQuizType.includes("conversation_lesson")) {
@@ -2222,7 +2224,7 @@ function startAudio(curQuiz) {
 		// 3. This function creates an <iframe> (and YouTube player)
 		//    after the API code downloads.
 		var videoId = youtube_url.split("=")[1].split("&")[0];
-
+		//alert(videoId);
 		window.YT.ready(function () {
 			player = new window.YT.Player("player-div", {
 				// height: YT_height,
