@@ -1484,6 +1484,7 @@ function readSubtitles(srtFile) {
 	// var displayName = read.responseText.replace(/’/g, "'");
 	// var quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
 	// youtube_url = quesArr[0];
+
 	setSubtitles(displayName);
 }
 
@@ -2056,6 +2057,7 @@ function startAudio(curQuiz) {
 	modal.style.display = "block";
 
 	var videoID = curQuiz.split("@")[1];
+	var srtID = curQuiz.split("@")[2];
 
 	var curQuizArr = curQuiz.split("-");
 
@@ -2131,7 +2133,7 @@ function startAudio(curQuiz) {
 			.split("@")[1]
 			.replace(/&/g, "_")
 			.replace(/~/g, "-");
-		base_filename = base_left_filename + "/" + curTopicArr[3].split("@")[2];
+		base_filename = base_left_filename + "/" + srtID;
 		subtitleMode = "SingleSrt";
 		readSubtitles(base_filename + ".srt");
 		//tmpID = tmpID.replacee(/#/g, "_");

@@ -5,12 +5,12 @@ let courseSubjList = [
 	{ course: "chinese", subj: "word,idiom,video,match" },
 	{
 		course: "english",
-		subj: "word,spell,grammer,listen,video,business,person,match",
+		subj: "word,spell,grammer,listen,video,business,person,story,match",
 	},
 	{ course: "japan", subj: "word,spell,video,news,match" },
 	{
 		course: "korean",
-		subj: "word,spell,listen,writing,grammer,video,news,match",
+		subj: "word,spell,listen,writing,grammer,video,news,match,story",
 	},
 	{ course: "cejk", subj: "speak,word,grammer,song" },
 	{ course: "computer", subj: "os,db,programming,data,devops,web" },
@@ -44,6 +44,7 @@ let subjMap = new Map([
 	["speak", "會話"],
 	["song", "歌曲"],
 	["graph", "圖型"],
+	["story", "故事"],
 	//電腦
 	["os", "OS"],
 	["db", "DB"],
