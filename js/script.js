@@ -2086,12 +2086,13 @@ function startAudio(curQuiz) {
 
 	// alert(curQuiz);
 	var videoID;
-	if (curQuiz.includes("Left@@@") || curQuiz.includes("all@@@")) {
+	if (curQuiz.includes("Left@@@") || curQuiz.includes("all@")) {
 		videoID = curQuiz.split("@")[1];
 	} else {
+		alert(curQuiz);
 		videoID = curQuiz.split("-")[1].split("_")[3];
 	}
-	// alert(videoID);
+
 	videoID = videoID.replace(/&/g, "_").replace(/~/g, "-");
 	var srtID = curQuiz.split("@")[2];
 
