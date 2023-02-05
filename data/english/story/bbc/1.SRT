@@ -1,248 +1,414 @@
 #Subtitle2
 1
 00:18,138 --> 00:24,453
-Milly sat under the apple tree and watched the rain clouds sweep over the hills. -- 
+Milly sat under the apple tree and watched the [rain clouds] sweep over [the hills].
+ -- 米莉坐在蘋果樹下，看著[雨雲]掠過[山丘]。
+
 2
 00:24,453 --> 00:27,265
-What a wet day! -- 
+What a [wet] day!
+ -- 多麼[潮濕]的一天！
+
 3
 00:27,265 --> 00:31,610
-She ate an apple and waited for the rain to stop. -- 
+She ate an apple and waited for the rain to stop.
+ -- 她吃了一個蘋果，等著雨停。
+
 4
 00:31,610 --> 00:33,651
-Soon it did. -- 
+Soon it did.
+ -- 很快就成功了。
+
 5
 00:33,651 --> 00:39,946
-The sky turned blue again, and the Sun shone, warm and golden. -- 
+The sky [turned blue] again, and the Sun [shone], warm and golden.
+ -- 天空又[變藍]了，太陽[照耀]著，溫暖而金色。
+
 6
 00:39,946 --> 00:43,553
-Then she saw the rainbow.  -- 
+Then she saw the rainbow. 
+ -- 然後她看到了彩虹。
+
 7
 00:43,553 --> 00:49,116
-It began as an explosion of light, high in the clouds. -- 
+It began as an [explosion] of light, high in the clouds.
+ -- 它開始時，就像光線在高處雲層[爆炸]。
+
 8
 00:49,116 --> 00:57,240
-The sky filled with dazzling colours: blue, orange, green and purple. -- 
+The sky filled with [dazzling colors]: blue, orange, green and purple.
+ -- 天空充滿了[耀眼的色彩]：藍色、橙色、綠色和紫色。
+
 9
 00:57,240 --> 01:03,488
-Then both ends of the rainbow began to fall to Earth... -- 
+Then both ends of the rainbow began to fall to Earth...
+ -- 然後彩虹的兩端開始落到地球上……
+
 10
 01:03,488 --> 01:08,263
-The rainbow landed in the garden. -- 
+The rainbow landed in the garden.
+ -- 彩虹降落在花園裡。
+
 11
 01:08,263 --> 01:14,95
-‘Wow!’ Milly went closer and touched the rainbow.  -- 
+‘Wow!’ Milly went closer and touched the rainbow. 
+ -- “哇！”米莉走近，摸了摸彩虹。
+
 12
 01:14,95 --> 01:17,444
-She felt nothing, just air. -- 
+She felt nothing, just air.
+ -- 她什麼都感覺不到，只有空氣。
+
 13
 01:17,444 --> 01:21,832
-But the colours moved beneath her fingers. -- 
+But the colors moved [beneath] her fingers.
+ -- 但是顏色在她的手指[下]移動。
+
 14
 01:21,832 --> 01:29,133
-When she looked up, the rainbow seemed to be stretching on and on into space. -- 
+When she looked up, the rainbow seemed to be [stretching] on and on into space.
+ -- 當她抬頭看時，彩虹似乎一直[延伸]到太空中。
+
 15
 01:29,133 --> 01:35,139
-'What would happen if I stepped inside it?' she wondered. -- 
+'What would happen if I [stepped inside] it?' she wondered.
+ -- “如果我[走進去]會發生什麼？” 她想知道。
+
 16
 01:35,139 --> 01:37,857
- There was only one way to find out... -- 
+There was only one way to find out...
+ -- 只有一種方法可以查明...
+
 17
 01:37,857 --> 01:40,146
-She stepped inside. -- 
+She stepped inside.
+ -- 她走進去。
+
 18
 01:40,146 --> 01:44,246
-It was beautiful!  -- 
+It was beautiful! 
+ -- 它過去挺美！
+
 19
 01:44,246 --> 01:46,463
-And very quiet.  -- 
+And very quiet. 
+ -- 而且很安靜。
+
 20
 01:46,463 --> 01:48,426
-Milly couldn’t hear anything. -- 
+Milly couldn’t hear anything.
+ -- 米莉什麼也聽不見。
+
 21
 01:48,426 --> 01:50,567
-She looked up.  -- 
+She [looked up]. 
+ -- 她[抬起頭]。
+
 22
 01:50,567 --> 01:53,507
-The rainbow seemed to go on forever... -- 
+The rainbow seemed to go on forever...
+ -- 彩虹似乎永遠持續下去……
+
 23
 01:53,507 --> 01:57,737
-WHOOSH! Milly was sucked up by the rainbow.  -- 
+WHOOSH! Milly was [sucked up] by the rainbow. 
+ -- 嗖！ 米莉被彩虹[吸了上去]。
+
 24
 01:57,737 --> 01:59,801
-It was a tunnel of light.  -- 
+It was a [tunnel] of light. 
+ -- 那是一條光之[隧道]。
+
 25
 01:59,801 --> 02:03,327
-She whizzed along like a button up a vacuum cleaner.  -- 
+She [whizzed along] like a button up a [vacuum cleaner]. 
+ -- 她像按下[吸塵器]上的按鈕後一樣，[呼嘯而過]。
+
 26
 02:03,327 --> 02:06,234
-Wind whistled past her ears.  -- 
+Wind [whistled past] her ears. 
+ -- 風從她耳邊[呼嘯而過]。
+
 27
 02:06,234 --> 02:14,233
-She tumbled over and over but didn’t hurt herself: she was carried on a soft cushion of air.  -- 
+She [tumbled] over and over but didn’t hurt herself: she was carried on a [soft cushion] of air. 
+ -- 她一遍又一遍地[翻滾]，但沒有傷到自己：她被一個[柔軟的氣墊]支撐著。
+
 28
 02:14,233 --> 02:19,134
- Up and up and up she went, so fast. -- 
+Up and up and up she went, so fast.
+ -- 她走得越來越快，越來越快。
+
 29
 02:19,134 --> 02:22,153
-But rainbows go up... -- 
+But rainbows go up...
+ -- 但彩虹升起...
+
 30
 02:22,153 --> 02:24,928
-and rainbows come down.  -- 
+and rainbows come down. 
+ -- 彩虹降臨。
+
 31
 02:24,928 --> 02:29,446
-Soon she was falling down the far side of the rainbow.  -- 
+Soon she was falling down the far side of the rainbow. 
+ -- 很快她就從彩虹的另一邊掉下來了。
+
 32
 02:29,446 --> 02:31,627
-She could see green below. -- 
+She could see green below.
+ -- 她可以看到下面的綠色。
+
 33
 02:31,627 --> 02:36,369
-Green grass, rushing up to meet her, faster and faster... -- 
+Green grass, rushing up to meet her, faster and faster...
+ -- 綠草，迎面撲來，越來越快……
+
 34
 02:36,369 --> 02:41,760
-BUMP! She landed hard, but nothing was broken. -- 
+BUMP! She landed hard, but nothing was broken.
+ -- 撞！ 她重重地落地，但沒有損壞任何東西。
+
 35
 02:41,760 --> 02:44,155
-Milly stood up.  -- 
+Milly stood up. 
+ -- 米莉站了起來。
+
 36
 02:44,155 --> 02:49,324
-She was on the other side of the valley, standing on a steep green hill. -- 
+She was on the other side of the valley, standing on a [steep] green hill.
+ -- 她在山谷的另一邊，站在[陡峭的]青山上。
+
 37
 02:49,324 --> 02:52,76
-She could see her house, far away. -- 
+She could see her house, far away.
+ -- 她可以看到她的房子，很遠。
+
 38
 02:52,76 --> 02:56,704
-It was like a tiny white box with a rainbow in the garden. -- 
+It was like a tiny white box with a rainbow in the garden.
+ -- 它就像一個白色的小盒子，花園裡有彩虹。
+
 39
 02:56,704 --> 03:02,465
-Everything was calm and peaceful and very lovely... -- 
+Everything was [calm and peaceful] and very lovely...
+ -- 一切都[平靜祥和]，非常可愛……
+
 40
 03:02,465 --> 03:10,133
-WHOOSH! Suddenly she was shooting back through the rainbow, faster than a firework. -- 
+WHOOSH! Suddenly she was shooting back through the rainbow, faster than a firework.
+ -- 嗖！ 突然間，她從彩虹中被射了回來，比煙火還快。
+
 41
 03:10,133 --> 03:14,957
-Red, blue, yellow ... stripes of light, flashing by. -- 
+Red, blue, yellow ... stripes of light, flashing by.
+ -- 紅、藍、黃……一道道光紋，一閃而過。
+
 42
 03:14,957 --> 03:21,372
-Up, up, up she went and down, down, down...  -- 
+Up, up, up she went and down, down, down... 
+ -- 她往上，往上，往上，往下，往下，往下……
+
 43
 03:21,372 --> 03:26,345
-BUMP. She landed back in her own garden. -- 
+BUMP. She landed back in her own garden.
+ -- 碰。 她回到了自己的花園。
+
 44
 03:26,345 --> 03:29,790
-'Oww...!’ Milly groaned.  -- 
+'Oww...!’ Milly [groaned]. 
+ -- “哇……！”米莉[呻吟]道。
+
 45
 03:29,790 --> 03:33,268
-‘I am going to be so bruised tomorrow.' -- 
+‘I am going to be so [bruised] tomorrow.'
+ -- “我明天會[瘀青]。”
+
 46
 03:33,268 --> 03:35,846
-Then she had a thought... -- 
+Then she had a thought...
+ -- 然後她有了一個想法……
+
 47
 03:35,846 --> 03:41,120
-'GOLD! There is always gold at the end of a rainbow!' -- 
+'GOLD! There is always gold at the end of a rainbow!'
+ -- '金子！ 彩虹盡頭總有黃金！
+
 48
 03:41,120 --> 03:45,139
-She dropped to her knees and started to dig.  -- 
+She dropped to her knees and started to [dig].
+ -- 她跪下來開始[挖]。
+
 49
 03:45,139 --> 03:51,669
-The earth flew out behind her, covering the grass with stones and soil. -- 
+The earth flew out behind her, covering the grass with stones and soil.
+ -- 泥土在她身後飛出，草地上佈滿了用石頭和泥土。
+
 50
 03:51,669 --> 03:57,754
-'Come on, come on! It must be here somewhere...' -- 
+'Come on, come on! It must be here somewhere...'
+ -- '好啦好啦！ 它一定在這兒的某個地方……”
+
 51
 03:57,754 --> 04:00,840
-She went deeper and deeper.  -- 
+She went deeper and deeper. 
+ -- 她越挖越深。
+
 52
 04:00,840 --> 04:06,352
-Then she saw something shiny, under her fingertips. -- 
+Then she saw something [shiny], under her fingertips.
+ -- 然後她看到指尖下有什麼[閃閃發亮]的東西。
+
 53
 04:06,352 --> 04:07,860
-She pulled it out. -- 
+She pulled it out.
+ -- 她把它拉了出來。
+
 54
 04:07,860 --> 04:10,187
-'Gold...' -- 
+'Gold...'
+ -- '金子...'
+
 55
 04:10,187 --> 04:14,536
-Milly stared at it, breathless with excitement. -- 
+Milly [stared at] it, [breathless with excitement].
+ -- 米莉[盯]著它，[興奮得喘不過氣來]。
+
 56
 04:14,536 --> 04:20,821
- It was a golden coin, bigger than usual money and much heavier.  -- 
+ It was a [golden coin], bigger than usual money and much heavier. 
+ -- 那是一枚[金幣]，比平常的錢要大，也重得多。
+
 57
 04:20,821 --> 04:22,565
-She rubbed it clean.  -- 
+She [rubbed it clean]. 
+ -- 她[把它擦乾淨]。
+
 58
 04:22,565 --> 04:29,706
-There were words written on it: Make a wish before the rainbow fades. -- 
+There were words written on it: [Make a wish] before the rainbow [fades].
+ -- 上面寫著：在彩虹[消失]之前[許個願]。
+
 59
 04:29,706 --> 04:37,297
-'Oh wow!' she said. 'This is amazing! A wish!' -- 
+'Oh wow!' she said. 'This is [amazing]! A wish!'
+ -- “哦哇！” 她說。 '這真太[了不起]了！ 一個心願！'
+
 60
 04:37,297 --> 04:43,113
-Her head began to fill with ideas, everything she could wish for. -- 
+Her head began to fill with ideas, everything she could wish for.
+ -- 她的腦子裡開始充滿了想法，她所希望的一切。
+
 61
 04:43,113 --> 04:46,138
-But then she saw something.  -- 
+But then she saw something. 
+ -- 但隨後她看到了什麼。
+
 62
 04:46,138 --> 04:49,264
-The rainbow was starting to fade. -- 
+The rainbow was starting to fade.
+ -- 彩虹開始褪色。
+
 63
 04:49,264 --> 04:52,303
-It was going thin at the edges. -- 
+It was going thin at the edges.
+ -- 它的邊緣變薄了。
+
 64
 04:52,303 --> 04:57,837
-'No! I haven't made up my mind! Please - wait!' -- 
+'No! I haven't made up my mind! Please - wait!'
+ -- '不！ 我還沒想好！ 請稍等！'
+
 65
 04:57,837 --> 05:00,658
-But the rainbow didn't wait. -- 
+But the rainbow didn't wait.
+ -- 但是彩虹沒有等。
+
 66
 05:00,658 --> 05:06,180
-It was fading. Going away, and taking her wish with it. -- 
+It was fading. Going away, and taking her wish with it.
+ -- 它正在褪色。 離開，並帶著她的願望。
+
 67
 05:06,180 --> 05:10,676
-'No! I’ll make my wish soon. Just a moment, please!' -- 
+'No! I’ll make my wish soon. Just a moment, please!'
+ -- '不！ 我很快就會許願完成。 請稍等片刻！'
+
 68
 05:10,676 --> 05:14,34
-But still the rainbow was fading.  -- 
+But still the rainbow was fading. 
+ -- 但彩虹仍在消退。
+
 69
 05:14,34 --> 05:17,491
-The golden coin was getting hot in her hand. -- 
+The golden coin was getting hot in her hand.
+ -- 金幣在她手中越來越燙。
+
 70
 05:17,491 --> 05:22,242
-'Ohh....! Choose... choose... Yes. YES! I have it!' -- 
+'Ohh....! Choose... choose... Yes. YES! I have it!'
+ -- 啊……！ 選擇……選擇……是的。 是的！ 我有它！
+
 71
 05:22,242 --> 05:27,652
-Milly closed her eyes and made her wish and VOOMF! -- 
+Milly closed her eyes and made her wish and VOOMF!
+ -- 米莉閉上眼睛許下了她的願望，VOOMF！
+
 72
 05:27,652 --> 05:32,224
-The rainbow disappeared, and so did the golden coin. -- 
+The rainbow disappeared, and so did the golden coin.
+ -- 彩虹消失了，金幣也消失了。
+
 73
 05:32,224 --> 05:35,668
-Milly hardly dared to move. -- 
+Milly hardly dared to move.
+ -- 米莉幾乎不敢動彈。
+
 74
 05:35,668 --> 05:38,583
-Had her wish come true? -- 
+Had her wish come true?
+ -- 她的願望實現了嗎？
+
 75
 05:38,583 --> 05:40,45
-Maybe. -- 
+Maybe.
+ -- 或許。
+
 76
 05:40,45 --> 05:41,717
-She looked up.  -- 
+She looked up. 
+ -- 她抬起頭。
+
 77
 05:41,717 --> 05:44,299
-The sky was peacock blue. -- 
+The sky was peacock blue.
+ -- 天空是孔雀藍。
+
 78
 05:44,299 --> 05:48,215
-The Sun was golden, warm on her face. -- 
+The Sun was golden, warm on her face.
+ -- 陽光是金色的，溫暖地照在她的臉上。
+
 79
 05:48,215 --> 05:51,267
-Such a beautiful day. -- 
+Such a beautiful day.
+ -- 多麼美好的一天。
+
 80
 05:51,267 --> 05:54,423
-Such a beautiful world. -- 
+Such a beautiful world.
+ -- 如此美麗的世界。
+
 81
 05:54,423 --> 06:02,369
 'Even if the wish doesn't come true, I am a very lucky girl,' she said.
- -- 
+ -- “即使願望沒有實現，我也是一個非常幸運的女孩，”她說。
+
 82
 06:02,369 --> 06:06,347
-And she smiled. -- 
+And she smiled.
+ -- 她笑了。
+
+83
+06:06,347 --> 06:06,347
+ -- 

@@ -1,78 +1,153 @@
 #Subtitle2
-
 1
-00:00:00.129 --> 00:00:06.369
-how's it going pregnant man oh yeah too easy man&nbsp;don't know what all the fuss is about oh good&nbsp;&nbsp; -- 
+00:00,129 --> 00:06,369
+mom: how's it going [pregnant] man
+dad: oh yeah too easy man don't know [what all the fuss is about]
+ -- 媽：[懷孕]怎麼樣
+爸：哦耶 太簡單了，不知道有什麼好[大驚小怪]
+媽：好吧
 
 2
-00:00:06.369 --> 00:00:12.685
-well soon you'll start feeling the baby kicking&nbsp;oh no I'm sure that's not for a little while ow -- 
+00:06,369 --> 00:12,685
+mom: oh good, well soon you'll start feeling the baby kicking 
+dad: oh no I'm sure that's not for [a little while], ow
+ -- 媽：很快你就會開始感覺到寶寶在踢腿
+爸：哦，不，我確定這不會持續[一段時間], 噢...
 
 3
-00:00:12.970 --> 00:00:14.685
-kick kick kick -- 
+00:12,970 --> 00:14,685
+kick kick kick
+ -- 踢踢踢
 
 4
-00:00:14.685 --> 00:00:23.537
-oh you never forget that first kick okay that's a wrap kids come on unclip&nbsp; -- 
+00:14,685 --> 00:23,537
+mom: oh you never forget that [first kick]
+dad: okay that's a [wrap] kids come on unclip 
+ -- 媽：哦，你永遠不會忘記[第一腳]
+爸：好吧，這只是一個 [背巾], 孩子, 來幫忙[解開]
 
 5
-00:00:23.537 --> 00:00:26.109
-no not yet you haven't had the baby&nbsp; -- 
+00:23,537 --> 00:26,109
+bluey: no not yet you haven't had the baby 
+ -- 布麗：不，你還沒有生孩子
 
 6
-00:00:26.229 --> 00:00:32.769
-too bad how do you get this thing&nbsp;off you said if you're going to do&nbsp;&nbsp; -- 
+00:26,229 --> 00:34,464
+dad: too bad how do you get this thing off
+bluey: you said if you're going to do something, [do it properly]
+ -- 爸：太糟糕了，你怎麼把這東西弄下來
+布麗：你說如果你打算做某件事，就會[把它做對]
 
 7
-00:00:32.769 --> 00:00:38.955
-something do it properly ah that&nbsp;advice doesn't apply to me hello -- 
+00:34,464 --> 00:38,955
+dad: ah that [advice] doesn't apply to me bingo: hello
+ -- 爸：噢，那個[建議]不適用於我
+賓果：哈囉
 
 8
-00:00:38.955 --> 00:00:42.406
-he's having a baby -- 
+00:38,955 --> 00:42,406
+bluey: he's having a baby
+ -- 布麗：他有孩子了
 
 9
-00:00:42.539 --> 00:00:48.249
-what happens now what are you asking me for&nbsp;aren't you the midwife no I'm just a friend I&nbsp;&nbsp; -- 
+00:42,539 --> 00:48,249
+bluey: what happens now
+dad: what are you asking me for? aren't you the [midwife]
+bluey: no I'm just a friend 
+ -- 布麗：現在發生了什麼？
+爸：妳問我做什麼？妳不是助產士嗎？
+布麗：不，我只是一個朋友
 
 10
-00:00:48.249 --> 00:00:58.149
-work at a petrol station what I'm out well&nbsp;who's gonna deliver my baby I true blue is it me&nbsp;&nbsp; -- 
+00:48,249 --> 00:58,149
+bluey: I  work at a [petrol station]
+dad: what
+bingo: I'm coming out
+dad: well who's gonna [deliver my baby]
+ -- 布麗：我在[加油站]工作。
+爸：什麼？
+賓果：我要出來了。
+爸：好吧，誰要來[接生我的孩子]
 
 11
-00:00:58.149 --> 00:01:08.649
-and you yes is it mum and dad is it er lucky star can you give&nbsp;us a hand with something yeah no worries bluey&nbsp;&nbsp; -- 
+00:58,149 --> 01:08,649
+neighbor: true blue, is it me and you? is it mum and dad? is it...
+buley: er lucky star can you [give us a hand] with something
+neighbor: yeah [no worries] bluey  
+ -- 鄰居：我真的很憂鬱, 是我和你嗎？是媽媽和爸爸嗎？是... (註：John Williams 的 True Blue 歌詞）
+布麗：呃，幸運星，你能[幫我們]嗎
+鄰居：[不用擔心]，布麗
 
 12
-00:01:08.649 --> 00:01:13.509
-I didn't know this was the something lighten&nbsp;up pat but I don't know how to deliver a&nbsp;&nbsp; -- 
+01:08,649 --> 01:13,509
+I didn't know this was the something dad:[lighten up] pat
+neighbor: but I don't know how to deliver a baby
+ -- 鄰居：我不知道這是什麼東西
+爸：[放輕鬆], pat
+鄰居：但我不知道如何接生
 
 13
-00:01:13.509 --> 00:01:20.109
-baby I thought you grew up in a farm we&nbsp;grew sorghum dad the cricket started I'm&nbsp;&nbsp; -- 
+01:13,509 --> 01:20,109
+dad: I thought you [grew up] in a farm neighbor: we [grew sorghum]
+neighbor's son: dad the [cricket] started 
+ -- 爸：我以為你是在農場[長大]
+鄰居：我們[種高梁]
+鄰居兒子：爸爸，[板球]遊戲開始了
 
 14
-00:01:20.109 --> 00:01:27.249
-busy mate just shout if there's a wicket okay&nbsp;well how hard can this be I'll just gravel it&nbsp;&nbsp; -- 
+01:20,109 --> 01:27,249
+neighbor: I'm busy mate just shout if there's a wicket
+neighbor's son: okay 
+neighbor: well how hard can this be? I'll just gravel it  
+ -- 鄰居：我在忙，如果擊住三柱門再叫我
+鄰居兒子：OK
+鄰居：好吧，這能有多難？讓我來鏟除它
 
 15
-00:01:27.249 --> 00:01:36.969
-hey where are you going I'm not going anywhere&nbsp;bingo that tickles well we'll see about that -- 
+01:27,249 --> 01:36,969
+neighbor: hey where are you going
+bingo: I'm not going anywhere 
+dad: bingo that [tickles]
+neighbor: well we'll see about that, i've got a foot
+ -- 鄰居：嘿，你要去哪裡
+賓果：我哪兒也不去
+爸：賓果，那樣很[癢]
+鄰居：好，我們來看看，我捉到一隻腳了
 
 16
-00:01:36.969 --> 00:01:43.938
-i've got a foot ooh she's got my belly hair -- 
+01:36,969 --> 01:43,938
+dad: ooh she's got my belly hair
+ -- 爸：喔，她捉到我肚子的毛了
 
 17
-00:01:43.938 --> 00:01:55.074
-it's none for six dad any boundaries one boundary two singles&nbsp;who got the boundary focus oh yeah sorry -- 
+01:43,938 --> 01:55,74
+neighbor's son: it's none for six dad neighbor: any boundaries
+neighbor's son: one boundary two singles
+neighbor: who got the boundary
+buley & dad: focus oh
+neighbor: oh, yeah, sorry
+ -- 鄰居兒子：現在零比六了，爸爸
+鄰居：有任何長打嗎？
+鄰居兒子：一個2分的長打
+鄰居：誰打的長打
+布麗和爸爸：專心點
+鄰居：喔，抱歉
 
 18
-00:01:56.469 --> 00:01:59.889
-I can see the butt I can see&nbsp;the butt you can watch lots&nbsp;&nbsp; -- 
+01:56,469 --> 01:59,889
+neighbor: I can see the [butt] I can see the butt 
+ -- 鄰居：我可以看到[屁股]我可以看到屁股
 
 19
-00:01:59.889 --> 00:02:04.269
-more bluey on BBC iPlayer ask&nbsp;your grown-up to search bluey -- 
+01:59,889 --> 02:04,269
+host: you can watch lots more bluey on BBC iPlayer ask your grown-up to search bluey
+ -- 主持人：你可以在 BBC iPlayer 上，看到更多布麗，請你家中的大人搜索 bluey
 
+20
+02:04,269 --> 02:04,269
+
+ -- 
+
+21
+02:04,269 --> 02:04,269
+ -- 

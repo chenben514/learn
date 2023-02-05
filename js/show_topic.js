@@ -111,7 +111,6 @@ function getTopic() {
 			for (j = 0; j < allTopicArr.length; j++) {
 				var allSingTopicArr = allTopicArr[j].split(",");
 				if (allSingTopicArr.length < 2) {
-					// alert(allTopicArr);
 					continue;
 				}
 
@@ -275,12 +274,6 @@ function showTopic() {
 			curDetailLeft.disabled = true;
 		}
 
-		// alert(windowWidth);
-		/*  
-    if (windowWidth > 600) {
-      curDetailLeft.appendChild(curDetailLeftImg);
-    }
-*/
 		curDetailLeft.appendChild(curDetailMidSbj);
 		// 2.2. curDetailRight
 		var curDetailRight = document.createElement("detail-right-side");
@@ -289,7 +282,6 @@ function showTopic() {
 
 		var midSearch = false;
 		if (search_input.value.length > 0) {
-			// alert(topics[i].mid_explain);
 			if (
 				topics[i].mid_explain
 					.toLowerCase()
@@ -300,9 +292,7 @@ function showTopic() {
 		}
 
 		var maxLength = 0;
-		// alert(topics[i].small_subjs.length);
 		for (j = 0; j < topics[i].small_subjs.length; j++) {
-			// alert(topics[i].small_subj_explains);
 			if (topics[i].small_subj_explains[j].length > maxLength) {
 				maxLength = topics[i].small_subj_explains[j].length;
 			}

@@ -1519,6 +1519,8 @@ function setSubtitles(contents) {
 	var quesArr = contents.replace(/\r\n/g, "\n").split("\n");
 	let quesCnt = quesArr.length;
 	let adjustTime = 0;
+	var subColCnt = 1;
+	if (quesCnt <= 0) return;
 
 	for (let k = 0; k < quesCnt; k++) {
 		if (quesArr[k].includes("(adjust)")) {
@@ -1534,6 +1536,10 @@ function setSubtitles(contents) {
 				let subtitle = new Subtitle();
 				subtitles.push(subtitle);
 			}
+		} else if (subtitleMode.includes("Csv")) {
+			if (quesArr[k].length < 2) continue;
+			let subtitle = new Subtitle();
+			subtitles.push(subtitle);
 		} else if (subtitleMode.includes("MD")) {
 			if (quesArr[k].startsWith("#")) {
 				if (quesArr[k].includes("#Subtitle4")) {
@@ -1548,6 +1554,7 @@ function setSubtitles(contents) {
 			}
 		}
 	}
+
 	subTitleCnt = 0;
 	var nowStatus = 0; //0:nothing,1:start
 
@@ -1576,6 +1583,19 @@ function setSubtitles(contents) {
 			subtitles[subTitleCnt - 1].content2 = "";
 			nowStatus = 1;
 			bSubtitle2 = false;
+		} else if (subtitleMode.includes("Csv")) {
+			var subtitleArr = quesArr[k].split("\t");
+			if (subtitleArr.length < 2) continue;
+			subTitleCnt++;
+			subtitles[subTitleCnt - 1].numb = subTitleCnt;
+			subtitles[subTitleCnt - 1].start = getSecond(subtitleArr[1]) + adjustTime;
+			subtitles[subTitleCnt - 1].finish =
+				getSecond(subtitleArr[2]) + adjustTime;
+			subtitles[subTitleCnt - 1].content = subtitleArr[3];
+			if (subtitleArr.length > 4) {
+				subtitles[subTitleCnt - 1].content2 = subtitleArr[4];
+				if (k == 0) subColCnt = 2;
+			}
 		} else if (subtitleMode.includes("MD") && quesArr[k].startsWith("#")) {
 			// if (nowStatus == 1) {
 			subTitleCnt++;
@@ -1595,7 +1615,6 @@ function setSubtitles(contents) {
 					//   subtitles[subTitleCnt].content += "\n";
 					if (subtitleMode.includes("DoubleSrt")) {
 						var contentArr = quesArr[k].split("--"); //00:01:01,440 --> 00:01:03,232
-
 						if (contentArr.length > 1) {
 							subtitles[subTitleCnt - 1].content += contentArr[0];
 							subtitles[subTitleCnt - 1].content2 += contentArr[1];
@@ -1607,8 +1626,12 @@ function setSubtitles(contents) {
 								}
 							}
 							if (bSubtitle2) {
+								if (subtitles[subTitleCnt - 1].content2.length > 0)
+									subtitles[subTitleCnt - 1].content2 += "<br>";
 								subtitles[subTitleCnt - 1].content2 += quesArr[k];
 							} else {
+								if (subtitles[subTitleCnt - 1].content.length > 0)
+									subtitles[subTitleCnt - 1].content += "<br>";
 								subtitles[subTitleCnt - 1].content += quesArr[k];
 							}
 						}
@@ -1653,6 +1676,10 @@ function setSubtitles(contents) {
 	if (subTitleCnt < 1) {
 		alert("No subtitles inside");
 		return;
+	}
+
+	if (subtitleMode == "Csv") {
+		if (subColCnt == 2) subtitleMode = "DoubleSrt";
 	}
 
 	// if (subtitleMode.includes("MD")) {
@@ -1956,6 +1983,7 @@ function readTableContent(isMedia) {
 		var file = this.files[0];
 		if (file) {
 			const reader = new FileReader();
+			if (file.name.includes("csv")) subtitleMode = "Csv";
 			reader.readAsText(file, "UTF-8");
 			reader.onload = (evt) => {
 				var fileContent = evt.target.result;
@@ -2056,9 +2084,15 @@ function startAudio(curQuiz) {
 	// When the user clicks on <span> (x), close the modal
 	modal.style.display = "block";
 
-	var videoID = curQuiz.split("@")[1];
-	videoID = videoID.replace(/_/g, "&").replace(/~/g, "-");
+	// alert(curQuiz);
+	var videoID;
+	if (curQuiz.includes("Left@@@") || curQuiz.includes("all@@@")) {
+		videoID = curQuiz.split("@")[1];
+	} else {
+		videoID = curQuiz.split("-")[1].split("_")[3];
+	}
 	// alert(videoID);
+	videoID = videoID.replace(/&/g, "_").replace(/~/g, "-");
 	var srtID = curQuiz.split("@")[2];
 
 	var curQuizArr = curQuiz.split("-");
@@ -2137,7 +2171,14 @@ function startAudio(curQuiz) {
 			.replace(/~/g, "-");
 		base_filename = base_left_filename + "/" + srtID;
 		subtitleMode = "SingleSrt";
-		readSubtitles(base_filename + ".srt");
+		if (base_filename.includes("csv")) {
+			base_left_filename + "/" + srtID;
+			subtitleMode = "Csv";
+		} else {
+			base_filename = base_left_filename + "/" + srtID + ".srt";
+		}
+		readSubtitles(base_filename);
+
 		//tmpID = tmpID.replacee(/~/g, "_");
 		youtube_url = "https://www.youtube-nocookie.com/watch?v=" + videoID;
 	} else {
@@ -2577,6 +2618,7 @@ function showMessage(isMedia) {
 	}
 }
 function getSecond(inputTime) {
+	if (inputTime == undefined) return 99999;
 	if (inputTime.length < 2) {
 		return 99999;
 	}
