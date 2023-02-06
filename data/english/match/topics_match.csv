@@ -1,2 +1,8 @@
 ### 幼兒
-english,match,5,food,食,game_match,fruit,水果,fruit2,水果2,fruit3,水果3
+english,match,99,basic,基本,game_match,num1,數字1,num2,數字2,place1,地方1,place2,地方2
+english,match,99,people,人,game_match,body1,人體1,body2,人體2,people1,人物1,people2,人物2,people3,人物3,people4,人物4
+english,match,99,life,生活,game_match,life1,生活1,life2,生活2,object1,物品1,object2,物品2,object3,物品3,object4,物品4,trans1,交通1,trans2,交通2
+english,match,99,food,食,game_match,food1,食物1,food2,食物2
+english,match,99,action,動作,game_match,action1,動作1,action1,動作1,action2,動作2,action3,動作3,action4,動作4,action5,動作5,action6,動作6
+english,match,99,nature,自然,game_match,animal1,動物1,animal2,動物2,animal3,動物3,animal4,動物4,nature1,自然1,nature2,自然2,nature3,自然3,nature4,自然4
+english,match,99,other,其他,game_match,adj1,形容1,adj2,形容2,feeling1,感覺1,feeling2,感覺2

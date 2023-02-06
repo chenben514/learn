@@ -61,9 +61,12 @@ function pressCard() {
 			"/" +
 			imagePos +
 			"/" +
+			quesArr[pressID].answer.substring(0, 1) +
+			"/" +
 			quesArr[pressID].answer +
 			".mp3";
 		var audio = new Audio(audioName);
+		// alert(audioName);
 		audio.play();
 		// var msg = new SpeechSynthesisUtterance();
 
@@ -263,6 +266,8 @@ function showCard() {
 						"./data/image/" +
 						imagePos +
 						"/" +
+						quesArr[shuffleArr[nowCnt]].question.substring(0, 1) +
+						"/" +
 						quesArr[shuffleArr[nowCnt]].question +
 						".jpg";
 					var imgContent =
@@ -272,7 +277,7 @@ function showCard() {
 						imageName +
 						'">';
 					//'</figure>';
-
+					//alert(imageName);
 					tmpResult += imgContent;
 				} else {
 					tmpResult += quesArr[shuffleArr[nowCnt]].question;
@@ -303,9 +308,12 @@ function speakAnswer() {
 		"/" +
 		imagePos +
 		"/" +
+		quesArr[nowOrder].answer.substring(0, 1) +
+		"/" +
 		quesArr[nowOrder].answer +
 		".mp3";
 	var audio = new Audio(audioName);
+	// alert(audioName);
 	audio.play();
 	// var msg = new SpeechSynthesisUtterance();
 
@@ -363,7 +371,7 @@ function parseCsv(filename) {
 		matchQuesType = "image";
 		imagePos = tmpArr[0].split(":")[1];
 	}
-	for (var i = 1; i < tmpCnt; i++) {
+	for (var i = 0; i < tmpCnt; i++) {
 		let question = new Question();
 		question.numb = i;
 		if (tmpArr[i].length > 1) {
@@ -374,6 +382,7 @@ function parseCsv(filename) {
 	}
 	shuffle(quesArr);
 	quesCnt = quesArr.length;
+	//alert(quesCnt);
 }
 
 export default game_match;
