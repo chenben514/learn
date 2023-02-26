@@ -149,8 +149,10 @@ function getTopic() {
 			if (singTopicArr[6].includes("-")) {
 				var loopArr = singTopicArr[6].split("-");
 				for (j = loopArr[0]; j <= loopArr[1]; j++) {
-					topic.small_subjs.push(j.toString());
-					topic.small_subj_explains.push(j.toString());
+					//topic.small_subjs.push(j.toString());
+					//topic.small_subj_explains.push(j.toString());
+					topic.small_subjs.push(pad(j, 2));
+					topic.small_subj_explains.push(pad(j, 2));
 					topic.small_subj_html.push("NA");
 				}
 				if (loopArr.length > 2) {
@@ -479,4 +481,10 @@ function showStar(tmpLevel) {
 		returnStar += "✩";
 	}
 	return returnStar;
+}
+
+function pad(num, size) {
+	num = num.toString();
+	while (num.length < size) num = "0" + num;
+	return num;
 }

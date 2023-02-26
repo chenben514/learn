@@ -2089,7 +2089,7 @@ function startAudio(curQuiz) {
 	if (curQuiz.includes("Left@@@") || curQuiz.includes("all@")) {
 		videoID = curQuiz.split("@")[1];
 	} else {
-		alert(curQuiz);
+		//alert(curQuiz);
 		videoID = curQuiz.split("-")[1].split("_")[3];
 	}
 
