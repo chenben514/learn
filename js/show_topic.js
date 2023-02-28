@@ -307,6 +307,7 @@ function showTopic() {
 				continue;
 			}
 			var curButton = document.createElement("button");
+			var bImportant = false;
 			var c, r, t;
 			t = document.createElement("table");
 
@@ -339,6 +340,13 @@ function showTopic() {
 				topics[i].small_subj_explains[j] = topics[i].small_subj_explains[
 					j
 				].replaceAll("\\", "\n");
+				if (topics[i].small_subj_explains[j].includes("**")) {
+					topics[i].small_subj_explains[j] = topics[i].small_subj_explains[
+						j
+					].replaceAll("**", "");
+					bImportant = true;
+					curButton.classList.add("class", "test-pressed");
+				}
 				if (topics[i].small_subj_explains[j].includes("*")) {
 					topics[i].small_subj_explains[j] = topics[i].small_subj_explains[
 						j
@@ -364,6 +372,7 @@ function showTopic() {
 				}
 			}
 			c.appendChild(curButton);
+
 			curRightCnt++;
 
 			//2. wrong button
@@ -439,7 +448,11 @@ function showTopic() {
 			}
 
 			// curDetailRight.appendChild(curButton);
-			curDetailRight.appendChild(t);
+			if (bImportant == true) {
+				curDetailRight.prepend(t);
+			} else {
+				curDetailRight.appendChild(t);
+			}
 		}
 
 		// 2.X. curDetail
