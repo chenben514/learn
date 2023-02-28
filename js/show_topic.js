@@ -295,12 +295,14 @@ function showTopic() {
 
 		var maxLength = 0;
 		for (j = 0; j < topics[i].small_subjs.length; j++) {
+			if (topics[i].small_subj_explains[j] == null) continue;
 			if (topics[i].small_subj_explains[j].length > maxLength) {
 				maxLength = topics[i].small_subj_explains[j].length;
 			}
 		}
 		key = 0;
 		for (j = 0; j < topics[i].small_subjs.length; j++) {
+			if (topics[i].small_subj_explains[j] == null) continue;
 			if (key > 4) {
 				continue;
 			}

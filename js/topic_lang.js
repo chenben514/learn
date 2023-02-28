@@ -12,7 +12,7 @@ let courseSubjList = [
 		course: "korean",
 		subj: "word,spell,listen,writing,grammer,video,news,match,story",
 	},
-	{ course: "cejk", subj: "speak,word,grammer,song" },
+	{ course: "cejk", subj: "combo,speak,word,grammer,song" },
 	{ course: "computer", subj: "os,db,programming,data,devops,web" },
 	{ course: "learn", subj: "graph,calc,game,video,person" },
 ];
@@ -28,6 +28,7 @@ let defaultCourseSubjMap = new Map([
 ]);
 
 let subjMap = new Map([
+	["combo", "綜合"],
 	["word", "字彙"],
 	["video", "影片"],
 	["idiom", "成語"],
