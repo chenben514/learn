@@ -1503,7 +1503,8 @@ function add_new_line(line1, line2) {
 			if (line1.includes("▪")) {
 				resultStr += "<br>";
 			}
-			resultStr += "&#20;&#20;▪ ";
+			//resultStr += "&#20;&#20;▪ ";
+			resultStr += "▪ ";
 		}
 
 		resultStr += line2;
@@ -1746,7 +1747,7 @@ function highlight_start(lineno, content) {
 				line_content.indexOf(".jpg") - line_content.indexOf("<img:")
 			);
 			var tmpImageString =
-				'<img style="display:block;" width="100%" height="100%"  src="./data/image/' +
+				'<img style="display:block;" width="100%" object-fill="scale-down" src="./data/image/' +
 				tmpImageName.substring(0, 1) +
 				"/";
 			line_content = line_content.replaceAll("<img:", tmpImageString);
@@ -2714,6 +2715,7 @@ function changeTimeString(iTime) {
 
 function selectRow(c, iCol) {
 	var r = c.parentNode;
+	speakText(r.children[iCol].innerText, iCol);
 	if (rowSelected !== undefined) {
 		rowSelected.style.color = "blue";
 		if (bSubtitleEditable && rowSelected != r && iCol >= 3) {
@@ -2754,6 +2756,27 @@ function selectRow(c, iCol) {
 	actualRow = Number(r.children[0].innerHTML);
 }
 
+function speakText(readText, iCol) {
+	var mySpeakText;
+	var mySpeakArr;
+	var msg = new SpeechSynthesisUtterance();
+	if (iCol == 3) msg.lang = "zh-TW";
+	else if (iCol == 4) msg.lang = "en-GB";
+	else if (iCol == 5) msg.lang = "ja-JP";
+	else if (iCol == 6) msg.lang = "ko-KR";
+	msg.rate = 0.8;
+
+	mySpeakText = readText.replaceAll("▪", "").replaceAll("：", ":");
+	var lineArr = mySpeakText.replace(/\r\n/g, "\n").split("\n");
+	var myFinalSpeakText = "";
+	for (var i = 0; i < lineArr.length; i++) {
+		var curLineArr = lineArr[i].split(":");
+		mySpeakText = curLineArr[curLineArr.length - 1];
+		myFinalSpeakText = myFinalSpeakText + mySpeakText + ".";
+	}
+	msg.text = myFinalSpeakText;
+	window.speechSynthesis.speak(msg);
+}
 function changeRow(c) {
 	var r = c.parentNode;
 	var nowRow = Number(r.children[0].innerHTML);
