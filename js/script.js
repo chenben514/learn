@@ -1746,7 +1746,9 @@ function highlight_start(lineno, content) {
 				line_content.indexOf(".jpg") - line_content.indexOf("<img:")
 			);
 			var tmpImageString =
-				'<img style="display:block;" width="100%" height="100%"  src="./data/image/g/';
+				'<img style="display:block;" width="100%" height="100%"  src="./data/image/' +
+				tmpImageName.substring(0, 1) +
+				"/";
 			line_content = line_content.replaceAll("<img:", tmpImageString);
 			line_content = line_content.replaceAll(".jpg>", '.jpg"></img>');
 		}
