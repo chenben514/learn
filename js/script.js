@@ -1739,8 +1739,18 @@ function highlight_start(lineno, content) {
 			html = line_content;
 		}
 		line_content = html;
-
-		//1.replace []
+		//1.replace <image.jpg>
+		if (line_content.includes(".jpg>")) {
+			var tmpImageName = line_content.substr(
+				line_content.indexOf("<img:") + 5,
+				line_content.indexOf(".jpg") - line_content.indexOf("<img:")
+			);
+			var tmpImageString =
+				'<img style="display:block;" width="100%" height="100%"  src="./data/image/g/';
+			line_content = line_content.replaceAll("<img:", tmpImageString);
+			line_content = line_content.replaceAll(".jpg>", '.jpg"></img>');
+		}
+		//2.replace []
 		var tmpWhiteString = "<span style='color:#" + tmpColor + "'>";
 		line_content = line_content.replaceAll(
 			"[",
@@ -2122,7 +2132,12 @@ function startAudio(curQuiz) {
 			var fileNameArr = curTopicArr[3].split("^");
 			base_filename = base_left_filename + "/" + fileNameArr[0];
 			if (fileNameArr.length > 1) {
-				imageName = "./img/" + fileNameArr[1] + "_" + fileNameArr[2];
+				imageName =
+					"./data/image/" +
+					fileNameArr[1].substring(0, 1) +
+					"/" +
+					fileNameArr[1] +
+					".jpg";
 			}
 		} else {
 			base_filename = base_left_filename + "/" + curTopicArr[3];
@@ -2315,14 +2330,14 @@ function startAudio(curQuiz) {
 		showMessage(true);
 	} else {
 		if (imageName.length > 0 && !bSmallWindows) {
-			audio_sec_top.classList.add("video_sec_top");
+			audio_sec_top.classList.add("image_sec_top");
 			// x.1. This code loads the IFrame Player API code asynchronously.
 			var playerDiv = document.createElement("div");
 			playerDiv.setAttribute("id", "player-div");
-			playerDiv.classList.add("myPlayerDiv");
+			playerDiv.classList.add("myImageDiv");
 			var imageDiv = document.createElement("img");
-			imageDiv.setAttribute("height", "87%");
-			imageDiv.setAttribute("width", "60%");
+			imageDiv.setAttribute("height", "100%");
+			imageDiv.setAttribute("width", "100%");
 			imageDiv.setAttribute("object-fit", "scale-down");
 			imageDiv.src = imageName;
 			playerDiv.appendChild(imageDiv);

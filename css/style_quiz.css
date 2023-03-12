@@ -618,6 +618,16 @@ section .correct_list {
 } */
 
 /* Zebra striping */
+.image_sec_top {
+	background-color: rgb(220, 237, 216);
+
+	padding: 0.5rem 1rem 2rem 1rem;
+	margin: 0rem 1rem 1rem 1rem;
+	width: 50%;
+	/* height: 50%; */
+	height: 180px;
+}
+
 .video_sec_top {
 	background-color: rgb(220, 237, 216);
 
@@ -669,6 +679,12 @@ section .correct_list {
 	background-color: rgb(220, 237, 216);
 	padding: 0.5rem 1rem;
 	width: 90%;
+}
+
+.myImageDiv {
+	width: 50%;
+	height: 100%;
+	margin: 1rem;
 }
 
 .myPlayerDiv {
