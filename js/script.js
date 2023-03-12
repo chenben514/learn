@@ -2766,7 +2766,10 @@ function speakText(readText, iCol) {
 	else if (iCol == 6) msg.lang = "ko-KR";
 	msg.rate = 0.8;
 
-	mySpeakText = readText.replaceAll("▪", "").replaceAll("：", ":");
+	mySpeakText = readText
+		.replaceAll("▪", "")
+		.replaceAll("：", ":")
+		.replaceAll("*");
 	var lineArr = mySpeakText.replace(/\r\n/g, "\n").split("\n");
 	var myFinalSpeakText = "";
 	for (var i = 0; i < lineArr.length; i++) {
