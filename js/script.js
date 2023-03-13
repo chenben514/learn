@@ -2715,7 +2715,9 @@ function changeTimeString(iTime) {
 
 function selectRow(c, iCol) {
 	var r = c.parentNode;
-	speakText(r.children[iCol].innerText, iCol);
+	if (subtitleMode.includes("MD4")) {
+		speakText(r.children[iCol].innerText, iCol);
+	}
 	if (rowSelected !== undefined) {
 		rowSelected.style.color = "blue";
 		if (bSubtitleEditable && rowSelected != r && iCol >= 3) {
@@ -2769,7 +2771,12 @@ function speakText(readText, iCol) {
 	mySpeakText = readText
 		.replaceAll("▪", "")
 		.replaceAll("：", ":")
-		.replaceAll("*");
+		.replaceAll("*", "")
+		.replaceAll("？", "")
+		.replaceAll("?", "")
+		.replaceAll("。", "");
+	// mySpeakText = readText.replaceAll("▪|：|*|?|？", "");
+
 	var lineArr = mySpeakText.replace(/\r\n/g, "\n").split("\n");
 	var myFinalSpeakText = "";
 	for (var i = 0; i < lineArr.length; i++) {
