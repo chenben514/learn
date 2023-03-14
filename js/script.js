@@ -683,7 +683,6 @@ function getQuestions() {
 	} else {
 		parseCsv(base_filename + ".csv");
 	}
-
 	var quesList = [];
 	let quesCnt = quesArr.length;
 	let ansList = [];
