@@ -7,12 +7,12 @@ let courseSubjList = [
 		course: "english",
 		subj: "word,spell,grammer,listen,video,business,person,story,match",
 	},
-	{ course: "japan", subj: "word,spell,video,news,match" },
+	{ course: "japan", subj: "word,spell,video,news" },
 	{
 		course: "korean",
-		subj: "word,spell,listen,writing,grammer,video,news,match,story",
+		subj: "word,spell,listen,writing,grammer,video,news,story",
 	},
-	{ course: "cejk", subj: "combo,speak,word,grammer,song" },
+	{ course: "cejk", subj: "combo,song" },
 	{ course: "computer", subj: "os,db,programming,data,devops,web" },
 	{ course: "learn", subj: "graph,calc,game,video,person" },
 ];
