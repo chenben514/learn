@@ -5,7 +5,7 @@ let courseSubjList = [
 	{ course: "chinese", subj: "word,idiom,video,match" },
 	{
 		course: "english",
-		subj: "speak,word,spell,grammer,listen,video,business,person,story,match",
+		subj: "speak,word,spell,grammer,listen,video,business,story,match",
 	},
 	{ course: "japan", subj: "word,spell,video,news" },
 	{
@@ -22,8 +22,7 @@ let defaultCourseSubjMap = new Map([
 	["english", "word"],
 	["japan", "word"],
 	["korean", "word"],
-	["cejk", "speak"],
-	["computer", "os"],
+	["cejk", "combo"],
 	["learn", "graph"],
 ]);
 
