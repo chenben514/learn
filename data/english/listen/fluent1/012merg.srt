@@ -1,0 +1,51 @@
+1
+00:03,124 --> 00:07,153
+Cuba, Cuban
+
+2
+00:07,153 --> 00:14,757
+Turkey, Turkish
+
+3
+00:17,911 --> 00:22,148
+Morocco, Moroccan
+
+4
+00:24,984 --> 00:29,614
+Argentina, Argentinian
+
+5
+00:35,125 --> 00:38,703
+Egypt, Egyptian
+
+6
+00:42,840 --> 00:46,257
+Italy, Italian
+
+7
+00:48,23 --> 00:53,210
+Hungary, Hungarian
+
+8
+00:55,702 --> 01:00,702
+Canada, Canadian
+
+9
+01:06,67 --> 01:09,389
+China, Chinese
+
+10
+01:11,598 --> 01:16,630
+Malta, Maltese
+
+11
+01:19,118 --> 01:23,872
+Portugal, Portuguese
+
+12
+01:25,540 --> 01:31,95
+Japan, Japanese
+
+13
+01:31,95 --> 
+

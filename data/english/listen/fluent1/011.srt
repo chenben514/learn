@@ -1,0 +1,80 @@
+1
+00:00:00,000 --> 00:00:01,000
+Four.
+
+2
+00:00:02,640 --> 00:00:04,400
+What do you think of your city?
+
+3
+00:00:04,920 --> 00:00:07,080
+It is a very special place.
+
+4
+00:00:07,080 --> 00:00:10,240
+There is nowhere else in the world like my city.
+
+5
+00:00:10,240 --> 00:00:11,800
+It's so romantic.
+
+6
+00:00:11,800 --> 00:00:14,200
+What's the city centre like?
+
+7
+00:00:14,200 --> 00:00:17,600
+The buildings are beautiful and we have San Marco,
+
+8
+00:00:17,600 --> 00:00:20,000
+one of the most famous churches in the world.
+
+9
+00:00:20,640 --> 00:00:24,960
+San Marco Square is wonderful and during Carnival in February,
+
+10
+00:00:24,960 --> 00:00:28,400
+Venice is the best place in the world to be.
+
+11
+00:00:28,560 --> 00:00:30,160
+Do you like living here?
+
+12
+00:00:30,160 --> 00:00:33,040
+No, I really hate living here.
+
+13
+00:00:33,040 --> 00:00:34,280
+It's horrible.
+
+14
+00:00:34,280 --> 00:00:36,200
+There are too many tourists everywhere.
+
+15
+00:00:36,200 --> 00:00:37,800
+Oh dear.
+
+16
+00:00:37,800 --> 00:00:39,320
+What are the shops like?
+
+17
+00:00:39,320 --> 00:00:42,720
+Well, because of the tourists, the shops are too expensive
+
+18
+00:00:42,720 --> 00:00:46,000
+and the canals are dirty and polluted.
+
+19
+00:00:46,000 --> 00:00:48,880
+My city is not big enough for all these people.
+
+20
+00:00:48,880 --> 00:00:51,000
+Why don't they leave us in peace?
+

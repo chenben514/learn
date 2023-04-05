@@ -1,0 +1,63 @@
+1
+00:00:00,000 --> 00:00:01,000
+Three.
+
+2
+00:00:03,000 --> 00:00:04,000
+Where do you live?
+
+3
+00:00:04,000 --> 00:00:08,000
+Well, I live in a small village with my parents.
+
+4
+00:00:08,000 --> 00:00:12,000
+My grandparents live here too, and my aunts and uncles.
+
+5
+00:00:12,000 --> 00:00:18,000
+In fact, I think I'm related to about 50% of the people in my village.
+
+6
+00:00:18,000 --> 00:00:20,000
+What's your village like?
+
+7
+00:00:20,000 --> 00:00:21,000
+It's very pretty.
+
+8
+00:00:21,000 --> 00:00:26,000
+The countryside is beautiful and the air is lovely and clean.
+
+9
+00:00:26,000 --> 00:00:28,000
+But it's too quiet.
+
+10
+00:00:28,000 --> 00:00:31,000
+I find it so dull and boring here.
+
+11
+00:00:31,000 --> 00:00:34,000
+There aren't any discos or cinemas.
+
+12
+00:00:34,000 --> 00:00:35,000
+What are the people like?
+
+13
+00:00:35,000 --> 00:00:37,000
+Oh, they're lovely.
+
+14
+00:00:37,000 --> 00:00:40,000
+But there aren't many young people.
+
+15
+00:00:40,000 --> 00:00:42,000
+I want to go and live in the city.
+
+16
+00:00:42,000 --> 00:00:43,000
+Soon.

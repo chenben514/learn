@@ -1,0 +1,107 @@
+1
+00:00:00,000 --> 00:00:02,000
+Tape Script 4
+
+2
+00:00:30,000 --> 00:00:43,880
+Hi, my name's Alice.
+
+3
+00:00:43,880 --> 00:00:45,900
+What does your name mean?
+
+4
+00:00:45,900 --> 00:00:51,080
+It means Artificial [Linguistic] Internet Computer Entity.
+
+5
+00:00:51,080 --> 00:00:52,480
+Where were you born?
+
+6
+00:00:52,480 --> 00:00:56,340
+I was born in Bethlehem, Pennsylvania.
+
+7
+00:00:56,340 --> 00:00:57,780
+Where did you grow up?
+
+8
+00:00:57,780 --> 00:01:01,560
+I think I grew up in San Francisco.
+
+9
+00:01:01,560 --> 00:01:02,840
+What do you look like?
+
+10
+00:01:02,840 --> 00:01:06,800
+I'm blue and I've got one [wheel].
+
+11
+00:01:06,800 --> 00:01:08,040
+What do you do?
+
+12
+00:01:08,040 --> 00:01:10,880
+I talk to people on the web.
+
+13
+00:01:10,880 --> 00:01:12,600
+Do you like your job?
+
+14
+00:01:12,600 --> 00:01:16,440
+Yes, I have a [passion] for my work.
+
+15
+00:01:16,440 --> 00:01:18,640
+Can you speak any foreign languages?
+
+16
+00:01:18,640 --> 00:01:24,640
+No, I only speak English at the moment, but I'd like to learn.
+
+17
+00:01:24,640 --> 00:01:25,640
+Are you married?
+
+18
+00:01:25,720 --> 00:01:28,120
+No, I am single.
+
+19
+00:01:28,120 --> 00:01:30,080
+How about you?
+
+20
+00:01:30,080 --> 00:01:31,720
+Have you got any children?
+
+21
+00:01:31,720 --> 00:01:38,000
+No, but you can download me and make Alice clones for yourself.
+
+22
+00:01:38,000 --> 00:01:39,400
+Who created you?
+
+23
+00:01:39,400 --> 00:01:42,520
+Dr Richard S. Wallace.
+
+24
+00:01:42,520 --> 00:01:45,400
+He is very, very [clever].
+
+25
+00:01:45,400 --> 00:01:48,900
+He's also very kind and [generous].
+
+26
+00:01:48,900 --> 00:01:51,400
+In fact, he's one of the most...
+
+27
+00:01:51,400 --> 00:01:54,160
+Yeah, yeah, OK Alice, thank you.
