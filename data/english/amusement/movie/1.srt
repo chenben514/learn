@@ -1,0 +1,238 @@
+#Subtitle2
+幫我把下面的英文字幕，保留原來的英文，加上 "--" 符號，再加上中文翻譯
+1
+00:01,906 --> 00:04,296
+You were born here. Raised here.
+ -- 你在這裡出生，長大。
+
+2
+00:05,148 --> 00:07,257
+This dome is the only world you've ever known.
+ -- 這個圓頂是你所認識的唯一世界。
+
+3
+00:09,531 --> 00:13,117
+There's a place just off past the eastern ridge. Right there.
+ -- 在東邊山脈的遠處有個地方，就在那裡。
+
+4
+00:13,488 --> 00:15,437
+Dad, what are you talking about?
+ -- 爸，你在說什麼？
+
+5
+00:15,617 --> 00:16,343
+You'll see.
+ -- 你會明白的。
+
+6
+00:17,326 --> 00:18,427
+Get out there.
+ -- 去那裡。
+
+7
+00:21,553 --> 00:22,591
+To the crater.
+ -- 去那個隕石坑。
+
+8
+00:24,21 --> 00:25,122
+Whatever's out there,
+ -- 無論有什麼，
+
+9
+00:25,173 --> 00:26,146
+your dad wants you to see it.
+ -- 你爸爸希望你去看看。
+
+10
+00:26,197 --> 00:28,60
+We've never even been outside the dome before.
+ -- 我們從未去過圓頂之外。
+
+12
+00:28,968 --> 00:29,865
+So what's it going to be?
+ -- 你們決定怎麼做？
+
+13
+00:29,916 --> 00:30,904
+We're leaving tonight.
+ -- 我們今晚就出發。
+
+14
+00:30,955 --> 00:32,192
+I hear she's weird.
+ -- 我聽說她很奇怪。
+
+15
+00:32,244 --> 00:32,857
+Why?
+ -- 為什麼？
+
+16
+00:32,908 --> 00:33,771
+She's from Earth.
+ -- 她來自地球。
+
+17
+00:33,822 --> 00:35,185
+So? They're peculiar.
+ -- 那又怎樣？他們很奇特。
+
+18
+00:35,243 --> 00:36,231
+You're peculiar.
+ -- 你也很奇特。
+
+19
+00:36,308 --> 00:37,75
+All in favor？
+ -- 大家都贊成嗎？
+
+20
+00:39,515 --> 00:40,708
+Let's go steal a rover.
+ -- 讓我們去偷一輛月球車。
+
+21
+00:43,255 --> 00:44,849
+The lockdown will commence...
+ -- 封鎖措施即將啟動...
+
+22
+00:44,900 --> 00:45,638
+Come on.
+ -- 快點。
+
+23
+00:45,689 --> 00:46,669
+...in five...
+ -- ...五...
+
+24
+00:47,21 --> 00:47,739
+...four...
+ -- ...四...
+
+25
+00:48,256 --> 00:48,974
+...three...
+ -- ...三...
+
+26
+00:49,326 --> 00:50,44
+...two...
+ -- ...二...
+
+27
+00:50,552 --> 00:51,199
+...one.
+ -- ...一。
+
+28
+00:56,555 --> 00:58,250
+You know the best thing about road trips?
+ -- 你知道公路旅行最好的事情嗎？
+
+29
+00:59,993 --> 01:01,828
+You get to leave everything behind.
+ -- 你可以把一切都拋在腦後。
+
+30
+01:06,134 --> 01:07,294
+Here it is,
+ -- 到了，
+
+31
+01:07,345 --> 01:09,599
+bottom of the ninth... the wind up.
+ -- 九局末... 準備投球。
+
+32
+01:20,980 --> 01:23,550
+The sky on Earth. Is it really blue?
+ -- 地球上的天空，真的是藍色的嗎？
+
+33
+01:23,601 --> 01:24,315
+Yeah.
+ -- 是的。
+
+34
+01:24,366 --> 01:25,260
+Wow.
+ -- 哇。
+
+35
+01:25,770 --> 01:27,456
+The most important thing to remember...
+ -- 最重要的是要記住...
+
+36
+01:27,618 --> 01:29,175
+This is a bad idea.
+ -- 這是個糟糕的主意。
+
+37
+01:31,340 --> 01:33,544
+Watch out! Watch out!
+ -- 小心！小心！
+
+38
+01:33,724 --> 01:35,854
+It's not just about where you're going.
+ -- 重點不只在於目的地
+
+40
+01:38,53 --> 01:39,91
+Meteor shower!
+ -- 流星雨！
+
+41
+01:39,782 --> 01:41,380
+Addison! Run!
+ -- Addison！快跑！
+
+42
+01:42,282 --> 01:43,895
+It's about how you get there.
+ -- 重要的是前往的過程
+
+43
+01:45,513 --> 01:46,872
+The people you get there with.
+ -- 和同行的夥伴
+
+44
+01:47,622 --> 01:49,240
+Caleb, what's in the crater?
+ -- Caleb，坑洞裡有什麼？
+
+45
+01:49,519 --> 01:50,245
+I don't know.
+ -- 我不知道
+
+46
+01:51,351 --> 01:52,466
+Guess we'll find out.
+ -- 猜猜看，我們會發現什麼
+
+47
+01:52,517 --> 01:54,222
+You guys go first.
+ -- 你們先去
+
+48
+01:55,17 --> 01:57,398
+You're never quite the same as you were when you began.
+ -- 完成旅程後，不會不同於出發時的自己
+
+50
+01:57,516 --> 02:10,359
+These were the best two days of my life.
+ -- 這是我一生中最美好的兩天
+
+

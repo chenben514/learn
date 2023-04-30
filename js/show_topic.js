@@ -417,6 +417,7 @@ function showTopic() {
 				curProcCnt < topics[i].open_course_cnt &&
 				topics[i].main_subj != "game" &&
 				topics[i].main_subj != "advanced" &&
+				topics[i].main_subj != "amusement" &&
 				topics[i].main_subj != "video" //&&
 				//topics[i].quiz_type.includes("conversation")
 			) {
