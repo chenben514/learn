@@ -276,6 +276,11 @@ function showTopic() {
 			curDetailLeft.disabled = true;
 		}
 
+		if (topics[i].quiz_type.includes("mp3")) {
+			curDetailLeft.classList.add("detail_left_subj_mp3");
+			curDetailLeft.disabled = true;
+		}
+
 		curDetailLeft.appendChild(curDetailMidSbj);
 		// 2.2. curDetailRight
 		var curDetailRight = document.createElement("detail-right-side");

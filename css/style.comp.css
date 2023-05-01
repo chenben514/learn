@@ -332,6 +332,9 @@ body {
 .detail_left_subj {
   cursor: pointer; }
 
+.detail_left_mp3_subj {
+  cursor: pointer; }
+
 .test-button {
   height: 5rem;
   width: 8.4rem;

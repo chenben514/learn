@@ -1,5 +1,6 @@
 #Subtitle2
 幫我把下面的英文字幕，保留原來的英文，加上 "--" 符號，再加上中文翻譯
+
 1
 00:01,906 --> 00:04,296
 You were born here. Raised here.
@@ -228,7 +229,7 @@ You guys go first.
 48
 01:55,17 --> 01:57,398
 You're never quite the same as you were when you began.
- -- 完成旅程後，不會不同於出發時的自己
+ -- 完成旅程後，你會不同於出發時的自己
 
 50
 01:57,516 --> 02:10,359

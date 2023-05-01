@@ -162,6 +162,10 @@ function setCourse() {
 	for (let i = 0; i < left_test_links.length; i++) {
 		left_test_links[i].addEventListener("click", startLeft);
 	}
+	let left_test_mp3_links = document.querySelectorAll(".detail_left_subj_mp3");
+	for (let i = 0; i < left_test_mp3_links.length; i++) {
+		left_test_mp3_links[i].addEventListener("click", startLeftMp3);
+	}
 
 	//0.2. Set Subject
 
@@ -224,6 +228,11 @@ function setMainSubject() {
 		left_test_links[i].addEventListener("click", startLeft);
 	}
 
+	let left_test_mp3_links = document.querySelectorAll(".detail_left_subj_mp3");
+	for (let i = 0; i < left_test_mp3_links.length; i++) {
+		left_test_mp3_links[i].addEventListener("click", startLeftMp3);
+	}
+
 	let small_test_links = document.querySelectorAll(".test-button");
 	for (let i = 0; i < small_test_links.length; i++) {
 		small_test_links[i].addEventListener("click", startQuiz);
@@ -258,6 +267,11 @@ function setMainSubject() {
 let left_test_links = document.querySelectorAll(".detail_left_subj");
 for (let i = 0; i < left_test_links.length; i++) {
 	left_test_links[i].addEventListener("click", startLeft);
+}
+
+let left_test_mp3_links = document.querySelectorAll(".detail_left_subj_mp3");
+for (let i = 0; i < left_test_mp3_links.length; i++) {
+	left_test_mp3_links[i].addEventListener("click", startLeftMp3);
 }
 
 //0.4. Set Small Course
@@ -329,6 +343,47 @@ function pronClick() {
 // if Left button clicked
 function startLeft() {
 	startAudio(this.id);
+}
+
+// if Left button clicked
+function startLeftMp3() {
+	let tmpSubject = this.id.split("-")[1].split("_")[1];
+	let tmpLesson = this.id.split("-")[1].split("_")[2];
+
+	var numOfMp3 = this.parentNode.children[1].children.length;
+
+	//let audioNum = t;
+	var baseName = "./data/" + curCourse + "/" + tmpSubject + "/" + tmpLesson;
+	var audioName;
+	var audioFiles = [];
+
+	const randomArray = new Array(numOfMp3);
+	for (let i = 0; i < numOfMp3; i++) {
+		// 生成 0 到 1 之间的随机数并乘以 10
+		// 然后使用 Math.floor() 函数将其向下取整为整数
+		randomArray[i] = Math.floor(Math.random() * numOfMp3) + 1;
+	}
+
+	for (let k = 0; k < numOfMp3; k++) {
+		if (randomArray[k] < 10) {
+			audioName = baseName + "/0" + randomArray[k] + ".mp3";
+		} else {
+			audioName = baseName + "/" + randomArray[k] + ".mp3";
+		}
+		audioFiles.push(audioName);
+	}
+	let currentIndex = 0;
+	let audio = new Audio(audioFiles[currentIndex]);
+
+	audio.addEventListener("ended", function () {
+		currentIndex++;
+		if (currentIndex < audioFiles.length) {
+			audio.src = audioFiles[currentIndex];
+			audio.play();
+		}
+	});
+
+	audio.play();
 }
 
 // function disableBtnStatus(status) {
@@ -2149,7 +2204,6 @@ function startAudio(curQuiz) {
 	/*read src file*/
 	playlistCnt = 0;
 	playlists = [];
-
 	if (curQuiz.includes("Left@@@")) {
 		bPlayerList = true;
 		parseCsv(base_left_filename + "/all.csv");
