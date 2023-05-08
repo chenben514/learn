@@ -1343,7 +1343,7 @@ function showResult() {
 			starMessage.innerText = showStar(curLevel);
 		}
 		scoreText.innerHTML = scoreTag; //adding new span tag inside score_Text
-	} else if (final_score >= 80) {
+	} else if (final_score >= 90) {
 		// if user scored more than 1
 		resultICON.innerHTML = '<i class="fas fa-grin-beam-sweat"></i>';
 		let scoreTag =
@@ -1351,6 +1351,17 @@ function showResult() {
 		scoreText.innerHTML = scoreTag;
 	} else {
 		// if user scored less than 1
+		reduceStarLevel();
+		var starMessage;
+		if (curQuiz.startsWith("test_")) {
+			starMessage = document.getElementById(
+				curQuiz.substr(5, curQuiz.length - 5) + "_star"
+			);
+		} else {
+			starMessage = document.getElementById(curQuiz + "_star");
+		}
+		starMessage.innerText = showStar(curLevel);
+
 		resultICON.innerHTML = '<i class="fas fa-tired"></i>';
 		let scoreTag =
 			"<span>很可惜 😐, 你只得到 <p>" + final_score + "</p> 分 </span>";
@@ -1510,6 +1521,33 @@ function raiseStarLevel() {
 		prevLevelStorage = prevLevelStorage + curQuiz + ";";
 		localStorage.setItem(cursubject + "_level_" + curLevel, prevLevelStorage);
 	}
+	localStorage.setItem(curQuiz + "_right", "");
+	return;
+}
+
+function reduceStarLevel() {
+	var i;
+	var curLevelStorage;
+	for (i = 3; i > 0; i--) {
+		curLevelStorage = localStorage.getItem(cursubject + "_level_" + i);
+		if (
+			curLevelStorage == null ||
+			curLevelStorage == "undefined" ||
+			curLevelStorage.length < 2
+		) {
+			continue;
+		}
+		if (curLevelStorage.includes(curQuiz + ";")) {
+			break;
+		}
+	}
+	curLevel = i;
+	if (curLevel > 0) {
+		curLevelStorage = curLevelStorage.replaceAll(curQuiz + ";", "");
+		localStorage.setItem(cursubject + "_level_" + curLevel, curLevelStorage);
+		curLevel--;
+	}
+	//alert(curLevel);
 	localStorage.setItem(curQuiz + "_right", "");
 	return;
 }
