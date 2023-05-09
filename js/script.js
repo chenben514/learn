@@ -1013,7 +1013,7 @@ function showQuestions(index) {
 				answer_target +
 				'<span><input type="text" class="direct_input" name="direct_input" id="direct_input' +
 				j.toString() +
-				'" value="" placeholder="輸入答案" style="width:15%;height:40px;font-size:20px;padding:10px;margin:5px"></span>';
+				'" value="" placeholder="輸入答案" style="width:200px;height:40px;font-size:20px;padding:10px;margin:5px"></span>';
 		}
 		answer_target +=
 			"<span> <button id='confirmButton' onclick='confirmClick()' style='width:70px;height:40px;' >確認</button></span> ";
