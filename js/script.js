@@ -2376,7 +2376,7 @@ function startAudio(curQuiz) {
 				videoId: videoId,
 				events: {
 					onReady: onPlayerReady,
-					// onStateChange: onPlayerStateChange,
+					onStateChange: onPlayerStateChange,
 				},
 			});
 		});
@@ -2385,6 +2385,21 @@ function startAudio(curQuiz) {
 		function onPlayerReady(e) {
 			e.target.playVideo();
 			youtube_ready = true;
+		}
+
+		function onPlayerStateChange(event) {
+			console.log(event);
+			if (event.data == YT.PlayerState.ENDED) {
+				var search_flexbox_list = document.querySelectorAll(".flex-box");
+				// alert(
+				// 	search_flexbox_list[
+				// 		Math.floor(Math.random() * search_flexbox_list.length) + 1
+				// 	].id
+				// );
+				search_flexbox_list[
+					Math.floor(Math.random() * search_flexbox_list.length) + 1
+				].click();
+			}
 		}
 
 		function stopVideo() {
