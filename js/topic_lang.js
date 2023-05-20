@@ -14,7 +14,7 @@ let courseSubjList = [
 	},
 	{ course: "cejk", subj: "combo,song" },
 	{ course: "computer", subj: "os,db,programming,data,devops,web" },
-	{ course: "learn", subj: "graph,calc,game,video,person" },
+	{ course: "learn", subj: "graph,calc,game,video,person,learn" },
 ];
 
 let defaultCourseSubjMap = new Map([
@@ -46,6 +46,7 @@ let subjMap = new Map([
 	["song", "歌曲"],
 	["graph", "圖型"],
 	["story", "故事"],
+	["learn", "學習"],
 	//電腦
 	["os", "OS"],
 	["db", "DB"],

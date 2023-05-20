@@ -146,22 +146,54 @@ function getTopic() {
 			if (singTopicArr[6] == undefined) {
 				alert("逗點分隔，找不到第7欄位，或第7欄位非 all.csv -- " + selFile);
 			}
-			if (singTopicArr[6].includes("-")) {
-				var loopArr = singTopicArr[6].split("-");
-				for (j = loopArr[0]; j <= loopArr[1]; j++) {
-					//topic.small_subjs.push(j.toString());
-					//topic.small_subj_explains.push(j.toString());
-					topic.small_subjs.push(pad(j, 2));
-					topic.small_subj_explains.push(pad(j, 2));
-					topic.small_subj_html.push("NA");
-				}
-				if (loopArr.length > 2) {
-					for (j = loopArr[0]; j <= loopArr[2]; j++) {
-						topic.small_subj_explains[j - 1] = "*" + j.toString();
+			// if (singTopicArr[6].includes("-")) {
+			// 	var loopArr = singTopicArr[6].split("-");
+			// 	var digit = 1;
+			// 	if (loopArr[1] > 100) digit = 3;
+			// 	else if (loopArr[1] > 10) digit = 2;
+			// 	for (j = loopArr[0]; j <= loopArr[1]; j++) {
+			// 		topic.small_subjs.push(pad(j, digit));
+			// 		topic.small_subj_explains.push(pad(j, digit));
+			// 		topic.small_subj_html.push("NA");
+			// 	}
+			// 	if (loopArr.length > 2) {
+			// 		for (j = loopArr[0]; j <= loopArr[2]; j++) {
+			// 			topic.small_subj_explains[j - 1] = "*" + j.toString();
+			// 		}
+			// 	}
+			// } else {
+			// 	for (j = 6; j < singTopicArr.length; j += 2) {
+			// 		topic.small_subjs.push(singTopicArr[j]);
+			// 		topic.small_subj_explains.push(singTopicArr[j + 1]);
+			// 		if (j + 2 < singTopicArr.length) {
+			// 			if (singTopicArr[j + 2].startsWith("http")) {
+			// 				topic.small_subj_html.push(singTopicArr[j + 2]);
+			// 				j += 1;
+			// 			} else {
+			// 				topic.small_subj_html.push("NA");
+			// 			}
+			// 		} else {
+			// 			topic.small_subj_html.push("NA");
+			// 		}
+			// 	}
+			// }
+			for (j = 6; j < singTopicArr.length; j += 2) {
+				if (singTopicArr[j].includes("-")) {
+					var loopArr = singTopicArr[j].split("-");
+					var digit = 1;
+					if (loopArr[1] > 100) digit = 3;
+					else if (loopArr[1] > 10) digit = 2;
+					for (j = loopArr[0]; j <= loopArr[1]; j++) {
+						topic.small_subjs.push(pad(j, digit));
+						topic.small_subj_explains.push(pad(j, digit));
+						topic.small_subj_html.push("NA");
 					}
-				}
-			} else {
-				for (j = 6; j < singTopicArr.length; j += 2) {
+					if (loopArr.length > 2) {
+						for (j = loopArr[0]; j <= loopArr[2]; j++) {
+							topic.small_subj_explains[j - 1] = "*" + j.toString();
+						}
+					}
+				} else {
 					topic.small_subjs.push(singTopicArr[j]);
 					topic.small_subj_explains.push(singTopicArr[j + 1]);
 					if (j + 2 < singTopicArr.length) {
@@ -176,6 +208,7 @@ function getTopic() {
 					}
 				}
 			}
+
 			//end
 		}
 		topics[i] = topic;

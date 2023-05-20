@@ -365,11 +365,15 @@ function startLeftMp3() {
 	}
 
 	for (let k = 0; k < numOfMp3; k++) {
-		if (randomArray[k] < 10) {
-			audioName = baseName + "/0" + randomArray[k] + ".mp3";
-		} else {
-			audioName = baseName + "/" + randomArray[k] + ".mp3";
-		}
+		// alert(
+		// 	this.parentNode.children[1].children[randomArray[k]].children[0]
+		// 		.children[0].children[0].children[0].id
+		// );
+		var tmpName =
+			this.parentNode.children[1].children[
+				randomArray[k]
+			].children[0].children[0].children[0].children[0].id.split("_")[4];
+		audioName = baseName + "/" + tmpName + ".mp3";
 		audioFiles.push(audioName);
 	}
 	let currentIndex = 0;
@@ -385,17 +389,6 @@ function startLeftMp3() {
 
 	audio.play();
 }
-
-// function disableBtnStatus(status) {
-// 	let small_wrong_links = document.querySelectorAll(".wrong-button");
-// 	for (let i = 0; i < small_wrong_links.length; i++) {
-// 		small_wrong_links[i].disabled = status;
-// 	}
-// 	let small_test_links = document.querySelectorAll(".test-button");
-// 	for (let i = 0; i < small_test_links.length; i++) {
-// 		small_test_links[i].disabled = status;
-// 	}
-// }
 
 // if startQuiz button clicked
 function startQuiz() {
