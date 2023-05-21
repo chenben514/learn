@@ -361,7 +361,7 @@ function startLeftMp3() {
 	for (let i = 0; i < numOfMp3; i++) {
 		// 生成 0 到 1 之间的随机数并乘以 10
 		// 然后使用 Math.floor() 函数将其向下取整为整数
-		randomArray[i] = Math.floor(Math.random() * numOfMp3) + 1;
+		randomArray[i] = Math.floor(Math.random() * numOfMp3);
 	}
 
 	for (let k = 0; k < numOfMp3; k++) {
@@ -369,11 +369,14 @@ function startLeftMp3() {
 		// 	this.parentNode.children[1].children[randomArray[k]].children[0]
 		// 		.children[0].children[0].children[0].id
 		// );
+		// console.log("random:" + k + ":" + randomArray[k]);
+
 		var tmpName =
 			this.parentNode.children[1].children[
 				randomArray[k]
 			].children[0].children[0].children[0].children[0].id.split("_")[4];
 		audioName = baseName + "/" + tmpName + ".mp3";
+		// console.log("ok:" + audioName);
 		audioFiles.push(audioName);
 	}
 	let currentIndex = 0;
