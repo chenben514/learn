@@ -182,7 +182,7 @@ function getTopic() {
 					var loopArr = singTopicArr[j].split("-");
 					var digit = 1;
 					if (loopArr[1] > 100) digit = 3;
-					else if (loopArr[1] > 10) digit = 2;
+					else if (loopArr[1] > 0) digit = 2;
 					for (j = loopArr[0]; j <= loopArr[1]; j++) {
 						topic.small_subjs.push(pad(j, digit));
 						topic.small_subj_explains.push(pad(j, digit));
