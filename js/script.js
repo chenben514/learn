@@ -309,7 +309,6 @@ function pronClick() {
 	} else {
 		audioFile = base_filename + ".m4a";
 	}
-
 	if (UrlExists(audioFile)) {
 		var quizPlayer = document.getElementById("radio");
 		quizPlayer.hidden = false;
@@ -365,12 +364,6 @@ function startLeftMp3() {
 	}
 
 	for (let k = 0; k < numOfMp3; k++) {
-		// alert(
-		// 	this.parentNode.children[1].children[randomArray[k]].children[0]
-		// 		.children[0].children[0].children[0].id
-		// );
-		// console.log("random:" + k + ":" + randomArray[k]);
-
 		var tmpName =
 			this.parentNode.children[1].children[
 				randomArray[k]
@@ -415,7 +408,6 @@ function startQuiz() {
 
 	//0.2. disable all test buttons
 	//0.直接聽錄音
-	// alert(curQuiz);
 	if (curQuizType.startsWith("conversation")) {
 		startAudio(this.id);
 		return;
@@ -659,7 +651,6 @@ function checkFileExist(urlToFile) {
 function parseCsv(filename) {
 	var displayName;
 	if (checkFileExist(filename) == false) {
-		// alert("Quiz file [" + filename + "] does not exist.");
 		return false;
 	}
 
@@ -747,7 +738,6 @@ function getQuestions() {
 		rightStorage = "nothing";
 	let tmpMessage = "";
 	for (let k = 0; k < quesCnt; k++) {
-		// alert(quesArr[k] + ":" + quesArr[k].length);
 		if (quesArr[k].length < 2) continue;
 		if (curQuizType.includes("conversation")) {
 			if (!quesArr[k].includes("[")) continue;
@@ -1543,7 +1533,6 @@ function reduceStarLevel() {
 		localStorage.setItem(cursubject + "_level_" + curLevel, curLevelStorage);
 		curLevel--;
 	}
-	//alert(curLevel);
 	localStorage.setItem(curQuiz + "_right", "");
 	return;
 }
@@ -1927,9 +1916,7 @@ function showTable(isMedia) {
 		c.onkeyup = function () {
 			changeRow(this);
 		};
-		//alert(subtitles[k].content);
 		c.innerHTML = highlight_start(k, subtitles[k].content);
-		//alert(c.innerHTML);
 
 		//5.句子2
 		if (subtitleMode.includes("DoubleSrt") || subtitleMode.includes("MD4")) {
@@ -2055,10 +2042,6 @@ function getTableContent() {
 	}
 
 	for (var i = 1, row; (row = table.rows[i]); i++) {
-		// alert(row.cells[3].innerText);
-		// if (row.cells[3].innerText.length == 0) {
-		//   continue;
-		// }
 		tableContent = tableContent + row.cells[0].innerText + "\n";
 		tableContent =
 			tableContent +
@@ -2185,12 +2168,10 @@ function startAudio(curQuiz) {
 	// When the user clicks on <span> (x), close the modal
 	modal.style.display = "block";
 
-	// alert(curQuiz);
 	var videoID;
 	if (curQuiz.includes("Left@@@") || curQuiz.includes("all@")) {
 		videoID = curQuiz.split("@")[1];
 	} else {
-		//alert(curQuiz);
 		videoID = curQuiz.split("-")[1].split("_")[3];
 	}
 
@@ -2234,7 +2215,6 @@ function startAudio(curQuiz) {
 			base_filename = base_left_filename + "/" + curTopicArr[3];
 		}
 	}
-
 	/*read src file*/
 	playlistCnt = 0;
 	playlists = [];
@@ -2371,7 +2351,6 @@ function startAudio(curQuiz) {
 		// 3. This function creates an <iframe> (and YouTube player)
 		//    after the API code downloads.
 		var videoId = youtube_url.split("=")[1].split("&")[0];
-		//alert(videoId);
 		window.YT.ready(function () {
 			player = new window.YT.Player("player-div", {
 				// height: YT_height,
@@ -2394,11 +2373,6 @@ function startAudio(curQuiz) {
 			console.log(event);
 			if (event.data == YT.PlayerState.ENDED) {
 				var search_flexbox_list = document.querySelectorAll(".flex-box");
-				// alert(
-				// 	search_flexbox_list[
-				// 		Math.floor(Math.random() * search_flexbox_list.length) + 1
-				// 	].id
-				// );
 				search_flexbox_list[
 					Math.floor(Math.random() * search_flexbox_list.length) + 1
 				].click();
