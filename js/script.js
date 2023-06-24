@@ -2366,6 +2366,7 @@ function startAudio(curQuiz) {
 		// 4. The API will call this function when the video player is ready.
 		function onPlayerReady(e) {
 			e.target.playVideo();
+			e.target.seekTo(0);
 			youtube_ready = true;
 		}
 
@@ -2474,6 +2475,34 @@ function startAudio(curQuiz) {
 					if (currentTime < subtitles[actualRow - 1].start) {
 						actualRow--;
 					} else break;
+				}
+			}
+			/*end*/
+
+			/*handle bRemainHighlight */
+			if (bRemainHighlight && arrPlayMode[playMode].value == "ArticleStop") {
+				while (1) {
+					if (
+						subtitles[actualRow - 1].content.includes("[") &&
+						subtitles[actualRow - 1].content.includes("]")
+					) {
+						break;
+					} else {
+						if (youtube_mode) {
+							actualRow++;
+							player.seekTo(subtitles[actualRow - 1].start);
+						}
+
+						// if (actualRow == myAudioTableRow.length) {
+						// 	alert("hello 2497");
+						// 	if (youtube_mode) {
+						// 		player.pauseVideo();
+						// 	} else {
+						// 		audio.pause();
+						// 	}
+						// 	return;
+						// }
+					}
 				}
 			}
 			/*end*/
