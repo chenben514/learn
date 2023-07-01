@@ -1,0 +1,215 @@
+#Subtitle2
+幫我把下面的英文字幕，保留原來的英文，請在同一行，加上 "--" 符號，再加上中文翻譯，請使用繁體中文
+
+1
+00:00:01,000 --> 00:00:03,666
+I'm here because I got a divorce. -- 我來這裡是因為我離婚了。
+
+2
+00:00:04,541 --> 00:00:07,041
+I wanted to take on a new challenge -- 我想接受新的挑戰。
+
+3
+00:00:07,166 --> 00:00:09,500
+and just sort of [reset my life]. -- 並且重新啟動我的生活。
+
+4
+00:00:09,541 --> 00:00:11,791
+You'll get all the badges, make lots of friends. -- 你會獲得所有徽章，結交很多朋友。
+
+5
+00:00:11,916 --> 00:00:13,791
+This is an adult camping trip. 
+Yes.
+-- 這是一個成人露營之旅。
+是的
+
+
+6
+00:00:13,875 --> 00:00:15,375
+It's not camp. -- 不是夏令營。
+
+7
+00:00:15,375 --> 00:00:16,791
+Yes. [Archery badge]. -- 是的。射箭徽章。
+
+8
+00:00:16,875 --> 00:00:18,291
+No archery. No. 
+Okay.
+-- 
+不能射箭。不行。
+好吧
+
+11
+00:00:18,375 --> 00:00:24,875
+We'll be working our way through some of Connecticut's 51 miles -- 我們將穿越康乃狄克州的51英里
+
+12
+00:00:24,916 --> 00:00:26,291
+of the Appalachian Trail. -- 阿巴拉契亞山徑。
+
+13
+00:00:26,375 --> 00:00:28,250
+These people here... -- 這些人在這裡...
+
+14
+00:00:28,291 --> 00:00:29,416
+...are your team. -- ...是你的團隊。
+
+15
+00:00:29,541 --> 00:00:31,416
+It's hike day, baby! Whoo! -- 今天是遠足的日子，寶貝！耶！
+
+16
+00:00:31,541 --> 00:00:34,250
+Like some coffee, Ellen? 
+My name is Helen, with an H.
+-- 要喝點咖啡嗎，艾倫？
+我的名字是海倫，開頭是H
+
+17
+00:00:34,291 --> 00:00:36,625
+Really? With an H, Helen? Hm. -- 真的嗎？帶個「H」的，海倫？嗯。
+
+18
+00:00:36,666 --> 00:00:39,625
+I'm Hugh. I'm old enough not to discuss my age. -- 我是休，我已經老到不需要討論我的年齡了。
+
+19
+00:00:39,666 --> 00:00:41,666
+She knows what I'm talking about. -- 她知道我在講什麼。
+
+20
+00:00:41,750 --> 00:00:49,166
+I am taking a vow of silence on our hike. -- 我在這次遠足中守口如瓶。
+
+23
+00:00:49,291 --> 00:00:50,250
+Okay, people. -- 好了，大家。
+
+24
+00:00:51,291 --> 00:00:52,541
+Well, let's gather around. -- 好吧，讓我們聚在一起。
+
+25
+00:00:52,625 --> 00:00:54,666
+Should we expect to see a bear around here? -- 我們應該預料會在這附近看到熊嗎？
+
+26
+00:00:54,791 --> 00:00:56,041
+I'd say expect anything. -- 我會說預料可能會有任何事情發生。
+
+27
+00:00:56,125 --> 00:00:57,916
+What about [large stray dogs]? -- 那大型流浪狗呢？
+
+28
+00:00:58,000 --> 00:01:00,291
+[That is very unlikely]. -- 那是非常不可能的。
+
+29
+00:01:00,875 --> 00:01:02,791
+I sense [tension] between the two of you. -- 我感受到你們之間的緊張氛圍。
+
+30
+00:01:02,916 --> 00:01:06,916
+Oh, no. We actually know each other.
+He's my little brother's best friend. 
+-- 喔，不是的。我們實際上認識彼此，
+他是我小弟弟最好的朋友。
+
+31
+00:01:07,666 --> 00:01:10,666
+Why are you here? People [get seriously injured] on these hikes. -- 你為什麼在這裡？在這些遠足中人們會受到嚴重的傷害。
+
+32
+00:01:10,791 --> 00:01:14,041
+That's where you're wrong.
+This is the new and improved Helen. -- 你錯了，這是新的、進化過的海倫。
+
+33
+00:01:14,125 --> 00:01:16,791
+This Helen [spits in the face of danger]. -- 這個海倫勇於面對危險。
+
+34
+00:01:17,375 --> 00:01:18,250
+Ow! -- 哎喲！
+
+35
+00:01:18,291 --> 00:01:20,791
+How did you find the sharpest rock in the forest? -- 你怎麼找到了森林中最銳利的岩石？
+
+36
+00:01:22,166 --> 00:01:28,041
+I got it, thank you. I got it. -- 我拿到了，謝謝。我拿到了。
+
+39
+00:01:28,166 --> 00:01:29,541
+Why did you come here? -- 你為什麼來這裡？
+
+40
+00:01:30,375 --> 00:01:34,166
+I think I just sort of [got sick of being fed up with myself]. -- 我想我只是厭倦
+
+41
+00:01:35,375 --> 00:01:38,041
+Every night, I write three good things that happened to me. -- 每晚我寫下三件發生在我身上的好事。
+
+42
+00:01:38,125 --> 00:01:40,166
+And, what, just like that you're happy? -- 就這樣你就開心了嗎？
+
+43
+00:01:40,666 --> 00:01:43,916
+All you talk about is how [your breakup is clinging to you], -- 你一直在談論你的分手如何困擾著你，
+
+44
+00:01:44,000 --> 00:01:45,250
+but that's not what I see. -- 但我不這麼認為。
+
+45
+00:01:45,291 --> 00:01:47,375
+Why do you sound like a [jealous boyfriend]? -- 為什麼你聽起來像個嫉妒的男朋友？
+
+46
+00:01:48,291 --> 00:01:49,875
+You were too good for him. -- 你對他來說太好了。
+
+47
+00:01:51,750 --> 00:01:53,916
+If you like him, just tell him. -- 如果你喜歡他，就告訴他。
+
+48
+00:01:54,041 --> 00:01:58,000
+You've got to [look closer at the big picture]. -- 你必須更仔細地看待整個情況。
+
+49
+00:01:58,666 --> 00:02:01,166
+I remember you seemed to really like your life, -- 我記得你似乎真的喜歡你的生活，
+
+50
+00:02:01,291 --> 00:02:02,625
+and you laughed all the time. -- 你一直笑個不停。
+
+51
+00:02:02,666 --> 00:02:03,666
+Yeah, I was young. -- 是的，那時我還年輕。
+
+52
+00:02:03,791 --> 00:02:05,250
+Well, you're still really young. -- 嗯，你仍然很年輕。
+
+53
+00:02:10,250 --> 00:02:13,250
+You don't realize it, but [life really takes a toll]. -- 你沒有意識到，但生活真的會耗盡你的精力。
+
+54
+00:02:14,625 --> 00:02:16,291
+Figure out a way to [fight back]. -- 想辦法反擊。
+
+55
+00:02:21,875 --> 00:02:22,750
+[To the trail]. -- 出發上山徑。
+
+

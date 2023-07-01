@@ -1,0 +1,360 @@
+#Subtitle2
+幫我把下面的英文字幕，保留原來的英文，加上 "--" 符號，再加上中文翻譯
+
+1
+00:00:00,000 --> 00:00:05,520
+(♪ INTRO) -- (♪ 開場音樂)
+
+2
+00:00:05,520 --> 00:00:07,200
+Wasn’t that great, Squeaks?! -- 那不是很棒嗎，史奎克斯？
+
+3
+00:00:07,200 --> 00:00:08,080
+(Squeaks squeaks) --(史奎克斯叫聲)
+
+4
+00:00:08,080 --> 00:00:09,200
+What was your [favorite(最喜歡的)] part? -- 你最喜歡的部分是什麼？
+
+5
+00:00:09,200 --> 00:00:11,280
+(Squeaks squeaks) -- (史奎克斯叫聲)
+
+6
+00:00:11,280 --> 00:00:13,760
+Yeah, the [roller coaster(雲霄飛車)] was great! -- 是的，雲霄飛車真的很棒！
+
+7
+00:00:13,760 --> 00:00:15,040
+(Squeaks squeaks) -- (史奎克斯叫聲)
+
+8
+00:00:15,040 --> 00:00:18,960
+Oh, hey there! Squeaks and I just got back from the [carnival（喜年華）]! -- 哦，嗨！史奎克斯和我剛從嘉年華回來！
+
+9
+00:00:18,960 --> 00:00:24,320
+We rode on lots of fun rides, played carnival games… it was -- 我們體驗了很多有趣的遊樂設施，玩了嘉年華遊戲... 真是太有趣了！
+
+10
+00:00:24,320 --> 00:00:27,652
+But do you know my favorite part of a carnival? -- 但你知道我在嘉年華最喜歡的是什麼嗎？
+
+11
+00:00:27,652 --> 00:00:29,008
+The food! -- 是食物！
+
+12
+00:00:29,008 --> 00:00:35,200
+Hot dogs, ice cream, and… cotton candy! -- 熱狗、冰淇淋，還有... 棉花糖！
+
+13
+00:00:35,200 --> 00:00:36,880
+I love [cotton candy(棉花糖)]! -- 我喜歡棉花糖！
+
+14
+00:00:36,880 --> 00:00:39,920
+It’s super [fluffy(蓬鬆)], and really sweet. -- 它超級蓬鬆，而且非常甜。
+
+15
+00:00:39,920 --> 00:00:42,880
+And it comes in so many different colors and flavors. -- 而且有很多不同的顏色和口味。
+
+16
+00:00:42,880 --> 00:00:46,800
+Like pink or blue, vanilla or bubblegum. -- 像粉紅色或藍色，香草或泡泡糖口味。
+
+17
+00:00:46,800 --> 00:00:49,120
+(Squeaks squeaks) -- (史奎克斯叫聲)
+
+18
+00:00:49,120 --> 00:00:50,960
+Oh, what’s your question, Squeaks? -- 噢，史奎克斯，你有什麼問題？
+
+19
+00:00:50,960 --> 00:00:52,720
+(Squeaks squeaks) -- (史奎克斯叫聲)
+
+20
+00:00:52,720 --> 00:00:54,000
+What’s it made out of? -- 它是由什麼做成的？
+
+21
+00:00:54,000 --> 00:01:00,720
+Well, [even though（即使）] we call it cotton candy, this stuff isn’t really made out of cotton. -- 嗯，即使我們稱之為棉花糖，但它並不是真的由棉花製成的。
+
+22
+00:01:00,720 --> 00:01:04,160
+Cotton candy is made out of sugar, but we call it “cotton” candy -- 棉花糖是由糖製成的，但我們稱之為「棉花」糖
+
+23
+00:01:04,160 --> 00:01:06,320
+because it reminds some people of cotton. -- 是因為它讓一些人想起棉花。
+
+24
+00:01:06,320 --> 00:01:10,319
+Do you see any similarities between 
+the candy and the cotton plant? -- 你看到糖果和棉花植物之間有任何相似之處嗎？
+
+25
+00:01:10,319 --> 00:01:11,920
+(Squeaks squeaks) -- (吱吱叫聲)
+
+26
+00:01:11,920 --> 00:01:17,600
+Yeah, they both have a super fluffy texture, with lots of soft, wispy strands. -- 是的，它們都具有超級蓬鬆的質地，有著許多柔軟、纖細的絲狀物。
+
+27
+00:01:17,600 --> 00:01:21,120
+So some people call this food “cotton” candy because their texture -- 因此，有些人稱這種食物為“棉花”糖果，因為它們的質地
+
+28
+00:01:21,120 --> 00:01:22,560
+looks and feels so similar. -- 看起來和感覺非常相似。
+
+29
+00:01:22,560 --> 00:01:25,920
+Other people call cotton candy 
+“sugar floss” or “fairy floss”, -- 其他人稱棉花糖為“糖絲”或“仙女絲”，
+
+30
+00:01:25,920 --> 00:01:29,040
+because of how teeny tiny 
+the little sugar strings are. -- 因為這些小小的糖絲非常細小。
+
+31
+00:01:29,040 --> 00:01:31,520
+(Squeaks squeaks) -- (吱吱叫聲)
+
+32
+00:01:31,520 --> 00:01:34,560
+Yes, a little like [tooth floss（牙線）] for a [fairy（仙女）]! -- 是的，有點像仙女用的牙線！
+
+33
+00:01:34,560 --> 00:01:37,840
+But even though it might look like cotton or little fairy strings, -- 但即使它看起來像棉花或小仙女絲，
+
+34
+00:01:37,840 --> 00:01:41,680
+this candy is just sugar, which is why it tastes so sweet. -- 這種糖果其實只是糖，所以才會那麼甜。
+
+35
+00:01:41,680 --> 00:01:45,242
+(Squeaks squeaks) -- (吱吱叫聲)
+
+36
+00:01:45,242 --> 00:01:50,080
+Hm, you’re right that sugar doesn’t always look fluffy like in cotton candy. -- 嗯，你說得對，糖不總是像棉花糖那樣蓬鬆。
+
+37
+00:01:50,080 --> 00:01:56,240
+Here, let’s take a look at some sugar like we’d find in our [sugar jar（糖罐）] really closely! -- 來，讓我們仔細看看糖罐裡的一些糖！
+
+38
+00:01:56,240 --> 00:01:59,760
+If we look really closely, this sugar is [solid（固體）], -- 如果我們仔細看，這些糖是固體的，
+
+39
+00:01:59,760 --> 00:02:02,320
+with tiny shapes that don’t change much. -- 有著微小的形狀，並且不太變化。
+
+40
+00:02:02,320 --> 00:02:06,880
+This sugar is small and kind of round, almost like little rocks. -- 這些糖很小而且有點圓，幾乎像小石頭一樣。
+
+41
+00:02:06,880 --> 00:02:09,840
+We call this special solid form of sugar crystals. -- 我們稱這種特殊的固體糖晶為。
+
+42
+00:02:09,840 --> 00:02:12,240
+(Squeaks squeaks) -- (吱吱叫聲)
+
+43
+00:02:12,240 --> 00:02:15,760
+Well, solid crystals can’t really 
+change their shape too much. -- 嗯，固體晶體實際上無法改變太多形狀。
+
+44
+00:02:15,760 --> 00:02:20,480
+So to change the sugar’s shape into the fluffy wisps of cotton candy, -- 因此，為了把糖的形狀變成鬆軟的棉花糖，
+
+45
+00:02:20,480 --> 00:02:22,240
+we need to use [heat(熱] to help us. -- 我們需要用熱來幫助我們。
+
+46
+00:02:22,240 --> 00:02:25,600
+When sugar crystals are put into a cotton candy machine, -- 當糖晶體被放入棉花糖機中，
+
+47
+00:02:25,600 --> 00:02:27,600
+they start as solid crystals. -- 它們開始時是固體晶體。
+
+48
+00:02:27,600 --> 00:02:32,080
+These sugar crystals usually have [food coloring（食用色素）] and [flavoring（香料）] added to them, -- 這些糖晶體通常會加入食用色素和香料，
+
+49
+00:02:32,080 --> 00:02:34,720
+so they’ll be extra colorful and tasty. -- 這樣它們會更加豐富多彩和美味。
+
+50
+00:02:34,720 --> 00:02:37,520
+Next the cotton candy machine starts to heat up, -- 接下來，棉花糖機開始加熱，
+
+51
+00:02:37,520 --> 00:02:41,200
+and that heat begins to [melt（融化)] the sugar, changing the sugar -- 熱量開始融化糖，改變糖的狀態
+
+52
+00:02:41,200 --> 00:02:43,440
+from solid crystals into something new. -- 從固體晶體轉變成全新的物質。
+
+53
+00:02:43,440 --> 00:02:48,173
+What state do you think the 
+sugar will melt into, Squeaks? -- Squeaks，你認為糖會融化成什麼狀態？
+
+54
+00:02:48,173 --> 00:02:50,080
+(Squeaks squeaks) -- (吱吱叫聲)
+
+55
+00:02:50,080 --> 00:02:54,720
+That’s right! When solid sugar melts, it melts into [liquid（液體)] sugar. -- 沒錯！當固體糖融化時，它會變成液體糖漿。
+
+56
+00:02:54,720 --> 00:02:59,040
+While the sugar is a liquid, it can change shape much more easily. -- 當糖是液體時，它可以更容易地改變形狀。
+
+57
+00:02:59,040 --> 00:03:04,160
+That means the machine can stretch the liquid sugar into long, thin lines. -- 這意味著機器可以把液體糖拉伸成長而細的線條。
+
+58
+00:03:04,160 --> 00:03:08,080
+The cotton candy machine has a lot of teeny, tiny holes inside -- 棉花糖機內部有很多微小的小孔，
+
+59
+00:03:08,080 --> 00:03:09,920
+for the liquid sugar to go through. -- 讓液體糖漿通過的小孔。
+
+60
+00:03:09,920 --> 00:03:13,920
+Little drips of liquid sugar go through as the machine spins, -- 當機器旋轉時，液體糖漿會滴下來，
+
+61
+00:03:13,920 --> 00:03:18,000
+and when they fling into the big empty space in the middle, -- 當它們擺動到中間的大空間時，
+
+62
+00:03:18,000 --> 00:03:22,080
+they cool down really quickly and change back into solid sugar. -- 它們迅速冷卻，重新變回固體糖。
+
+63
+00:03:22,080 --> 00:03:25,520
+The liquid sugar can turn back into a solid as it cools down, -- 當液體糖冷卻下來時，它可以變回固體，
+
+64
+00:03:25,520 --> 00:03:28,080
+just like it melted when it got hot. -- 就像在受熱時融化一樣。
+
+65
+00:03:28,080 --> 00:03:30,183
+But it looks a bit different now… -- 但現在它看起來有點不同...
+
+66
+00:03:30,183 --> 00:03:32,006
+(Squeaks squeaks) -- (吱吱叫聲)
+
+67
+00:03:32,006 --> 00:03:34,995
+Yeah, just like threads of cotton candy! -- 對，就像棉花糖的線條一樣！
+
+68
+00:03:34,995 --> 00:03:40,000
+When the liquid sugar cools back into a solid, it keeps the long, thin shape -- 當液體糖冷卻回到固體時，它保持了長而細的形狀，
+
+69
+00:03:40,000 --> 00:03:43,200
+that allowed it to go through the cotton candy machine holes, -- 這使它能夠通過棉花糖機的孔洞，
+
+70
+00:03:43,200 --> 00:03:46,800
+instead of turning back into the larger, hard crystals of plain sugar. -- 而不是變回更大、更硬的晶體糖。
+
+71
+00:03:46,800 --> 00:03:50,320
+Those little sugar threads are rolled up into a big, fluffy puff -- 這些小糖絲被捲成一個大而鬆軟的球狀
+
+72
+00:03:50,320 --> 00:03:53,040
+that we recognize as cotton candy. -- 就是我們認識的棉花糖。
+
+73
+00:03:53,040 --> 00:03:56,240
+The sugar changes a lot when it’s heated up and cooled down. -- 當糖受熱和冷卻時，它會發生很大的變化。
+
+74
+00:03:56,240 --> 00:04:00,880
+It went from a solid crystal, to liquid, to a thin, fluffy solid. -- 它從固體晶體變成液體，再變成薄薄的鬆軟固體。
+
+75
+00:04:00,880 --> 00:04:04,800
+Still, some things stayed the same, like its sweet flavor! -- 然而，一些東西保持不變，比如它的甜味！
+
+76
+00:04:04,800 --> 00:04:06,240
+I have a great idea! -- 我有一個好主意！
+
+77
+00:04:06,880 --> 00:04:11,280
+Do you want to go back to the carnival tomorrow to get more cotton candy -- 明天你想回到嘉年華會場再買更多棉花糖嗎？
+
+78
+00:04:11,280 --> 00:04:13,840
+and take a closer look at how the machine works, Squeaks? -- 並且仔細觀察一下機器是如何工作的，Squeaks？
+
+79
+00:04:13,840 --> 00:04:15,574
+(Squeaks squeaks) -- (吱吱叫聲)
+
+80
+00:04:15,574 --> 00:04:16,240
+Alright! -- 好的！
+
+81
+00:04:16,240 --> 00:04:18,399
+Have you seen cotton candy being made? -- 你看過製作棉花糖的過程嗎？
+
+82
+00:04:18,399 --> 00:04:22,640
+What other ways do you think people can change sugar to make new sweet treats? -- 你覺得人們還能用什麼其他方法改變糖來製作新的甜點呢？
+
+83
+00:04:22,640 --> 00:04:25,440
+Thanks for exploring how to 
+make cotton candy with us today. -- 感謝你今天與我們一起探索如何製作棉花糖。
+
+84
+00:04:25,440 --> 00:04:28,960
+Remember, if you want to keep learning new things with Squeaks and me, -- 記住，如果你想繼續和Squeaks以及我一起學習新知識，
+
+85
+00:04:28,960 --> 00:04:31,520
+and all of our friends, hit the subscribe button, -- 以及我們所有的朋友，按下訂閱按鈕，
+
+86
+00:04:31,520 --> 00:04:34,035
+and we’ll see you next time, here at the Fort. -- 下次見，就在堡壘這裡。
+
+87
+00:04:34,035 --> 00:04:35,314
+(Squeaks squeaks) -- (吱吱叫聲)
+
+88
+00:04:35,314 --> 00:04:46,420
+(♪ OUTRO)

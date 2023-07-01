@@ -2053,7 +2053,7 @@ function getTableContent() {
 		if (subtitleMode.includes("DoubleSrt")) {
 			tableContent = tableContent + " -- " + row.cells[4].innerText;
 		}
-		tableContent = tableContent + "\n";
+		tableContent = tableContent + "\n\n";
 	}
 	return tableContent;
 }
