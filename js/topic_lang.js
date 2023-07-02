@@ -42,7 +42,7 @@ let subjMap = new Map([
 	["spell", "拼寫"],
 	["writing", "書寫"],
 	["amusement", "娛樂"],
-	["speak", "會話"],
+	["speak", "發音"],
 	["song", "歌曲"],
 	["graph", "圖型"],
 	["story", "故事"],

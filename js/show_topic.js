@@ -144,7 +144,8 @@ function getTopic() {
 		} else {
 			//handle [1-n-x] auto loop case (n:全部,x:己校正)
 			if (singTopicArr[6] == undefined) {
-				alert("逗點分隔，找不到第7欄位，或第7欄位非 all.csv -- " + selFile);
+				//alert("逗點分隔，找不到第7欄位，或第7欄位非 all.csv -- " + selFile);
+				return;
 			}
 			// if (singTopicArr[6].includes("-")) {
 			// 	var loopArr = singTopicArr[6].split("-");
