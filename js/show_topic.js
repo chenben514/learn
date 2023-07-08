@@ -39,7 +39,7 @@ function getTopic() {
 	var selFile = "./";
 
 	if (curWeb.includes("computer")) {
-		selFile = "/computer/";
+		selFile = "/computer";
 	}
 	var selFile =
 		selFile +
@@ -53,6 +53,7 @@ function getTopic() {
 
 	var read = new XMLHttpRequest();
 	read.open("GET", selFile, false);
+	alert(selFile);
 	read.setRequestHeader("Cache-Control", "no-cache");
 	read.send();
 	var displayName = read.responseText;
