@@ -39,7 +39,7 @@ function getTopic() {
 	var selFile = "./";
 
 	if (curWeb.includes("computer")) {
-		selFile = "../computer/";
+		selFile = "/computer/";
 	}
 	var selFile =
 		selFile +
