@@ -53,7 +53,6 @@ function getTopic() {
 
 	var read = new XMLHttpRequest();
 	read.open("GET", selFile, false);
-	alert(selFile);
 	read.setRequestHeader("Cache-Control", "no-cache");
 	read.send();
 	var displayName = read.responseText;
