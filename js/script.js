@@ -495,7 +495,7 @@ function startWrong() {
 	var base_left_filename = "./";
 
 	if (curWeb.includes("computer")) {
-		base_left_filename = "../computer/";
+		base_left_filename = "./computer/";
 	}
 
 	var base_left_filename =
@@ -698,7 +698,7 @@ function getQuestions() {
 	var base_left_filename = "./";
 
 	if (curWeb.includes("computer")) {
-		base_left_filename = "../computer/";
+		base_left_filename = "./computer/";
 	}
 
 	var base_left_filename =
@@ -2187,7 +2187,7 @@ function startAudio(curQuiz) {
 	var base_left_filename = "./";
 
 	if (curWeb.includes("computer")) {
-		base_left_filename = ".//computer";
+		base_left_filename = "./computer/";
 	}
 
 	var base_left_filename =
