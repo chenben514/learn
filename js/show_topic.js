@@ -39,11 +39,11 @@ function getTopic() {
 	var selFile = "./";
 
 	if (curWeb.includes("computer")) {
-		selFile = ".//computer";
+		selFile = "./computer";
 	}
 	var selFile =
 		selFile +
-		"/data/" +
+		"data/" +
 		curCourse +
 		"/" +
 		curMainSubj +
@@ -87,7 +87,7 @@ function getTopic() {
 			var allFile = "./";
 
 			if (curWeb.includes("computer")) {
-				allFile = "../computer/";
+				allFile = "./computer/";
 			}
 
 			var allFile =
