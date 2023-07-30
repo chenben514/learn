@@ -1,0 +1,65 @@
+#Subtitle2
+1
+00:00,0 --> 00:51,381
+前言
+ -- 
+
+
+2
+00:51,381 --> 01:02,340
+Deep drive into Airflow's Schedule
+ -- 
+
+
+3
+01:02,340 --> 01:07,144
+Airflow 就是個無限循環的 Scheduler
+ -- 
+
+
+4
+01:09,343 --> 01:27,897
+Scheduler 做了哪些事 -- 1. 排程 2. SLA 3.檢查狀態
+
+5
+01:27,897 --> 01:48,832
+Scheduler 核心部份 -- 1. SchedulerJob. 2.Executor. 3.DagFileProcessor
+
+6
+01:48,832 --> 04:13,157
+Scheduler 利用 DB 內被解譯過的 DAG 決策 -- 1. do_scheduling()
+2. process_agent_heartbeat()
+3. heartbeat()
+4. timed_events_run()
+
+7
+04:13,157 --> 08:15,613
+Scheduler -- 1. create dagrun
+2. start queued dagruns
+3. get old dagrun (timeout..)
+4. send new task
+*. check pool slots, max_active_task.
+
+8
+08:15,613 --> 10:07,67
+Executor -- task 執行完會改DB
+
+
+
+9
+10:07,67 --> 13:08,674
+DagFileProcessorManager -- 不停的循環，掃瞄資料夾的檔案，存到DB內
+
+
+10
+13:08,674 --> 16:16,357
+High Avalibility -- select * from task_instance LIMIT 2 FOR UPDATE SKIP LOCKED (加上行鎖不等待）
+
+11
+16:16,357 --> 18:35,899
+Critical Section -- select * from pool for update nowait
+
+12
+18:35,899 --> 21:34,692
+HA (active-active) -- adopting tasks: 檢查有沒有死掉的 scheduler
+

@@ -1,0 +1,49 @@
+#Subtitle2
+1
+00:00,000 --> 01:24,128
+前言 -- 
+
+2
+01:24,128 --> 04:59,651
+Log -- 1. Log 可寫在 local 或 remote(支援S3,ElasticSearch), 可自訂格式，Log 層級(error, warning,info..)
+2. 以S3為例。以 DAG/Task/日期格式存放
+
+
+3
+04:59,651 --> 10:25,361
+AirFlow CLI -- 1. airflow -h : help
+2. airflow -info: 目前的 provider, tool, path
+3. airflow  cheat-sheet : 簡潔的help
+4. airflow webserver -h : help webserver
+5. airflow config list
+6. airflow dag list
+
+
+4
+10:25,361 --> 15:27,504
+AirFlow CLI: dag 的設計與驅動 -- 1. dag 裡要放幾十個 task, 或把task分成不同 dag, 依賴情境做設計
+2. airflow dags trigger xxxxxxx
+3. airflow dags list-runs
+4. airflow tasks run dag_xxxxx task_xxxxx exedate_xxxxx
+
+5
+15:27,504 --> 18:57,411
+AirFlow API -- 使用 API 的方式，對 dag 下指令，可用在與其他系統結合，前提是 airflow web server 要在 running 的狀況下。
+
+6
+18:57,411 --> 22:08,784
+AirFlow Configuration -- executor(local,celery), timezone, sql_conn,encoding...
+
+7
+22:08,784 --> 24:55,937
+AirFlow Pools -- 各種資源限制。AirFlow 本身CPU, memory, 以及 DB, API 的連線數
+
+8
+24:55,937 --> 33:23,369
+AirFlow Metadata Tables. -- 1. dag\_run: dag execution history
+2. serialized dag: 解析後的dag, for perf
+3. dag\_code: dag 原始碼
+4. dag\_pickle: python zip code for perf
+5. sla\_miss
+*有時因為 queue 太多，會直接進DB砍job
+

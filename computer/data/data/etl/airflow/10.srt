@@ -1,0 +1,17 @@
+#Subtitle2
+1
+00:00,000 --> 05:13,287
+Provider -- 提供60多種和資料的連接，以 S3 為例
+
+2
+05:13,287 --> 10:42,923
+Sensor -- 提供檢視特定條件 trigger DAG 的功能，以監控 S3 若有特定檔案，tigger DAG 的範例
+
+3
+10:42,923 --> 12:56,283
+DAG Dependeicies -- 提供某個 DAG 執行完後，trigger 另一個 DAG 的功能
+
+4
+12:56,283 --> 16:36,340
+Dynamic DAG -- 動態創建 DAG 的功能
+
