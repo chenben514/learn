@@ -1,0 +1,48 @@
+.section_word_chain {
+	margin-top: 2rem;
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	color: black;
+	line-height: 3rem;
+}
+
+.pron {
+	/* padding: 0.2rem; */
+	margin-bottom: 2rem;
+	font-size: 1.5rem;
+	color: green;
+	background-color: white;
+}
+
+.word {
+	/* padding: 0.2rem; */
+	margin-bottom: 2rem;
+	font-size: 1.5rem;
+	color: blue;
+	background-color: orange;
+}
+
+.word_chain_input {
+	margin-top: 2rem;
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	color: blue;
+	background-color: orange;
+}
+
+.word_chain_score {
+	margin-top: 2rem;
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	color: blue;
+	background-color: yellow;
+	float: right;
+}
+
+.word_chain_score_label {
+	margin-top: 2rem;
+	margin-left: 2rem;
+	font-size: 1.5rem;
+	color: blue;
+	float: right;
+}

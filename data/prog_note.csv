@@ -1,3 +1,9 @@
+-> git push 
+  git add .
+  git commit -m '2030917_1136'
+  git push origin --all
+
+
 --> only download mp3
 youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=QaOM-82fb10&ab_channel=JFlaMusic'
 youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=nfWlot6h_JM&ab_channel=TaylorSwiftVEVO'
@@ -75,3 +81,39 @@ youtube-dl --skip-download --write-sub --sub-lang zh "https://www.youtube.com/wa
 1. 音樂重覆放映取消
 4. by 課分離資料夾
 2. 數學自動變換數字
+
+
+vim ~/.bash_history 
+youtube-dl   --write-sub --sub-lang ko --skip-download -o '%(autonumber)s' -i 5moX0uVsO-o
+youtube-dl  --extract-audio --audio-format mp3 -o '%(autonumber)s' -i PLczjoc7gbZbT6oOagh22dsulnfNqPE
+pip3 install googletrans==3.1.0a0
+ 76 git init .
+ 77 git add --all
+ 78 git commit -m "first commit of my code"
+ 79 az repos create --name Emma2
+git clone https://chungben@dev.azure.com/chungben/Test/_git/TarotWeb
+90 git push
+ 91 git remote add origin https://chungben@dev.azure.com/chungben/Test/_git/TarotWeb
+ 92 git push origin main
+ 93 git push origin main
+ 94 git push -f origin main
+ 95 git pull --rebase
+ 96 git push origin main
+ 97 git remote -v
+ 98 git push -u origin main
+
+182 git add .
+183 git commit -m 'message'
+184 git push origin --all
+
+219 youtube-dl --write-sub --sub-lang en --skip-download -I PL2g2h-wyI4SqCdxdiyi8enEyWvACcUa9R
+274 python main.py chinese word idiom2 成語典前二字 /Users/tbchena/Documents/我的個人資源/Children/字
+    典/教育部_成語典_前2.csv 20
+275 python main.py japan video ErinGaChosen PL7d2kjFHoUe-K5oqgN8jcpBJkALmHjCJ7 jp
+276 git add .
+277 git commit -m '20221008'
+278 git push origin --all
+
+288 youtube-dl --list-subs https://www.youtube.com/watch?v=I3xEzd1ehKY&list=PLP6jQzrtQ71_R7lSyJLe95Qu    60Xos-FeH&ab_channel=MikuRealJapanese
+
+

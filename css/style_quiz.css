@@ -600,7 +600,8 @@ section .correct_list {
 	background-color: rgba(0, 0, 0, 0.4); /* Black w/ opacity */
 }
 
-.game-content {
+.game-content,
+.game-content-detail {
 	background-color: #effffd;
 	margin: auto;
 	padding: 20px;

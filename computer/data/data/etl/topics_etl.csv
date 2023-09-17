@@ -1,2 +1,3 @@
 ### 電腦
 data,etl,999,airflow,AirFlow,conversation_youtube,1,01.AirFlow簡介(HBgEJzIny2Y),2,02.本地安裝AirFlow(OZ7m3adpsD4),3,03.AirFlow架構與核心組件(L2zTE8ufsmg),4,04.UI常見操作(2Y4P9VpVUq4),5,05.創建一個簡單的DAG(hVxt5R7ocXw),6,06.遷移後台DB到MySQL(hoDUt7HBtns),7,07.完整ETL實例(NV7F7lIoEi0),8,08.增強DAG強健性(Q19vc013QPI),9,09.宏變量，Jinja(U6uNRMDQeyg),10,10.Provider\Sensor(4EwyjBj5bIE),11,11.Admin的一切(W5nCjFuo0nY),12,12.個人心得(KtAISiTaPH0),13,13.深入解析Schedule(Q-at1yXXzcM),14,14.透過Docker啟動(qOaaDF-vYdk),15,15.擴展DockerImage(vs9OBpt6VOk),16,16.打通AirFlow和dbt(V_4qB3nilLg)
+data,etl,999,airflow^udemy,AirFlow\Udemy,conversation_lesson,cli,AirFlow\CLI

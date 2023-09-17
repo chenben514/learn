@@ -3,7 +3,6 @@ import disableBtnStatus from "./common.js";
 import game_focus from "./game_focus.js";
 import game_match from "./game_match.js";
 import loadWordChain from "./game_word_chain.js";
-
 window.pronClick = pronClick;
 window.confirmClick = confirmClick;
 window.optionSelected = optionSelected;

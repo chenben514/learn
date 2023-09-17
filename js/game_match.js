@@ -1,5 +1,4 @@
 import disableBtnStatus from "./common.js";
-
 window.closeWrong = closeWrong;
 window.matchFocus = matchFocus;
 window.pressCard = pressCard;
