@@ -103,7 +103,7 @@ function loadWordChain() {
 	game_modal.style.display = "block";
 
 	//ben_test
-	var selFile = "../data/learn/word_chain.csv";
+	var selFile = "./data/learn/word_chain.csv";
 
 	// var errArr = localStorage.getItem(selCategory + "_" + selLevel + "_err");
 	// alert(errArr);
