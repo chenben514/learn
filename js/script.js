@@ -581,19 +581,17 @@ let counterLine;
 let nowCursorFocus = 0;
 let curQuesType = "";
 
-const restart_quiz = result_box.querySelector(".buttons .restart");
+// const restart_quiz = result_box.querySelector(".buttons .restart");
 const quit_quiz = result_box.querySelector(".buttons .quit");
 
 // if restartQuiz button clicked
-restart_quiz.onclick = () => {
-	localStorage.setItem(curQuiz + "_right", "");
-	result_box.classList.remove("activeResult"); //show result box
-	content.classList.remove("slight_opacity");
-	disableBtnStatus(false);
-	// window.location.reload(); //reload the current window
-	return;
-	//no-way-here
-};
+// restart_quiz.onclick = () => {
+// 	localStorage.setItem(curQuiz + "_right", "");
+// 	result_box.classList.remove("activeResult"); //show result box
+// 	content.classList.remove("slight_opacity");
+// 	disableBtnStatus(false);
+// 	return;
+// };
 
 // if quitQuiz button clicked
 quit_quiz.onclick = () => {

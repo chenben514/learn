@@ -1,0 +1,51 @@
+#Subtitle2
+1
+00:00:00,000 --> 00:00:11,380
+I really need to [get cracking with] this report if I want to finish it on time.
+-- 如果我想按時完成這份報告，我真的需要[開始]研究它。
+
+5
+00:00:12,480 --> 00:00:22,160
+After the party, we [mopped up] the spilled drinks and cleaned the kitchen.
+-- 聚會結束後，我們[擦掉]了溢出的飲料並打掃了廚房。
+
+9
+00:00:24,920 --> 00:00:43,600
+Your presentation was great, but you might want to [tone] it [down] a bit for the next audience. It's quite a sensitive topic for some people.
+-- 你的演講很棒，但你下次可能要[溫和]一點。 對某些人來說這是一個相當敏感的話題。
+
+17
+00:00:46,400 --> 00:00:53,480
+I'm [having] some friends [over] for dinner tonight.
+-- 今晚我[請]一些朋友[過來]吃晚餐。
+
+19
+00:00:56,760 --> 00:01:07,920
+After a long day at work, I like to spend some time [winding down] before going to bed.
+-- 經過一整天的工作後，我喜歡在睡覺前花一些時間[放鬆]。
+
+24
+00:01:11,200 --> 00:01:30,880
+The car behind us was [hooting], so my dad [sped up] to get out of the way. As soon as we [moved over], the other car [flew past] us and [sped away].
+-- 我們後面的車[鳴笛]，所以我爸爸[加速]讓路。 我們一[往旁邊靠]，另一輛車就[飛過]我們並[疾馳而去]。
+
+32
+00:01:34,360 --> 00:01:43,160
+After washing the dishes, please [put] them [away] in the cabinet.
+-- 洗完碗盤後，請把它們[收]進櫃子裡。
+
+37
+00:01:46,960 --> 00:01:58,160
+The billboard had been up for months, but it was finally [taken down] last week.
+-- 該廣告看板已經豎立了幾個月，但上週終於被[拆除]。
+
+42
+00:02:00,880 --> 00:02:17,960
+I accidentally [threw away] the page with all my passwords.
+-- 我不小心[扔掉了]包含我所有密碼的紙張。
+
+49
+00:02:18,960 --> 00:02:26,680
+Can you help me [pick up] the toys that are [scattered] around the living room?
+-- 你能幫我[撿起]客廳裡[散落]的玩具嗎？
+
