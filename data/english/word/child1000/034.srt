@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:07,000
+31. Crazy. Crazy. He is crazy about candy.
+
+2
+00:00:07,000 --> 00:00:14,000
+32. Friendly. Friendly. Grandma Bear is very friendly.
+
+3
+00:00:14,000 --> 00:00:19,000
+33. Nice. Nice. The candies taste nice.
+
+4
+00:00:19,000 --> 00:00:26,000
+34. Bad. Bad. He feels bad on the first day.
+
+5
+00:00:26,000 --> 00:00:29,000
+32. He feels worse on the second day.
+
+6
+00:00:29,000 --> 00:00:33,000
+32. He feels the worst on the third day.
+

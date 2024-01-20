@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:06,280
+7. Lonely. Lonely. He is lonely.
+
+2
+00:00:06,280 --> 00:00:12,920
+8. Feel. Feel. He feels sad and lonely.
+
+3
+00:00:12,920 --> 00:00:18,520
+9. Unhappy. Unhappy. He is unhappy.
+
+4
+00:00:18,520 --> 00:00:23,760
+10. Need. Need. He needs a friend.
+
+5
+00:00:23,760 --> 00:00:27,360
+11. Free. Free.
+
+6
+00:00:27,360 --> 00:00:30,520
+He dreams about being free.
+
+7
+00:00:30,520 --> 00:00:34,000
+12. Dream. Dream.
+
+8
+00:00:34,000 --> 00:00:36,880
+He dreams about playing with his friends.
+

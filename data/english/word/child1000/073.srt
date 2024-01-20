@@ -1,0 +1,72 @@
+1
+00:00:00,000 --> 00:00:04,000
+11. Fruit and Invegetables
+
+2
+00:00:05,000 --> 00:00:08,000
+1. Fruit
+
+3
+00:00:08,000 --> 00:00:11,000
+Mr. Elephant loves fruit
+
+4
+00:00:11,000 --> 00:00:13,000
+2. Strawberry
+
+5
+00:00:13,000 --> 00:00:14,000
+Strawberry
+
+6
+00:00:14,000 --> 00:00:18,000
+He eats strawberry ice cream on Monday
+
+7
+00:00:18,000 --> 00:00:20,000
+3. Lemon
+
+8
+00:00:20,000 --> 00:00:21,000
+Lemon
+
+9
+00:00:21,000 --> 00:00:25,000
+He drinks two cups of lemon tea on Tuesday
+
+10
+00:00:25,000 --> 00:00:27,000
+4. Apple
+
+11
+00:00:27,000 --> 00:00:31,000
+He makes three apple pies on Wednesday
+
+12
+00:00:31,000 --> 00:00:34,000
+5. Pineapple
+
+13
+00:00:34,000 --> 00:00:38,000
+He buys four pineapple cakes on Thursday
+
+14
+00:00:38,000 --> 00:00:41,000
+6. Orange
+
+15
+00:00:41,000 --> 00:00:45,000
+He eats five oranges on Friday
+
+16
+00:00:45,000 --> 00:00:47,000
+7. Banana
+
+17
+00:00:47,000 --> 00:00:48,000
+Banana
+
+18
+00:00:48,000 --> 00:00:52,000
+On Saturday, he picks six bananas
+

@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:05,600
+13. Story. Story. He loves to read stories.
+
+2
+00:00:05,600 --> 00:00:11,760
+14. Comic. Comic. Now he wants to read a comic book.
+
+3
+00:00:11,760 --> 00:00:18,400
+15. Ball. Ball. There are many different kinds of balls everywhere.
+
+4
+00:00:18,400 --> 00:00:24,640
+16. Jump. Jump. He jumps up to get the ball.
+
+5
+00:00:24,640 --> 00:00:29,840
+17. Hit. Hit. The ball hits a tree.
+
+6
+00:00:29,840 --> 00:00:33,520
+18. Exercise. Exercise.
+
+7
+00:00:33,520 --> 00:00:36,800
+Some people are exercising near the tree.
+

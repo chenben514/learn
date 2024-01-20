@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:04,000
+19. Around. Around.
+
+2
+00:00:04,000 --> 00:00:08,000
+The driver drives fast. He drives around the corner.
+
+3
+00:00:08,000 --> 00:00:11,000
+20. Move. Move.
+
+4
+00:00:11,000 --> 00:00:14,000
+It is hard to stop moving in the taxi.
+
+5
+00:00:14,000 --> 00:00:18,000
+21. Near. Near.
+
+6
+00:00:21,000 --> 00:00:24,000
+The taxi stops near a tree.
+
+7
+00:00:24,000 --> 00:00:26,000
+22. Bottom.
+
+8
+00:00:26,000 --> 00:00:27,000
+Bottom.
+
+9
+00:00:27,000 --> 00:00:30,000
+He checks the bottom of the car.
+
+10
+00:00:30,000 --> 00:00:33,000
+23. Buy. Buy.
+
+11
+00:00:33,000 --> 00:00:36,000
+His hat flies by the window.
+

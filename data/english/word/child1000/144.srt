@@ -1,0 +1,36 @@
+1
+00:00:00,000 --> 00:00:05,800
+27. Wet. Wet. They walk in wet shoes.
+
+2
+00:00:05,800 --> 00:00:11,300
+28. Dry. Dry. Their shoes are dry now.
+
+3
+00:00:11,300 --> 00:00:19,000
+29. Windy. Windy. 30. Wind. Wind.
+
+4
+00:00:23,000 --> 00:00:27,000
+It's a windy day. The winds are very strong.
+
+5
+00:00:27,000 --> 00:00:33,000
+31. Blow. Blow. The wind can blow us to the tree.
+
+6
+00:00:33,000 --> 00:00:37,000
+32. Umbrella. Umbrella.
+
+7
+00:00:37,000 --> 00:00:40,000
+We can use the umbrella to fly there.
+
+8
+00:00:40,000 --> 00:00:43,000
+33. Cool. Cool.
+
+9
+00:00:43,000 --> 00:00:46,000
+It is cool on the island.
+

@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:07,000
+25. Practice. Practice. He really needs to practice more carefully.
+
+2
+00:00:07,000 --> 00:00:14,000
+26. Sport. Sport. Artie does not play any sports.
+
+3
+00:00:14,000 --> 00:00:20,000
+27. Fill. Fill. He fills his pen with new ink.
+
+4
+00:00:20,000 --> 00:00:27,000
+28. Magic. Magic.
+
+5
+00:00:27,000 --> 00:00:36,000
+29. Draw. Draw. He draws a line.
+
+6
+00:00:36,000 --> 00:00:42,000
+30. Smoke. Smoke. Smoke comes out from the ink.
+

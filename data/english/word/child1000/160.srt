@@ -1,0 +1,48 @@
+1
+00:00:00,000 --> 00:00:05,160
+39. Special. Special. It is a special harp.
+
+2
+00:00:05,160 --> 00:00:11,440
+40. Basic. Basic. It teaches the giant some basic songs.
+
+3
+00:00:11,440 --> 00:00:18,580
+41. Remember. Remember. It remembers every song it has ever heard.
+
+4
+00:00:18,580 --> 00:00:25,760
+42. Forget. Forget. The giant forgets every song he has learned.
+
+5
+00:00:25,760 --> 00:00:29,200
+43. Difficult. Difficult.
+
+6
+00:00:29,400 --> 00:00:32,700
+It is difficult for the giant to learn music.
+
+7
+00:00:32,700 --> 00:00:36,400
+44. Simple. Simple.
+
+8
+00:00:36,400 --> 00:00:38,700
+It is simple for the harp.
+
+9
+00:00:38,700 --> 00:00:41,700
+45. Make. Make.
+
+10
+00:00:41,700 --> 00:00:44,700
+The giant makes a present for Teddy.
+
+11
+00:00:44,700 --> 00:00:51,200
+46. Stay. Stay. The man wants to stay with the giant.
+
+12
+00:00:51,200 --> 00:00:54,200
+Goodbye!
+

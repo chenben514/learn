@@ -1,0 +1,92 @@
+1
+00:00:00,000 --> 00:00:03,000
+19. Park. Park.
+
+2
+00:00:03,000 --> 00:00:05,000
+I like to go to the park.
+
+3
+00:00:05,000 --> 00:00:08,000
+20. Church. Church.
+
+4
+00:00:08,000 --> 00:00:12,000
+Grandpa and Grandma go to church every Sunday.
+
+5
+00:00:12,000 --> 00:00:17,000
+21. Store. Store.
+
+6
+00:00:17,000 --> 00:00:21,000
+People go in and out of the stores.
+
+7
+00:00:21,000 --> 00:00:24,000
+22. Bank. Bank.
+
+8
+00:00:24,000 --> 00:00:27,000
+Mr. Frog is going into the bank.
+
+9
+00:00:27,000 --> 00:00:29,000
+23. Library.
+
+10
+00:00:29,000 --> 00:00:34,000
+Library. People can read books in the library.
+
+11
+00:00:34,000 --> 00:00:37,000
+24. Bakery.
+
+12
+00:00:37,000 --> 00:00:42,000
+Bakery. Mrs. Han wants to buy bread from the bakery.
+
+13
+00:00:42,000 --> 00:00:45,000
+25. Department Store.
+
+14
+00:00:45,000 --> 00:00:47,000
+Department Store.
+
+15
+00:00:47,000 --> 00:00:50,000
+We can find many things in the department store.
+
+16
+00:00:50,000 --> 00:00:55,000
+26. Factory. Factory.
+
+17
+00:00:59,000 --> 00:01:02,000
+The factory is next to the park.
+
+18
+00:01:02,000 --> 00:01:04,000
+27. Restaurant.
+
+19
+00:01:04,000 --> 00:01:06,000
+Restaurant.
+
+20
+00:01:06,000 --> 00:01:09,000
+Mr. Horse works at the restaurant.
+
+21
+00:01:09,000 --> 00:01:11,000
+28. Post office.
+
+22
+00:01:11,000 --> 00:01:13,000
+Post office.
+
+23
+00:01:13,000 --> 00:01:17,000
+The mailman is standing in front of the post office.
+

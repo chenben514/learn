@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:06,500
+37. Office. Office. He does not work in an office.
+
+2
+00:00:06,500 --> 00:00:12,500
+38. Hotel. Hotel. He stays in hotels.
+
+3
+00:00:12,500 --> 00:00:19,500
+39. Bookstore. Bookstore. He often goes to the bookstore.
+
+4
+00:00:19,500 --> 00:00:25,000
+40. Club. Club. He joins a reading club.
+
+5
+00:00:25,000 --> 00:00:28,000
+41. Party. Party.
+
+6
+00:00:28,500 --> 00:00:31,500
+He likes to sing songs at parties.
+
+7
+00:00:31,500 --> 00:00:35,000
+42. Foreign. Foreign.
+
+8
+00:00:35,000 --> 00:00:38,500
+43. Country. Country.
+
+9
+00:00:38,500 --> 00:00:42,500
+44. National. National.
+
+10
+00:00:42,500 --> 00:00:46,500
+He often goes to foreign countries on national holidays.
+

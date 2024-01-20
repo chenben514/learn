@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:08,000
+The jars are [on] the shelf.
+
+2
+00:00:08,000 --> 00:00:15,000
+There is candy [in] the jar.
+
+3
+00:00:15,000 --> 00:00:19,000
+27. Between. Between.
+
+4
+00:00:19,000 --> 00:00:23,000
+The candy jar is [between] the honey jars.
+
+5
+00:00:23,000 --> 00:00:26,000
+28. Four.
+
+6
+00:00:26,000 --> 00:00:30,000
+They have honey [for] their meals.
+
+7
+00:00:30,000 --> 00:00:33,000
+29. At. At.
+
+8
+00:00:33,000 --> 00:00:37,000
+The bear eats honey [at] noon.
+
+9
+00:00:37,000 --> 00:00:40,000
+30. Of. Of.
+
+10
+00:00:40,000 --> 00:00:44,000
+He eats 10 jars [of] honey every day.
+

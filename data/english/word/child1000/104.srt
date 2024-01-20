@@ -1,0 +1,32 @@
+1
+00:00:00,000 --> 00:00:05,800
+37. Knowledge. Knowledge. He has a lot of knowledge.
+
+2
+00:00:05,800 --> 00:00:12,500
+38. Fact. Fact. In fact, he is the smartest student in class.
+
+3
+00:00:12,500 --> 00:00:18,000
+39. Sentence. Sentence. He writes a longer sentence.
+
+4
+00:00:18,000 --> 00:00:23,500
+40. Ready. Ready. They are ready to read the sentence.
+
+5
+00:00:23,500 --> 00:00:28,000
+41. Check. Check.
+
+6
+00:00:28,000 --> 00:00:33,500
+He checks the dictionary. 42. Spelling. Spelling.
+
+7
+00:00:33,500 --> 00:00:39,500
+He checks the spelling of every word. 43. Spell. Spell.
+
+8
+00:00:39,500 --> 00:00:41,500
+He spelled all the words right.
+

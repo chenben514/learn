@@ -1,0 +1,48 @@
+1
+00:00:00,000 --> 00:00:04,000
+13. Road. Road.
+
+2
+00:00:07,000 --> 00:00:10,000
+Cars are running on the road.
+
+3
+00:00:10,000 --> 00:00:14,000
+14. Street. Street.
+
+4
+00:00:16,000 --> 00:00:19,000
+There are many people on the street.
+
+5
+00:00:19,000 --> 00:00:22,000
+15. Public. Public.
+
+6
+00:00:22,000 --> 00:00:25,000
+There are many public places to visit.
+
+7
+00:00:25,000 --> 00:00:28,000
+16. Square. Square.
+
+8
+00:00:28,000 --> 00:00:32,000
+There is a market in public square.
+
+9
+00:00:32,000 --> 00:00:34,000
+17. Block.
+
+10
+00:00:34,000 --> 00:00:35,000
+Block.
+
+11
+00:00:35,000 --> 00:00:38,000
+18. Shop. Shop.
+
+12
+00:00:38,000 --> 00:00:43,000
+The square is one block away from Mr. Frog's shop.
+

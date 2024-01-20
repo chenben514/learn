@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:07,000
+Fourteen. Railway. Railway. The train drives along the railway.
+
+2
+00:00:07,000 --> 00:00:12,500
+Fifteen. Traffic. Traffic. The traffic is very bad.
+
+3
+00:00:12,500 --> 00:00:18,000
+Sixteen. Truck. Truck. The cabbage falls from the truck.
+
+4
+00:00:18,000 --> 00:00:25,000
+Seventeen. Taxi. Taxi.
+
+5
+00:00:25,000 --> 00:00:28,000
+The taxi hits a scooter.
+
+6
+00:00:28,000 --> 00:00:34,000
+Eighteen. Bus. Bus. The bus stops at the bus station.
+
+7
+00:00:34,000 --> 00:00:39,000
+Nineteen. Bus station. Bus station.
+

@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:03,400
+62. Test.
+
+2
+00:00:03,400 --> 00:00:06,500
+These questions are harder than a test.
+
+3
+00:00:06,500 --> 00:00:09,800
+63. Ask. Ask.
+
+4
+00:00:09,800 --> 00:00:13,000
+Her teacher tells her to ask Ms. Bird.
+
+5
+00:00:13,000 --> 00:00:16,200
+64. Program. Program.
+
+6
+00:00:16,200 --> 00:00:18,900
+Ms. Bird has a dance program.
+
+7
+00:00:18,900 --> 00:00:24,300
+65. No. No. She must know the answer.
+
+8
+00:00:24,300 --> 00:00:27,800
+66. Language. Language.
+
+9
+00:00:27,800 --> 00:00:30,800
+Ms. Bird answers in a different language.
+
+10
+00:00:30,800 --> 00:00:33,300
+Little hippo cannot understand.
+
+11
+00:00:33,300 --> 00:00:36,800
+67. Rule. Rule.
+
+12
+00:00:36,800 --> 00:00:38,800
+The three friends are playing a game.
+
+13
+00:00:38,800 --> 00:00:41,800
+The rule of the game is no laughing.
+

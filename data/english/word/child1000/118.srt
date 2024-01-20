@@ -1,0 +1,16 @@
+1
+00:00:00,000 --> 00:00:07,000
+33. Experience. Experience. She wrote a book about her travel experiences.
+
+2
+00:00:07,000 --> 00:00:14,000
+34. Scientists. Scientists. The scientist lives on another planet.
+
+3
+00:00:14,000 --> 00:00:26,000
+35. Plan. Plan. 36. Mailman. Mailman.
+
+4
+00:00:26,000 --> 00:00:31,000
+He plans to come on a rocket with the mailman.
+

@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:05,340
+30. Against. Against. He is sitting against the tree.
+
+2
+00:00:05,340 --> 00:00:11,340
+31. Above. Above.
+
+3
+00:00:11,340 --> 00:00:14,440
+A spider is swinging above his head.
+
+4
+00:00:14,440 --> 00:00:17,620
+32. Up. Up.
+
+5
+00:00:17,620 --> 00:00:20,520
+She is scared to walk up the stairs.
+
+6
+00:00:20,520 --> 00:00:23,820
+33. Down. Down.
+
+7
+00:00:23,820 --> 00:00:27,120
+The pigs walk down the stairs to help her.
+

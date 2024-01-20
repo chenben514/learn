@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:06,000
+29. Garden. Garden. Some people are hiding in the garden.
+
+2
+00:00:06,000 --> 00:00:11,000
+30. Knock. Knock.
+
+3
+00:00:11,000 --> 00:00:14,000
+Mr. Cat knocks on the door.
+
+4
+00:00:14,000 --> 00:00:17,000
+31. Call. Call.
+
+5
+00:00:17,000 --> 00:00:21,000
+It is late. Your moms are calling you.
+
+6
+00:00:21,000 --> 00:00:28,000
+32. Bath. Bath.
+
+7
+00:00:28,000 --> 00:00:31,000
+She goes home to take a bath.
+
+8
+00:00:31,000 --> 00:00:35,000
+33. Video. Video.
+
+9
+00:00:35,000 --> 00:00:38,000
+34. Video Game. Video Game.
+
+10
+00:00:38,000 --> 00:00:42,000
+They go home to play video games.
+

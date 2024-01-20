@@ -1,0 +1,52 @@
+1
+00:00:00,000 --> 00:00:06,000
+25. Lazy. Lazy.
+
+2
+00:00:06,000 --> 00:00:09,000
+The little pigs are lazy.
+
+3
+00:00:09,000 --> 00:00:13,000
+26. Hardworking. Hardworking.
+
+4
+00:00:13,000 --> 00:00:15,000
+He is a hardworking man.
+
+5
+00:00:15,000 --> 00:00:21,000
+27. Smart. Smart.
+
+6
+00:00:21,000 --> 00:00:25,000
+He is very smart. He can fix anything.
+
+7
+00:00:25,000 --> 00:00:29,000
+28. Stupid. Stupid.
+
+8
+00:00:29,000 --> 00:00:32,000
+Sometimes, he makes stupid mistakes.
+
+9
+00:00:32,000 --> 00:00:36,000
+29. Handsome. Handsome.
+
+10
+00:00:36,000 --> 00:00:38,000
+He looks handsome.
+
+11
+00:00:38,000 --> 00:00:41,000
+30. Good. Good.
+
+12
+00:00:41,000 --> 00:00:44,000
+He wears his best suit.
+
+13
+00:00:44,000 --> 00:00:47,000
+The apple tastes good.
+

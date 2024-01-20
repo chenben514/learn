@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:05,420
+27. Trip. Trip. She is going on a trip.
+
+2
+00:00:05,420 --> 00:00:11,620
+28. Visit. Visit. She wants to visit her grandma.
+
+3
+00:00:11,620 --> 00:00:17,800
+29. Mile. Mile. She rides her bike for miles.
+
+4
+00:00:17,800 --> 00:00:25,500
+30. Sidewalk. Sidewalk. She meets the big bad wolf on the bridge's sidewalk.
+
+5
+00:00:25,500 --> 00:00:28,900
+31. Bridge. Bridge.
+
+6
+00:00:28,900 --> 00:00:32,000
+The big bad wolf falls over the bridge.
+
+7
+00:00:32,000 --> 00:00:35,200
+32. Boat. Boat.
+
+8
+00:00:35,200 --> 00:00:37,200
+He falls into a boat.
+
+9
+00:00:37,200 --> 00:00:40,400
+33. Ship. Ship.
+
+10
+00:00:40,400 --> 00:00:45,400
+The fisherman takes the wolf to a ship.
+

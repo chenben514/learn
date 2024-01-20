@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:07,000
+the day is [almost] over.
+
+2
+00:00:07,000 --> 00:00:14,000
+she is looking for [something].
+
+3
+00:00:14,000 --> 00:00:21,000
+she must write [with] her special pen.
+
+4
+00:00:21,000 --> 00:00:27,000
+she cannot live [without] it.
+
+5
+00:00:27,000 --> 00:00:34,000
+[Perhaps] bob can help her to find it.
+
+6
+00:00:34,000 --> 00:00:41,000
+Bob Cat thinks her pen must be [somewhere] in the room.
+

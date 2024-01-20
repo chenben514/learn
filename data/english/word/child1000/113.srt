@@ -1,0 +1,56 @@
+1
+00:00:00,000 --> 00:00:03,680
+29. Farm. Farm.
+
+2
+00:00:03,680 --> 00:00:08,720
+Mr. Elephant sees a big hungry fish on his farm.
+
+3
+00:00:08,720 --> 00:00:12,080
+30. Bird. Bird.
+
+4
+00:00:14,320 --> 00:00:18,600
+The birds carry the fish back to the sea.
+
+5
+00:00:18,600 --> 00:00:21,760
+31. Crow. Crow.
+
+6
+00:00:21,760 --> 00:00:25,640
+The crow is helping to carry away the fish.
+
+7
+00:00:25,640 --> 00:00:28,920
+32. Dove. Dove.
+
+8
+00:00:29,080 --> 00:00:32,360
+The dove is next to the crow.
+
+9
+00:00:32,360 --> 00:00:35,880
+33. Eagle. Eagle.
+
+10
+00:00:35,880 --> 00:00:40,040
+The eagle is the strongest among all the birds.
+
+11
+00:00:40,040 --> 00:00:43,320
+34. Parrot. Parrot.
+
+12
+00:00:43,320 --> 00:00:45,960
+The parrot can't talk now.
+
+13
+00:00:45,960 --> 00:00:49,400
+35. Goose. Goose.
+
+14
+00:00:49,400 --> 00:00:55,000
+The goose is surprised to see the big fish.
+

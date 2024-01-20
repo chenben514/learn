@@ -1,0 +1,24 @@
+1
+00:00:00,000 --> 00:00:06,000
+31. Wrong. Wrong. He often jumps into the wrong place.
+
+2
+00:00:06,000 --> 00:00:11,000
+32. Enter. Enter. He enters a race.
+
+3
+00:00:11,000 --> 00:00:17,000
+33. Finish. Finish. He finishes the race last.
+
+4
+00:00:17,000 --> 00:00:23,000
+34. Prepare. Prepare. They are prepared to read and write.
+
+5
+00:00:23,000 --> 00:00:29,000
+35. Dictionary. Dictionary. He takes out his dictionary.
+
+6
+00:00:29,000 --> 00:00:36,000
+36. Right. Right. He can write many words.
+

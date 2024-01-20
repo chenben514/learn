@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:05,760
+23. Boy. Boy. He was a bad boy.
+
+2
+00:00:05,760 --> 00:00:12,000
+24. Girl. Girl. She was a bad girl.
+
+3
+00:00:12,000 --> 00:00:18,000
+25. Kid. Kid. They were bad kids.
+
+4
+00:00:18,000 --> 00:00:25,000
+26. Man. Man. Ding Dong is a nice man now.
+
+5
+00:00:25,000 --> 00:00:29,000
+27. Woman. Woman.
+
+6
+00:00:29,480 --> 00:00:35,800
+Bill is a nice woman now. 28. Mary. Mary.
+
+7
+00:00:35,800 --> 00:00:39,840
+Bill married Ding Dong last week.
+

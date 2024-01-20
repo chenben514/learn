@@ -1,0 +1,44 @@
+1
+00:00:00,000 --> 00:00:03,000
+30. Little. Little.
+
+2
+00:00:03,000 --> 00:00:06,500
+Teddy's little cousin is eating a big cookie.
+
+3
+00:00:06,500 --> 00:00:12,500
+31. Part. Part. Part of the cookie is in his mouth.
+
+4
+00:00:12,500 --> 00:00:16,000
+32. Piece. Piece.
+
+5
+00:00:16,000 --> 00:00:19,000
+He cut a little piece off his shirt.
+
+6
+00:00:19,000 --> 00:00:21,500
+33. More.
+
+7
+00:00:21,500 --> 00:00:25,000
+More. He wants to put more things in.
+
+8
+00:00:25,000 --> 00:00:28,500
+34. Less. Less.
+
+9
+00:00:28,500 --> 00:00:32,000
+The feather is less heavy than the notebook.
+
+10
+00:00:32,000 --> 00:00:35,500
+35. Least. Least.
+
+11
+00:00:35,500 --> 00:00:40,500
+Last but not least, please play my favorite song.
+
