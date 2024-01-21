@@ -4,7 +4,7 @@
 
 2
 00:00:03,500 --> 00:00:07,200
-Artie hopes to play with the little monster.
+Artie [hopes] to play with the little monster.
 
 3
 00:00:07,200 --> 00:00:10,900
@@ -12,7 +12,7 @@ Artie hopes to play with the little monster.
 
 4
 00:00:10,900 --> 00:00:14,700
-Teddy tries to cheer the little monster up.
+Teddy tries to [cheer] the little monster up.
 
 5
 00:00:14,700 --> 00:00:18,900
@@ -20,7 +20,7 @@ Teddy tries to cheer the little monster up.
 
 6
 00:00:18,900 --> 00:00:21,400
-Do not worry.
+Do not [worry].
 
 7
 00:00:21,400 --> 00:00:24,400
@@ -28,7 +28,7 @@ Do not worry.
 
 8
 00:00:24,400 --> 00:00:28,800
-Comfortable. He is not comfortable at all.
+He is not [comfortable] at all.
 
 9
 00:00:28,800 --> 00:00:32,800
@@ -36,7 +36,7 @@ Comfortable. He is not comfortable at all.
 
 10
 00:00:32,800 --> 00:00:34,800
-Teddy notices that.
+Teddy [notices] that.
 
 11
 00:00:34,800 --> 00:00:38,800
@@ -44,5 +44,5 @@ Teddy notices that.
 
 12
 00:00:38,800 --> 00:00:40,800
-Teddy wants to help him.
+Teddy [wants] to help him.
 

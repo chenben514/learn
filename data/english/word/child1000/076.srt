@@ -1,20 +1,20 @@
 1
 00:00:00,000 --> 00:00:07,500
-29. Taste. Taste. In this sandwich you can taste everything.
+In this sandwich you can [taste] everything.
 
 2
 00:00:07,500 --> 00:00:17,000
-30. Dish. Dish. There are so many delicious dishes. Be careful not to break a dish.
+There are so many delicious [dishes]. Be careful not to break a [dish].
 
 3
 00:00:17,000 --> 00:00:23,000
-31. Garbage. Garbage. They clean up all the garbage.
+They clean up all the [garbage].
 
 4
 00:00:23,000 --> 00:00:29,000
-32. Hungry. Hungry. No one is hungry now.
+No one is [hungry] now.
 
 5
 00:00:29,000 --> 00:00:39,000
-33. Full. Full. Everyone goes home with a full stomach.
+Everyone goes home with a [full] stomach.
 

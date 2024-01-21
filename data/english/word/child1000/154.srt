@@ -1,24 +1,24 @@
 1
 00:00:00,000 --> 00:00:05,800
-6. Become. Become. The flowers become healthy again.
+The flowers [become] healthy again.
 
 2
 00:00:05,800 --> 00:00:11,260
-7. True. True. He is a true gardener.
+He is a [true] gardener.
 
 3
 00:00:11,260 --> 00:00:16,000
-8. Hard. Hard. This is not hard at all.
+This is not [hard] at all.
 
 4
 00:00:16,000 --> 00:00:21,800
-9. Easy. Easy. It is easy if you know some magic.
+It is [easy] if you know some magic.
 
 5
 00:00:21,800 --> 00:00:26,800
-10. Keep. Keep. He keeps a key with him.
+He [keeps] a key with him.
 
 6
 00:00:26,800 --> 00:00:33,800
-11. Have. Have. Not many people have it.
+Not many people [have] it.
 

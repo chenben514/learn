@@ -1,48 +1,24 @@
-1
-00:00:00,000 --> 00:00:04,000
-22. Other Words
-
-2
-00:00:05,000 --> 00:00:08,000
-1. Wonderful. Wonderful.
-
 3
 00:00:08,000 --> 00:00:10,000
-It's a wonderful day.
-
-4
-00:00:10,000 --> 00:00:13,000
-2. Cut. Cut.
+It's a [wonderful] day.
 
 5
 00:00:13,000 --> 00:00:16,000
-He cuts some flowers from Teddy's Garden.
-
-6
-00:00:16,000 --> 00:00:19,000
-3. Grow. Grow.
+He [cuts] some flowers from Teddy's Garden.
 
 7
 00:00:19,000 --> 00:00:22,000
-Your flowers grew feet and ran away.
-
-8
-00:00:22,000 --> 00:00:25,000
-4. Lie. Lie.
+Your flowers [grew] feet and ran away.
 
 9
 00:00:25,000 --> 00:00:28,000
-The flowers are lying on the grass.
+The flowers are [lying] on the grass.
 
 10
 00:00:28,000 --> 00:00:31,000
-Why did you lie to me?
-
-11
-00:00:31,000 --> 00:00:34,000
-5. Care. Care.
+Why did you [lie] to me?
 
 12
 00:00:34,000 --> 00:00:37,000
-Let me take care of the dying flowers.
+Let me [take care of] the dying flowers.
 

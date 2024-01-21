@@ -1,12 +1,8 @@
 1
 00:00:00,000 --> 00:00:14,500
-55. Korea. Korea. 56. Mexico. Mexico. 57. America. USA. America. USA. His friend
+55. [Korea]. 56. [Mexico]. 57. [America]. [USA]. His friend from America can speak English.
 
 2
-00:00:14,500 --> 00:00:23,340
-from America can speak English. 58. Canada. Canada. He wants to go to more countries
-
-3
-00:00:23,340 --> 00:00:24,700
-and make more friends.
+00:00:14,500 --> 00:00:24,700
+58. Canada. Canada. He wants to go to more countries and make more friends.
 

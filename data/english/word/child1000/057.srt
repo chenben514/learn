@@ -12,7 +12,7 @@ Spring
 
 4
 00:00:09,000 --> 00:00:11,000
-In the spring, flowers grow
+In the [spring]. flowers grow.
 
 5
 00:00:11,000 --> 00:00:13,000
@@ -24,7 +24,7 @@ Summer
 
 7
 00:00:16,000 --> 00:00:19,000
-In the summer, it rains heavily
+In the [summer], it rains heavily
 
 8
 00:00:19,000 --> 00:00:21,000
@@ -36,7 +36,7 @@ Fall
 
 10
 00:00:25,000 --> 00:00:28,000
-In the fall, the leaves change color
+In the [fall], the leaves change color
 
 11
 00:00:28,000 --> 00:00:30,000
@@ -48,7 +48,7 @@ Winter
 
 13
 00:00:31,000 --> 00:00:33,000
-In the winter, it snows
+In the [winter], it snows
 
 14
 00:00:33,000 --> 00:00:35,000
@@ -60,7 +60,7 @@ Season
 
 16
 00:00:36,000 --> 00:00:39,000
-All the seasons take their turn
+All the [seasons] take their turn
 
 17
 00:00:39,000 --> 00:00:41,000
@@ -72,5 +72,5 @@ Year
 
 19
 00:00:42,000 --> 00:00:43,000
-A year goes by
+A [year] goes by
 

@@ -1,88 +1,30 @@
-1
-00:00:00,000 --> 00:00:05,000
-18. Directions
-
-2
-00:00:05,000 --> 00:00:07,000
-1. Front
-
-3
-00:00:07,000 --> 00:00:08,000
-Front
-
 4
 00:00:08,000 --> 00:00:11,000
-He works in front of a big house
+He works in [front] of a big house
 
-5
-00:00:11,000 --> 00:00:13,000
-2. Left
-
-6
-00:00:13,000 --> 00:00:14,000
-Left
-
-7
-00:00:14,000 --> 00:00:16,000
-3. Right
-
-8
-00:00:16,000 --> 00:00:17,000
-Right
 
 9
 00:00:17,000 --> 00:00:20,000
-He has a red shoe on his left foot
+He has a red shoe on his [left] foot
 
 10
 00:00:20,000 --> 00:00:23,000
-and a green shoe on his right foot
+and a green shoe on his [right] foot
 
-11
-00:00:23,000 --> 00:00:25,000
-4. Center
-
-12
-00:00:25,000 --> 00:00:26,000
-Center
 
 13
 00:00:26,000 --> 00:00:29,000
-He is the center of attention
-
-14
-00:00:29,000 --> 00:00:31,000
-5. Bring
-
-15
-00:00:31,000 --> 00:00:32,000
-Bring
+He is the [center] of attention
 
 16
 00:00:32,000 --> 00:00:35,000
-He always brings candy with him
-
-17
-00:00:35,000 --> 00:00:37,000
-6. Arrived
-
-18
-00:00:37,000 --> 00:00:38,000
-Arrived
+He always [brings] candy with him
 
 19
 00:00:38,000 --> 00:00:40,000
-He arrives very early
-
-20
-00:00:40,000 --> 00:00:42,000
-7. Leave
-
-21
-00:00:42,000 --> 00:00:43,000
-Leave
+He [arrives] very early
 
 22
 00:00:43,000 --> 00:00:46,000
-He leaves when it is very late
+He [leaves] when it is very late
 

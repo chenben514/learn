@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:05,400
-11. Shirt. Shirt. There is a shirt in her bag.
+There is a [shirt] in her bag.
 
 2
 00:00:05,400 --> 00:00:09,000
@@ -8,43 +8,47 @@
 
 3
 00:00:09,000 --> 00:00:14,500
-Her cell phone is yellow. 13. Shoes. Shoes.
+Her [cellphone] is yellow. 13. Shoes. Shoes.
 
 4
 00:00:14,500 --> 00:00:19,700
-Her shoes are red. 14. Dress. Dress.
+Her [shoes] are red. 14. Dress. Dress.
 
 5
-00:00:19,700 --> 00:00:28,600
-Her dress is white and blue. 15. Hat. Hat. She wears her hat every day.
+00:00:19,700 --> 00:00:22,700
+Her [dress] is white and blue. 
+
+5
+00:00:22,700 --> 00:00:28,600
+She wears her [hat] every day.
 
 6
 00:00:28,600 --> 00:00:35,600
-16. Key. Key. She uses her key to open the door.
+She uses her [key] to open the door.
 
 7
 00:00:35,600 --> 00:00:41,600
-17. Pants. Pants. She wears these pants in PE class.
+She wears these [pants] in PE class.
 
 8
 00:00:41,600 --> 00:00:48,600
-18. Sweater. Sweater. She wears her sweater on cold days.
+She wears her [sweater] on cold days.
 
 9
 00:00:48,600 --> 00:00:54,600
-19. Gloves. Gloves. Her gloves are pink.
+Her [gloves] are pink.
 
 10
 00:00:54,600 --> 00:01:00,600
-20. Skirt. Skirt. The skirt is green.
+The [skirt] is green.
 
 11
 00:01:00,600 --> 00:01:07,600
-21. Perse. Perse. The purse is a birthday present from her mom.
+The [purse] is a birthday present from her mom.
 
 12
 00:01:07,600 --> 00:01:13,600
-22. Belt. Belt. The belt is purple.
+The [belt] is purple.
 
 13
 00:01:13,600 --> 00:01:18,600
@@ -52,5 +56,5 @@ Her dress is white and blue. 15. Hat. Hat. She wears her hat every day.
 
 14
 00:01:18,600 --> 00:01:23,600
-22. She takes beautiful pictures with her camera.
+22. She takes beautiful pictures with her [camera].
 

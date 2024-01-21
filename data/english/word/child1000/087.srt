@@ -1,18 +1,18 @@
 1
 00:00:00,000 --> 00:00:07,000
-7. Movie. Movie. She dreams she is a movie star.
+She dreams she is a [movie] star.
 
 2
 00:00:07,000 --> 00:00:13,000
-8. Play. Play. Others are playing on the hill too.
+Others are [playing] on the hill too.
 
 3
 00:00:13,000 --> 00:00:20,000
-9. Basketball. Basketball. Some are playing basketball.
+Some are playing [basketball].
 
 4
 00:00:20,000 --> 00:00:26,000
-10. Baseball. Baseball. Others are playing baseball.
+Others are playing [baseball].
 
 5
 00:00:26,000 --> 00:00:29,000
@@ -20,9 +20,9 @@
 
 6
 00:00:30,000 --> 00:00:34,000
-The rest are playing tennis.
+The rest are playing [tennis].
 
 7
 00:00:34,000 --> 00:00:40,000
-12. Player. Player. They are all great players.
+They are all great [players].
 

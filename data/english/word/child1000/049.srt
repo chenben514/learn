@@ -12,7 +12,7 @@ Holiday
 
 4
 00:00:09,000 --> 00:00:11,000
-My cousin loves holidays.
+My cousin loves [holidays].
 
 5
 00:00:11,000 --> 00:00:13,000
@@ -24,7 +24,7 @@ Christmas
 
 7
 00:00:14,000 --> 00:00:16,000
-He loves Christmas.
+He loves [Christmas].
 
 8
 00:00:16,000 --> 00:00:18,000
@@ -36,7 +36,7 @@ Celebrate
 
 10
 00:00:20,000 --> 00:00:22,000
-He wants to celebrate it.
+He wants to [celebrate] it.
 
 11
 00:00:22,000 --> 00:00:24,000
@@ -48,7 +48,7 @@ Yesterday
 
 13
 00:00:26,000 --> 00:00:30,000
-He waited for Christmas Day all day yesterday.
+He waited for Christmas Day all day [yesterday].
 
 14
 00:00:30,000 --> 00:00:33,000
@@ -56,7 +56,7 @@ He waited for Christmas Day all day yesterday.
 
 15
 00:00:33,000 --> 00:00:36,000
-He is very excited today.
+He is very excited [today].
 
 16
 00:00:36,000 --> 00:00:38,000
@@ -68,5 +68,5 @@ Tomorrow
 
 18
 00:00:39,000 --> 00:00:41,000
-Christmas Day is tomorrow.
+Christmas Day is [tomorrow].
 

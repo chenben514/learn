@@ -1,40 +1,12 @@
-1
-00:00:00,000 --> 00:00:04,000
-12. In a house
-
-2
-00:00:06,000 --> 00:00:08,000
-1. House
-
-3
-00:00:08,000 --> 00:00:09,000
-House
-
 4
 00:00:09,000 --> 00:00:13,000
-Teddy and his friends are playing hide and seek in a big house
-
-5
-00:00:13,000 --> 00:00:15,000
-2. Home
-
-6
-00:00:15,000 --> 00:00:16,000
-Home
+Teddy and his friends are playing hide and seek in a big [house]
 
 7
 00:00:16,000 --> 00:00:18,000
-Teddy likes to play at home
-
-8
-00:00:18,000 --> 00:00:20,000
-3. Room
-
-9
-00:00:20,000 --> 00:00:21,000
-Room
+Teddy likes to play at [home]
 
 10
 00:00:21,000 --> 00:00:24,000
-There are many rooms in the house
+There are many [rooms] in the house
 

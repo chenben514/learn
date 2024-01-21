@@ -12,7 +12,7 @@ Happy
 
 4
 00:00:03,500 --> 00:00:06,500
-The little monster is happy
+The little monster is [happy]
 
 5
 00:00:06,500 --> 00:00:08,000
@@ -28,7 +28,7 @@ Belong
 
 8
 00:00:10,500 --> 00:00:13,500
-They think they belong together
+They think they [belong] together
 
 9
 00:00:13,500 --> 00:00:15,000
@@ -44,7 +44,7 @@ Share
 
 12
 00:00:17,000 --> 00:00:21,000
-They share a lot of things in common
+They [share] a lot of things in common
 
 13
 00:00:21,000 --> 00:00:22,000
@@ -60,7 +60,7 @@ Love
 
 16
 00:00:24,000 --> 00:00:28,000
-They both love to play under the sun
+They both [love] to play under the sun
 
 17
 00:00:28,000 --> 00:00:29,000
@@ -76,7 +76,7 @@ Kiss
 
 20
 00:00:31,000 --> 00:00:38,000
-They also love kisses from the rain
+They also love [kisses] from the rain
 
 21
 00:00:38,000 --> 00:00:39,000
@@ -92,5 +92,5 @@ Hate
 
 24
 00:00:41,000 --> 00:00:47,000
-They hate the strong wind
+They [hate] the strong wind
 

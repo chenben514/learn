@@ -1,24 +1,24 @@
 1
 00:00:00,000 --> 00:00:10,000
-13. First. First. Mrs. Bear comes first. She wants the pot of fat soup.
+Mrs. Bear comes [first]. She wants the pot of fat soup.
 
 2
 00:00:10,000 --> 00:00:18,000
-14. Second. Second. Ms. Hippo comes second. She wants the two blue birds.
+Ms. Hippo comes [second]. She wants the two blue birds.
 
 3
 00:00:18,000 --> 00:00:26,000
-15. Third. Third. Bunny sister comes third. She wants the three green rings.
+Bunny sister comes [third]. She wants the three green rings.
 
 4
 00:00:26,000 --> 00:00:33,000
-16. Fourth. Fourth. Doctor Tiger comes fourth. He wants the four frogs.
+Doctor Tiger comes [fourth]. He wants the four frogs.
 
 5
 00:00:33,000 --> 00:00:41,000
-17. Fifth. Fifth. Mr. Horse comes fifth. He wants the five candies.
+Mr. Horse comes [fifth]. He wants the five candies.
 
 6
 00:00:41,000 --> 00:00:49,000
-18. Sixth. Sixth. Mr. Snake comes sixth. He wants the six pairs of socks.
+Mr. Snake comes [sixth]. He wants the six pairs of socks.
 

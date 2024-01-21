@@ -12,7 +12,7 @@ Spoon.
 
 4
 00:00:03,500 --> 00:00:06,140
-I use a spoon to eat soup.
+I use a [spoon] to eat soup.
 
 5
 00:00:06,140 --> 00:00:07,500
@@ -28,7 +28,7 @@ Nappkin.
 
 8
 00:00:09,940 --> 00:00:12,940
-She uses a napkin to clean her mouth.
+She uses a [napkin] to clean her mouth.
 
 9
 00:00:12,940 --> 00:00:14,240
@@ -44,11 +44,11 @@ Cook.
 
 12
 00:00:16,280 --> 00:00:17,680
-He can cook.
+He can [cook].
 
 13
 00:00:17,680 --> 00:00:19,480
-He is a great cook.
+He is a great [cook].
 
 14
 00:00:19,480 --> 00:00:20,940
@@ -64,7 +64,7 @@ Oil.
 
 17
 00:00:23,480 --> 00:00:30,280
-He needs some oil to fry the fish.
+He needs some [oil] to fry the fish.
 
 18
 00:00:30,280 --> 00:00:31,280
@@ -80,7 +80,7 @@ Meat.
 
 21
 00:00:33,280 --> 00:00:35,280
-He loves cooking meat.
+He loves cooking [meat].
 
 22
 00:00:35,280 --> 00:00:36,280
@@ -96,5 +96,5 @@ Steak.
 
 25
 00:00:38,280 --> 00:00:40,520
-He is good at cooking steak.
+He is good at cooking [steak].
 

@@ -1,28 +1,24 @@
 1
 00:00:00,000 --> 00:00:06,280
-29. Zoo. Zoo. There are many animals in the zoo.
+There are many animals in the [zoo].
 
 2
 00:00:06,280 --> 00:00:12,360
-30. Theater. Theater. The singer is singing in the theater.
+The singer is singing in the [theater].
 
 3
 00:00:12,360 --> 00:00:20,120
-31. Museum. Museum. People go to the art museum to look at great art.
-
-4
-00:00:20,120 --> 00:00:27,520
-32. Sale. Sale. 33. On sale. On sale.
+People go to the art [museum] to look at great art.
 
 5
 00:00:27,520 --> 00:00:35,160
-34. Supermarket. Supermarket. Things in the supermarket are often on sale.
+Things in the [supermarket] are often [on sale].
 
 6
 00:00:35,160 --> 00:00:43,040
-35. Convenient. Convenient. It is very convenient to live in this town.
+It is very [convenient] to live in this town.
 
 7
 00:00:43,040 --> 00:00:50,080
-36. City. City. He is from a big city.
+He is from a big [city].
 

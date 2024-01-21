@@ -1,28 +1,20 @@
-1
-00:00:00,000 --> 00:00:07,000
-25. Nurse. Nurse. 26. Doctor. Doctor.
-
 2
 00:00:07,000 --> 00:00:12,500
-The nurse comes with the doctor. 27. Job. Job.
+The [nurse] comes with the [doctor]. 
 
 3
 00:00:12,500 --> 00:00:23,000
-Their job is to do a health check on the twins. 28. Worker. Worker. 29. Work. Work.
+Their [job] is to do a health check on the twins. 
 
 4
 00:00:23,000 --> 00:00:31,000
-The worker works very hard. He made two rocking horses for the twins. 30. Waiter.
-
-5
-00:00:31,000 --> 00:00:35,000
-Waiter. 31. Waitress. Waitress.
+The [worker] [works] very hard. He made two rocking horses for the twins. 
 
 6
 00:00:35,000 --> 00:00:41,000
-The waiter and the waitress work together. They put many candies on the horses.
+The [waiter] and the [waitress] work together. They put many candies on the horses.
 
 7
 00:00:41,000 --> 00:00:48,000
-32. Writer. Writer. The writer travels in a hot air balloon.
+The [writer] travels in a hot air balloon.
 

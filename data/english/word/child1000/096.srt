@@ -1,48 +1,24 @@
-1
-00:00:00,000 --> 00:00:03,600
-61. Loud. Loud.
-
 2
 00:00:03,600 --> 00:00:07,000
-The mold is not like loud noises.
-
-3
-00:00:07,000 --> 00:00:10,500
-62. Run. Run.
+The mold is not like [loud] noises.
 
 4
 00:00:13,500 --> 00:00:15,500
-She runs out.
-
-5
-00:00:15,500 --> 00:00:18,500
-63. Drop. Drop.
+She [runs] out.
 
 6
 00:00:18,500 --> 00:00:20,500
-She drops the doll.
-
-7
-00:00:20,500 --> 00:00:24,000
-64. Hurry. Hurry.
+She [drops] the doll.
 
 8
 00:00:24,000 --> 00:00:26,500
-Hurry. Pick up the doll.
-
-9
-00:00:26,500 --> 00:00:29,000
-65. Toy.
+[Hurry]. Pick up the doll.
 
 10
 00:00:29,000 --> 00:00:34,000
-The mold cries. She wants a toy.
-
-11
-00:00:34,000 --> 00:00:37,000
-66. Break. Break.
+The mold cries. She wants a [toy].
 
 12
 00:00:37,000 --> 00:00:41,000
-Teddy breaks some branches off a tree.
+Teddy [breaks] some branches off a tree.
 

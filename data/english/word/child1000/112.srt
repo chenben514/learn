@@ -1,44 +1,32 @@
 1
 00:00:00,000 --> 00:00:05,240
-21. Fish. Fish. Fish can swim.
+[Fish] can swim.
 
 2
 00:00:05,240 --> 00:00:10,560
-22. Dolphin. Dolphin. Dolphins are smart.
+[Dolphins] are smart.
 
 3
 00:00:10,560 --> 00:00:17,520
-23. Starfish. Starfish. A starfish looks like a star.
+A [starfish] looks like a star.
 
 4
 00:00:17,520 --> 00:00:24,240
-24. Jellyfish. Jellyfish. Jellyfish live in the sea.
-
-5
-00:00:24,240 --> 00:00:28,080
-25. Octopus. Octopus.
+[Jellyfish] live in the sea.
 
 6
 00:00:28,080 --> 00:00:31,120
-An octopus has eight legs.
-
-7
-00:00:31,120 --> 00:00:34,960
-26. Sea horse. Sea horse.
+An [octopus] has eight legs.
 
 8
 00:00:34,960 --> 00:00:38,560
-Sea horse is swim very slowly.
+[Seahorse] is swim very slowly.
 
 9
 00:00:38,560 --> 00:00:44,000
-27. Shrimp. Shrimp. Shrimps have small legs.
-
-10
-00:00:44,000 --> 00:00:47,280
-28. Whale. Whale.
+[Shrimps] have small legs.
 
 11
 00:00:47,280 --> 00:00:50,400
-A whale can grow bigger than a boat.
+A [whale] can grow bigger than a boat.
 

@@ -12,7 +12,7 @@ Bathroom
 
 4
 00:00:03,880 --> 00:00:06,640
-The little pigs are in the bathroom.
+The little pigs are in the [bathroom].
 
 5
 00:00:06,640 --> 00:00:07,680
@@ -28,7 +28,7 @@ Shower
 
 8
 00:00:09,680 --> 00:00:12,000
-They need to take a shower.
+They need to take a [shower].
 
 9
 00:00:12,000 --> 00:00:13,280
@@ -44,7 +44,7 @@ Bath tub
 
 12
 00:00:15,480 --> 00:00:17,880
-They sit in the bathtub.
+They sit in the [bathtub].
 
 13
 00:00:17,880 --> 00:00:18,880
@@ -60,7 +60,7 @@ Soap
 
 16
 00:00:20,880 --> 00:00:23,120
-The soap smells good.
+The [soap] smells good.
 
 17
 00:00:23,120 --> 00:00:24,360
@@ -76,7 +76,7 @@ Towel
 
 20
 00:00:26,360 --> 00:00:29,560
-Their mom will use a towel to dry them.
+Their mom will use a [towel] to dry them.
 
 21
 00:00:29,560 --> 00:00:30,560
@@ -92,7 +92,7 @@ Toilet
 
 24
 00:00:32,560 --> 00:00:35,040
-They keep the toilet clean.
+They keep the [toilet] clean.
 
 25
 00:00:35,040 --> 00:00:36,040
@@ -108,5 +108,5 @@ Toilet paper
 
 28
 00:00:38,640 --> 00:00:42,080
-The toilet paper is placed next to the toilet.
+The [toilet paper] is placed next to the toilet.
 

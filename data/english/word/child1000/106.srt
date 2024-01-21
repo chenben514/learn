@@ -1,52 +1,24 @@
-1
-00:00:00,000 --> 00:00:03,000
-50. Mark. Mark.
-
 2
 00:00:03,000 --> 00:00:07,000
-He makes an X mark next to the mistake.
-
-3
-00:00:07,000 --> 00:00:10,000
-51. Example. Example.
+He [makes] an X mark next to the mistake.
 
 4
 00:00:10,000 --> 00:00:13,000
-Artie looks at the example from the book.
-
-5
-00:00:13,000 --> 00:00:16,000
-52. Copy. Copy.
+Artie looks at the [example] from the book.
 
 6
 00:00:16,000 --> 00:00:19,000
-He makes a lovely copy of a word.
-
-7
-00:00:19,000 --> 00:00:22,000
-53. Homework. Homework.
+He makes a lovely [copy] of a word.
 
 8
 00:00:22,000 --> 00:00:25,000
-He draws on his math homework.
-
-9
-00:00:25,000 --> 00:00:28,000
-54. Workbook.
+He draws on his math [homework].
 
 10
 00:00:28,000 --> 00:00:31,000
-He draws on his workbook.
-
-11
-00:00:31,000 --> 00:00:34,000
-55. Notebook.
-
-12
-00:00:34,000 --> 00:00:35,000
-Notebook.
+He draws on his [workbook].
 
 13
 00:00:35,000 --> 00:00:39,000
-Little B writes the word B in his notebook.
+Little Bee writes the word "bee" in his [notebook].
 

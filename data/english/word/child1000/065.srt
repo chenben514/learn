@@ -1,20 +1,43 @@
 1
 00:00:00,000 --> 00:00:16,000
-24. book. book. she has a giant book. 25. dark. dark. the book has a dark color. 26. color. color. she wants
+she has a giant [book]. 
+
+1
+00:00:06,000 --> 00:00:11,000
+25. dark. dark. the book has a [dark] color. 
+
+1
+00:00:11,000 --> 00:00:16,000
+26. color. color. she wants the book in different [colors].
 
 2
-00:00:16,000 --> 00:00:29,500
-the book in different colors. 27. white. white. 28. black. black. 29. red. red.
+00:00:18,000 --> 00:00:29,500
+27. [white]. 28. [black]. 29. [red].
 
 3
-00:00:29,500 --> 00:00:54,500
-30. purple. purple. 31. gray. gray. 32. pink. pink. 33. green. green. 34. yellow. yellow. 35. brown. brown. 36. blue. blue.
+00:00:29,500 --> 00:00:40,500
+30. [purple].  31. [gray]. 32. [pink]. 
+
+3
+00:00:40,500 --> 00:00:54,500
+33. [green]. 34. [yellow]. 35. [brown]. 36. [blue].
 
 4
 00:00:54,500 --> 00:01:18,500
-What color do you like? I like red. I like brown. I like pink. 37. page. page. he spills the paint and turns the page pink. 38. wash. wash.
+What color do you like? I like red. I like brown. I like pink. 
+
+4
+00:01:06,500 --> 00:01:18,500
+he spills the paint and turns the [page] pink. 
 
 5
-00:01:18,500 --> 00:01:33,500
-The rain washes away the paint. 39. clean. clean. the rain makes them clean. 40. dirty. dirty. they are still dirty.
+00:01:18,500 --> 00:01:21,500
+The rain [washes] away the paint.
 
+5
+00:01:21,500 --> 00:01:27,500
+the rain makes them [clean]. 
+
+5
+00:01:27,500 --> 00:01:33,500
+they are still [dirty].

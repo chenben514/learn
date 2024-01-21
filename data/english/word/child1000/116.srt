@@ -1,88 +1,28 @@
-1
-00:00:00,000 --> 00:00:03,000
-18. Matter. Matter.
-
 2
 00:00:03,000 --> 00:00:06,000
-What is the matter with the oyster?
-
-3
-00:00:06,000 --> 00:00:09,000
-19. Businessman.
-
-4
-00:00:09,000 --> 00:00:10,000
-Businessman.
+What is the [matter] with the oyster?
 
 5
 00:00:10,000 --> 00:00:12,000
-Mr. Snake is a businessman.
-
-6
-00:00:12,000 --> 00:00:14,000
-20. Business.
-
-7
-00:00:14,000 --> 00:00:15,000
-Business.
+Mr. Snake is a [businessman].
 
 8
 00:00:15,000 --> 00:00:18,000
-He runs a successful business.
-
-9
-00:00:18,000 --> 00:00:20,000
-21. Boss.
-
-10
-00:00:20,000 --> 00:00:21,000
-Boss.
+He runs a successful [business].
 
 11
 00:00:21,000 --> 00:00:24,000
-He is the boss of his own company.
-
-12
-00:00:24,000 --> 00:00:26,000
-22. Shopkeeper.
-
-13
-00:00:26,000 --> 00:00:27,000
-Shopkeeper.
+He is the [boss] of his own company.
 
 14
-00:00:27,000 --> 00:00:30,000
-Mr. Frog is a shopkeeper.
-
-15
-00:00:30,000 --> 00:00:33,000
-He brings a special blanket from his shop.
-
-16
-00:00:33,000 --> 00:00:36,000
-23. Designer.
-
-17
-00:00:36,000 --> 00:00:37,000
-Designer.
+00:00:27,000 --> 00:00:33,000
+Mr. Frog is a [shopkeeper]. He brings a special blanket from his shop.
 
 18
-00:00:37,000 --> 00:00:39,000
-Ms. Spider is a designer.
-
-19
-00:00:39,000 --> 00:00:41,000
-She also brings something special.
-
-20
-00:00:41,000 --> 00:00:44,000
-24. Idea.
-
-21
-00:00:44,000 --> 00:00:45,000
-Idea.
+00:00:37,000 --> 00:00:41,000
+Ms. Spider is a [designer]. She also brings something special.
 
 22
 00:00:45,000 --> 00:00:49,000
-That thing can catch good ideas for the twins.
+That thing can catch good [ideas] for the twins.
 

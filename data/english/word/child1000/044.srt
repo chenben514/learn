@@ -12,7 +12,7 @@ All
 
 4
 00:00:09,000 --> 00:00:14,000
-People can find all kinds of things in Mr. Frog's shop.
+People can find [all] kinds of things in Mr. Frog's shop.
 
 5
 00:00:14,000 --> 00:00:16,000
@@ -24,7 +24,7 @@ Cell
 
 7
 00:00:17,000 --> 00:00:20,000
-Mr. Frog wants to sell everything.
+Mr. Frog wants to [sell] everything.
 
 8
 00:00:20,000 --> 00:00:26,000
@@ -32,7 +32,7 @@ Mr. Frog wants to sell everything.
 
 9
 00:00:26,000 --> 00:00:29,000
-He has one pot of bat soup.
+He has [one] pot of bat soup.
 
 10
 00:00:29,000 --> 00:00:32,000
@@ -44,7 +44,7 @@ He has one pot of bat soup.
 
 12
 00:00:33,000 --> 00:00:35,000
-2 blue birds.
+[Two] blue birds.
 
 13
 00:00:35,000 --> 00:00:38,000
@@ -52,7 +52,7 @@ He has one pot of bat soup.
 
 14
 00:00:38,000 --> 00:00:40,000
-3 green rings.
+[Three] green rings.
 
 15
 00:00:40,000 --> 00:00:44,000
@@ -60,7 +60,7 @@ He has one pot of bat soup.
 
 16
 00:00:44,000 --> 00:00:49,000
-4 cold frogs.
+[Four] cold frogs.
 
 17
 00:00:49,000 --> 00:00:53,000
@@ -68,19 +68,19 @@ He has one pot of bat soup.
 
 18
 00:00:53,000 --> 00:00:55,000
-5 candy flosses.
+[Five] candy flosses.
 
 19
 00:00:55,000 --> 00:01:00,000
-8. 6. 6. 6 pairs of socks.
+[Six] pairs of socks.
 
 20
 00:01:00,000 --> 00:01:06,000
-9. 7. 7. 7 little Indians.
+[Seven] little Indians.
 
 21
 00:01:06,000 --> 00:01:11,000
-10. 8. 8. 8 snails.
+[Eight] snails.
 
 22
 00:01:11,000 --> 00:01:18,000
@@ -88,9 +88,9 @@ He has one pot of bat soup.
 
 23
 00:01:18,000 --> 00:01:22,000
-9 mice. 12. 10.
+[Nine] mice.
 
 24
 00:01:22,000 --> 00:01:25,000
-10. 10 earrings.
+[Ten] earrings.
 

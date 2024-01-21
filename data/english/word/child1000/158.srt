@@ -1,24 +1,20 @@
 1
 00:00:00,000 --> 00:00:05,600
-28. Let. Let. Let. Let me take you to the cloud.
+[Let] me take you to the cloud.
 
 2
 00:00:05,600 --> 00:00:11,500
-29. Start. Start. They start to walk into another story.
+They [start] to walk into another story.
 
 3
 00:00:11,500 --> 00:00:17,000
-30. Stop. Stop. They stop before a giant plant.
+They [stop] before a giant plant.
 
 4
 00:00:17,000 --> 00:00:23,500
-31. Begin. Begin. Teddy begins to think of a giant.
+Teddy [begins] to think of a giant.
 
 5
-00:00:23,500 --> 00:00:29,500
-32. Fall. Fall. A boy wants the plant to fall.
-
-6
-00:00:29,500 --> 00:00:34,500
-30. Fall. A boy wants the plant to fall.
+00:00:23,500 --> 00:00:24,500
+A boy wants the plant to [fall].
 

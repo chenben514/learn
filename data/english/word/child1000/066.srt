@@ -12,7 +12,7 @@ Food
 
 4
 00:00:09,000 --> 00:00:11,000
-A food fair is fun
+A [food] fair is fun
 
 5
 00:00:11,000 --> 00:00:13,000
@@ -24,7 +24,7 @@ Eat
 
 7
 00:00:14,000 --> 00:00:16,000
-People can eat many things there
+People can [eat] many things there
 
 8
 00:00:16,000 --> 00:00:18,000
@@ -36,7 +36,7 @@ Popcorn
 
 10
 00:00:19,000 --> 00:00:21,000
-Some people like popcorn
+Some people like [popcorn]
 
 11
 00:00:21,000 --> 00:00:23,000
@@ -48,7 +48,7 @@ Hot Dog
 
 13
 00:00:25,000 --> 00:00:27,000
-Others enjoy eating hot dogs
+Others enjoy eating [hot dogs]
 
 14
 00:00:27,000 --> 00:00:29,000
@@ -56,7 +56,7 @@ Others enjoy eating hot dogs
 
 15
 00:00:29,000 --> 00:00:33,000
-Food is always delicious at the fair
+Food is always [delicious] at the fair
 
 16
 00:00:33,000 --> 00:00:35,000
@@ -68,5 +68,5 @@ Order
 
 18
 00:00:36,000 --> 00:00:39,000
-People order a lot of food
+People [order] a lot of food
 

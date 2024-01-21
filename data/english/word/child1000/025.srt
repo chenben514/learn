@@ -4,7 +4,7 @@
 
 2
 00:00:04,000 --> 00:00:09,000
-Mr. Ding Dong and Ms. Bell are little hippos friends.
+Mr. Ding Dong and Ms. Bell are little hippos [friends].
 
 3
 00:00:09,000 --> 00:00:13,000
@@ -12,7 +12,7 @@ Mr. Ding Dong and Ms. Bell are little hippos friends.
 
 4
 00:00:13,000 --> 00:00:16,000
-Ms. Bell lives in another country.
+[Ms.] Bell lives in another country.
 
 5
 00:00:16,000 --> 00:00:19,000
@@ -20,7 +20,7 @@ Ms. Bell lives in another country.
 
 6
 00:00:19,000 --> 00:00:22,000
-Foreigner. She is a foreigner.
+She is a [foreigner].
 
 7
 00:00:22,000 --> 00:00:24,000
@@ -28,7 +28,7 @@ Foreigner. She is a foreigner.
 
 8
 00:00:24,000 --> 00:00:28,000
-Daughter. Her daughter lives in the city.
+Her [daughter] lives in the city.
 
 9
 00:00:28,000 --> 00:00:32,000
@@ -36,7 +36,7 @@ Daughter. Her daughter lives in the city.
 
 10
 00:00:32,000 --> 00:00:36,000
-She is the only child in the family.
+She is the only [child] in the family.
 
 11
 00:00:36,000 --> 00:00:39,000
@@ -44,5 +44,5 @@ She is the only child in the family.
 
 12
 00:00:39,000 --> 00:00:42,000
-Her parents live in the country.
+Her [parents] live in the country.
 

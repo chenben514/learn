@@ -1,112 +1,28 @@
-1
-00:00:00,000 --> 00:00:02,000
-22.
-
-2
-00:00:02,000 --> 00:00:03,000
-Safe.
-
-3
-00:00:03,000 --> 00:00:04,000
-Safe.
-
 4
-00:00:04,000 --> 00:00:07,000
-Snow White wants to pick the flowers.
-
-5
-00:00:07,000 --> 00:00:08,000
-Help!
-
-6
-00:00:08,000 --> 00:00:09,000
-We are not safe.
-
-7
-00:00:09,000 --> 00:00:10,000
-23.
-
-8
-00:00:10,000 --> 00:00:11,000
-Dangerous.
-
-9
-00:00:11,000 --> 00:00:12,000
-Dangerous.
+00:00:04,000 --> 00:00:09,000
+Snow White wants to pick the flowers. Help! We are not [safe].
 
 10
-00:00:12,000 --> 00:00:14,000
-This is dangerous.
+00:00:12,000 --> 00:00:16,000
+This is [dangerous]. We will die.
 
-11
-00:00:14,000 --> 00:00:16,000
-We will die.
-
-12
-00:00:16,000 --> 00:00:17,000
-24.
-
-13
-00:00:17,000 --> 00:00:18,000
-Give.
-
-14
-00:00:18,000 --> 00:00:19,000
-Give.
 
 15
 00:00:19,000 --> 00:00:22,000
-Would you please give us some water?
+Would you please [give] us some water?
 
-16
-00:00:22,000 --> 00:00:23,000
-25.
-
-17
-00:00:23,000 --> 00:00:24,000
-Common.
-
-18
-00:00:24,000 --> 00:00:25,000
-Common.
 
 19
 00:00:25,000 --> 00:00:28,000
-This is not the common Snow White story.
+This is not the [common] Snow White story.
 
-20
-00:00:28,000 --> 00:00:29,000
-26.
-
-21
-00:00:29,000 --> 00:00:31,000
-Important.
-
-22
-00:00:31,000 --> 00:00:32,000
-Important.
 
 23
 00:00:32,000 --> 00:00:36,000
-The flowers may tell you something important.
+The flowers may tell you something [important].
 
-24
-00:00:36,000 --> 00:00:37,000
-27.
-
-25
-00:00:37,000 --> 00:00:38,000
-New.
-
-26
-00:00:38,000 --> 00:00:40,000
-New.
 
 27
 00:00:40,000 --> 00:00:42,000
-The man has a new idea.
-
-28
-00:00:42,000 --> 00:00:44,000
-Come out, Teddy.
+The man has a [new] idea.
 

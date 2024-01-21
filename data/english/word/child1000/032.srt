@@ -12,7 +12,7 @@ Kind
 
 4
 00:00:03,480 --> 00:00:05,680
-Nurse Mae is kind
+Nurse Mae is [kind]
 
 5
 00:00:05,680 --> 00:00:06,680
@@ -28,7 +28,7 @@ Shy
 
 8
 00:00:08,880 --> 00:00:11,280
-He is never a shy boy
+He is never a [shy] boy
 
 9
 00:00:11,280 --> 00:00:12,680
@@ -44,7 +44,7 @@ Quiet
 
 12
 00:00:15,480 --> 00:00:17,480
-He is not quiet
+He is not [quiet]
 
 13
 00:00:17,480 --> 00:00:18,640
@@ -60,7 +60,7 @@ Boring
 
 16
 00:00:22,880 --> 00:00:25,480
-It is boring to sit still
+It is [boring] to sit still
 
 17
 00:00:25,480 --> 00:00:26,840
@@ -76,7 +76,7 @@ Funny
 
 20
 00:00:29,280 --> 00:00:32,280
-Mr. Pig looks funny
+Mr. Pig looks [funny]
 
 21
 00:00:32,280 --> 00:00:33,600
@@ -92,5 +92,5 @@ Honest
 
 24
 00:00:35,880 --> 00:00:38,200
-Are the little pigs honest?
+Are the little pigs [honest]?
 

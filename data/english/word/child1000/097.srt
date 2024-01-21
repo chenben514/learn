@@ -1,60 +1,29 @@
-1
-00:00:00,000 --> 00:00:04,000
-67. Band. Band.
-
 2
 00:00:04,000 --> 00:00:06,000
-He ties them with a band.
-
-3
-00:00:06,000 --> 00:00:09,000
-68. Collect. Collect.
+He ties them with a [band].
 
 4
 00:00:09,000 --> 00:00:12,000
-He collects some fruit.
-
-5
-00:00:12,000 --> 00:00:15,000
-69. Tape. Tape.
+He [collects] some fruit.
 
 6
 00:00:15,000 --> 00:00:19,000
-He tapes the fruit together to make a face.
-
-7
-00:00:19,000 --> 00:00:22,000
-70. Art. Art.
+He [tapes] the fruit together to make a face.
 
 8
 00:00:22,000 --> 00:00:26,000
-The branches become a beautiful work of art.
-
-9
-00:00:26,000 --> 00:00:29,000
-71. Use. Use.
+The branches become a beautiful work of [art].
 
 10
 00:00:29,000 --> 00:00:33,000
-Artie uses his magic ink again.
+Artie [uses] his magic ink again.
 
-11
-00:00:33,000 --> 00:00:36,000
-72. Lose.
-
-12
-00:00:36,000 --> 00:00:37,000
-Lose.
 
 13
 00:00:37,000 --> 00:00:41,000
-Bunny sister does not lose her favorite doll.
-
-14
-00:00:41,000 --> 00:00:43,000
-Win. Win.
+Bunny sister does not [lose] her favorite doll.
 
 15
 00:00:43,000 --> 00:00:47,000
-The more wins, a new toy.
+The more [wins] a new toy.
 

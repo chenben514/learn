@@ -1,28 +1,20 @@
 1
 00:00:00,000 --> 00:00:05,920
-19. English. English. Teddy does not like English.
+Teddy does not like [English].
 
 2
 00:00:05,920 --> 00:00:11,680
-20. Word. Word. English words look like worms.
-
-3
-00:00:11,680 --> 00:00:17,680
-21. Math. Math. Mathematics. Mathematics.
+English [words] look like worms.
 
 4
 00:00:17,680 --> 00:00:24,960
-He does not like math. 22. History. History. He likes history.
-
-5
-00:00:24,960 --> 00:00:28,640
-23. PE. PE.
+He does not like [math]. He likes [history].
 
 6
 00:00:28,800 --> 00:00:34,640
-Bunny brother likes PE class. 24. Excellent. Excellent.
+Bunny brother likes [PE] class.
 
 7
 00:00:34,640 --> 00:00:38,880
-He is excellent at sports.
+He is [excellent] at sports.
 

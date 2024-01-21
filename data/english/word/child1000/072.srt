@@ -8,7 +8,7 @@ Noodles
 
 3
 00:00:04,000 --> 00:00:07,000
-We eat noodles for lunch
+We eat [noodles] for lunch
 
 4
 00:00:07,000 --> 00:00:08,000
@@ -24,7 +24,7 @@ Pizza
 
 7
 00:00:10,000 --> 00:00:13,000
-They eat pizza for dinner
+They eat [pizza] for dinner
 
 8
 00:00:13,000 --> 00:00:14,000
@@ -40,7 +40,7 @@ Rice
 
 11
 00:00:17,000 --> 00:00:19,000
-Do you eat rice every day?
+Do you eat [rice] every day?
 
 12
 00:00:19,000 --> 00:00:21,000
@@ -56,7 +56,7 @@ Hi
 
 15
 00:00:23,000 --> 00:00:26,000
-Grandmother made an apple pie
+Grandmother made an apple [pie]
 
 16
 00:00:26,000 --> 00:00:27,000
@@ -72,5 +72,5 @@ Hamburger
 
 19
 00:00:29,000 --> 00:00:32,000
-I ate a hamburger this morning
+I ate a [hamburger] this morning
 

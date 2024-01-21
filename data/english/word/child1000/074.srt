@@ -1,24 +1,32 @@
 1
 00:00:00,000 --> 00:00:07,000
-8. Vegetable. Vegetable. Mrs. Hen has many kinds of vegetables.
+Mrs. Hen has many kinds of [vegetables].
 
 2
 00:00:07,000 --> 00:00:12,000
-9. Onion. Onion. She has an onion.
+She has an [onion].
 
 3
 00:00:12,000 --> 00:00:21,000
-10. Cucumber. Cucumber. She has a cucumber. 11. Eggplant. Eggplant.
+She has a [cucumber]. 
 
 4
-00:00:21,000 --> 00:00:29,000
-She has an eggplant. 12. Cabbage. Cabbage. She has a cabbage.
+00:00:21,000 --> 00:00:23,000
+She has an [eggplant]. 
+
+4
+00:00:23,000 --> 00:00:29,000
+She has a [cabbage].
 
 5
-00:00:29,000 --> 00:00:40,000
-13. Carrot. Carrot. She also has a carrot. 14. Fresh. Fresh. The vegetables are fresh.
+00:00:29,000 --> 00:00:34,000
+She also has a [carrot]. 
+
+5
+00:00:34,000 --> 00:00:40,000
+The vegetables are [fresh].
 
 6
 00:00:40,000 --> 00:00:46,000
-15. Salad. Salad. She wants to make salad for dinner.
+She wants to make [salad] for dinner.
 

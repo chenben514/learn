@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:06,000
-29. Garden. Garden. Some people are hiding in the garden.
+Some people are hiding in the [garden].
 
 2
 00:00:06,000 --> 00:00:11,000
@@ -8,7 +8,7 @@
 
 3
 00:00:11,000 --> 00:00:14,000
-Mr. Cat knocks on the door.
+Mr. Cat [knocks] on the door.
 
 4
 00:00:14,000 --> 00:00:17,000
@@ -16,7 +16,7 @@ Mr. Cat knocks on the door.
 
 5
 00:00:17,000 --> 00:00:21,000
-It is late. Your moms are calling you.
+It is late. Your moms are [calling] you.
 
 6
 00:00:21,000 --> 00:00:28,000
@@ -24,7 +24,7 @@ It is late. Your moms are calling you.
 
 7
 00:00:28,000 --> 00:00:31,000
-She goes home to take a bath.
+She goes home to take a [bath].
 
 8
 00:00:31,000 --> 00:00:35,000
@@ -36,5 +36,5 @@ She goes home to take a bath.
 
 10
 00:00:38,000 --> 00:00:42,000
-They go home to play video games.
+They go home to play [video games].
 

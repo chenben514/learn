@@ -12,7 +12,7 @@ Date.
 
 4
 00:00:04,000 --> 00:00:08,000
-The man will come back on a special date with a seed.
+The man will come back on a special [date] with a seed.
 
 5
 00:00:08,000 --> 00:00:10,000
@@ -28,7 +28,7 @@ Festival.
 
 8
 00:00:12,000 --> 00:00:16,000
-We will have a festival under the stars.
+We will have a [festival] under the stars.
 
 9
 00:00:16,000 --> 00:00:17,000
@@ -44,7 +44,7 @@ Birthday.
 
 12
 00:00:19,000 --> 00:00:23,000
-Mr. Elephant planted the seed on his birthday.
+Mr. Elephant planted the seed on his [birthday].
 
 13
 00:00:23,000 --> 00:00:25,000
@@ -60,7 +60,7 @@ Since.
 
 16
 00:00:30,000 --> 00:00:35,000
-Since the man left, the wind had blown every night.
+[Since] the man left, the wind had blown every night.
 
 17
 00:00:35,000 --> 00:00:36,000
@@ -76,7 +76,7 @@ Month.
 
 20
 00:00:38,000 --> 00:00:42,000
-A month passed and it began to snow.
+A [month] passed and it began to snow.
 
 21
 00:00:42,000 --> 00:00:43,000
@@ -92,5 +92,5 @@ Yet.
 
 24
 00:00:45,000 --> 00:00:49,000
-The seed had not grown yet.
+The seed had not grown [yet].
 

@@ -1,76 +1,32 @@
-1
-00:00:00,000 --> 00:00:03,680
-8. Living room. Living room.
-
 2
 00:00:03,680 --> 00:00:06,520
-Mr. Cat goes into the living room.
-
-3
-00:00:06,520 --> 00:00:09,920
-9. TV. TV.
+Mr. Cat goes into the [living room].
 
 4
 00:00:09,920 --> 00:00:12,840
-Mr. Owl is watching TV.
-
-5
-00:00:12,840 --> 00:00:15,920
-10. Lamp. Lamp.
+Mr. Owl is watching [TV].
 
 6
 00:00:15,920 --> 00:00:21,080
-The lamp is making a strange noise.
-
-7
-00:00:21,080 --> 00:00:24,680
-11. Telephone. Telephone.
+The [lamp] is making a strange noise.
 
 8
 00:00:24,680 --> 00:00:27,280
-No one is using the telephone.
-
-9
-00:00:27,280 --> 00:00:29,320
-12. News.
-
-10
-00:00:29,400 --> 00:00:30,400
-News.
+No one is using the [telephone].
 
 11
 00:00:30,400 --> 00:00:33,640
-They are watching the news on TV.
-
-12
-00:00:33,640 --> 00:00:36,960
-13. Picture. Picture.
+They are watching the [news] on TV.
 
 13
 00:00:36,960 --> 00:00:39,360
-There is a picture on the wall.
-
-14
-00:00:39,360 --> 00:00:41,600
-14. Armchair.
-
-15
-00:00:41,600 --> 00:00:43,000
-Armchair.
+There is a [picture] on the wall.
 
 16
 00:00:43,000 --> 00:00:46,000
-Teddy's grandmother is on the armchair.
-
-17
-00:00:46,000 --> 00:00:48,000
-15. Couch.
-
-18
-00:00:48,000 --> 00:00:48,840
-Couch.
+Teddy's grandmother is on the [armchair].
 
 19
 00:00:48,840 --> 00:00:51,200
-His grandfather is on the couch.
+His grandfather is on the [couch].
 

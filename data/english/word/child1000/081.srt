@@ -4,7 +4,7 @@
 
 2
 00:00:03,360 --> 00:00:06,140
-Mr. Cat goes into the kitchen.
+Mr. Cat goes into the [kitchen].
 
 3
 00:00:06,140 --> 00:00:08,440
@@ -16,7 +16,7 @@ Window.
 
 5
 00:00:09,640 --> 00:00:11,760
-The window is open.
+The [window] is open.
 
 6
 00:00:11,760 --> 00:00:14,320
@@ -36,7 +36,7 @@ Fridge.
 
 10
 00:00:18,200 --> 00:00:21,680
-Somebody is hiding in the refrigerator.
+Somebody is hiding in the [refrigerator].
 
 11
 00:00:21,680 --> 00:00:24,200
@@ -48,7 +48,7 @@ Fosset.
 
 13
 00:00:25,360 --> 00:00:28,440
-You can turn on the faucet to wash your hands.
+You can turn on the [faucet] to wash your hands.
 
 14
 00:00:28,440 --> 00:00:29,720
@@ -64,7 +64,7 @@ Drawer.
 
 17
 00:00:31,640 --> 00:00:33,880
-The drawers are closed.
+The [drawers] are closed.
 
 18
 00:00:33,880 --> 00:00:35,040
@@ -80,7 +80,7 @@ Sync.
 
 21
 00:00:36,880 --> 00:00:39,040
-The sync is clean.
+The [sink] is clean.
 
 22
 00:00:39,040 --> 00:00:40,240
@@ -96,5 +96,5 @@ Floor.
 
 25
 00:00:42,320 --> 00:00:45,440
-There are some pieces of vegetable on the floor.
+There are some pieces of vegetable on the [floor].
 

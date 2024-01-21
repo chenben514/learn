@@ -8,7 +8,7 @@
 
 3
 00:00:08,000 --> 00:00:11,000
-The pork steak is too hot.
+The [pork] steak is too [hot].
 
 4
 00:00:11,000 --> 00:00:14,000
@@ -24,7 +24,7 @@ Bite.
 
 7
 00:00:19,000 --> 00:00:23,000
-The beef steak is too hard. He cannot bite it.
+The [beef] steak is too hard. He cannot [bite] it.
 
 8
 00:00:23,000 --> 00:00:25,000
@@ -36,7 +36,7 @@ The beef steak is too hard. He cannot bite it.
 
 10
 00:00:29,000 --> 00:00:33,000
-Cold. The chicken steak is too cold.
+Cold. The [chicken] steak is too [cold].
 
 11
 00:00:33,000 --> 00:00:36,000
@@ -48,5 +48,5 @@ Cold. The chicken steak is too cold.
 
 13
 00:00:39,000 --> 00:00:42,000
-Snack. He likes sweet snacks.
+Snack. He likes [sweet snacks].
 

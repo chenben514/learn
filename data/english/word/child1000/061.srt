@@ -12,7 +12,7 @@ November.
 
 4
 00:00:03,600 --> 00:00:08,000
-In November, the octopus cannot climb down the tree.
+In [November], the octopus cannot climb down the tree.
 
 5
 00:00:08,000 --> 00:00:09,200
@@ -28,7 +28,7 @@ December.
 
 8
 00:00:11,600 --> 00:00:15,600
-December is the time to share the giant fruit.
+[December] is the time to share the giant fruit.
 
 9
 00:00:15,600 --> 00:00:16,800
@@ -44,7 +44,7 @@ Until.
 
 12
 00:00:19,200 --> 00:00:23,800
-They don't know whether the fruit is sweet until they cut it open.
+They don't know whether the fruit is sweet [until] they cut it open.
 
 13
 00:00:23,800 --> 00:00:25,000
@@ -60,7 +60,7 @@ During.
 
 16
 00:00:28,400 --> 00:00:33,400
-During the festival, something falls from the sky.
+[During] the festival, something falls from the sky.
 
 17
 00:00:33,400 --> 00:00:34,400
@@ -76,7 +76,7 @@ Next.
 
 20
 00:00:36,400 --> 00:00:39,400
-I will be more careful next time.
+I will be more careful [next] time.
 
 21
 00:00:39,400 --> 00:00:40,400
@@ -91,10 +91,6 @@ A go.
 A go.
 
 24
-00:00:42,400 --> 00:00:43,400
-I'm sorry.
-
-25
-00:00:43,400 --> 00:00:46,400
-I fell on your fruit cart a long time ago.
+00:00:42,400 --> 00:00:46,400
+I'm sorry. I fell on your fruit cart a long time [ago].
 

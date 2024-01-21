@@ -1,24 +1,24 @@
 1
 00:00:00,000 --> 00:00:07,340
-15. Now. Now. I want to open my Christmas presents now!
+I want to open my Christmas presents [now]!
 
 2
 00:00:07,340 --> 00:00:13,360
-16. A clock. A clock. It is 10 o'clock now.
+It is 10 [o'clock] now.
 
 3
 00:00:13,360 --> 00:00:20,480
-17. Minute. Minute. Is one hour the same as one minute?
+Is one hour the same as one [minute]?
 
 4
 00:00:20,480 --> 00:00:29,200
-18. Hour. Hour. No, it is not. There are 60 minutes in an hour.
+No, it is not. There are 60 minutes in an [hour].
 
 5
 00:00:29,200 --> 00:00:36,440
-19. A.M. A.M. What does A.M mean?
+What does [A.M.] mean?
 
 6
 00:00:36,440 --> 00:00:44,200
-20. Before. Before. The time before noon is A.M.
+The time [before] noon is A.M.
 

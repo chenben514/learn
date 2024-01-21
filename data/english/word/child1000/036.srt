@@ -8,7 +8,7 @@
 
 3
 00:00:09,000 --> 00:00:14,000
-Mr. Frog does not mind showing his special box.
+Mr. Frog does not [mind] showing his special box.
 
 4
 00:00:14,000 --> 00:00:16,000
@@ -20,7 +20,7 @@ Proud
 
 6
 00:00:17,000 --> 00:00:19,000
-He is proud of his box.
+He is [proud] of his box.
 
 7
 00:00:19,000 --> 00:00:22,000
@@ -32,7 +32,7 @@ Afraid
 
 9
 00:00:23,000 --> 00:00:25,000
-He is afraid of the dark.
+He is [afraid] of the dark.
 
 10
 00:00:25,000 --> 00:00:27,000
@@ -44,7 +44,7 @@ Cry
 
 12
 00:00:29,000 --> 00:00:36,000
-He cries when he is all alone.
+He [cries] when he is all alone.
 
 13
 00:00:36,000 --> 00:00:39,000
@@ -56,7 +56,7 @@ Like
 
 15
 00:00:40,000 --> 00:00:44,000
-He does not like to be all by himself.
+He does not [like] to be all by himself.
 
 16
 00:00:44,000 --> 00:00:46,000
@@ -68,5 +68,5 @@ Sad
 
 18
 00:00:47,000 --> 00:00:49,000
-He is sad
+He is [sad]
 

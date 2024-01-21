@@ -12,7 +12,7 @@ Smell.
 
 4
 00:00:03,900 --> 00:00:07,900
-The big bad wolf can smell the pigs.
+The big bad wolf can [smell] the pigs.
 
 5
 00:00:07,900 --> 00:00:09,000
@@ -28,7 +28,7 @@ Pick.
 
 8
 00:00:11,000 --> 00:00:14,500
-He is coming to pick the fattest pig.
+He is coming to [pick] the fattest pig.
 
 9
 00:00:14,500 --> 00:00:16,000
@@ -44,7 +44,7 @@ Laugh.
 
 12
 00:00:19,000 --> 00:00:22,500
-He is laughing.
+He is [laughing].
 
 13
 00:00:22,500 --> 00:00:24,000
@@ -60,7 +60,7 @@ Smile.
 
 16
 00:00:26,500 --> 00:00:29,000
-Does he love to smile?
+Does he love to [smile]?
 
 17
 00:00:29,000 --> 00:00:30,000
@@ -76,7 +76,7 @@ Brush.
 
 20
 00:00:32,000 --> 00:00:38,000
-Does he brush his teeth before bed?
+Does he [brush] his teeth before bed?
 
 21
 00:00:38,000 --> 00:00:39,000
@@ -92,5 +92,5 @@ Nod.
 
 24
 00:00:41,000 --> 00:00:44,000
-The pigs nodded off in bed.
+The pigs [nodded] off in bed.
 

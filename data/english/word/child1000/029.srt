@@ -8,7 +8,7 @@ One. Healthy. Healthy.
 
 3
 00:00:08,000 --> 00:00:11,000
-Mr. Ox eats healthy food.
+Mr. Ox eats [healthy] food.
 
 4
 00:00:11,000 --> 00:00:14,000
@@ -16,7 +16,7 @@ Two. Strong.
 
 5
 00:00:14,000 --> 00:00:17,000
-Strong. He is very strong.
+He is very [strong].
 
 6
 00:00:17,000 --> 00:00:19,000
@@ -24,7 +24,7 @@ Three. Heavy.
 
 7
 00:00:19,000 --> 00:00:24,000
-Heavy. He helped Mr. Frog move his heavy house.
+He helped Mr. Frog move his [heavy] house.
 
 8
 00:00:24,000 --> 00:00:26,000
@@ -40,7 +40,7 @@ Poor.
 
 11
 00:00:30,000 --> 00:00:32,000
-Poor Mr. Frog.
+[Poor] Mr. Frog.
 
 12
 00:00:32,000 --> 00:00:33,000
@@ -56,7 +56,7 @@ Old.
 
 15
 00:00:35,000 --> 00:00:38,000
-Her blanket is very old.
+Her blanket is very [old].
 
 16
 00:00:38,000 --> 00:00:39,000
@@ -72,5 +72,5 @@ Cute.
 
 19
 00:00:41,000 --> 00:00:44,000
-She bought a cute new blanket.
+She bought a [cute] new blanket.
 

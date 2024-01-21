@@ -1,96 +1,24 @@
-1
-00:00:00,000 --> 00:00:01,320
-33
-
-2
-00:00:01,320 --> 00:00:02,400
-End
-
-3
-00:00:02,400 --> 00:00:03,600
-End
-
 4
 00:00:03,600 --> 00:00:06,920
-The end breaks and a giant falls.
-
-5
-00:00:06,920 --> 00:00:08,060
-34
-
-6
-00:00:08,060 --> 00:00:08,960
-Take
-
-7
-00:00:08,960 --> 00:00:09,960
-Take
+The [end] breaks and a giant falls.
 
 8
 00:00:09,960 --> 00:00:12,920
-They can take him back to the cloud.
-
-9
-00:00:12,920 --> 00:00:14,200
-35
-
-10
-00:00:14,200 --> 00:00:15,160
-Helpful
-
-11
-00:00:15,160 --> 00:00:16,200
-Helpful
+They can [take] him back to the cloud.
 
 12
 00:00:16,200 --> 00:00:19,200
-They use the very helpful key.
-
-13
-00:00:19,200 --> 00:00:20,640
-36
-
-14
-00:00:20,640 --> 00:00:21,640
-Help
-
-15
-00:00:21,640 --> 00:00:22,440
-Help
+They use the very [helpful] key.
 
 16
 00:00:22,440 --> 00:00:25,200
-They are happy to help the giant.
-
-17
-00:00:25,200 --> 00:00:26,360
-37
-
-18
-00:00:26,360 --> 00:00:27,360
-Same
-
-19
-00:00:27,360 --> 00:00:28,680
-Same
+They are happy to [help] the giant.
 
 20
 00:00:28,760 --> 00:00:31,280
-Their colors are the same.
-
-21
-00:00:31,280 --> 00:00:32,280
-38
-
-22
-00:00:32,280 --> 00:00:33,280
-Different
-
-23
-00:00:33,280 --> 00:00:34,280
-Different
+Their colors are the [same].
 
 24
 00:00:34,280 --> 00:00:36,280
-There is something different.
+There is something [different].
 

@@ -1,48 +1,24 @@
-1
-00:00:00,000 --> 00:00:04,000
-24. Behind. Behind.
-
 2
 00:00:04,000 --> 00:00:08,000
-His bag of candy is hanging behind him.
-
-3
-00:00:08,000 --> 00:00:11,000
-25. Below. Below.
+His bag of candy is hanging [behind] him.
 
 4
 00:00:11,000 --> 00:00:14,000
-The bird looks below at the horse.
-
-5
-00:00:14,000 --> 00:00:17,000
-26. Over. Over.
+The bird looks [below] at the horse.
 
 6
 00:00:17,000 --> 00:00:20,000
-He is hanging over the tree.
-
-7
-00:00:20,000 --> 00:00:23,000
-27. Under. Under.
+He is hanging [over] the tree.
 
 8
 00:00:23,000 --> 00:00:26,000
-The bus stop sign is under the tree.
-
-9
-00:00:26,000 --> 00:00:29,000
-28. Here. Here.
+The bus stop sign is [under] the tree.
 
 10
 00:00:29,000 --> 00:00:32,000
-The green boot is here by the tree.
-
-11
-00:00:32,000 --> 00:00:35,000
-29. There. There.
+The green boot is [here] by the tree.
 
 12
 00:00:35,000 --> 00:00:39,000
-The red boot is over there by the bus.
+The red boot is over [there] by the bus.
 

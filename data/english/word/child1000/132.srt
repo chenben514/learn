@@ -1,72 +1,25 @@
-1
-00:00:00,000 --> 00:00:05,000
-19. Countries and Places
-
-2
-00:00:06,000 --> 00:00:08,000
-1. Live
-
-3
-00:00:08,000 --> 00:00:09,000
-Live
-
 4
 00:00:09,000 --> 00:00:14,000
-This is a bug. It lives in Mr. Pig's hair.
-
-5
-00:00:14,000 --> 00:00:16,000
-2. Place
-
-6
-00:00:16,000 --> 00:00:17,000
-Place
+This is a bug. It [lives] in Mr. Pig's hair.
 
 7
 00:00:17,000 --> 00:00:20,000
-It is a comfortable place to live.
+It is a comfortable [place] to live.
 
-8
-00:00:20,000 --> 00:00:22,000
-3. Kill
-
-9
-00:00:22,000 --> 00:00:23,000
-Kill
 
 10
 00:00:23,000 --> 00:00:27,000
-One day, Mr. Pig almost kills the bug.
-
-11
-00:00:27,000 --> 00:00:29,000
-4. Die
+One day, Mr. Pig almost [kills] the bug.
 
 12
 00:00:29,000 --> 00:00:33,000
-He sits on the bug and it is dying.
-
-13
-00:00:33,000 --> 00:00:35,000
-5. Save
-
-14
-00:00:35,000 --> 00:00:36,000
-Save
+He sits on the bug and it is [dying].
 
 15
 00:00:36,000 --> 00:00:40,000
-Mr. Pig tries to save the bug's life.
-
-16
-00:00:40,000 --> 00:00:42,000
-6. Life
-
-17
-00:00:42,000 --> 00:00:43,000
-Life
+Mr. Pig tries to [save] the bug's life.
 
 18
 00:00:43,000 --> 00:00:45,000
-Life is beautiful.
+[Life] is beautiful.
 

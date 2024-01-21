@@ -1,48 +1,16 @@
-1
-00:00:00,000 --> 00:00:02,260
-4. Bedroom
-
-2
-00:00:02,260 --> 00:00:03,260
-Bedroom
-
 3
 00:00:03,260 --> 00:00:06,000
-Mr. Cat goes into the bedroom.
-
-4
-00:00:06,000 --> 00:00:08,000
-5. Bed
-
-5
-00:00:08,000 --> 00:00:09,000
-Bed
+Mr. Cat goes into the [bedroom].
 
 6
 00:00:09,000 --> 00:00:12,000
-He finds little hippo under the bed.
-
-7
-00:00:12,000 --> 00:00:14,000
-6. Pillow
-
-8
-00:00:14,000 --> 00:00:15,000
-Pillow
+He finds little hippo under the [bed].
 
 9
 00:00:15,000 --> 00:00:19,000
-A teddy bear rests its head on a pillow.
-
-10
-00:00:19,000 --> 00:00:21,000
-7. Blanket
-
-11
-00:00:21,000 --> 00:00:22,000
-Blanket
+A teddy bear rests its head on a [pillow].
 
 12
 00:00:22,000 --> 00:00:24,000
-It is covered with a blanket.
+It is covered with a [blanket].
 

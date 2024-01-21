@@ -8,7 +8,7 @@ Agree
 
 3
 00:00:04,000 --> 00:00:07,000
-They both agree on one thing.
+They both [agree] on one thing.
 
 4
 00:00:07,000 --> 00:00:09,000
@@ -20,7 +20,7 @@ Mean
 
 6
 00:00:11,000 --> 00:00:15,000
-Mr. Frog is very mean.
+Mr. Frog is very [mean].
 
 7
 00:00:15,000 --> 00:00:17,000
@@ -36,7 +36,7 @@ Enjoy
 
 10
 00:00:19,000 --> 00:00:22,000
-They enjoy being with each other.
+They [enjoy] being with each other.
 
 11
 00:00:22,000 --> 00:00:23,000
@@ -52,7 +52,7 @@ Board
 
 14
 00:00:25,000 --> 00:00:29,000
-They are never bored when they're together.
+They are never [bored] when they're together.
 
 15
 00:00:30,000 --> 00:00:32,000

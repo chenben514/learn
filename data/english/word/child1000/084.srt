@@ -4,7 +4,7 @@
 
 2
 00:00:07,000 --> 00:00:10,000
-They can play the piano.
+They can play the [piano].
 
 3
 00:00:10,000 --> 00:00:13,000
@@ -12,7 +12,7 @@ They can play the piano.
 
 4
 00:00:13,000 --> 00:00:16,000
-The music is coming from the radio.
+The music is coming from the [radio].
 
 5
 00:00:16,000 --> 00:00:18,000
@@ -20,7 +20,7 @@ The music is coming from the radio.
 
 6
 00:00:18,000 --> 00:00:21,000
-Desk. She is dancing on the desk.
+Desk. She is dancing on the [desk].
 
 7
 00:00:21,000 --> 00:00:24,000
@@ -28,7 +28,7 @@ Desk. She is dancing on the desk.
 
 8
 00:00:24,000 --> 00:00:27,000
-Then she falls down on the computer.
+Then she falls down on the [computer].
 
 9
 00:00:27,000 --> 00:00:29,000
@@ -40,7 +40,7 @@ Apartment.
 
 11
 00:00:31,000 --> 00:00:34,000
-Dr. Dog has a new friend in his apartment.
+Dr. Dog has a new friend in his [apartment].
 
 12
 00:00:34,000 --> 00:00:36,000
@@ -48,5 +48,5 @@ Dr. Dog has a new friend in his apartment.
 
 13
 00:00:36,000 --> 00:00:39,000
-Build. He built a helper.
+Build. He [built] a helper.
 

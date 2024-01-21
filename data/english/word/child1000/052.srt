@@ -4,7 +4,7 @@
 
 2
 00:00:03,740 --> 00:00:06,640
-What is P.M?
+What is [P.M.]?
 
 3
 00:00:06,640 --> 00:00:09,200
@@ -15,12 +15,8 @@ What is P.M?
 After.
 
 5
-00:00:10,480 --> 00:00:13,140
-After noon is P.M.
-
-6
-00:00:13,140 --> 00:00:15,880
-So it means afternoon.
+00:00:10,480 --> 00:00:15,880
+[After] noon is P.M. So it means afternoon.
 
 7
 00:00:15,880 --> 00:00:18,080
@@ -31,12 +27,9 @@ So it means afternoon.
 Late.
 
 9
-00:00:19,280 --> 00:00:20,580
-It is late.
+00:00:19,280 --> 00:00:22,720
+It is [late]. It's time to go to bed.
 
-10
-00:00:20,580 --> 00:00:22,720
-It's time to go to bed.
 
 11
 00:00:22,720 --> 00:00:25,260
@@ -48,7 +41,7 @@ Early.
 
 13
 00:00:26,440 --> 00:00:29,200
-I think it is still early.
+I think it is still [early].
 
 14
 00:00:29,200 --> 00:00:31,640
@@ -60,7 +53,7 @@ Again.
 
 16
 00:00:35,440 --> 00:00:39,040
-He feels tired again.
+He feels tired [again].
 
 17
 00:00:39,040 --> 00:00:41,320
@@ -72,5 +65,5 @@ Past.
 
 19
 00:00:42,720 --> 00:00:46,640
-He can't open his eyes when it is past 10 P.M.
+He can't open his eyes when it is [past] 10 P.M.
 

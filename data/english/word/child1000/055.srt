@@ -12,7 +12,7 @@ Tuesday.
 
 4
 00:00:03,900 --> 00:00:08,400
-Tuesday, the little pigs played under his trees.
+[Tuesday], the little pigs played under his trees.
 
 5
 00:00:08,400 --> 00:00:09,900
@@ -28,7 +28,7 @@ Wednesday.
 
 8
 00:00:12,500 --> 00:00:16,500
-Wednesday, he picked some fruit from his trees again.
+[Wednesday], he picked some fruit from his trees again.
 
 9
 00:00:16,500 --> 00:00:18,000
@@ -44,7 +44,7 @@ Thursday.
 
 12
 00:00:20,500 --> 00:00:24,500
-Thursday, he took them to the market to sell again.
+[Thursday], he took them to the market to sell again.
 
 13
 00:00:24,500 --> 00:00:25,800
@@ -60,7 +60,7 @@ Friday.
 
 16
 00:00:30,500 --> 00:00:34,500
-Friday, Mr. Goat fell on his fruit.
+[Friday], Mr. Goat fell on his fruit.
 
 17
 00:00:34,500 --> 00:00:36,000
@@ -76,7 +76,7 @@ Saturday.
 
 20
 00:00:38,500 --> 00:00:42,500
-Saturday, he picked vegetables on his farm.
+[Saturday], he picked vegetables on his farm.
 
 21
 00:00:42,500 --> 00:00:43,500
@@ -92,5 +92,5 @@ Weekend.
 
 24
 00:00:46,000 --> 00:00:50,000
-On the weekend, a stranger came to see him.
+On the [weekend], a stranger came to see him.
 

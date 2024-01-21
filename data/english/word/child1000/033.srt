@@ -4,7 +4,7 @@
 
 2
 00:00:06,000 --> 00:00:09,000
-The little pigs are lazy.
+The little pigs are [lazy].
 
 3
 00:00:09,000 --> 00:00:13,000
@@ -12,7 +12,7 @@ The little pigs are lazy.
 
 4
 00:00:13,000 --> 00:00:15,000
-He is a hardworking man.
+He is a [hard-working] man.
 
 5
 00:00:15,000 --> 00:00:21,000
@@ -20,7 +20,7 @@ He is a hardworking man.
 
 6
 00:00:21,000 --> 00:00:25,000
-He is very smart. He can fix anything.
+He is very [smart]. He can fix anything.
 
 7
 00:00:25,000 --> 00:00:29,000
@@ -28,7 +28,7 @@ He is very smart. He can fix anything.
 
 8
 00:00:29,000 --> 00:00:32,000
-Sometimes, he makes stupid mistakes.
+Sometimes, he makes [stupid] mistakes.
 
 9
 00:00:32,000 --> 00:00:36,000
@@ -36,7 +36,7 @@ Sometimes, he makes stupid mistakes.
 
 10
 00:00:36,000 --> 00:00:38,000
-He looks handsome.
+He looks [handsome].
 
 11
 00:00:38,000 --> 00:00:41,000
@@ -44,9 +44,9 @@ He looks handsome.
 
 12
 00:00:41,000 --> 00:00:44,000
-He wears his best suit.
+He wears his [best] suit.
 
 13
 00:00:44,000 --> 00:00:47,000
-The apple tastes good.
+The apple tastes [good].
 

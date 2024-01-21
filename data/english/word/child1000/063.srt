@@ -20,7 +20,7 @@ Modern
 
 6
 00:00:09,000 --> 00:00:12,000
-Bunny Sister is a modern girl
+Bunny Sister is a [modern] girl
 
 7
 00:00:12,000 --> 00:00:13,000
@@ -36,7 +36,7 @@ Bag
 
 10
 00:00:15,000 --> 00:00:18,000
-She has a very big bag
+She has a very big [bag]
 
 11
 00:00:18,000 --> 00:00:19,000
@@ -52,7 +52,7 @@ Wear
 
 14
 00:00:21,000 --> 00:00:24,000
-She likes to wear beautiful things
+She likes to [wear] beautiful things
 
 15
 00:00:24,000 --> 00:00:25,000
@@ -68,7 +68,7 @@ Close
 
 18
 00:00:27,000 --> 00:00:30,000
-There are many clothes in the bag
+There are many [clothes] in the bag
 
 19
 00:00:30,000 --> 00:00:31,000
@@ -84,7 +84,7 @@ Ring
 
 22
 00:00:33,000 --> 00:00:38,000
-You can also find a ring and many other things in it
+You can also find a [ring] and many other things in it
 
 23
 00:00:38,000 --> 00:00:39,000
@@ -100,7 +100,7 @@ Uniform
 
 26
 00:00:41,000 --> 00:00:45,000
-She goes to school in her uniform
+She goes to school in her [uniform]
 
 27
 00:00:45,000 --> 00:00:46,000
@@ -116,7 +116,7 @@ Map
 
 30
 00:00:48,000 --> 00:00:51,000
-There is a map in her bag
+There is a [map] in her bag
 
 31
 00:00:51,000 --> 00:00:52,000
@@ -132,7 +132,7 @@ Socks
 
 34
 00:00:54,000 --> 00:00:57,000
-There is a pair of socks in her bag
+There is a pair of [socks] in her bag
 
 35
 00:00:57,000 --> 00:00:58,000
@@ -148,7 +148,7 @@ Jacket
 
 38
 00:01:00,000 --> 00:01:03,000
-There is a jacket in her bag
+There is a [jacket] in her bag
 
 39
 00:01:03,000 --> 00:01:04,000
@@ -164,5 +164,5 @@ Jeans
 
 42
 00:01:06,000 --> 00:01:09,000
-There is a pair of jeans in her bag
+There is a pair of [jeans] in her bag
 

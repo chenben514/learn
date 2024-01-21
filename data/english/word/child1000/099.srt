@@ -1,32 +1,15 @@
-1
-00:00:00,000 --> 00:00:04,160
-5. Junior high school. Junior high school.
-
 2
 00:00:04,160 --> 00:00:07,680
-It will be even more fun to go to junior high school.
-
-3
-00:00:07,680 --> 00:00:11,920
-6. Senior high school. Senior high school.
-
+It will be even more fun to go to [junior high school].
 4
 00:00:11,920 --> 00:00:15,280
-They will go to senior high school in the future.
-
-5
-00:00:15,280 --> 00:00:18,080
-7. Class. Class.
+They will go to [senior high school] in the future.
 
 6
 00:00:18,080 --> 00:00:20,720
-Which class does Teddy like best?
-
-7
-00:00:20,720 --> 00:00:23,680
-8. Classroom. Classroom.
+Which [class] does Teddy like best?
 
 8
 00:00:23,680 --> 00:00:26,320
-He is in the classroom now.
+He is in the [classroom] now.
 

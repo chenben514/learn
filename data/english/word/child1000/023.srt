@@ -12,7 +12,7 @@ Age
 
 4
 00:00:09,000 --> 00:00:12,000
-Teddy was born in the space age
+Teddy was born in the Space [Age]
 
 5
 00:00:12,000 --> 00:00:14,000
@@ -24,7 +24,7 @@ Cousin
 
 7
 00:00:15,000 --> 00:00:18,000
-He has one little cousin
+He has one little [cousin]
 
 8
 00:00:18,000 --> 00:00:21,000
@@ -36,7 +36,7 @@ Ant
 
 10
 00:00:22,000 --> 00:00:26,000
-The cousin is Teddy's aunt's son
+The cousin is Teddy's [aunt's] son
 
 11
 00:00:26,000 --> 00:00:28,000
@@ -48,7 +48,7 @@ Uncle
 
 13
 00:00:29,000 --> 00:00:33,000
-The man in the middle is Teddy's uncle
+The man in the middle is Teddy's [uncle]
 
 14
 00:00:33,000 --> 00:00:35,000
@@ -60,7 +60,7 @@ Father
 
 16
 00:00:36,000 --> 00:00:39,000
-Teddy's father is a cook
+Teddy's [father] is a cook
 
 17
 00:00:39,000 --> 00:00:41,000
@@ -72,7 +72,7 @@ Mother
 
 19
 00:00:42,000 --> 00:00:45,000
-His mother is a baker
+His [mother] is a baker
 
 20
 00:00:45,000 --> 00:00:47,000
@@ -84,7 +84,7 @@ Son
 
 22
 00:00:48,000 --> 00:00:50,000
-They have two sons
+They have two [sons]
 
 23
 00:00:50,000 --> 00:00:53,000
@@ -96,7 +96,7 @@ Grandmother
 
 25
 00:00:54,000 --> 00:00:57,000
-Teddy's grandmother is old
+Teddy's [grandmother] is old
 
 26
 00:00:57,000 --> 00:01:00,000
@@ -108,7 +108,7 @@ Grandfather
 
 28
 00:01:02,000 --> 00:01:05,000
-Teddy's grandfather is old too
+Teddy's [grandfather] is old too
 
 29
 00:01:05,000 --> 00:01:07,000
@@ -120,5 +120,5 @@ Family
 
 31
 00:01:08,000 --> 00:01:10,000
-This is Teddy's family
+This is Teddy's [family]
 

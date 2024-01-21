@@ -1,52 +1,16 @@
-1
-00:00:00,000 --> 00:00:03,240
-14. Cross. Cross.
-
 2
 00:00:03,240 --> 00:00:05,640
-People are crossing the road.
-
-3
-00:00:05,640 --> 00:00:07,800
-15. North.
-
-4
-00:00:07,800 --> 00:00:08,800
-North.
-
-5
-00:00:08,800 --> 00:00:10,880
-16. South.
-
-6
-00:00:10,880 --> 00:00:11,800
-South.
+People are [crossing] the road.
 
 7
 00:00:11,800 --> 00:00:15,080
-They are driving from the north to the south.
-
-8
-00:00:15,080 --> 00:00:17,320
-17. West.
-
-9
-00:00:17,320 --> 00:00:19,320
-West.
+They are driving from the [north] to the [south].
 
 10
 00:00:21,820 --> 00:00:25,280
-The car on the west side of the road stops.
-
-11
-00:00:25,280 --> 00:00:27,400
-18. East.
-
-12
-00:00:27,400 --> 00:00:28,280
-East.
+The car on the [west] side of the road stops.
 
 13
 00:00:28,280 --> 00:00:32,080
-The old man on the east side of the road drops his bag.
+The old man on the [east] side of the road drops his bag.
 

@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:10,000
-13. Believe. Believe. He believes his dream will come true.
+He [believes] his dream will come true.
 
 2
 00:00:10,000 --> 00:00:14,000
@@ -8,7 +8,7 @@
 
 3
 00:00:14,000 --> 00:00:17,000
-R.T. is so excited.
+Artie is so [excited].
 
 4
 00:00:17,000 --> 00:00:20,000
@@ -16,7 +16,7 @@ R.T. is so excited.
 
 5
 00:00:20,000 --> 00:00:24,000
-He guesses there must be cookies in the box.
+He [guesses] there must be cookies in the box.
 
 6
 00:00:24,000 --> 00:00:28,000
@@ -24,11 +24,11 @@ He guesses there must be cookies in the box.
 
 7
 00:00:28,000 --> 00:00:33,000
-Am I in trouble? 17. Glad.
+Am I in [trouble]?
 
 8
 00:00:33,000 --> 00:00:36,000
-Glad. He is glad.
+He is [glad].
 
 9
 00:00:36,000 --> 00:00:39,000
@@ -36,5 +36,5 @@ Glad. He is glad.
 
 10
 00:00:39,000 --> 00:00:42,000
-Joy. This brings him joy.
+This brings him [joy].
 

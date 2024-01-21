@@ -1,92 +1,40 @@
-1
-00:00:00,000 --> 00:00:03,500
-9. Blackboard. Blackboard.
-
 2
 00:00:03,500 --> 00:00:06,500
-He sits in front of a big blackboard.
-
-3
-00:00:06,500 --> 00:00:09,500
-10. Teacher. Teacher.
+He sits in front of a big [blackboard].
 
 4
 00:00:09,500 --> 00:00:11,500
-The teacher is teaching.
-
-5
-00:00:11,500 --> 00:00:14,500
-11. Chalk. Chalk.
+The [teacher] is teaching.
 
 6
 00:00:14,500 --> 00:00:22,500
-The teacher uses a piece of chalk to write on the blackboard.
-
-7
-00:00:22,500 --> 00:00:25,500
-12. Eraser. Eraser.
+The teacher uses a piece of [chalk] to write on the blackboard.
 
 8
 00:00:25,500 --> 00:00:29,000
-You can use an eraser to erase the words.
-
-9
-00:00:29,000 --> 00:00:32,000
-13. Ruler. Ruler.
+You can use an [eraser] to erase the words.
 
 10
 00:00:32,000 --> 00:00:34,000
-How long is the ruler?
-
-11
-00:00:34,000 --> 00:00:36,000
-14. School bag.
-
-12
-00:00:36,000 --> 00:00:37,500
-School bag.
+How long is the [ruler]?
 
 13
 00:00:37,500 --> 00:00:40,500
-Teddy goes to school with his school bag.
-
-14
-00:00:40,500 --> 00:00:42,500
-15. Student.
-
-15
-00:00:42,500 --> 00:00:43,500
-Student.
+Teddy goes to school with his [school bag].
 
 16
 00:00:43,500 --> 00:00:45,500
-He is a good student.
-
-17
-00:00:45,500 --> 00:00:48,000
-16. Paper.
-
-18
-00:00:48,000 --> 00:00:49,000
-Paper.
+He is a good [student].
 
 19
 00:00:49,000 --> 00:00:52,000
-There is a piece of paper on his desk.
-
-20
-00:00:52,000 --> 00:00:55,000
-17. Pencil. Pencil.
+There is a piece of [paper] on his desk.
 
 21
 00:00:55,000 --> 00:00:58,500
-He uses his pencil to write on the paper.
-
-22
-00:00:58,500 --> 00:01:01,500
-18. Pen. Pen.
+He uses his [pencil] to write on the paper.
 
 23
 00:01:01,500 --> 00:01:04,500
-His friend likes to write with a pen.
+His friend likes to write with a [pen].
 

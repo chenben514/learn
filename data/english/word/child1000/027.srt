@@ -1,20 +1,20 @@
 1
 00:00:00,000 --> 00:00:07,840
-29. Deer. Deer. Now they call each other my deer.
+Now they call each other "My [dear]".
 
 2
 00:00:07,840 --> 00:00:14,160
-30. Husband. Husband. Ding Dong is the husband.
+Ding Dong is the [husband].
 
 3
 00:00:14,160 --> 00:00:26,760
-31. Wife. Wife. Bell is the wife. 32. Baby. Baby.
+Bell is the [wife].
 
 4
 00:00:27,080 --> 00:00:37,480
-They want to have many babies. 33. Mr. Mr. 34. Mrs. Mrs.
+They want to have many [babies]
 
 5
 00:00:38,120 --> 00:00:42,840
-Mr. and Mrs. Ding Dong want to have a big family.
+[Mr.] and [Mrs.] Ding Dong want to have a big family.
 

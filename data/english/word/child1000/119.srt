@@ -1,76 +1,25 @@
-1
-00:00:00,000 --> 00:00:05,720
-17. How we go from one place to another?
-
-2
-00:00:05,720 --> 00:00:09,920
-1. Airplane. Airplane.
-
 3
 00:00:09,920 --> 00:00:12,680
-We go on a trip by airplane.
-
-4
-00:00:12,680 --> 00:00:16,320
-2. Airport. Airport.
+We go on a trip by [airplane].
 
 5
 00:00:16,320 --> 00:00:19,600
-The airplane will land at the airport.
-
-6
-00:00:19,600 --> 00:00:21,840
-3. Passengers.
+The airplane will land at the [airport].
 
 7
 00:00:21,840 --> 00:00:26,000
-Passengers. There are many passengers on the plane.
+There are many [passengers] on the plane.
 
-8
-00:00:26,000 --> 00:00:28,000
-4. Fly.
-
-9
-00:00:28,000 --> 00:00:29,040
-Fly.
 
 10
 00:00:29,040 --> 00:00:32,320
-An airplane can fly in the sky.
-
-11
-00:00:32,320 --> 00:00:34,560
-5. Bike.
-
-12
-00:00:34,560 --> 00:00:35,560
-Bike.
-
-13
-00:00:35,560 --> 00:00:36,560
-Bicycle.
-
-14
-00:00:36,560 --> 00:00:37,760
-Bicycle.
-
-15
-00:00:37,760 --> 00:00:39,920
-Bicycle.
+An airplane can [fly] in the sky.
 
 16
 00:00:39,920 --> 00:00:43,760
-She goes to school by bicycle.
-
-17
-00:00:43,760 --> 00:00:45,600
-6. Car.
-
-18
-00:00:45,600 --> 00:00:46,720
-Car.
+She goes to school by [bicycle].
 
 19
 00:00:46,720 --> 00:00:48,960
-He goes to work by car.
+He goes to work by [car].
 

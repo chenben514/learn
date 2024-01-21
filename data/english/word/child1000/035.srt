@@ -4,7 +4,7 @@
 
 2
 00:00:04,480 --> 00:00:07,360
-Dr. Dog is very busy.
+Dr. Dog is very [busy].
 
 3
 00:00:07,360 --> 00:00:09,920
@@ -12,7 +12,7 @@ Dr. Dog is very busy.
 
 4
 00:00:09,920 --> 00:00:13,760
-Beautiful. Miss Spider is beautiful.
+Miss Spider is [beautiful].
 
 5
 00:00:13,760 --> 00:00:20,720
@@ -20,7 +20,7 @@ Beautiful. Miss Spider is beautiful.
 
 6
 00:00:20,720 --> 00:00:23,920
-She is able to fly with the wind.
+She is [able] to fly with the wind.
 
 7
 00:00:23,920 --> 00:00:26,640
@@ -28,7 +28,7 @@ She is able to fly with the wind.
 
 8
 00:00:26,640 --> 00:00:29,840
-Careful. She is careful.
+She is [careful].
 
 9
 00:00:29,840 --> 00:00:33,440
@@ -36,7 +36,7 @@ Careful. She is careful.
 
 10
 00:00:33,440 --> 00:00:36,000
-Look at that strange smoke.
+Look at that [strange] smoke.
 
 11
 00:00:36,000 --> 00:00:42,800
@@ -44,5 +44,5 @@ Look at that strange smoke.
 
 12
 00:00:42,800 --> 00:00:47,280
-He made a successful landing.
+He made a [successful] landing.
 

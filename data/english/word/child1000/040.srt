@@ -1,6 +1,6 @@
 1
 00:00:00,000 --> 00:00:08,000
-25. Decide. Decide. He decides to give him a warm hug.
+He [decides] to give him a warm hug.
 
 2
 00:00:08,000 --> 00:00:12,000
@@ -8,7 +8,7 @@
 
 3
 00:00:12,000 --> 00:00:16,000
-It is not a great idea to stay here.
+It is not a [great] idea to stay here.
 
 4
 00:00:16,000 --> 00:00:20,000
@@ -16,7 +16,7 @@ It is not a great idea to stay here.
 
 5
 00:00:20,000 --> 00:00:24,000
-The little monster surprises Mr. Ox.
+The little monster [surprises] Mr. Ox.
 
 6
 00:00:24,000 --> 00:00:28,000
@@ -24,7 +24,7 @@ The little monster surprises Mr. Ox.
 
 7
 00:00:28,000 --> 00:00:33,000
-Mr. Frog lost his special box and he is angry.
+Mr. Frog lost his special box and he is [angry].
 
 8
 00:00:33,000 --> 00:00:37,000
@@ -32,9 +32,9 @@ Mr. Frog lost his special box and he is angry.
 
 9
 00:00:37,000 --> 00:00:40,000
-Mr. Horse is sick.
+Mr. Horse is [sick].
 
 10
 00:00:40,000 --> 00:00:46,000
-30. Try. Try. He is trying to hit the ball.
+He is [trying] to hit the ball.
 

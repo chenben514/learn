@@ -12,7 +12,7 @@ Born
 
 4
 00:00:06,000 --> 00:00:09,000
-The chicks were born on the same day.
+The chicks were [born] on the same day.
 
 5
 00:00:09,000 --> 00:00:10,000
@@ -36,7 +36,7 @@ Somebody
 
 10
 00:00:15,000 --> 00:00:18,000
-Someone is at the door.
+[Someone] is at the door.
 
 11
 00:00:18,000 --> 00:00:19,000
@@ -64,7 +64,7 @@ Knock, knock, knock.
 
 17
 00:00:27,000 --> 00:00:29,000
-Is anyone home?
+Is [anyone] home?
 
 18
 00:00:30,000 --> 00:00:31,000
@@ -84,7 +84,7 @@ Nobody
 
 22
 00:00:34,000 --> 00:00:37,000
-Nobody knows who it is.
+[Nobody] knows who it is.
 
 23
 00:00:37,000 --> 00:00:39,000
@@ -100,7 +100,7 @@ Sir
 
 26
 00:00:42,000 --> 00:00:44,000
-I bring you a pizza, sir.
+I bring you a pizza, [sir].
 
 27
 00:00:44,000 --> 00:00:45,000
@@ -116,7 +116,7 @@ Stranger
 
 30
 00:00:48,000 --> 00:00:51,000
-We can't open the door to strangers.
+We can't open the door to [strangers].
 
 31
 00:00:51,000 --> 00:00:53,000
@@ -132,7 +132,7 @@ Miss
 
 34
 00:00:57,000 --> 00:01:01,000
-Where is he taking Miss Daisy?
+Where is he taking [Miss] Daisy?
 
 35
 00:01:01,000 --> 00:01:03,000
@@ -148,5 +148,5 @@ Name
 
 38
 00:01:05,000 --> 00:01:09,000
-Miss Daisy forgot the name of the place.
+Miss Daisy forgot the [name] of the place.
 

@@ -1,52 +1,25 @@
-1
-00:00:00,000 --> 00:00:03,500
-44. List. List.
-
 2
 00:00:03,500 --> 00:00:06,500
-Teddy looks at another list of words.
-
-3
-00:00:06,500 --> 00:00:09,800
-45. Read. Read.
+Teddy looks at another [list] of words.
 
 4
 00:00:09,800 --> 00:00:12,000
-He cannot read the words.
-
-5
-00:00:12,000 --> 00:00:15,300
-46. Bell. Bell.
+He cannot [read] the words.
 
 6
 00:00:15,300 --> 00:00:18,500
-The word B looks like the word Bell.
-
-7
-00:00:18,500 --> 00:00:21,500
-47. Learn. Learn.
+The word "Bee" looks like the word "[bell]".
 
 8
 00:00:21,500 --> 00:00:23,500
-He should learn to write better.
-
-9
-00:00:23,500 --> 00:00:26,800
-48. Mistake. Mistake.
+He should [learn] to write better.
 
 10
 00:00:26,800 --> 00:00:29,500
-He makes a mistake when he writes.
+He makes a [mistake] when he writes.
 
-11
-00:00:29,500 --> 00:00:31,500
-49. Correct.
-
-12
-00:00:31,500 --> 00:00:32,500
-Correct.
 
 13
 00:00:32,500 --> 00:00:35,000
-He wants to correct his mistake.
+He wants to [correct] his mistake.
 

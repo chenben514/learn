@@ -4,7 +4,7 @@
 
 2
 00:00:04,000 --> 00:00:07,000
-She also bought a pretty blanket.
+She also bought a [pretty] blanket.
 
 3
 00:00:07,000 --> 00:00:09,000
@@ -16,7 +16,7 @@ Wise.
 
 5
 00:00:10,000 --> 00:00:13,000
-Mrs. Hen is very wise.
+Mrs. Hen is very [wise].
 
 6
 00:00:13,000 --> 00:00:15,000
@@ -28,7 +28,7 @@ Young.
 
 8
 00:00:16,000 --> 00:00:19,000
-The little chicks are very young.
+The little chicks are very [young].
 
 9
 00:00:19,000 --> 00:00:21,000
@@ -40,7 +40,7 @@ Polite.
 
 11
 00:00:22,000 --> 00:00:24,000
-They are always polite.
+They are always [polite].
 
 12
 00:00:24,000 --> 00:00:26,000
@@ -52,7 +52,7 @@ Tall.
 
 14
 00:00:27,000 --> 00:00:29,000
-Teddy's father is tall.
+Teddy's father is [tall].
 
 15
 00:00:29,000 --> 00:00:31,000
@@ -64,5 +64,5 @@ Short.
 
 17
 00:00:32,000 --> 00:00:34,000
-Teddy is short.
+Teddy is [short].
 

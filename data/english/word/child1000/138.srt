@@ -1,20 +1,20 @@
 1
 00:00:00,000 --> 00:00:07,000
-45. World. World. He has many friends from around the world.
+He has many friends from around the [world].
 
 2
 00:00:07,000 --> 00:00:15,000
-46. United Kingdom. UK. United Kingdom. UK.
+[United Kingdom]. [UK].
 
 3
 00:00:15,000 --> 00:00:27,000
-47. France. France. 48. Italy. Italy. 49. India. India. 50.
+47. [France]. 48. [Italy]. 49. [India].
 
 4
 00:00:27,000 --> 00:00:45,000
-China. China. 51. Taiwan. Taiwan. 52. Australia. Australia. 53. New Zealand. New Zealand. 54. Japan. Japan.
+50. [China]. 51. [Taiwan]. 52. [Australia]. 53. [New Zealand]. 54. [Japan].
 
 5
 00:00:45,000 --> 00:00:51,000
-His friends from China and Taiwan can speak Chinese.
+His friends from [China] and [Taiwan] can speak Chinese.
 

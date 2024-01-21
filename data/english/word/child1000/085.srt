@@ -8,7 +8,7 @@
 
 3
 00:00:07,000 --> 00:00:12,000
-His helper is a machine. It is a friendly robot.
+His helper is a [machine]. It is a friendly [robot].
 
 4
 00:00:12,000 --> 00:00:17,000
@@ -16,7 +16,7 @@ His helper is a machine. It is a friendly robot.
 
 5
 00:00:17,000 --> 00:00:20,000
-It falls to the ground.
+It falls to the [ground].
 
 6
 00:00:20,000 --> 00:00:23,000
@@ -24,7 +24,7 @@ It falls to the ground.
 
 7
 00:00:23,000 --> 00:00:26,000
-The fan blows the robot away.
+The [fan] blows the robot away.
 
 8
 00:00:26,000 --> 00:00:29,000
@@ -32,7 +32,7 @@ The fan blows the robot away.
 
 9
 00:00:29,000 --> 00:00:31,000
-It hits the wall.
+It hits the [wall].
 
 10
 00:00:31,000 --> 00:00:34,000
@@ -44,7 +44,7 @@ Restroom.
 
 12
 00:00:35,000 --> 00:00:38,000
-The robot loves to stay in the restroom.
+The robot loves to stay in the [restroom].
 
 13
 00:00:38,000 --> 00:00:43,000
@@ -52,5 +52,5 @@ The robot loves to stay in the restroom.
 
 14
 00:00:43,000 --> 00:00:48,000
-Dr. Dog needs to fix the robot.
+Dr. Dog needs to [fix] the robot.
 

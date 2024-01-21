@@ -12,7 +12,7 @@ Miss
 
 4
 00:00:03,240 --> 00:00:06,040
-He missed the little monster
+He [missed] the little monster
 
 5
 00:00:06,040 --> 00:00:07,440
@@ -28,7 +28,7 @@ Lucky
 
 8
 00:00:09,440 --> 00:00:12,240
-The little monster is lucky
+The little monster is [lucky]
 
 9
 00:00:12,240 --> 00:00:13,640
@@ -44,7 +44,7 @@ Tired
 
 12
 00:00:16,040 --> 00:00:19,040
-The little monster is tired
+The little monster is [tired]
 
 13
 00:00:19,040 --> 00:00:20,720
@@ -60,7 +60,7 @@ Week
 
 16
 00:00:22,760 --> 00:00:24,960
-He feels weak
+He feels [weak]
 
 17
 00:00:24,960 --> 00:00:26,560
@@ -76,7 +76,7 @@ Wish
 
 20
 00:00:29,120 --> 00:00:32,920
-They wish the little monster sweet dreams
+They [wish] the little monster sweet dreams
 
 21
 00:00:32,920 --> 00:00:34,320
@@ -92,5 +92,5 @@ Fun
 
 24
 00:00:36,320 --> 00:00:38,320
-It is so much fun
+It is so much [fun]
 

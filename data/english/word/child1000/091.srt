@@ -1,96 +1,25 @@
-1
-00:00:00,000 --> 00:00:01,280
-31.
-
-2
-00:00:01,280 --> 00:00:02,520
-Exciting.
-
-3
-00:00:02,520 --> 00:00:03,680
-Exciting.
-
 4
 00:00:03,680 --> 00:00:05,840
-That is so exciting.
-
-5
-00:00:05,840 --> 00:00:07,160
-32.
-
-6
-00:00:07,160 --> 00:00:08,480
-Interesting.
-
-7
-00:00:08,480 --> 00:00:09,680
-Interesting.
+That is so [exciting].
 
 8
 00:00:09,680 --> 00:00:12,080
-That is so interesting.
-
-9
-00:00:12,080 --> 00:00:13,440
-33.
-
-10
-00:00:13,440 --> 00:00:14,800
-Interested.
-
-11
-00:00:14,800 --> 00:00:16,160
-Interested.
+That is so [interesting].
 
 12
 00:00:16,160 --> 00:00:20,000
-Everyone is interested in the Magic Inc.
-
-13
-00:00:20,000 --> 00:00:21,360
-34.
-
-14
-00:00:21,360 --> 00:00:22,400
-Interest.
-
-15
-00:00:22,400 --> 00:00:23,600
-Interest.
+Everyone is [interested] in the Magic Inc.
 
 16
 00:00:23,600 --> 00:00:26,400
-He has an interest in drawing.
-
-17
-00:00:26,400 --> 00:00:27,760
-35.
-
-18
-00:00:27,760 --> 00:00:28,880
-Noise.
-
-19
-00:00:28,960 --> 00:00:30,160
-Noise.
+He has an [interest] in drawing.
 
 20
 00:00:30,160 --> 00:00:33,600
-They hear some noise from the smoke.
+They hear some [noise] from the smoke.
 
-21
-00:00:33,600 --> 00:00:34,960
-36.
-
-22
-00:00:34,960 --> 00:00:35,760
-Dig.
-
-23
-00:00:35,760 --> 00:00:36,960
-Dig.
 
 24
 00:00:36,960 --> 00:00:40,560
-The mole is digging its way out of the wall.
+The mole is [digging] its way out of the wall.
 

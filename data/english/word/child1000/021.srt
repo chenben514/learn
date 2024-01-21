@@ -12,7 +12,7 @@ Talk
 
 4
 00:00:05,000 --> 00:00:08,000
-Ghosts are talking in the wall
+Ghosts are [talking] in the wall
 
 5
 00:00:08,000 --> 00:00:09,000
@@ -28,7 +28,7 @@ Speak
 
 8
 00:00:12,000 --> 00:00:14,000
-She is speaking to her flower
+She is [speaking] to her flower
 
 9
 00:00:14,000 --> 00:00:16,000
@@ -44,7 +44,7 @@ Tell
 
 12
 00:00:18,000 --> 00:00:21,000
-She is telling her flower, it is pretty
+She is [telling] her flower, it is pretty
 
 13
 00:00:21,000 --> 00:00:23,000
@@ -60,7 +60,7 @@ Point
 
 16
 00:00:25,000 --> 00:00:27,000
-The pig points at the ground
+The pig [points] at the ground
 
 17
 00:00:27,000 --> 00:00:29,000
@@ -76,7 +76,7 @@ Think
 
 20
 00:00:31,000 --> 00:00:34,000
-They think they see an alien
+They [think] they see an alien
 
 21
 00:00:34,000 --> 00:00:35,000
@@ -92,5 +92,5 @@ Walk
 
 24
 00:00:37,000 --> 00:00:40,000
-They want to walk on the moon
+They want to [walk] on the moon
 

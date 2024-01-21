@@ -12,7 +12,7 @@ May.
 
 4
 00:00:03,400 --> 00:00:07,000
-In May, the nurse gives the tree a health check.
+In [May], the nurse gives the tree a health check.
 
 5
 00:00:07,000 --> 00:00:08,200
@@ -28,7 +28,7 @@ June.
 
 8
 00:00:13,200 --> 00:00:16,600
-In June, he plays music under the tree.
+In [June], he plays music under the tree.
 
 9
 00:00:16,600 --> 00:00:17,800
@@ -44,7 +44,7 @@ July.
 
 12
 00:00:23,000 --> 00:00:26,600
-In July, the ferry falls from the sky.
+In [July], the ferry falls from the sky.
 
 13
 00:00:26,600 --> 00:00:27,800
@@ -60,7 +60,7 @@ August.
 
 16
 00:00:29,800 --> 00:00:33,600
-In August, the ferry is covered with dust.
+In [August], the ferry is covered with dust.
 
 17
 00:00:33,600 --> 00:00:34,600
@@ -76,7 +76,7 @@ September.
 
 20
 00:00:37,200 --> 00:00:40,800
-In September, she flies up to the tree top.
+In [September], she flies up to the tree top.
 
 21
 00:00:40,800 --> 00:00:41,800
@@ -92,5 +92,5 @@ October.
 
 24
 00:00:44,600 --> 00:00:49,000
-In October, an octopus tries to steal the pair.
+In [October], an octopus tries to steal the pair.
 
