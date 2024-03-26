@@ -7,7 +7,7 @@ let courseSubjList = [
 		course: "english",
 		subj: "speak,conversation,word,spell,listen,video,business,amusement,match",
 	},
-	{ course: "japan", subj: "word,spell,video,amusement" },
+	{ course: "japan", subj: "listen,word,spell,video,amusement" },
 	{
 		course: "korean",
 		subj: "word,spell,listen,writing,grammer,video,amusement",
