@@ -1,0 +1,28 @@
+1
+00:00:00,000 --> 00:00:06,000
+The stock market surged today as investors cheered positive economic data.
+
+2
+00:00:06,000 --> 00:00:11,600
+Analysts attributed the gains to strong earnings reports from major companies and a potential
+
+3
+00:00:11,600 --> 00:00:14,600
+interest rate cut by central banks.
+
+4
+00:00:14,600 --> 00:00:20,800
+Investors are raking in dividends and are eager to continue caching in on the bullish trend.
+
+5
+00:00:20,800 --> 00:00:27,160
+However, experts caution that market volatility remains a key risk and investors should not
+
+6
+00:00:27,160 --> 00:00:30,080
+bank on recent upward trends.
+
+7
+00:00:30,080 --> 00:00:36,440
+Instead, they should carefully monitor their portfolios and hedge against potential downturns.
+

@@ -1,0 +1,56 @@
+1
+00:00:00,000 --> 00:00:04,600
+Hey, Jude, do you have a moment to talk about setting up a meeting?
+
+2
+00:00:04,600 --> 00:00:06,560
+Jude says, sure, what's up?
+
+3
+00:00:06,560 --> 00:00:11,520
+Dominic says, we need to brainstorm the way forward regarding our latest client.
+
+4
+00:00:11,520 --> 00:00:14,000
+Could sometime this week work for you?
+
+5
+00:00:14,000 --> 00:00:16,680
+Jude says, let me pull up my calendar quickly.
+
+6
+00:00:16,680 --> 00:00:21,320
+Damn, I'm all blocked up this week, but I can set aside sometime next week.
+
+7
+00:00:21,320 --> 00:00:23,800
+How long do you reckon we'd need?
+
+8
+00:00:23,800 --> 00:00:29,040
+Dominic says, given the lack of resources assigned to the project, at least two hours.
+
+9
+00:00:29,040 --> 00:00:34,480
+And then Jude says, cool, I'm sure I can squeeze in a two hour gap next week Wednesday.
+
+10
+00:00:34,480 --> 00:00:37,440
+Do you think this a chance will run over?
+
+11
+00:00:37,440 --> 00:00:40,200
+And Dominic says, great, let me pencil in the Wednesday slot.
+
+12
+00:00:40,200 --> 00:00:42,760
+I think we should be able to get through everything.
+
+13
+00:00:42,760 --> 00:00:46,480
+If anything changes last minute, I'll give you a heads up ASAP.
+
+14
+00:00:46,480 --> 00:00:47,000
+See you next week.
+

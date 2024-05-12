@@ -1,0 +1,40 @@
+1
+00:00:00,000 --> 00:00:06,000
+Hi, Mary. How's your first month and the new job being? Are you staying on top of things?
+
+2
+00:00:06,000 --> 00:00:12,000
+Yes, I've been keeping up with everything, but unexpected issues did arise. In my previous job,
+
+3
+00:00:12,000 --> 00:00:18,000
+I learned that it is important to be able to deal with them quickly, to avoid any negative impacts on the business,
+
+4
+00:00:18,000 --> 00:00:21,000
+or falling behind at work.
+
+5
+00:00:21,000 --> 00:00:26,000
+I couldn't agree more. It's good to know that we can count on each other to manage these situations.
+
+6
+00:00:26,000 --> 00:00:30,000
+Definitely, and if you ever have any concerns, be sure to bring them up.
+
+7
+00:00:30,000 --> 00:00:34,000
+We can work together to address any issues as soon as possible.
+
+8
+00:00:34,000 --> 00:00:41,000
+That's a great point. Speaking of concerns, we need to find a way to cut back in expenses. Any ideas?
+
+9
+00:00:41,000 --> 00:00:46,000
+Yes, I think we should review our budget and identify any unnecessary expenses.
+
+10
+00:00:46,000 --> 00:00:53,000
+By cutting back on these expenses, we can keep costs under control and improve the bottom line.
+
