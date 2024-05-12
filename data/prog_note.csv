@@ -12,8 +12,11 @@ whisper 005house4.mp3 --language English --model base
 find ./ -name '*.m4a' -exec bash -c 'ffmpeg -i "$0" -y -b:a 256k "${0/%m4a/mp3}"' '{}' \;
 --> mp3 to srt 
 find ./ -name '*.mp3' -exec bash -c 'whisper "$0" --language English --model base' '{}' \;
+rm *.json *.tsv *.txt *.vtt *.m4a
+
 --> list files 
 ls -p | grep -v / | cut -d. -f1 | tr '\n' ',' 
+mv * ../
 
 --> only download mp3
 youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=QaOM-82fb10&ab_channel=JFlaMusic'
@@ -22,6 +25,8 @@ youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=
 
 
 python main.py english video bbcWork PLcetZ6gSk969oGvAI0e4_PgVnlGbm64bp
+
+npm run build:css
 
 ### 功能開發
 
