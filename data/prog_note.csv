@@ -1,6 +1,6 @@
 -> git push 
   git add .
-  git commit -m '20240121_1214'
+  git commit -m '20240512_2147'
   git push origin --all
 
 --> mp3 to srt script
