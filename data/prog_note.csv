@@ -6,10 +6,14 @@
 --> mp3 to srt script
 whisper 021.mp3 --language English --model base 
 whisper 001.mp3 --language English --model base 
+whisper 005house4.mp3 --language English --model base 
 
 --> m4a to mp3
 find ./ -name '*.m4a' -exec bash -c 'ffmpeg -i "$0" -y -b:a 256k "${0/%m4a/mp3}"' '{}' \;
-
+--> mp3 to srt 
+find ./ -name '*.mp3' -exec bash -c 'whisper "$0" --language English --model base' '{}' \;
+--> list files 
+ls -p | grep -v / | cut -d. -f1 | tr '\n' ',' 
 
 --> only download mp3
 youtube-dl --extract-audio --audio-format mp3  'https://www.youtube.com/watch?v=QaOM-82fb10&ab_channel=JFlaMusic'
