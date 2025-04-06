@@ -13,6 +13,7 @@ let arrPlayMode = [
 	{ value: "SentenceRepeat", text: "單句重覆" },
 ];
 let playMode = 0;
+let isMD = false;
 
 //subtitleMode
 let arrSubtitleMode = [
@@ -657,7 +658,6 @@ function parseCsv(filename) {
 	read.send();
 
 	displayName = read.responseText.replace(/’/g, "'");
-
 	quesArr = displayName.replace(/\r\n/g, "\n").split("\n");
 }
 
@@ -1780,6 +1780,12 @@ function highlight_start(lineno, content) {
 	if (content == null) return content;
 	if (content.length == 0) return content;
 	return_content = "";
+	//	alert(content);
+	if (isMD) {
+		content = marked.parse(content);
+		return content;
+	}
+
 	var lineArr = content.replace(/\r\n/g, "\n").split("\n");
 
 	var tmpColor;
@@ -1808,12 +1814,17 @@ function highlight_start(lineno, content) {
 
 		var html;
 		if (!subtitleMode.includes("MD4")) {
-			const converter = new showdown.Converter();
-			html = converter.makeHtml(line_content);
+			//output.innerHTML = marked.parse(input.value);
+			//const converter = new showdown.Converter();
+			//html = converter.makeHtml(line_content);
+			//			alert(line_content);
+			//html = marked.parse(line_content);
+			html = line_content;
 		} else {
 			html = line_content;
 		}
 		line_content = html;
+		//alert(line_content);
 		//1.replace <image.jpg>
 		if (line_content.includes(".jpg>")) {
 			var tmpImageName = line_content.substr(
@@ -2150,6 +2161,7 @@ function startAudio(curQuiz) {
 	var isMedia = true;
 	var imageName = "";
 	subtitles = [];
+	isMD = false;
 	//2.generate questions
 	document.getElementById(curQuiz).classList.add("test-pressed");
 	content.classList.add("slight_opacity");
@@ -2260,6 +2272,7 @@ function startAudio(curQuiz) {
 		} else {
 			base_filename = base_left_filename + "/" + srtID + ".srt";
 		}
+		isMD = false;
 		readSubtitles(base_filename);
 
 		//tmpID = tmpID.replacee(/~/g, "_");
@@ -2267,9 +2280,11 @@ function startAudio(curQuiz) {
 	} else {
 		if (curQuizType.includes("conversation_lesson")) {
 			subtitleMode = "MD";
+			isMD = true;
 			readSubtitles(base_filename + ".md");
 		} else {
 			subtitleMode = "SingleSrt";
+			isMD = false;
 			readSubtitles(base_filename + ".srt");
 		}
 	}

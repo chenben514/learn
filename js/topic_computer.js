@@ -3,7 +3,7 @@ let defaultCourse = "db";
 
 let courseSubjList = [
 	{ course: "os", subj: "linux" },
-	{ course: "db", subj: "mariadb,mongodb,cassandra" },
+	{ course: "db", subj: "oracle,mariadb,mongodb,cassandra" },
 	{ course: "data", subj: "spark,kafka,nats,cloud,etl" },
 	{ course: "devops", subj: "azure,docker" },
 	{ course: "programming", subj: "proc,c,c++,java,python,dotnet" },
@@ -21,6 +21,7 @@ let defaultCourseSubjMap = new Map([
 
 let subjMap = new Map([
 	["linux", "Linux"],
+	["oracle", "Oracle"],
 	["mariadb", "MariaDB"],
 	["mongodb", "MongoDB"],
 	["cassandra", "Cassandra"],

@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+	<head>
+		<meta charset="UTF-8" />
+		<title>吉卜力風轉盤抽獎</title>
+		<style>
+			body {
+				font-family: "Microsoft JhengHei", sans-serif;
+				background: linear-gradient(to bottom, #fafafa, #e6f0ff);
+				text-align: center;
+				padding: 30px;
+			}
+
+			h1 {
+				font-size: 32px;
+				color: #444;
+				margin-bottom: 10px;
+			}
+
+			input {
+				width: 70px;
+				padding: 6px;
+				margin: 8px;
+				border-radius: 6px;
+				border: 1px solid #ccc;
+			}
+
+			button {
+				padding: 12px 25px;
+				font-size: 18px;
+				margin-top: 15px;
+				background-color: #6fb98f;
+				border: none;
+				border-radius: 10px;
+				color: white;
+				cursor: pointer;
+				transition: 0.3s;
+			}
+
+			button:hover {
+				background-color: #519d82;
+			}
+
+			canvas {
+				margin-top: 30px;
+				border-radius: 50%;
+				box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+				background: radial-gradient(circle at center, #fffdf5, #f2f2f2);
+			}
+
+			#pointer {
+				position: absolute;
+				left: 50%;
+				top: 230px;
+				transform: translateX(-50%);
+				width: 0;
+				height: 0;
+				border-left: 20px solid transparent;
+				border-right: 20px solid transparent;
+				border-bottom: 30px solid #ff6666;
+			}
+
+			#result {
+				font-size: 24px;
+				margin-top: 30px;
+				color: #333;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>🎡 吉卜力風轉盤抽獎</h1>
+
+		<div>
+			一獎機率 (%)：<input type="number" id="p1" value="1" /> 二獎機率
+			(%)：<input type="number" id="p2" value="2" /> 三獎機率 (%)：<input
+				type="number"
+				id="p3"
+				value="3"
+			/>
+		</div>
+
+		<div id="pointer"></div>
+		<canvas id="wheelCanvas" width="400" height="400"></canvas><br />
+		<button onclick="spinWheel()">抽獎！</button>
+
+		<div id="result"></div>
+
+		<!-- 音效 -->
+		<audio
+			id="winAudio"
+			src="https://cdn.pixabay.com/audio/2022/03/15/audio_39912b06e6.mp3"
+		></audio>
+		<audio
+			id="loseAudio"
+			src="https://cdn.pixabay.com/audio/2022/03/15/audio_6071e28b1c.mp3"
+		></audio>
+
+		<script>
+			const canvas = document.getElementById("wheelCanvas");
+			const ctx = canvas.getContext("2d");
+			const centerX = canvas.width / 2;
+			const centerY = canvas.height / 2;
+			const radius = 160;
+
+			const segments = [
+				{ label: "🎁 一獎", color: "#f9d423" },
+				{ label: "🥈 二獎", color: "#a3d5ff" },
+				{ label: "🥉 三獎", color: "#ffc09f" },
+				{ label: "🌿 感謝獎", color: "#d4f4dd" },
+			];
+
+			function drawWheel(rotationAngle = 0) {
+				const anglePerSegment = (2 * Math.PI) / segments.length;
+
+				ctx.clearRect(0, 0, canvas.width, canvas.height);
+				ctx.save();
+				ctx.translate(centerX, centerY);
+				ctx.rotate(rotationAngle);
+				ctx.translate(-centerX, -centerY);
+
+				for (let i = 0; i < segments.length; i++) {
+					const startAngle = i * anglePerSegment;
+					const endAngle = startAngle + anglePerSegment;
+
+					ctx.beginPath();
+					ctx.moveTo(centerX, centerY);
+					ctx.arc(centerX, centerY, radius, startAngle, endAngle);
+					ctx.fillStyle = segments[i].color;
+					ctx.fill();
+					ctx.strokeStyle = "#fff";
+					ctx.stroke();
+
+					// Label
+					ctx.save();
+					ctx.translate(centerX, centerY);
+					ctx.rotate(startAngle + anglePerSegment / 2);
+					ctx.textAlign = "right";
+					ctx.fillStyle = "#333";
+					ctx.font = "bold 20px sans-serif";
+					ctx.fillText(segments[i].label, radius - 10, 10);
+					ctx.restore();
+				}
+
+				ctx.restore();
+			}
+
+			drawWheel();
+
+			function spinWheel() {
+				const p1 =
+					parseFloat(document.getElementById("p1").value) / 100 || 0.01;
+				const p2 =
+					parseFloat(document.getElementById("p2").value) / 100 || 0.02;
+				const p3 =
+					parseFloat(document.getElementById("p3").value) / 100 || 0.03;
+
+				const total = p1 + p2 + p3;
+				if (total > 1) {
+					document.getElementById("result").innerText =
+						"❌ 機率總和不能超過 100%";
+					return;
+				}
+
+				const rand = Math.random();
+				let prize = "🌿 感謝獎";
+				if (rand < p1) {
+					prize = "🎁 一獎";
+				} else if (rand < p1 + p2) {
+					prize = "🥈 二獎";
+				} else if (rand < p1 + p2 + p3) {
+					prize = "🥉 三獎";
+				}
+
+				const index = segments.findIndex((s) => s.label === prize);
+				const anglePerSegment = 360 / segments.length;
+				const stopAngle =
+					360 * 5 +
+					(segments.length - index) * anglePerSegment -
+					anglePerSegment / 2;
+
+				animateSpin(stopAngle, prize);
+			}
+
+			function animateSpin(targetAngle, prize) {
+				let angle = 0;
+				const step = 10;
+				const interval = setInterval(() => {
+					drawWheel((angle * Math.PI) / 180);
+					angle += step;
+					if (angle >= targetAngle) {
+						clearInterval(interval);
+						showResult(prize);
+					}
+				}, 20);
+			}
+
+			function showResult(prize) {
+				const resultDiv = document.getElementById("result");
+				resultDiv.innerText = `🎯 結果：${prize}`;
+				if (prize === "🌿 感謝獎") {
+					document.getElementById("loseAudio").play();
+				} else {
+					document.getElementById("winAudio").play();
+				}
+			}
+		</script>
+	</body>
+</html>

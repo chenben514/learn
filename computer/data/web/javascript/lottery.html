@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+	<head>
+		<meta charset="UTF-8" />
+		<title>抽獎系統</title>
+		<style>
+			body {
+				font-family: "Microsoft JhengHei", sans-serif;
+				background: #f4f4f4;
+				padding: 30px;
+				text-align: center;
+			}
+			h1 {
+				color: #333;
+			}
+			input {
+				width: 80px;
+				padding: 5px;
+				margin: 10px;
+				font-size: 16px;
+			}
+			button {
+				padding: 10px 20px;
+				font-size: 18px;
+				margin-top: 20px;
+				cursor: pointer;
+				background-color: #4caf50;
+				color: white;
+				border: none;
+				border-radius: 6px;
+			}
+			button:hover {
+				background-color: #45a049;
+			}
+			#result {
+				margin-top: 30px;
+				font-size: 24px;
+				color: #0066cc;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>🎁 抽獎系統</h1>
+
+		<div>
+			<label>一獎機率 (%)：</label>
+			<input type="number" id="prize1" value="1" min="0" max="100" /><br />
+
+			<label>二獎機率 (%)：</label>
+			<input type="number" id="prize2" value="2" min="0" max="100" /><br />
+
+			<label>三獎機率 (%)：</label>
+			<input type="number" id="prize3" value="3" min="0" max="100" /><br />
+
+			<button onclick="drawLottery()">抽獎！</button>
+		</div>
+
+		<div id="result"></div>
+
+		<script>
+			function drawLottery() {
+				const prize1 =
+					parseFloat(document.getElementById("prize1").value) / 100;
+				const prize2 =
+					parseFloat(document.getElementById("prize2").value) / 100;
+				const prize3 =
+					parseFloat(document.getElementById("prize3").value) / 100;
+
+				const total = prize1 + prize2 + prize3;
+				if (total > 1) {
+					document.getElementById("result").innerHTML =
+						"❌ 總機率不能超過 100%！";
+					return;
+				}
+
+				const rand = Math.random();
+				let resultText = "";
+
+				if (rand < prize1) {
+					resultText = "🎉 恭喜中【一獎】！";
+				} else if (rand < prize1 + prize2) {
+					resultText = "🥈 恭喜中【二獎】！";
+				} else if (rand < prize1 + prize2 + prize3) {
+					resultText = "🥉 恭喜中【三獎】！";
+				} else {
+					resultText = "🙏 感謝參與，請再接再厲～";
+				}
+
+				document.getElementById("result").innerHTML = resultText;
+			}
+		</script>
+	</body>
+</html>
