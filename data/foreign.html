@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<title>中英例句搜尋器</title>
+		<style>
+			body {
+				font-family: Arial, sans-serif;
+				padding: 20px;
+			}
+			input {
+				width: 100%;
+				padding: 10px;
+				margin-bottom: 20px;
+				font-size: 16px;
+			}
+			table {
+				width: 100%;
+				border-collapse: collapse;
+			}
+			th,
+			td {
+				padding: 12px;
+				border: 1px solid #ccc;
+				text-align: left;
+			}
+			tr.hidden {
+				display: none;
+			}
+		</style>
+	</head>
+	<body>
+		<h2>中英例句搜尋器</h2>
+		<input
+			type="text"
+			id="searchBox"
+			placeholder="輸入英文、中文或例句關鍵字來搜尋..."
+		/>
+
+		<table id="dataTable">
+			<thead>
+				<tr>
+					<th>英文</th>
+					<th>中文</th>
+					<th>例句</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>break the ice</td>
+					<td>打破冷場</td>
+					<td>He told a joke to break the ice at the meeting.</td>
+				</tr>
+				<tr>
+					<td>once in a blue moon</td>
+					<td>千載難逢</td>
+					<td>She visits her hometown once in a blue moon.</td>
+				</tr>
+				<tr>
+					<td>under the weather</td>
+					<td>身體不適</td>
+					<td>I'm feeling a bit under the weather today.</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<script>
+			const searchBox = document.getElementById("searchBox");
+			const tableRows = document.querySelectorAll("#dataTable tbody tr");
+
+			searchBox.addEventListener("input", function () {
+				const searchText = this.value.toLowerCase();
+
+				tableRows.forEach((row) => {
+					const rowText = row.textContent.toLowerCase();
+					row.classList.toggle("hidden", !rowText.includes(searchText));
+				});
+			});
+		</script>
+	</body>
+</html>
