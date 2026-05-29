@@ -1024,6 +1024,8 @@ function showQuestions(index) {
 	} else if (questions[index].quizType == "rearrange") {
 		let answer_target = '<div class="option">';
 		let answer_option = '<div class="answer" "option">';
+		//20260516 const que_text = document.querySelector(".que_text");
+		//20260516 que_text.innerHTML = "";
 		const sentence = questions[index].answer;
 		// let wordArr = sentence.split(/([,.\s])/);
 		let wordArr = sentence.split("");
