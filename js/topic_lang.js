@@ -2,15 +2,15 @@ let curWeb = "learn";
 let defaultCourse = "korean";
 
 let courseSubjList = [
-	{ course: "chinese", subj: "word,idiom,video,match" },
+	{ course: "chinese", subj: "word,match,idiom,learn,amusement" },
 	{
 		course: "english",
-		subj: "speak,conversation,word,spell,listen,video,business,amusement,match",
+		subj: "speak,word,match,spell,listen,learn,business,amusement",
 	},
-	{ course: "japan", subj: "listen,word,spell,video,amusement" },
+	{ course: "japan", subj: "word,spell,listen,learn,amusement" },
 	{
 		course: "korean",
-		subj: "word,spell,listen,writing,grammer,video,amusement",
+		subj: "word,spell,listen,grammer,learn,amusement",
 	},
 	{ course: "cejk", subj: "combo,song" },
 	{ course: "computer", subj: "os,db,programming,data,devops,web" },
