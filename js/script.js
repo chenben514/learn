@@ -1783,10 +1783,12 @@ function highlight_start(lineno, content) {
 	if (content.length == 0) return content;
 	return_content = "";
 	//	alert(content);
+	/* marked doesn't work anymore 
 	if (isMD) {
 		content = marked.parse(content);
 		return content;
 	}
+	*/
 
 	var lineArr = content.replace(/\r\n/g, "\n").split("\n");
 

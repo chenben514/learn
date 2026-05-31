@@ -29,6 +29,11 @@ python main.py english video bbcWork PLcetZ6gSk969oGvAI0e4_PgVnlGbm64bp
 --> cejk generate
 python /Users/tbchena/Documents/Python/Project/SelfTool/0012_text_to_audio/text_to_audio.py
 
+--> youtube list 
+python /Users/tbchena/Documents/Python/Project/SelfTool/0005_GetYoutubePlaylist/genlist.py
+
+
+
 npm run build:css
 
 ### 功能開發
